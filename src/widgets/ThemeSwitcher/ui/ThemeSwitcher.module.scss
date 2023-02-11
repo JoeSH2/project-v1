@@ -1,0 +1,23 @@
+.ThemeSwither {
+    
+}
+
+.icon {
+    padding: 0 0 0 7px;
+}
+
+.dark {
+    background-color: var(--bg-color-special);
+    color: var(--primary-color);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+}
+
+.default {
+    background-color: var(--bg-color-special);
+    color: var(--special-color);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+}

@@ -1,0 +1,17 @@
+@import './reset.scss';
+@import './variables/global.scss';
+@import './dark/dark.scss';
+@import './default/default.scss';
+
+.app {
+    font-family: var(--font-family-main);
+    font: var(--font-m);
+    font-size: var(--font-m);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    height: 100vh;
+}
+
+.content-page {
+    display: flex;
+}

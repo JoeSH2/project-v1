@@ -1,0 +1,17 @@
+.Sidebare {
+    position: relative;
+    height: calc(100vh - var(--navbare-height));
+    width: var(--sidebare-width);
+    background-color: var(--bg-color-dark);
+    transition: width 0.3s;
+}
+
+.collapse {
+    width: var(--sidebare-width-collapse);
+}
+
+.switchers {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+}

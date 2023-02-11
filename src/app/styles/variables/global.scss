@@ -1,0 +1,17 @@
+:root {
+    --font-family-main: Tahoma, Geneva, sans-serif;
+
+    --font-size-m: 16px;
+    --font-line-m: 16px;
+    --font-m: var(var(--font-size-m) / var(--font-line-m) var(--font-family-main))
+    
+    --font-size-l: 22px;
+    --font-line-l: 16px;
+    --font-l: var(var(--font-size-l) / var(--font-line-l) var(--font-family-main));
+
+    //Размеры
+
+    --navbare-height: 50px;
+    --sidebare-width: 300px;
+    --sidebare-width-collapse: 130px;
+}
