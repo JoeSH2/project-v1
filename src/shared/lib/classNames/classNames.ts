@@ -1,13 +1,9 @@
 type Mode = Record<string, boolean | string>;
 
-export const classNames = (
-  className: string,
-  mode?: Mode,
-  additional?: string[],
-): string => [
+export const classNames = (className: string, mode: Mode = {}, additional: string[] = []): string => [
   className,
-  ...additional.filter(Boolean),
   ...Object.entries(mode)
-    .filter(([cls, key]) => Boolean(key))
-    .map(([cls, key]) => cls),
+    .filter(([_, key]) => Boolean(key))
+    .map(([cls]) => cls),
+  ...additional.filter(Boolean),
 ].join(' ');

@@ -1,11 +1,11 @@
-@import './reset.scss';
-@import './variables/global.scss';
-@import './dark/dark.scss';
-@import './default/default.scss';
+@import "./reset";
+@import "./variables/global";
+@import "./dark/dark";
+@import "./default/default";
 
 .app {
-    font-family: var(--font-family-main);
     font: var(--font-m);
+    font-family: var(--font-family-main);
     font-size: var(--font-m);
     background-color: var(--bg-color);
     color: var(--primary-color);

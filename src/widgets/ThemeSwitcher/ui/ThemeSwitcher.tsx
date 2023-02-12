@@ -16,7 +16,7 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
   const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
   return (
-    <Button theme={ButtonTheme.DEFAULT} onClick={toggleTheme}>
+    <Button type="button" theme={ButtonTheme.DEFAULT} onClick={toggleTheme}>
       {t('Theme')}
       {theme === Theme.DARK ? (
         <MoonIcon className={style.icon} width={22} height={22} />
