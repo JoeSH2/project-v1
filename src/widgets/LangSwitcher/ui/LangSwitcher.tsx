@@ -1,9 +1,14 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 import { ButtonTheme } from 'shared/ui/Button/ui/Button';
 import style from './LangSwitcher.module.scss';
+
+export enum LangSwitcherValues {
+  RU = 'ru',
+  EN = 'en'
+}
 
 interface LangSwitcherProps {
   className?: string;
@@ -15,16 +20,25 @@ export const LangSwitcher: FC<LangSwitcherProps> = ({
   children,
 }) => {
   const { t, i18n } = useTranslation();
-  const toggleLang = async () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+  const toggleLang = async (args: LangSwitcherValues) => {
+    i18n.changeLanguage(args);
   };
   return (
-    <Button
-      theme={ButtonTheme.CLEAR}
-      onClick={toggleLang}
-      className={classNames(style.LangSwitcher, {}, [className])}
-    >
-      {t('ru/en')}
-    </Button>
+    <div className={classNames(style.LangSwitcher, {}, [className])}>
+      <Button
+        theme={ButtonTheme.CLEAR}
+        onClick={() => toggleLang(LangSwitcherValues.RU)}
+        className={classNames(style.button, {}, [className, style.buttonR])}
+      >
+        {t('RU')}
+      </Button>
+      <Button
+        theme={ButtonTheme.CLEAR}
+        onClick={() => toggleLang(LangSwitcherValues.EN)}
+        className={classNames(style.button, {}, [className, style.buttonL])}
+      >
+        {t('EN')}
+      </Button>
+    </div>
   );
 };

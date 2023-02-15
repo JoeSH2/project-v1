@@ -16,7 +16,7 @@ export const Navbare: FC<NavbareProps> = ({ className }) => {
       <AppLink to="/" theme={AppLinkTheme.DARK}>
         {t('Main page')}
       </AppLink>
-      <AppLink to={t('/about')} theme={AppLinkTheme.DEFAULT}>
+      <AppLink to="/about" theme={AppLinkTheme.DEFAULT}>
         {t('About us')}
       </AppLink>
     </div>

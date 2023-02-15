@@ -1,7 +1,15 @@
 {
+  "/about": "",
   "About us": "About us",
+  "Back": "Back",
+  "EN": "EN",
+  "ERRRRROR": "ERRRRROR",
   "Main page": "Main page",
+  "Page not found": "",
+  "RU": "RU",
+  "Reload page": "Reload page",
   "Theme": "Theme",
+  "There was an error, return to the home page?": "There was an error, return to the home page?",
   "Toggle": "Toggle",
   "ru/en": "ru/en"
 }

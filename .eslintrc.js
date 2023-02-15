@@ -8,6 +8,7 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
+    'eslint:recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -44,10 +45,10 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'react/no-unused-prop-types': 'warn',
     'import/order': 'off',
-    'no-unused-vars': 'warn',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
+    'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
     'max-len': ['error', { code: 130, ignoreComments: true }],
     'linebreak-style': [0, 'error', 'windows'],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['stroke'] }],
   },
   globals: {
     __IS_DEV__: true,

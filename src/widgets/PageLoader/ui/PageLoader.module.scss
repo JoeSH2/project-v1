@@ -1,0 +1,18 @@
+.PageLoader {
+    height: calc(100vh - var(--navbare-height));
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.Loader {
+    width: var(--loader-width-large);
+    height: var(--loader-height-large);
+}
+
+.Loader:after {
+    width: var(--loader-width-large);
+    height: var(--loader-height-large);
+}

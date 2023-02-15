@@ -1,7 +1,15 @@
 {
+  "/about": "",
   "About us": "О сайте",
+  "Back": "Назад",
+  "EN": "EN",
+  "ERRRRROR": "",
   "Main page": "Главная страница",
+  "Page not found": "Страница не найдена",
+  "RU": "RU",
+  "Reload page": "Перезагрузить страницу",
   "Theme": "Тема",
+  "There was an error, return to the home page?": "Произошла ошибка, вернуться на главную страницу?",
   "Toggle": "Переключить",
   "ru/en": "ру/англ"
 }

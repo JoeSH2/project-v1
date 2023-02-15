@@ -6,7 +6,18 @@
     --font-size-l: 16px;
     --font-line-l: 22px;
     --font-l: var(var(--font-size-l) / var(--font-line-l) var(--font-family-main));
+    --font-size-large: 46px;
+    --font-default-invereted: #fff;
+    --font-dark-invereted: #000;
     --navbare-height: 50px;
     --sidebare-width: 300px;
     --sidebare-width-collapse: 130px;
+
+    //Размеры лоудера
+    --loader-height-large: 110px;
+    --loader-width-large: 110px;
+    --loader-height-medium: 50px;
+    --loader-width-medium: 50px;
+    --loader-height-small: 38px;
+    --loader-width-small: 38px;
 }
