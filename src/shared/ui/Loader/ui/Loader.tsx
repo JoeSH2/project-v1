@@ -7,6 +7,6 @@ interface LoaderProps {
   theme?: string;
 }
 
-export const Loader: FC<LoaderProps> = ({ className, children }) => (
+export const Loader: FC<LoaderProps> = ({ className }) => (
   <span className={classNames(style.Loader, {}, [className])} />
 );

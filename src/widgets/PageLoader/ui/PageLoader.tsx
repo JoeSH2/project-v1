@@ -8,7 +8,7 @@ interface PageLoaderProps {
   theme?: string;
 }
 
-export const PageLoader: FC<PageLoaderProps> = ({ className, children }) => (
+export const PageLoader: FC<PageLoaderProps> = ({ className }) => (
   <div className={classNames(style.PageLoader, {}, [className])}>
     <Loader className={style.Loader} />
   </div>

@@ -45,7 +45,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'react/no-unused-prop-types': 'warn',
     'import/order': 'off',
-    'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
+    'no-unused-vars': ['warn', { vars: 'local', args: 'after-used', ignoreRestSiblings: false }],
     'max-len': ['error', { code: 130, ignoreComments: true }],
     'linebreak-style': [0, 'error', 'windows'],
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['stroke'] }],
@@ -53,4 +53,12 @@ module.exports = {
   globals: {
     __IS_DEV__: true,
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };

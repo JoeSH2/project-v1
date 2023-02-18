@@ -1,8 +1,8 @@
-import path from 'path';
 import webpack from 'webpack';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
@@ -22,4 +22,7 @@ export const buildPlugins = ({
     __IS_DEV__: JSON.stringify(isDev),
   }),
   isDev && new ReactRefreshPlugin(),
+  new BundleAnalyzerPlugin({
+    openAnalyzer: false,
+  }),
 ];

@@ -6,6 +6,7 @@ import style from './PageNotFound.module.scss';
 interface PageNotFoundProps {
   className?: string;
   theme?: string;
+  children?: React.ReactNode
 }
 
 export const PageNotFound: FC<PageNotFoundProps> = ({ className, children }) => {

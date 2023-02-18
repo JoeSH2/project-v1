@@ -10,6 +10,7 @@ import style from './Sidebare.module.scss';
 interface SidebareProps {
   className?: string;
   theme?: string;
+  children?: React.ReactNode
 }
 
 export const Sidebare: FC<SidebareProps> = ({ className }) => {
@@ -22,11 +23,13 @@ export const Sidebare: FC<SidebareProps> = ({ className }) => {
 
   return (
     <div
+      data-testid="sidebare"
       className={classNames(style.Sidebare, { [style.collapse]: collapse }, [
         className,
       ])}
     >
       <Button
+        data-testid="toggle-sidebare"
         theme={ButtonTheme.DEFAULT}
         onClick={toggleCollapse}
         className={style.openBtn}

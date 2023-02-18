@@ -5,9 +5,13 @@ import {
   ThemesContext,
 } from '../lib/ThemesContext';
 
+interface ThemeProviderProps {
+  children: React.ReactNode
+}
+
 const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.DEFAULT;
 
-const ThemeProvider: FC = ({ children }) => {
+const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   const defaultProps = useMemo(

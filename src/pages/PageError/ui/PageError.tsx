@@ -8,9 +8,10 @@ import style from './PageError.module.scss';
 interface PageErrorProps {
   className?: string;
   theme?: string;
+  children?: React.ReactNode
 }
 
-export const PageError: FC<PageErrorProps> = ({ className, children }) => {
+export const PageError: FC<PageErrorProps> = ({ className }) => {
   const { t } = useTranslation();
   const reloadPage = () => {
     // eslint-disable-next-line no-restricted-globals

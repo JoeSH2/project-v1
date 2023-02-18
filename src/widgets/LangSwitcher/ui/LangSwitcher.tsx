@@ -13,12 +13,14 @@ export enum LangSwitcherValues {
 interface LangSwitcherProps {
   className?: string;
   theme?: string;
+  children?: React.ReactNode
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = ({
-  className,
-  children,
-}) => {
+export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
+  const {
+    className,
+    children,
+  } = props;
   const { t, i18n } = useTranslation();
   const toggleLang = async (args: LangSwitcherValues) => {
     i18n.changeLanguage(args);

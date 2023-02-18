@@ -7,7 +7,6 @@ export enum AppLinkTheme {
   DARK = 'dark',
   DEFAULT = 'default',
 }
-
 interface AppLinkProps extends LinkProps {
   className?: string;
   theme: AppLinkTheme;
