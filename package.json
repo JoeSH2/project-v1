@@ -85,7 +85,6 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "fs.promises": "^0.1.2",
     "i18next": "^22.4.9",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.1.1",
