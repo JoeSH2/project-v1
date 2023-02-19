@@ -4,11 +4,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
-  extends: [
-    'plugin:react/recommended',
+  extends: ['plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
     'eslint:recommended',
+    'plugin:storybook/recommended',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -18,19 +18,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next',
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
     indent: [2, 2],
-    'react/jsx-filename-extension': [
-      2,
-      { extensions: ['.js', '.jsx', '.tsx'] },
-    ],
+    'react/jsx-filename-extension': [2, {
+      extensions: ['.js', '.jsx', '.tsx'],
+    }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
     'react/require-default-props': 'off',
@@ -45,20 +40,28 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'react/no-unused-prop-types': 'warn',
     'import/order': 'off',
-    'no-unused-vars': ['warn', { vars: 'local', args: 'after-used', ignoreRestSiblings: false }],
-    'max-len': ['error', { code: 130, ignoreComments: true }],
+    'no-unused-vars': ['warn', {
+      vars: 'local',
+      args: 'after-used',
+      ignoreRestSiblings: false,
+    }],
+    'max-len': ['error', {
+      code: 130,
+      ignoreComments: true,
+    }],
     'linebreak-style': [0, 'error', 'windows'],
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['stroke'] }],
+    'i18next/no-literal-string': ['error', {
+      markupOnly: true,
+      ignoreAttribute: ['stroke'],
+    }],
   },
   globals: {
     __IS_DEV__: true,
   },
-  overrides: [
-    {
-      files: ['**/src/**/*.test.{ts,tsx}'],
-      rules: {
-        'i18next/no-literal-string': 'off',
-      },
+  overrides: [{
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off',
     },
-  ],
+  }],
 };
