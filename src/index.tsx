@@ -5,6 +5,8 @@ import { App } from 'app/App';
 import 'shared/config/i18n/i18n';
 import { ErrorBoundaries } from 'app/providers/ErrorBoundaries';
 
+const fs = require('fs').promises;
+
 render(
   <BrowserRouter>
     <ErrorBoundaries>
