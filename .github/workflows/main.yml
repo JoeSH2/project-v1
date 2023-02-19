@@ -1,7 +1,7 @@
-name: Build project
-on: 
+name: linting, testing, building
+on:
   push:
-    branches: [ bnbnbnbnbn ] 
+    branches: [ bnbnbnbnbn ]
   pull_request:
     branches: [ bnbnbnbnbn ]
 jobs:
@@ -9,36 +9,30 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-node-version: [ 18.x ]
-
+        node-version: [ 18.x ]
 
     steps:
       - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-node-version }}
+      - name: Staring Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-node-version: ${{ matrix.node-node-version }}
+          node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm i -D 
-
-      - name: build production
+        run: npm install
+      - name: build production project
         run: npm run build:prod
-
-      - name: lint ts
+        if: always()
+      - name: linting typescript
         run: npm run lint:ts
-
-      - name: lint scss
+        if: always()
+      - name: linting css
         run: npm run lint:scss
-
-      - name: jest testing
+      - name: unit testing
+        if: always()
         run: npm run test:unit
-
-      - name: loki testing
-        run: npm run test:ui
-
-      - name: jest testing
-        run: npm run test:unit
-
-      - name: jest testing
-        run: npm run test:unit
-
+      - name: build storybook
+        run: npm run storybook:build
+        if: always()
+      - name: screenshot testing
+        run: npm run test:ui:ci
+        if: always()
