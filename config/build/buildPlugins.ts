@@ -6,7 +6,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 
 const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-export function buildPlugins2({
+export function buildPlugins({
   paths,
   isDev,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
