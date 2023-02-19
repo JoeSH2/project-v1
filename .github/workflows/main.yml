@@ -9,15 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-node-version: [ 18.x ]
 
 
     steps:
       - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
+      - name: Staring Node.js ${{ matrix.node-node-version }}
         uses: actions/setup-node@v1
         with:
-          node-verson: ${{ matrix.node-version }}
+          node-node-version: ${{ matrix.node-node-version }}
       - name: install modules
         run: npm i -D 
 
