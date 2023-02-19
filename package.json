@@ -9,8 +9,8 @@
     "build:dev": "webpack  --env mode=development",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
-    "lint:scss": "yarn stylelint \"**/*.scss\"",
-    "lint:scss:fix": "yarn stylelint \"**/*.scss\" --fix",
+    "lint:scss": "npx stylelint \"**/*.scss\"",
+    "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:ui": "loki test",
     "test:ui:true": "loki approve",
@@ -18,7 +18,7 @@
     "storybook:build": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
-  "author": "JoeSH2 <foremansh2@mail.ru>",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -107,6 +107,5 @@
         "preset": "iPhone 7"
       }
     }
-  },
-  "repository": "https://github.com/JoeSH2/project-v1.git"
+  }
 }
