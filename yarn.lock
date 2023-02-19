@@ -3390,7 +3390,7 @@
     "@types/node" "*"
     "form-data" "^3.0.0"
 
-"@types/node@*", "@types/node@^18.13.0":
+"@types/node@*", "@types/node@^18.14.0":
   "integrity" "sha512-5EWrvLmglK+imbCJY0+INViFWUHg1AHel1sq4ZVSfdcNqGy9Edv3UB9IIzzg+xPaUcAgZYcfVs2fBcwDeZzU0A=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-18.14.0.tgz"
   "version" "18.14.0"
@@ -7549,6 +7549,11 @@
     "iferr" "^0.1.5"
     "imurmurhash" "^0.1.4"
     "readable-stream" "1 || 2"
+
+"fs.promises@^0.1.2":
+  "integrity" "sha512-LNfkXdN6EToumV455EbdJaNxqLmEFqKqNZVIEyI2whtdpIppTsne2fHWgx05s+B2Aif29Lhzdz0AaOXKLvMGsA=="
+  "resolved" "https://registry.npmjs.org/fs.promises/-/fs.promises-0.1.2.tgz"
+  "version" "0.1.2"
 
 "fs.realpath@^1.0.0":
   "integrity" "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
