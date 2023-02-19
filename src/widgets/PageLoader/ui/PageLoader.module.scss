@@ -12,7 +12,7 @@
     height: var(--loader-height-large);
 }
 
-.Loader:after {
+.Loader::after {
     width: var(--loader-width-large);
     height: var(--loader-height-large);
 }

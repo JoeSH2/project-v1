@@ -9,7 +9,7 @@
     animation: pulse 1s linear infinite;
 }
 
-.Loader:after {
+.Loader::after {
     content: '';
     position: absolute;
     width: var(--loader-width-medium);
@@ -36,7 +36,6 @@
 }
 
 @keyframes pulse {
-
     0%,
     60%,
     100% {
