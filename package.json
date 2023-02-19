@@ -18,7 +18,7 @@
     "storybook:build": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
-  "author": "",
+  "author": "JoeSH2 <foremansh2@mail.ru>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -107,5 +107,6 @@
         "preset": "iPhone 7"
       }
     }
-  }
+  },
+  "repository": "https://github.com/JoeSH2/project-v1.git"
 }

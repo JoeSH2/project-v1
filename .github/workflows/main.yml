@@ -19,7 +19,7 @@ jobs:
         with:
           node-verson: ${{ matrix.node-version }}
       - name: install modules
-        run: yarn add
+        run: yarn install
 
       - name: build production
         run: yarn build:prod
