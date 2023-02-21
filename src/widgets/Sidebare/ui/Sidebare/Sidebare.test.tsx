@@ -1,6 +1,7 @@
 import {
   fireEvent, screen,
 } from '@testing-library/react';
+import ComponentRouter from 'shared/lib/componentRouter/componentRouter';
 import renderComponentTranslations from 'shared/lib/renderComponentTranslations/renderComponentTranslations';
 import { Sidebare } from 'widgets/Sidebare';
 
@@ -12,7 +13,7 @@ test('renders full components', () => {
 });
 
 test('toggle sidebare', () => {
-  renderComponentTranslations(<Sidebare />);
+  ComponentRouter(<Sidebare />);
   const toggleButton = screen.getByTestId('toggle-sidebare');
   fireEvent.click(toggleButton);
   expect(screen.getByTestId('sidebare')).toHaveClass('collapse');
