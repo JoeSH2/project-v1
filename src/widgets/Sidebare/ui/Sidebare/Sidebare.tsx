@@ -2,6 +2,7 @@ import React, { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import ArrowIcon from 'shared/assets/icon/arrow.svg';
 
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
@@ -34,11 +35,11 @@ export const Sidebare: FC<SidebareProps> = ({ className }) => {
         onClick={toggleCollapse}
         className={style.openBtn}
       >
-        {t('Toggle')}
+        <ArrowIcon className={collapse ? style.arrow : `${style.arrow} ${style.arrowRotate}`} />
       </Button>
-      <div className={style.switchers}>
+      <div className={!collapse ? style.switchers : `${style.switchers} ${style.switchersColumn}`}>
         <ThemeSwitcher />
-        <LangSwitcher />
+        <LangSwitcher isCollapsed={collapse} />
       </div>
     </div>
   );

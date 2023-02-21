@@ -16,12 +16,11 @@ export const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
   const { theme, toggleTheme } = useTheme();
   const { t } = useTranslation();
   return (
-    <Button type="button" theme={ButtonTheme.DEFAULT} onClick={toggleTheme}>
-      {t('Theme')}
+    <Button className={style.ThemeSwitcher} type="button" theme={ButtonTheme.DEFAULT} onClick={toggleTheme}>
       {theme === Theme.DARK ? (
-        <MoonIcon className={style.icon} width={22} height={22} />
+        <MoonIcon className={style.icon} width={26} height={26} />
       ) : (
-        <SunIcon className={style.icon} width={22} height={22} />
+        <SunIcon className={style.icon} width={26} height={26} />
       )}
     </Button>
   );

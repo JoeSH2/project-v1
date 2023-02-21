@@ -13,31 +13,33 @@ export enum LangSwitcherValues {
 interface LangSwitcherProps {
   className?: string;
   theme?: string;
-  children?: React.ReactNode
+  children?: React.ReactNode;
+  isCollapsed: boolean;
 }
 
 export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
   const {
     className,
     children,
+    isCollapsed,
   } = props;
   const { t, i18n } = useTranslation();
   const toggleLang = async (args: LangSwitcherValues) => {
     i18n.changeLanguage(args);
   };
   return (
-    <div className={classNames(style.LangSwitcher, {}, [className])}>
+    <div className={classNames(style.LangSwitcher, { [style.collapse]: isCollapsed }, [className])}>
       <Button
         theme={ButtonTheme.CLEAR}
         onClick={() => toggleLang(LangSwitcherValues.RU)}
-        className={classNames(style.button, {}, [className, style.buttonR])}
+        className={classNames(style.button, { [style.btnRadius]: isCollapsed }, [className, style.buttonR])}
       >
         {t('RU')}
       </Button>
       <Button
         theme={ButtonTheme.CLEAR}
         onClick={() => toggleLang(LangSwitcherValues.EN)}
-        className={classNames(style.button, {}, [className, style.buttonL])}
+        className={classNames(style.button, { [style.btnRadius]: isCollapsed }, [className, style.buttonL])}
       >
         {t('EN')}
       </Button>
