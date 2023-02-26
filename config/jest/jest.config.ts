@@ -15,9 +15,12 @@ const config: Config = {
     'json',
     'node',
   ],
+  globals: {
+    __IS_DEV__: true,
+  },
   rootDir: '../../',
   moduleDirectories: [
-    'node_modules', 'src ',
+    'node_modules', 'src',
   ],
   modulePaths: [
     '<rootDir>src',

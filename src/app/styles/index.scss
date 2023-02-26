@@ -3,10 +3,13 @@
 @import "./dark/dark";
 @import "./default/default";
 
-.app {
+body {
     font: var(--font-m);
     font-family: var(--font-family-main);
     font-size: var(--font-m);
+}
+
+.app {
     background-color: var(--bg-color);
     color: var(--primary-color);
     height: 100vh;
@@ -14,4 +17,9 @@
 
 .content-page {
     display: flex;
+}
+
+.mainPage {
+    display: flex;
+    flex-direction: column;
 }
