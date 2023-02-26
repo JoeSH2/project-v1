@@ -1,3 +1,4 @@
+import { useTheme } from 'app/providers/ThemesProvider';
 import React, {
   FC, useCallback, useEffect, useRef,
 } from 'react';
@@ -17,6 +18,7 @@ export const Modal: FC<ModalProps> = ({
   className, children, isOpen, onClose,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
 
   const clickContent = (e: any) => {
     e.stopPropagation();

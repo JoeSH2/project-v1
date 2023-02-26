@@ -1,6 +1,12 @@
 .Navbare {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     height: var(--navbare-height);
     background-color: var(--bg-color-dark);
+}
+
+.linkWrapper {
+    display: flex;
+    align-items: center;
 }

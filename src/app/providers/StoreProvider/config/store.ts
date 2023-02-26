@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { counterReducer } from '../../../../entities/Counter'; //   !!! ОШИБКА ПРИ АБСОЛЮТНОМ ИМПОРТЕ !!!
+import { counterReducer } from 'entity/Counter';
 import { StateSchema } from './StateSchema';
 
 export const reduxStore = (initialState?: StateSchema) => configureStore<StateSchema>({

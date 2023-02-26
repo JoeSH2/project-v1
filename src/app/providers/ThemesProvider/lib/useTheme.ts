@@ -12,6 +12,7 @@ export const useTheme = (): UseMemoResult => {
   const toggleTheme = () => {
     const newTheme = theme === Theme.DARK ? Theme.DEFAULT : Theme.DARK;
     setTheme(newTheme);
+    document.body.className = newTheme;
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
 
