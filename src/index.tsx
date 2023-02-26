@@ -1,4 +1,3 @@
-import { render } from 'react-dom';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundaries } from 'app/providers/ErrorBoundaries';
