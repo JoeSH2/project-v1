@@ -30,7 +30,7 @@ export const Navbare: FC<NavbareProps> = ({ className }) => {
         </AppLink>
       </div>
       <Button onClick={() => setIsOpenModal(true)} theme={ButtonTheme.CLEAR}>{t('Sign in')}</Button>
-      <Modal isOpen={isOpenModal} onClose={onCloseModal}>{t('Lorem ipsum dolor sit amet.')}</Modal>
+      <Modal isOpen={isOpenModal} onClose={onCloseModal}>{t('Lorem ipsum dolor sit amet consectetur.')}</Modal>
     </div>
   );
 };

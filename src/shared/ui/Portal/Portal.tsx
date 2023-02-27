@@ -6,6 +6,4 @@ interface PortalProps {
     container?: HTMLElement;
 }
 
-const Portal = ({ children, container = document.body }: PortalProps) => createPortal(children, container);
-
-export default Portal;
+export const Portal = ({ children, container = document.body }: PortalProps) => createPortal(children, container);

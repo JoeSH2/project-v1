@@ -3,7 +3,7 @@ import React, {
   FC, useCallback, useEffect, useRef,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import Portal from 'shared/ui/Portal/Portal';
+import { Portal } from 'shared/ui/Portal/Portal';
 import style from './Modal.module.scss';
 
 interface ModalProps {
@@ -42,7 +42,7 @@ export const Modal: FC<ModalProps> = ({
 
   return (
     <Portal>
-      <div className={classNames(style.Modal, { [style.open]: isOpen }, [className])}>
+      <div className={classNames(style.Modal, { [style.open]: isOpen }, [className, theme])}>
         <div onClick={onClose} className={style.overlay}>
           <div onClick={clickContent} ref={ref} className={style.wrapper}>{children}</div>
         </div>

@@ -5,6 +5,10 @@
   "EN": "EN",
   "ERRRRROR": "",
   "Lorem ipsum dolor sit amet": "Lorem ipsum dolor sit amet.",
+  "Lorem ipsum dolor sit amet consectetur": {
+    "": ""
+  },
+  "Lorem ipsum dolor sit amet consectetur.": "Lorem ipsum dolor sit amet consectetur.",
   "Main page": "Главная страница",
   "Open Modal": "",
   "Page not found": "Страница не найдена",
