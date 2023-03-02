@@ -4,6 +4,9 @@
   "Back": "Back",
   "EN": "EN",
   "ERRRRROR": "ERRRRROR",
+  "Log Out": "",
+  "Login": "Login",
+  "Logout": "Logout",
   "Lorem ipsum dolor sit amet": "Lorem ipsum dolor sit amet.",
   "Lorem ipsum dolor sit amet consectetur": {
     "": ""
@@ -12,9 +15,11 @@
   "Main page": "Main page",
   "Open Modal": "Open Modal",
   "Page not found": "",
+  "Password": "Password",
   "RU": "RU",
   "Reload page": "Reload page",
   "Sign in": "Sign in",
+  "Sing in with": "Sing in with",
   "Theme": "Theme",
   "There was an error, return to the home page?": "There was an error, return to the home page?",
   "Toggle": "Toggle",

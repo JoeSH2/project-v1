@@ -19,6 +19,11 @@
     text-transform: uppercase;
     border: none;
     border-radius: 3px;
+    transition: background 0.25s ease;
+
+    &:hover {
+        background: var(--bg-color-special-dark);
+    }
 }
 
 .default {
@@ -27,4 +32,17 @@
     text-transform: uppercase;
     border: none;
     border-radius: 3px;
+    transition: background 0.25s ease;
+
+    &:hover {
+        background: var(--bg-color-special-dark);
+    }
+}
+
+.disabled {
+    background-color: var(--bg-color-gray);
+
+    &:hover {
+        background-color: var(--bg-color-gray);
+    }
 }

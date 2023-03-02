@@ -1,0 +1,62 @@
+.LoginForm {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 15px;
+}
+
+.title {
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: var(--font-size-l);
+    margin-bottom: 50px;
+
+    &::before {
+        position: absolute;
+        content: '';
+        top: 180%;
+        left: 10%;
+        background-color: var(--bg-color-special);
+        height: 2px;
+        width: 80%;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapperInput {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.label {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 0 0 7px 15px;
+}
+
+.input {
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.loginBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    font: var(--font-m);
+    font-weight: 600;
+    border-radius: 5px;
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+.errorText {
+    text-align: center;
+}

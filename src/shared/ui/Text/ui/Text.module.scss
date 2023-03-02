@@ -1,0 +1,31 @@
+.Text {
+    .title {
+        font: var(--font-l);
+        color: var(--primary-color);
+    }
+
+    .text {
+        font: var(--font-m);
+        color: var(--secondary-color);
+    }
+}
+
+.theme {
+    .title {
+        color: var(--primary-color);
+    }
+
+    .text {
+        color: var(--secondary-color);
+    }
+}
+
+.red {
+    .title {
+        color: var(--color-red);
+    }
+
+    .text {
+        color: var(--color-red-dark);
+    }
+}

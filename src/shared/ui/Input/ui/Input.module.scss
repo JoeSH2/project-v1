@@ -1,0 +1,30 @@
+.Input {
+    outline: none;
+    box-shadow: none;
+    background: none;
+    background-color: transparent;
+    border: none;
+    color: var(--font-color-inverted);
+}
+
+.clear {}
+
+.default {
+    background-color: var(--bg-color-inverted);
+    box-shadow: 0 0 3px 0 var(--bg-color);
+    transition: box-shadow 0.2s ease-in;
+
+    &:focus {
+        box-shadow: 0 0 7px 0 var(--bg-color);
+    }
+}
+
+.dark {
+    background-color: var(--bg-color-inverted);
+    box-shadow: 0 0 3px 0 var(--bg-color);
+    transition: box-shadow 0.2s ease-in;
+
+    &:focus {
+        box-shadow: 0 0 7px 0 var(--bg-color);
+    }
+}

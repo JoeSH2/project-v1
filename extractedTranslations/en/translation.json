@@ -1,6 +1,8 @@
 {
   "About us": "",
   "EN": "",
+  "Login": "",
+  "Logout": "",
   "Lorem ipsum dolor sit amet": {
     "": ""
   },
@@ -9,9 +11,11 @@
   },
   "Main page": "",
   "Page not found": "",
+  "Password": "",
   "RU": "",
   "Reload page": "",
   "Sign in": "",
+  "Sing in with": "",
   "Theme": "",
   "There was an error, return to the home page?": "",
   "Toggle": ""

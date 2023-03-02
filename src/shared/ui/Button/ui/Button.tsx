@@ -17,12 +17,13 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
-    className, children, theme, ...otherProps
+    className, children, theme, disabled, ...otherProps
   } = props;
   return (
     <button
+      disabled={disabled}
       type="button"
-      className={classNames(style.Button, {}, [className, style[theme]])}
+      className={classNames(style.Button, { [style.disabled]: disabled }, [className, style[theme]])}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}
     >

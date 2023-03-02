@@ -4,6 +4,9 @@
   "Back": "Назад",
   "EN": "EN",
   "ERRRRROR": "",
+  "Log Out": "",
+  "Login": "Логин",
+  "Logout": "",
   "Lorem ipsum dolor sit amet": "Lorem ipsum dolor sit amet.",
   "Lorem ipsum dolor sit amet consectetur": {
     "": ""
@@ -12,9 +15,11 @@
   "Main page": "Главная страница",
   "Open Modal": "",
   "Page not found": "Страница не найдена",
+  "Password": "Пароль",
   "RU": "RU",
   "Reload page": "Перезагрузить страницу",
   "Sign in": "Войти",
+  "Sing in with": "Войти в систему",
   "Theme": "Тема",
   "There was an error, return to the home page?": "Произошла ошибка, вернуться на главную страницу?",
   "Toggle": "Переключить",

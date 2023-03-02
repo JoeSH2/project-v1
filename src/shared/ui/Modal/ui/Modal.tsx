@@ -1,6 +1,6 @@
 import { useTheme } from 'app/providers/ThemesProvider';
 import React, {
-  FC, useCallback, useEffect, useRef,
+  FC, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
@@ -12,12 +12,14 @@ interface ModalProps {
   children: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;
+  lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = ({
-  className, children, isOpen, onClose,
+  className, children, isOpen, onClose, lazy,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const { theme } = useTheme();
 
   const clickContent = (e: any) => {
@@ -32,6 +34,13 @@ export const Modal: FC<ModalProps> = ({
     },
     [onClose],
   );
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
+
   useEffect(() => {
     window.addEventListener('keydown', keyCloseModal);
 
@@ -39,6 +48,10 @@ export const Modal: FC<ModalProps> = ({
       window.removeEventListener('keydown', keyCloseModal);
     };
   }, [onClose]);
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

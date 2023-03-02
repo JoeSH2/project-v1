@@ -3,10 +3,13 @@
     --font-size-m: 16px;
     --font-line-m: 16px;
     --font-m: var(var(--font-size-m) / var(--font-line-m) var(--font-family-main));
-    --font-size-l: 16px;
+    --font-size-l: 22px;
     --font-line-l: 22px;
     --font-l: var(var(--font-size-l) / var(--font-line-l) var(--font-family-main));
     --font-size-large: 46px;
+    --font-size-xl: 26px;
+    --font-line-xl: 26px;
+    --font-xl: var(var(--font-size-xl) / var(--font-line-xl) var(--font-family-main));
     --font-default-invereted: #fff;
     --font-dark-invereted: #000;
     --navbare-height: 50px;
@@ -24,4 +27,7 @@
     /* Modal window */
     --z-index-modal: 15;
     --bg-color-overlay: #272727b0;
+    --bg-color-gray: #4e4e4e;
+    --color-red: #dd0505;
+    --color-red-dark: #c00707;
 }

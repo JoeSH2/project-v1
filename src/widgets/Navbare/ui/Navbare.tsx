@@ -1,5 +1,9 @@
+import { userActions } from 'entity/User';
+import { getUserSelector } from 'entity/User/model/selectors/getUserSelector';
+import { LoginModal } from 'features/AuthWithUsername';
 import React, { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -13,10 +17,17 @@ interface NavbareProps {
 
 export const Navbare: FC<NavbareProps> = ({ className }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState(false);
+  const { authData } = useSelector(getUserSelector);
 
   const onCloseModal = () => {
     setIsOpenModal(false);
+  };
+
+  const clickLogout = () => {
+    dispatch(userActions.logout());
+    onCloseModal();
   };
 
   return (
@@ -29,8 +40,24 @@ export const Navbare: FC<NavbareProps> = ({ className }) => {
           {t('About us')}
         </AppLink>
       </div>
-      <Button onClick={() => setIsOpenModal(true)} theme={ButtonTheme.CLEAR}>{t('Sign in')}</Button>
-      <Modal isOpen={isOpenModal} onClose={onCloseModal}>{t('Lorem ipsum dolor sit amet consectetur.')}</Modal>
+      {
+        authData
+          ? <Button className={style.logBtn} theme={ButtonTheme.DEFAULT} onClick={clickLogout}>{t('Logout')}</Button>
+          : (
+            <>
+              <Button
+                className={style.logBtn}
+                onClick={() => setIsOpenModal(true)}
+                theme={ButtonTheme.DEFAULT}
+              >
+                {t('Sign in')}
+
+              </Button>
+              <LoginModal isOpen={isOpenModal} onClose={onCloseModal} />
+
+            </>
+          )
+      }
     </div>
   );
 };
