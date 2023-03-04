@@ -1,18 +1,16 @@
 import { userActions } from 'entity/User';
 import { getUserSelector } from 'entity/User/model/selectors/getUserSelector';
 import { LoginModal } from 'features/AuthWithUsername';
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
 import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Modal } from 'shared/ui/Modal';
 import style from './Navbare.module.scss';
 
 interface NavbareProps {
   className?: string;
-  theme?: string;
 }
 
 export const Navbare: FC<NavbareProps> = ({ className }) => {
@@ -51,10 +49,8 @@ export const Navbare: FC<NavbareProps> = ({ className }) => {
                 theme={ButtonTheme.DEFAULT}
               >
                 {t('Sign in')}
-
               </Button>
-              <LoginModal isOpen={isOpenModal} onClose={onCloseModal} />
-
+              {isOpenModal && <LoginModal isOpen={isOpenModal} onClose={onCloseModal} />}
             </>
           )
       }

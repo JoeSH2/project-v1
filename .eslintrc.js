@@ -42,6 +42,7 @@ module.exports = {
     'import/order': 'off',
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
+    '@typescript-eslint/no-unused-vars': ['warn'],
     'no-unused-vars': ['warn', {
       vars: 'local',
       args: 'after-used',

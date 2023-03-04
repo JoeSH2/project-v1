@@ -19,7 +19,7 @@ export const asyncLoginUser = createAsyncThunk<User, LoginUserProps, { rejectVal
       return response.data;
     } catch (e) {
       console.log(e);
-      return thunkAPI.rejectWithValue('Wrong login or password, try again!');
+      return thunkAPI.rejectWithValue(e);
     }
   },
 );
