@@ -11,14 +11,6 @@
     align-items: center;
 }
 
-.button {
-    background-color: var(--bg-color-special);
-    color: var(--font-default-invereted);
-    border-radius: 5px;
-    padding: 5px 12px;
-    height: 32px;
-}
-
 .buttonR {
     border-radius: 3px 0 0 3px;
 }
@@ -28,6 +20,14 @@
     border-left: 1px solid var(--bg-color-dark);
 }
 
-.btnRadius {
-    border-radius: 3px;
+.button {
+    background-color: var(--bg-color-special);
+    color: var(--font-default-invereted);
+    padding: 5px 12px;
+    height: 32px;
+    transition: 0.2s ease;
+
+    &:hover {
+        background-color: var(--bg-color-special-dark);
+    }
 }

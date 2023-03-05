@@ -13,6 +13,7 @@ body {
     color: var(--primary-color);
     background-color: var(--bg-color);
     height: 100vh;
+    transition: background-color 0.1s ease;
 }
 
 .content-page {
