@@ -1,0 +1,24 @@
+.link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 3px 0;
+    margin: 9px 0;
+}
+
+.linkIcon {
+    width: 28px;
+    height: 28px;
+    fill: var(--bg-color-special);
+    margin: 0 15px 0 0;
+    transition: all 0.2s ease;
+}
+
+.collapse {
+    .linkIcon {
+        width: 32px;
+        height: 32px;
+    }
+}

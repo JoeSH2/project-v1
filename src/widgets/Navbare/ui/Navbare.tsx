@@ -1,23 +1,24 @@
-import { userActions } from 'entity/User';
-import { getUserSelector } from 'entity/User/model/selectors/getUserSelector';
+import { getUserAuth, userActions } from 'entity/User';
 import { LoginModal } from 'features/AuthWithUsername';
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Button } from 'shared/ui/Button';
+import { Text } from 'shared/ui/Text';
+
 import style from './Navbare.module.scss';
 
 interface NavbareProps {
   className?: string;
 }
 
-export const Navbare: FC<NavbareProps> = ({ className }) => {
+export const Navbare: FC<NavbareProps> = memo(({ className }: NavbareProps) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState(false);
-  const { authData } = useSelector(getUserSelector);
+  const authData = useSelector(getUserAuth);
 
   const onCloseModal = () => {
     setIsOpenModal(false);
@@ -31,22 +32,17 @@ export const Navbare: FC<NavbareProps> = ({ className }) => {
   return (
     <div className={classNames(style.Navbare, {}, [className])}>
       <div className={style.linkWrapper}>
-        <AppLink to="/" theme={AppLinkTheme.DARK}>
-          {t('Main page')}
-        </AppLink>
-        <AppLink to="/about" theme={AppLinkTheme.DEFAULT}>
-          {t('About us')}
-        </AppLink>
+        <Text className={style.logo} title={t('LOGO')} />
       </div>
       {
         authData
-          ? <Button className={style.logBtn} theme={ButtonTheme.DEFAULT} onClick={clickLogout}>{t('Logout')}</Button>
+          ? <Button className={style.logBtn} onClick={clickLogout}>{t('Logout')}</Button>
           : (
             <>
               <Button
                 className={style.logBtn}
                 onClick={() => setIsOpenModal(true)}
-                theme={ButtonTheme.DEFAULT}
+
               >
                 {t('Sign in')}
               </Button>
@@ -56,4 +52,4 @@ export const Navbare: FC<NavbareProps> = ({ className }) => {
       }
     </div>
   );
-};
+});

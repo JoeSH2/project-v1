@@ -1,9 +1,8 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemesProvider';
+import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
 
 import { ThemeSwitcher } from './ThemeSwitcher';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemesProvider';
 
 export default {
   title: 'widgets/ThemeSwitcher',
@@ -13,6 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof ThemeSwitcher>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof ThemeSwitcher> = (args) => <ThemeSwitcher {...args} />;
 
 export const Dark = Template.bind({});

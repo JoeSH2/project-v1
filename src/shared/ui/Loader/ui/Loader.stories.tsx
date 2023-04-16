@@ -1,9 +1,9 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemesProvider';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
 
 import { Loader } from './Loader';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemesProvider';
 
 export default {
   title: 'shared/Loader',
@@ -13,15 +13,10 @@ export default {
   },
 } as ComponentMeta<typeof Loader>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />;
 
 export const Dark = Template.bind({});
-Dark.args = {
-  theme: Theme.DARK,
-};
 
 export const Default = Template.bind({});
-Default.args = {
-  theme: Theme.DEFAULT,
-};
 Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

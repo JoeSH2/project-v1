@@ -7,8 +7,6 @@ export type ReducerList = {
   [name in StateSchemaKey]?: Reducer<any, AnyAction>
 }
 
-type ReducerArray = [StateSchemaKey, Reducer<any, AnyAction>]
-
 export const useAsyncWrapperReducer = (
   reducers: ReducerList,
 ) => {
@@ -16,14 +14,14 @@ export const useAsyncWrapperReducer = (
   const store = useStore() as ReduxStoreManager;
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([key, reducer]: ReducerArray) => {
-      store.reducerManager.add(key, reducer);
+    Object.entries(reducers).forEach(([key, reducer]) => {
+      store.reducerManager.add(key as StateSchemaKey, reducer);
       dispatch({ type: `@MOUNT ${key}` });
     });
 
     return () => {
-      Object.entries(reducers).forEach(([key, reducer]: ReducerArray) => {
-        store.reducerManager.remove(key);
+      Object.entries(reducers).forEach(([key]) => {
+        store.reducerManager.remove(key as StateSchemaKey);
         dispatch({ type: `@UNMOUNT ${key}` });
       });
     };

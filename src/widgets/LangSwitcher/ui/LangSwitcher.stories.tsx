@@ -1,9 +1,9 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemesProvider';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
 
 import { LangSwitcher } from './LangSwitcher';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemesProvider';
 
 export default {
   title: 'widgets/LangSwitcher',
@@ -13,6 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof LangSwitcher>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof LangSwitcher> = (args) => <LangSwitcher {...args} />;
 
 export const Dark = Template.bind({});

@@ -1,0 +1,20 @@
+.Select {
+    background: none;
+    color: var(--primary-color);
+    box-shadow: 0 0 2px 0 var(--bg-color-inverted);
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:focus {
+        box-shadow: 0 0 8px 0 var(--bg-color-inverted);
+    }
+}
+
+.option {
+    background: var(--bg-color);
+    color: var(--primary-color);
+}
+
+.readonly {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+}

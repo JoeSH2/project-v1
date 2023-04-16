@@ -1,0 +1,21 @@
+.AddComment {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background: var(--bg-color-dark);
+    border: 1px solid var(--bg-color-special);
+    margin: 2rem 0 1rem 0;
+}
+
+.input {
+    padding: 1rem 1rem;
+    background: var(--bg-color);
+    border-radius: 4px;
+    flex-grow: 1;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    margin: 0 0 0 2rem;
+}

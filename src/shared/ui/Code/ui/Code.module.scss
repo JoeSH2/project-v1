@@ -1,0 +1,20 @@
+.Code {
+    border: 1px solid var(--bg-color-special);
+    padding: 2rem;
+    position: relative;
+    background: var(--bg-color-code);
+
+    code {
+        font-family: var(--font-family-main);
+    }
+}
+
+.copySvg {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 30px;
+    height: 30px;
+    width: 30px;
+    height: 30px;
+}

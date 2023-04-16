@@ -1,9 +1,9 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemesProvider';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
 
 import { Input } from './Input';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemesProvider';
 
 export default {
   title: 'shared/Input',
@@ -13,6 +13,7 @@ export default {
   },
 } as ComponentMeta<typeof Input>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
 export const Default = Template.bind({});

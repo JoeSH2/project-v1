@@ -1,4 +1,5 @@
 import webpack from 'webpack';
+
 import { buildDevServer } from './buildDevServer';
 import { buildLoaders } from './buildLoaders';
 import { buildPlugins } from './buildPlugins';
@@ -18,6 +19,7 @@ export const buildWebpackConfig = (
       filename: '[name].[contenthash].js',
       path: paths.build,
       clean: true,
+      publicPath: '/',
     },
     plugins: buildPlugins(options),
     module: {

@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'simple-import-sort'],
   rules: {
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
@@ -43,6 +43,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'warn', // Checks effect dependencies
     '@typescript-eslint/no-unused-vars': ['warn'],
+    'simple-import-sort/imports': 'error',
+    'simple-import-sort/exports': 'error',
     'no-unused-vars': ['warn', {
       vars: 'local',
       args: 'after-used',
@@ -67,6 +69,8 @@ module.exports = {
   },
   globals: {
     __IS_DEV__: true,
+    __API__: true,
+    __PROJECT__: true,
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],

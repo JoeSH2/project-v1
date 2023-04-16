@@ -1,8 +1,9 @@
-import React, { FC, useState } from 'react';
+import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 import { ButtonTheme } from 'shared/ui/Button/ui/Button';
+
 import style from './LangSwitcher.module.scss';
 
 export enum LangSwitcherValues {
@@ -17,7 +18,7 @@ interface LangSwitcherProps {
   isCollapsed: boolean;
 }
 
-export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
+export const LangSwitcher: FC<LangSwitcherProps> = memo((props: LangSwitcherProps) => {
   const {
     className,
     children,
@@ -45,4 +46,4 @@ export const LangSwitcher: FC<LangSwitcherProps> = (props) => {
       </Button>
     </div>
   );
-};
+});

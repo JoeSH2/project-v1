@@ -1,9 +1,9 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemesProvider';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
 
 import { AppLink, AppLinkTheme } from './AppLink';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemesProvider';
 
 export default {
   title: 'shared/AppLink',
@@ -17,6 +17,7 @@ export default {
   },
 } as ComponentMeta<typeof AppLink>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
 
 export const Dark = Template.bind({});

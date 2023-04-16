@@ -1,12 +1,20 @@
 import {
-  configureStore, ReducersMapObject,
+  CombinedState,
+  configureStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { counterReducer } from 'entity/Counter';
 import { userReducer } from 'entity/User';
+import { NavigateOptions, To } from 'react-router-dom';
+import { $axiosApi } from 'shared/api/api';
+
 import { createReducerManager } from './reducerManager';
 import { StateSchema } from './StateSchema';
 
-export function createReduxStore(initialState: StateSchema, asyncRedusers: ReducersMapObject<StateSchema>) {
+export function createReduxStore(
+  initialState: StateSchema,
+  asyncRedusers?: ReducersMapObject<StateSchema>,
+  navigate?: (to: To, options?: NavigateOptions) => void,
+) {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncRedusers,
     counter: counterReducer,
@@ -15,10 +23,18 @@ export function createReduxStore(initialState: StateSchema, asyncRedusers: Reduc
 
   const reducerManager = createReducerManager(rootReducer);
 
-  const store = configureStore<StateSchema>({
-    reducer: reducerManager.reduce,
+  const store = configureStore({
+    reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     preloadedState: initialState,
     devTools: __IS_DEV__,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      thunk: {
+        extraArgument: {
+          api: $axiosApi,
+          navigate,
+        },
+      },
+    }),
   });
 
   // @ts-ignore
@@ -27,17 +43,4 @@ export function createReduxStore(initialState: StateSchema, asyncRedusers: Reduc
   return store;
 }
 
-// export const rootReducer: ReducersMapObject<StateSchema> = {
-//   counter: counterReducer,
-//   user: userReducer,
-// };
-
-// export const store = (initialState?: StateSchema) => configureStore<StateSchema>({
-//   reducer: rootReducer,
-//   preloadedState: initialState,
-//   devTools: __IS_DEV__,
-// });
-
-// const reducerManager = createReducerManager(rootReducer);
-
-// store.reducerManager = reducerManager;
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']

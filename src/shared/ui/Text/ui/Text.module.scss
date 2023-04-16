@@ -1,13 +1,29 @@
 .Text {
+    line-height: 1.2;
+
     .title {
-        font: var(--font-l);
+        font: var(--font-xl);
+        font-size: var(--font-size-xl);
         color: var(--primary-color);
     }
 
     .text {
         font: var(--font-m);
+        font-size: var(--font-size-m);
         color: var(--secondary-color);
     }
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.rigth {
+    text-align: rigth;
 }
 
 .theme {
@@ -27,5 +43,45 @@
 
     .text {
         color: var(--color-red-dark);
+    }
+}
+
+.s {
+    .title {
+        font-size: var(--font-size-m);
+    }
+
+    .text {
+        font-size: var(--font-size-s);
+    }
+}
+
+.m {
+    .title {
+        font-size: var(--font-size-l);
+    }
+
+    .text {
+        font-size: var(--font-size-m);
+    }
+}
+
+.l {
+    .title {
+        font-size: var(--font-size-xl);
+    }
+
+    .text {
+        font-size: var(--font-size-l);
+    }
+}
+
+.xl {
+    .title {
+        font-size: var(--font-size-xl);
+    }
+
+    .text {
+        font-size: var(--font-size-xxl);
     }
 }

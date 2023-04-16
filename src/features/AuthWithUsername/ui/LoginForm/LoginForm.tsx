@@ -1,20 +1,24 @@
+import { getLoginUserStatus } from 'features/AuthWithUsername/model/selectors/getLoginUserStatus';
 import React, {
   FC, memo, useCallback, useEffect,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import style from './LoginForm.module.scss';
-import { Input } from 'shared/ui/Input';
+import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/hooks/useAppDispatch';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { ReducerList, useAsyncWrapperReducer } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
-import { getLoginUsername } from '../../model/selectors/getLoginUsername';
-import { getLoginUserError } from '../../model/selectors/getLoginUsereError';
+import { PageLoader } from 'widgets/PageLoader';
+
+import { asyncLoginUser } from '../..';
+import { getLoginUserError } from '../../model/selectors/getLoginUserError';
 import { getLoginUserLoading } from '../../model/selectors/getLoginUserLoading';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername';
 import { getLoginUserPassword } from '../../model/selectors/getLoginUserPassword';
 import { loginUserActions, loginUserReducer } from '../../model/slice/loginUserSlice';
-import { asyncLoginUser } from '../..';
-import { useDispatch, useSelector } from 'react-redux';
-import { ReducerList, useAsyncWrapperReducer } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import style from './LoginForm.module.scss';
 
 const listState: ReducerList = {
   loginUser: loginUserReducer,
@@ -26,7 +30,7 @@ export interface LoginFormProps {
 const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
 
-  const dispatch: any = useDispatch();
+  const dispatch = useAppDispatch();
 
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginUserPassword);
@@ -55,18 +59,29 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
       <form className={classNames(style.form, {}, [className])}>
         <div className={style.wrapperInput}>
           <label className={style.label} htmlFor="login">{t('Login')}</label>
-          <Input onChange={onChangeLogin} value={username} autofocus theme="default" className={style.input} />
+          <Input
+            onChange={onChangeLogin}
+            value={username}
+            autofocus
+            theme="clear"
+            className={style.input}
+          />
         </div>
         <div className={style.wrapperInput}>
           <label className={style.label} htmlFor="password">{t('Password')}</label>
-          <Input onChange={onChangePassword} value={password} theme="default" className={style.input} type="password" />
+          <Input
+            onChange={onChangePassword}
+            value={password}
+            theme="clear"
+            className={style.input}
+            type="password"
+          />
         </div>
-        {error && <Text className={style.errorText} theme="red" text={t('Wrong login or password, try again!')} />}
+        {error && <Text size="m" className={style.errorText} theme="red" text={t('Wrong login or password, try again!')} />}
         <Button
           onClick={onClickLogin}
           disabled={isLoading}
           className={style.loginBtn}
-          theme={ButtonTheme.DEFAULT}
         >
           {t('Sign in')}
         </Button>

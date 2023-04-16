@@ -1,26 +1,41 @@
-import React, { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button';
+import { getUserAuth } from 'entity/User';
+import React, {
+  FC, memo, useMemo, useState,
+} from 'react';
+import { useSelector } from 'react-redux';
 import ArrowIcon from 'shared/assets/icon/arrow.svg';
-
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import { getSidebareLinks } from 'widgets/Sidebare/model/selectors/getSidebareLinks';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
+
+import { SidebareLink } from '../SidebareLink/SidebareLink';
 import style from './Sidebare.module.scss';
 
 interface SidebareProps {
   className?: string;
-  theme?: string;
-  children?: React.ReactNode
 }
 
-export const Sidebare: FC<SidebareProps> = ({ className }) => {
+export const Sidebare: FC<SidebareProps> = memo(({ className }: SidebareProps) => {
   const [collapse, setCollapse] = useState(false);
-  const { t } = useTranslation();
+  const isAuth = useSelector(getUserAuth);
+  const sidebareLinks = useSelector(getSidebareLinks);
 
   const toggleCollapse = () => {
     setCollapse((prev) => !prev);
   };
+
+  const authRoutes = useMemo(
+    () => sidebareLinks.filter((route) => !(route.authLink && !isAuth)),
+    [isAuth, sidebareLinks],
+  );
+
+  const linkItem = useMemo(() => (
+    authRoutes.map((item) => (
+      <SidebareLink collapse={collapse} item={item} key={item.path} />
+    ))
+  ), [authRoutes, collapse]);
 
   return (
     <div
@@ -29,9 +44,13 @@ export const Sidebare: FC<SidebareProps> = ({ className }) => {
         className,
       ])}
     >
+      <div className={style.wrapperLink}>
+        <ul>
+          {linkItem}
+        </ul>
+      </div>
       <Button
         data-testid="toggle-sidebare"
-        theme={ButtonTheme.DEFAULT}
         onClick={toggleCollapse}
         className={style.openBtn}
       >
@@ -43,4 +62,4 @@ export const Sidebare: FC<SidebareProps> = ({ className }) => {
       </div>
     </div>
   );
-};
+});

@@ -1,0 +1,15 @@
+.ProfilePage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 4rem;
+    flex: 0 1 800px;
+    border-radius: 6px;
+    background-color: var(--bg-color-dark);
+    box-shadow: var(--box-shadow);
+}

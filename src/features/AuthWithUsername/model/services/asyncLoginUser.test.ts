@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
+
 import { asyncLoginUser } from './asyncLoginUser';
 
 jest.mock('axios');

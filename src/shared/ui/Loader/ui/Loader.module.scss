@@ -1,48 +1,34 @@
 .Loader {
-    width: var(--loader-width-medium);
-    height: var(--loader-height-medium);
-    border: 5px solid var(--bg-color-special);
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--primary-color);
     border-radius: 50%;
     display: inline-block;
-    box-sizing: border-box;
     position: relative;
-    animation: pulse 1s linear infinite;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
 }
 
 .Loader::after {
     content: '';
-    position: absolute;
-    width: var(--loader-width-medium);
-    height: var(--loader-height-medium);
-    border: 5px solid var(--bg-color-special);
-    border-radius: 50%;
-    display: inline-block;
     box-sizing: border-box;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    animation: scaleUp 1s linear infinite;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-bottom-color: var(--bg-color-special);
 }
 
-@keyframes scaleUp {
+@keyframes rotation {
     0% {
-        transform: translate(-50%, -50%) scale(0)
+        transform: rotate(0deg);
     }
 
-    60%,
     100% {
-        transform: translate(-50%, -50%) scale(1)
-    }
-}
-
-@keyframes pulse {
-    0%,
-    60%,
-    100% {
-        transform: scale(1)
-    }
-
-    80% {
-        transform: scale(1.2)
+        transform: rotate(360deg);
     }
 }

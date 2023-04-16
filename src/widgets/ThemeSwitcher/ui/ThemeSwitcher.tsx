@@ -1,8 +1,10 @@
-import React, { FC } from 'react';
-import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Theme, useTheme } from 'app/providers/ThemesProvider';
+import React, { FC, memo } from 'react';
+import BrownIcon from 'shared/assets/icon/brown.svg';
 import MoonIcon from 'shared/assets/icon/moon.svg';
 import SunIcon from 'shared/assets/icon/sun.svg';
-import { Theme, useTheme } from 'app/providers/ThemesProvider';
+import { Button } from 'shared/ui/Button';
+
 import style from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
@@ -10,15 +12,27 @@ interface ThemeSwitcherProps {
   theme?: string;
 }
 
-export const ThemeSwitcher: FC<ThemeSwitcherProps> = () => {
+export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(() => {
   const { theme, toggleTheme } = useTheme();
+
+  if (theme === Theme.BROWN) {
+    return (
+      <Button className={style.ThemeSwitcher} type="button" onClick={toggleTheme}>
+        <BrownIcon className={style.icon} width={26} height={26} />
+      </Button>
+    );
+  }
+
   return (
-    <Button className={style.ThemeSwitcher} type="button" theme={ButtonTheme.DEFAULT} onClick={toggleTheme}>
-      {theme === Theme.DARK ? (
-        <MoonIcon className={style.icon} width={26} height={26} />
-      ) : (
-        <SunIcon className={style.icon} width={26} height={26} />
-      )}
-    </Button>
+
+    <div>
+      <Button className={style.ThemeSwitcher} type="button" onClick={toggleTheme}>
+        {theme === Theme.DARK ? (
+          <MoonIcon className={style.icon} width={26} height={26} />
+        ) : (
+          <SunIcon className={style.icon} width={26} height={26} />
+        )}
+      </Button>
+    </div>
   );
-};
+});

@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { PageWrapper } from 'shared/ui/PageWrapper';
+
 import style from './PageNotFound.module.scss';
 
 interface PageNotFoundProps {
@@ -13,8 +14,8 @@ export const PageNotFound: FC<PageNotFoundProps> = ({ className, children }) => 
   const { t } = useTranslation();
 
   return (
-    <div className={classNames(style.PageNotFound, {}, [className])}>
+    <PageWrapper>
       {t('Page not found')}
-    </div>
+    </PageWrapper>
   );
 };

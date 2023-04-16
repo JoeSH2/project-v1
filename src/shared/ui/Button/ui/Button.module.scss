@@ -2,6 +2,7 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+    font-family: var(--font-family-main)
 }
 
 .clear {
@@ -13,29 +14,54 @@
     border: none;
 }
 
-.dark {
+.theme {
     background-color: var(--bg-color-special);
     color: var(--primary-color);
     text-transform: uppercase;
     border: none;
     border-radius: 3px;
-    transition: background 0.25s ease;
+    transition: background-color 0.25s ease;
 
     &:hover {
-        background: var(--bg-color-special-dark);
+        background-color: var(--bg-color-special-dark);
     }
 }
 
-.default {
+.red {
+    background-color: var(--color-red);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.25s ease;
+
+    &:hover {
+        background-color: var(--color-red-dark);
+    }
+}
+
+.gray {
+    background-color: var(--color-gray);
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    transition: background-color 0.25s ease;
+
+    &:hover {
+        background-color: var(--color-gray-dark);
+    }
+}
+
+.opacity {
     background-color: var(--bg-color-special);
     color: var(--special-color);
     text-transform: uppercase;
     border: none;
     border-radius: 3px;
-    transition: background 0.25s ease;
+    opacity: 0.7;
+    transition: background-color 0.25s ease, opacity 0.25s ease;
 
     &:hover {
-        background: var(--bg-color-special-dark);
+        background-color: var(--bg-color-special-dark);
     }
 }
 

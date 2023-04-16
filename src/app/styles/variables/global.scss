@@ -1,5 +1,8 @@
 :root {
-    --font-family-main: tahoma, geneva, sans-serif;
+    --font-family-main: 'Mulish', sans-serif;
+    --font-size-s: 12px;
+    --font-line-s: 12px;
+    --font-m: var(var(--font-size-s) / var(--font-line-s) var(--font-family-main));
     --font-size-m: 16px;
     --font-line-m: 16px;
     --font-m: var(var(--font-size-m) / var(--font-line-m) var(--font-family-main));
@@ -10,9 +13,12 @@
     --font-size-xl: 26px;
     --font-line-xl: 26px;
     --font-xl: var(var(--font-size-xl) / var(--font-line-xl) var(--font-family-main));
+    --font-size-xxl: 32px;
+    --font-line-xxl: 32px;
+    --font-xl: var(var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main));
     --font-default-invereted: #fff;
     --font-dark-invereted: #000;
-    --navbare-height: 50px;
+    --navbare-height: 60px;
     --sidebare-width: 230px;
     --sidebare-width-collapse: 80px;
 
@@ -28,6 +34,10 @@
     --z-index-modal: 15;
     --bg-color-overlay: #272727b0;
     --bg-color-gray: #4e4e4e;
+
+    // Color
     --color-red: #dd0505;
     --color-red-dark: #c00707;
+    --color-gray: #a5a5a5;
+    --color-gray-dark: #888888;
 }

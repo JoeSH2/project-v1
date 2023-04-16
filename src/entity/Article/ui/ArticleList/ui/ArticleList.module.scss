@@ -1,0 +1,19 @@
+.articleList {}
+
+.SMALL {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
+    gap: 50px;
+
+    @media screen and (max-width: 1800px) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 1400px) {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.BIG {}

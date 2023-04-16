@@ -41,6 +41,14 @@
 }
 
 .input {
+    color: var(--font-color-inverted);
+    box-shadow: 0 0 3px 0 var(--font-color-inverted);
+    transition: box-shadow 0.2s ease-in-out;
+
+    &:focus {
+        box-shadow: 0 0 7px 0 var(--font-color-inverted);
+    }
+
     padding: 10px 20px;
     border-radius: 20px;
 }

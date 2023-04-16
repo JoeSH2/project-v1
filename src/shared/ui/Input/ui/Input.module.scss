@@ -7,24 +7,30 @@
     color: var(--font-color-inverted);
 }
 
-.clear {}
-
 .default {
-    background-color: var(--bg-color-inverted);
-    box-shadow: 0 0 3px 0 var(--bg-color);
-    transition: box-shadow 0.2s ease-in;
+    color: var(--primary-color);
+    box-shadow: 0 0 3px 0 var(--bg-color-inverted);
+    transition: box-shadow 0.2s ease-in-out;
 
     &:focus {
-        box-shadow: 0 0 7px 0 var(--bg-color);
+        box-shadow: 0 0 7px 0 var(--bg-color-inverted);
     }
 }
 
 .dark {
-    background-color: var(--bg-color-inverted);
-    box-shadow: 0 0 3px 0 var(--bg-color);
-    transition: box-shadow 0.2s ease-in;
+    color: var(--primary-color);
+    box-shadow: 0 0 3px 0 var(--bg-color-inverted);
+    transition: box-shadow 0.2s ease-in-out;
 
     &:focus {
-        box-shadow: 0 0 7px 0 var(--bg-color);
+        box-shadow: 0 0 7px 0 var(--bg-color-inverted);
     }
+}
+
+.clear {}
+
+.readonly {
+    pointer-events: none;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
 }

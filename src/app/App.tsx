@@ -1,19 +1,22 @@
+import './styles/index.scss';
+
+import { getUserAuth, userActions } from 'entity/User';
+import { getUserMounted } from 'entity/User/model/selectors/getUserMounted';
 import React, {
   FC, Suspense, useEffect,
 } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTheme } from './providers/ThemesProvider';
-import { AppRoutes } from './routes';
 import { Navbare } from 'widgets/Navbare';
 import { Sidebare } from 'widgets/Sidebare';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entity/User';
-import './styles/index.scss';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+
+import { useTheme } from './providers/ThemesProvider';
+import { AppRoutes } from './routes';
 
 export const App: FC = () => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
+  const mounted = useSelector(getUserMounted);
 
   useEffect(() => {
     dispatch(userActions.initUserData());
@@ -25,7 +28,7 @@ export const App: FC = () => {
         <Navbare />
         <div className="content-page">
           <Sidebare />
-          <AppRoutes />
+          {mounted && <AppRoutes />}
         </div>
       </Suspense>
     </div>

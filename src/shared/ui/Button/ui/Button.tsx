@@ -1,12 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React, { ButtonHTMLAttributes, FC } from 'react';
+import React, { ButtonHTMLAttributes, FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+
 import style from './Button.module.scss';
 
 export enum ButtonTheme {
+  THEME = 'theme',
   CLEAR = 'clear',
-  DEFAULT = 'default',
-  DARK = 'dark',
+  RED = 'red',
+  GRAY = 'gray',
+  OPACITY = 'opacity'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -15,10 +18,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
   const {
-    className, children, theme, disabled, ...otherProps
+    className = '', children, theme = ButtonTheme.THEME, disabled = false, ...otherProps
   } = props;
+
   return (
     <button
       disabled={disabled}
@@ -30,4 +34,4 @@ export const Button: FC<ButtonProps> = (props) => {
       {children}
     </button>
   );
-};
+});

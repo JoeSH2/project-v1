@@ -1,7 +1,7 @@
-import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import LoginForm from './LoginForm';
 import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
+
+import LoginForm from './LoginForm';
 
 export default {
   title: 'features/LoginForm',
@@ -11,6 +11,7 @@ export default {
   },
 } as ComponentMeta<typeof LoginForm>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const Dark = Template.bind({});
@@ -20,9 +21,6 @@ Dark.decorators = [StoreDecorator({
 })];
 
 export const Error = Template.bind({});
-Error.args = {
-  theme: 'red',
-};
 Error.decorators = [StoreDecorator({
   loginUser: {
     username: 'admin', password: 'admin', isLoading: false, error: 'Error',

@@ -1,0 +1,133 @@
+.ArticleCardSkeleton {}
+
+.wrapperIcon {
+    position: relative;
+    cursor: pointer;
+
+    .created {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-weight: 700;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    &:hover {
+        .created {
+            opacity: 1;
+        }
+
+        .img {
+            transform: scale(1.01);
+        }
+
+    }
+}
+
+.img {
+    display: block;
+    width: 100%;
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.wrapperInfo {
+    margin: 20px 0 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.articleType {
+    width: 60%;
+
+    p {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.wrapperView {
+    display: flex;
+    align-items: center;
+}
+
+.views {
+    margin-left: 10px;
+    color: var(--bg-color-special);
+}
+
+.title {
+    margin: 15px 0 0 0;
+    font-weight: 700;
+
+    h1 {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}
+
+.SMALL {
+    width: 300px;
+    gap: 50px;
+}
+
+.BIG {
+    width: 100%;
+    margin-bottom: 40px;
+
+    .card {
+        padding: 1rem;
+    }
+
+    .titleWrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .userWrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .avatar {
+        margin-right: 20px;
+    }
+
+    .title {
+        margin: 0;
+        text-transform: uppercase;
+        text-decoration: overline;
+        font-weight: 800;
+    }
+
+    .block {
+        height: 150px;
+        overflow: hidden;
+
+        p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .btnWrapper {
+        display: flex;
+        justify-content: end;
+        margin: 15px 0;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        box-shadow: var(--box-shadow);
+    }
+}
+
+.viewIcon {
+    fill: var(--bg-color-special)
+}

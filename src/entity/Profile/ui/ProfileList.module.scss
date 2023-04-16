@@ -1,0 +1,40 @@
+.ProfileList {
+    margin-top: 45px;
+    padding: 2rem;
+    border: 2px solid var(--bg-color-special);
+    border-radius: 8px;
+    min-height: 500px;
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    width: 100%;
+
+    .label {
+        flex: 0 1 23%
+    }
+
+    .input {
+        flex: 1 1 auto;
+        border-radius: 4px;
+        padding: 8px 10px;
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+}

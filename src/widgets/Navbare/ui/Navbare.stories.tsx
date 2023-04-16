@@ -1,10 +1,10 @@
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Theme } from 'app/providers/ThemesProvider';
 import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
+import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
 
 import { Navbare } from './Navbare';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-import { Theme } from 'app/providers/ThemesProvider';
-import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
 
 export default {
   title: 'widgets/Navbare',
@@ -14,16 +14,11 @@ export default {
   },
 } as ComponentMeta<typeof Navbare>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Navbare> = (args) => <Navbare {...args} />;
 
 export const Dark = Template.bind({});
-Dark.args = {
-  theme: Theme.DARK,
-};
 Dark.decorators = [StoreDecorator({})];
 
 export const Default = Template.bind({});
-Default.args = {
-  theme: Theme.DEFAULT,
-};
 Default.decorators = [ThemeDecorator(Theme.DEFAULT), StoreDecorator({})];

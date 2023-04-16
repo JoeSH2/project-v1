@@ -1,13 +1,27 @@
 .Sidebare {
     position: relative;
     height: calc(100vh - var(--navbare-height));
-    width: var(--sidebare-width);
+    min-width: var(--sidebare-width);
     background-color: var(--bg-color-dark);
-    transition: width 0.1s ease;
+    transition: min-width 0.1s ease;
+    z-index: 10;
 }
 
-.collapse {
-    width: var(--sidebare-width-collapse);
+.wrapperLink {
+    display: block;
+    margin: 2rem 0 0 1rem;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        transition: all 0.2s ease;
+
+        span {
+            animation: linkOpacity 0.2s forwards;
+        }
+    }
 }
 
 .switchers {
@@ -42,4 +56,34 @@
     position: absolute;
     top: 45%;
     right: -20px;
+}
+
+.collapse {
+    min-width: var(--sidebare-width-collapse);
+
+    .wrapperLink {
+        margin: 2rem 0 0 0;
+
+        ul {
+            align-items: center;
+
+            span {
+                opacity: 0;
+            }
+        }
+    }
+}
+
+@keyframes linkOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    60% {
+        opacity: 0.4;
+    }
+
+    100% {
+        opacity: 100%;
+    }
 }
