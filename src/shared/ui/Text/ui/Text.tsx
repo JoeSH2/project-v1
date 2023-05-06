@@ -15,9 +15,7 @@ interface TextProps {
   size?: 's' | 'm' | 'l' | 'xl'
 }
 
-export const Text: FC<TextProps> = ({
-  className, title, text, theme = 'theme', align = 'center', size = 'xl',
-}) => (
+export const Text: FC<TextProps> = ({ className, title, text, theme = 'theme', align = 'center', size = 'xl', }) => (
   <div className={classNames(style.Text, {}, [style[theme], style[align], style[size], className])}>
     <h1 className={style.title}>{title}</h1>
     <p className={style.text}>{text}</p>

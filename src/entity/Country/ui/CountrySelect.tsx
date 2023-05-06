@@ -23,9 +23,7 @@ const options = [
   { value: CountryList.UKRAINE, content: CountryList.UKRAINE },
 ];
 
-export const CountrySelect: FC<CountrySelectProps> = ({
-  onChange, className, readonly, value,
-}) => (
+export const CountrySelect: FC<CountrySelectProps> = ({ onChange, className, readonly, value, }) => (
   (
     <Select
       className={classNames(style.CountrySelect, { }, [className])}

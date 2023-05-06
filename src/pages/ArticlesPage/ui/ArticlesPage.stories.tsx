@@ -1,15 +1,15 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Article } from 'entity/Article';
-import { ArticleBlockType } from 'entity/Article/model/types/Article';
+import { ArticleBlockType, ArticleType } from 'entity/Article/model/types/Article';
 import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
 
+import { ArticleSortField } from 'features/ArticleSort';
 import ArticlesPage from './ArticlesPage';
 
 export default {
   title: 'pages/ArticlesPage',
   component: ArticlesPage,
-  argTypes: {
-  },
+  argTypes: {},
 } as ComponentMeta<typeof ArticlesPage>;
 
 const Template: ComponentStory<typeof ArticlesPage> = (args) => <ArticlesPage {...args} />;
@@ -21,7 +21,7 @@ const article: Article = {
   img: 'https://s3-eu-west-1.amazonaws.com/sdz-upload/prod/upload/js2.jpg',
   views: 1022,
   createdAt: '26.02.2022',
-  type: ['IT'],
+  type: [ArticleType.IT],
   blocks: [
     {
       id: '1',

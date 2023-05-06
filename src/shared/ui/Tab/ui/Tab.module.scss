@@ -1,0 +1,26 @@
+.TabWrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 90px;
+    padding: 6px 12px;
+    margin: 0 24px 0 0;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.active {
+    background-color: var(--bg-color-special);
+}
+
+.normal {
+    background-color: var(--bg-color);
+
+}

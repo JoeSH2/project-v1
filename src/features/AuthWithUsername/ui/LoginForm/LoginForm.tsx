@@ -20,9 +20,7 @@ import { getLoginUserPassword } from '../../model/selectors/getLoginUserPassword
 import { loginUserActions, loginUserReducer } from '../../model/slice/loginUserSlice';
 import style from './LoginForm.module.scss';
 
-const listState: ReducerList = {
-  loginUser: loginUserReducer,
-};
+const listState: ReducerList = { loginUser: loginUserReducer, };
 export interface LoginFormProps {
   className?: string;
 }
@@ -77,7 +75,12 @@ const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
             type="password"
           />
         </div>
-        {error && <Text size="m" className={style.errorText} theme="red" text={t('Wrong login or password, try again!')} />}
+        {error && <Text 
+          size="m" 
+          className={style.errorText} 
+          theme="red" 
+          text={t('Wrong login or password, try again!')} 
+        />}
         <Button
           onClick={onClickLogin}
           disabled={isLoading}

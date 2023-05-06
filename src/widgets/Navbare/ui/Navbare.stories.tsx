@@ -9,9 +9,7 @@ import { Navbare } from './Navbare';
 export default {
   title: 'widgets/Navbare',
   component: Navbare,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof Navbare>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

@@ -11,9 +11,7 @@ i18n
     fallbackLng: 'en',
     debug: __IS_DEV__,
 
-    interpolation: {
-      escapeValue: false,
-    },
+    interpolation: { escapeValue: false, },
   });
 
 export default i18n;

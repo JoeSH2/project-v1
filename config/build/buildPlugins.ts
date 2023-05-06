@@ -1,22 +1,16 @@
-import HTMLWebpackPlugin from 'html-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import webpack from 'webpack';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import HTMLWebpackPlugin from 'html-webpack-plugin'
+import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import webpack from 'webpack'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
+import CopyPlugin from 'copy-webpack-plugin'
 
-import { BuildOptions } from './types/config';
+import { BuildOptions } from './types/config'
 
-const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const ReactRefreshPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
-export function buildPlugins({
-  paths,
-  isDev,
-  apiUrl,
-  project,
-}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({ paths, isDev, apiUrl, project }: BuildOptions): webpack.WebpackPluginInstance[] {
   const plugin = [
-    new HTMLWebpackPlugin({
-      template: paths.html,
-    }),
+    new HTMLWebpackPlugin({ template: paths.html }),
     new webpack.ProgressPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
@@ -27,16 +21,14 @@ export function buildPlugins({
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
     }),
-  ];
+    new CopyPlugin({
+      patterns: [{ from: paths.locales, to: paths.buildLocales }],
+    }),
+  ]
 
   if (isDev) {
-    plugin.push(
-      new ReactRefreshPlugin(),
-      new BundleAnalyzerPlugin({
-        openAnalyzer: false,
-      }),
-    );
+    plugin.push(new ReactRefreshPlugin(), new BundleAnalyzerPlugin({ openAnalyzer: false }))
   }
 
-  return plugin;
+  return plugin
 }

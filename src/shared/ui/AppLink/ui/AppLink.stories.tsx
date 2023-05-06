@@ -8,9 +8,7 @@ import { AppLink, AppLinkTheme } from './AppLink';
 export default {
   title: 'shared/AppLink',
   component: AppLink,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
   args: {
     to: '/',
     children: 'click me',
@@ -21,12 +19,8 @@ export default {
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
 
 export const Dark = Template.bind({});
-Dark.args = {
-  theme: AppLinkTheme.DARK,
-};
+Dark.args = { theme: AppLinkTheme.DARK, };
 
 export const Default = Template.bind({});
-Default.args = {
-  theme: AppLinkTheme.DEFAULT,
-};
+Default.args = { theme: AppLinkTheme.DEFAULT, };
 Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

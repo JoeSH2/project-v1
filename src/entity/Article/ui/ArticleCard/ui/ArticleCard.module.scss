@@ -1,7 +1,6 @@
-.articleCard {
-    display: flex;
-    flex-wrap: wrap;
-}
+.articleCard {}
+
+.SMALL {}
 
 .wrapperIcon {
     position: relative;
@@ -98,6 +97,17 @@
         align-items: center;
     }
 
+    .articleInfo {
+        display: flex;
+        align-items: center;
+    }
+
+    .articleImg {
+        object-fit: cover;
+        border-radius: 20%;
+        border: 2px solid var(--bg-color-special-dark);
+    }
+
     .userWrapper {
         display: flex;
         align-items: center;
@@ -108,14 +118,14 @@
     }
 
     .title {
-        margin: 0;
+        margin: 0 1.8rem 0 0;
         text-transform: uppercase;
         text-decoration: overline;
         font-weight: 800;
     }
 
     .block {
-        height: 150px;
+        height: 154px;
         overflow: hidden;
 
         p {
@@ -126,8 +136,17 @@
 
     .btnWrapper {
         display: flex;
-        justify-content: end;
+        align-items: center;
+        justify-content: space-between;
         margin: 15px 0;
+
+        .created {
+            padding: 4px 16px;
+            border: 2px solid var(--bg-color-special);
+            border-radius: 4px;
+            font-weight: 800;
+            line-height: 1;
+        }
     }
 
     .btn {

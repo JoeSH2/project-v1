@@ -16,9 +16,7 @@ interface ModalProps {
   lazy?: boolean;
 }
 
-export const Modal: FC<ModalProps> = ({
-  className, children, isOpen, onClose, lazy,
-}) => {
+export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose, lazy, }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isMounted, setIsMounted] = useState(false);
   const { theme } = useTheme();

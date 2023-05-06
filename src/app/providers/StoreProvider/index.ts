@@ -1,11 +1,9 @@
 export { createReducerManager } from './config/reducerManager';
-export {
-  ReducerManager,
+export { ReducerManager,
   ReduxStoreManager,
   StateSchema,
   StateSchemaKey,
   ThunkConfig,
-  ThunkExtraArgs,
-} from './config/StateSchema';
+  ThunkExtraArgs, } from './config/StateSchema';
 export { AppDispatch, createReduxStore } from './config/store';
 export { StoreProvider } from './ui/StoreProvider';

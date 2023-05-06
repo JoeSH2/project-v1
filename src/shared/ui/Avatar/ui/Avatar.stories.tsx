@@ -9,9 +9,7 @@ import { Avatar } from './Avatar';
 export default {
   title: 'shared/Avatar',
   component: Avatar,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof Avatar>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

@@ -16,11 +16,7 @@ test('fetch data', async () => {
     lastname: 'Kuzin',
     avatar: 'asdasda',
   };
-  const thunk = new TestAsyncThunk(updateProfileData, {
-    profile: {
-      form: data,
-    },
-  });
+  const thunk = new TestAsyncThunk(updateProfileData, { profile: { form: data, }, });
 
   thunk.api.put.mockReturnValue(Promise.resolve({ data }));
 
@@ -41,11 +37,7 @@ test('fetch data', async () => {
     username: 'admin',
     lastname: 'Kuzin',
   };
-  const thunk = new TestAsyncThunk(updateProfileData, {
-    profile: {
-      form: data,
-    },
-  });
+  const thunk = new TestAsyncThunk(updateProfileData, { profile: { form: data, }, });
 
   thunk.api.put.mockReturnValue(Promise.resolve({ data }));
 

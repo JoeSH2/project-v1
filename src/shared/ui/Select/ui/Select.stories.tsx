@@ -8,9 +8,7 @@ import { Select } from './Select';
 export default {
   title: 'shared/Select',
   component: Select,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof Select>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

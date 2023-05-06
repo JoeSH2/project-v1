@@ -6,6 +6,15 @@
 }
 
 .viewIcon {
-    fill: var(--bg-color-special);
+    fill: var(--bg-color-special-dark);
+    opacity: 0.7;
     cursor: pointer;
+    transition: fill 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.active {
+    fill: var(--bg-color-special);
+    transform: scale(1.1);
+    opacity: 1;
+    filter: blur(0);
 }

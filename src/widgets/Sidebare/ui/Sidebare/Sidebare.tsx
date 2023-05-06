@@ -38,7 +38,7 @@ export const Sidebare: FC<SidebareProps> = memo(({ className }: SidebareProps) =
   ), [authRoutes, collapse]);
 
   return (
-    <div
+    <menu
       data-testid="sidebare"
       className={classNames(style.Sidebare, { [style.collapse]: collapse }, [
         className,
@@ -60,6 +60,6 @@ export const Sidebare: FC<SidebareProps> = memo(({ className }: SidebareProps) =
         <ThemeSwitcher />
         <LangSwitcher isCollapsed={collapse} />
       </div>
-    </div>
+    </menu>
   );
 });

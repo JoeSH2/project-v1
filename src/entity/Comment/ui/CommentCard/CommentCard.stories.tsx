@@ -12,6 +12,4 @@ export default {
 const Template: ComponentStory<typeof CountrySelect> = (args) => <CountrySelect {...args} />;
 
 export const Form = Template.bind({});
-Form.args = {
-  value: CountryList.RUSSIA,
-};
+Form.args = { value: CountryList.RUSSIA, };

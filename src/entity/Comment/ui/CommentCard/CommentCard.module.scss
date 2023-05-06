@@ -21,10 +21,6 @@
             .avatar {
                 padding: 2px;
             }
-
-            .username {
-                font-weight: 800;
-            }
         }
     }
 
@@ -41,12 +37,13 @@
 
 .avatar {
     margin-right: 15px;
-    transition: padding 0.2s ease;
+    transition: padding 0.2s ease-out;
 }
 
 .username {
     font-weight: 600;
     padding-left: 10px;
+
 }
 
 .text {

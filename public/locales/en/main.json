@@ -2,5 +2,27 @@
   "Main page": "Main page",
   "No comments": "No comments",
   "Comment": "Comment",
-  "Read Article": "Read Article"
+  "Read Article": "Read Article",
+  "Search article": "Search article",
+  "Sort by": "Sort by",
+  "descending": "descending",
+  "newest": "newest",
+  "number of views": "number of views",
+  "name": "name",
+  "TIOL": "TIOL",
+  "All": "All",
+  "IT": "IT",
+  "CRYPTO": "CRYPTO",
+  "ECONOMICS": "ECONOMICS",
+  "SCIENCE": "SCIENCE",
+  "ALL": "ALL",
+  "main": {
+    "IT": "IT",
+    "ALL": "ALL",
+    "CRYPTO": "CRYPTO",
+    "ECONOMICS": "ECONOMICS",
+    "SCIENCE": "SCIENCE"
+  },
+  "Create article": "Create article",
+  "Edit article": "Edit article"
 }

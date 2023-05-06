@@ -5,14 +5,18 @@
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto;
     justify-items: center;
-    gap: 50px;
+    gap: 30px;
 
-    @media screen and (max-width: 1800px) {
+    @media screen and (max-width: 1700px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (max-width: 1360px) {
         grid-template-columns: 1fr 1fr;
+    }
+
+    @media screen and (max-width: 840px) {
+        grid-template-columns: 1fr;
     }
 }
 

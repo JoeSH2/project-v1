@@ -4,17 +4,13 @@ import { buildCssLoader } from './loaders/buildCssLoader';
 import { buildSvgLoader } from './loaders/buildSvgLoader';
 import { BuildOptions } from './types/config';
 
-export const buildLoaders = ({
-  isDev,
-}: BuildOptions): webpack.RuleSetRule[] => {
+export const buildLoaders = ({ isDev, }: BuildOptions): webpack.RuleSetRule[] => {
   const svgLoader = buildSvgLoader();
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif)$/i,
     use: [
-      {
-        loader: 'file-loader',
-      },
+      { loader: 'file-loader', },
     ],
   };
 

@@ -78,16 +78,26 @@
 
 .BIG {
     width: 100%;
-    margin-bottom: 40px;
 
     .card {
         padding: 1rem;
+        margin-bottom: 60px;
     }
 
     .titleWrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    .articleInfo {
+        display: flex;
+        align-items: center;
+    }
+
+    .articleImg {
+        object-fit: cover;
+        border-radius: 20%;
     }
 
     .userWrapper {
@@ -107,13 +117,8 @@
     }
 
     .block {
-        height: 150px;
+        height: 154px;
         overflow: hidden;
-
-        p {
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
     }
 
     .btnWrapper {
@@ -123,7 +128,6 @@
     }
 
     .btn {
-        padding: 10px 25px;
         box-shadow: var(--box-shadow);
     }
 }

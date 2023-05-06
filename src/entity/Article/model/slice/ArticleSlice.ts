@@ -4,15 +4,12 @@ import { fetchArticleById } from '../services/fetchArticleById';
 import { Article } from '../types/Article';
 import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema';
 
-const initialState: ArticleDetailsSchema = {
-  isLoading: false,
-};
+const initialState: ArticleDetailsSchema = { isLoading: false, };
 
 export const ArticleSlice = createSlice({
   name: 'Article',
   initialState,
-  reducers: {
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchArticleById.pending, (state) => {
       state.error = undefined;

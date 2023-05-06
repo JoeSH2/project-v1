@@ -4,39 +4,37 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import style from './Select.module.scss';
 
-type SelectOptions = {
-    value: string,
+export type SelectOptions<T> = {
+    value: T,
     content: string;
 }
 
-interface SelectProps {
+interface SelectProps<T extends string> {
   className?: string;
-  children?: React.ReactNode;
   name?: string;
-  options?: SelectOptions[]
-  value?: string;
-  onChange?: (value: string) => void;
-  theme?: 'theme';
+  options?: SelectOptions<T>[]
+  value?: T;
+  onChange?: (value: T) => void;
   readonly?: boolean;
 }
 
-export const Select: FC<SelectProps> = ({
+export const Select = <T extends string>({
   className,
   name,
   value,
   onChange,
   readonly,
   options,
-}) => {
+}: SelectProps<T>) => {
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(e.target.value);
+    onChange?.(e.target.value as T);
   };
 
-  const optionsList = useMemo(() => options?.map((opt) => (
+  const optionsList = useMemo(() => options?.map((opt, i) => (
     <option
       className={style.option}
       value={opt.value}
-      key={opt.value}
+      key={`${opt.value} ${i}`}
     >
       {opt.content}
     </option>

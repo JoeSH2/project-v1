@@ -4,7 +4,7 @@ import {
 } from '@reduxjs/toolkit';
 import { counterReducer } from 'entity/Counter';
 import { userReducer } from 'entity/User';
-import { NavigateOptions, To } from 'react-router-dom';
+import { saveScrollPageReducer } from 'features/saveScrollPage';
 import { $axiosApi } from 'shared/api/api';
 
 import { createReducerManager } from './reducerManager';
@@ -13,12 +13,12 @@ import { StateSchema } from './StateSchema';
 export function createReduxStore(
   initialState: StateSchema,
   asyncRedusers?: ReducersMapObject<StateSchema>,
-  navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
   const rootReducer: ReducersMapObject<StateSchema> = {
     ...asyncRedusers,
     counter: counterReducer,
     user: userReducer,
+    saveScroll: saveScrollPageReducer,
   };
 
   const reducerManager = createReducerManager(rootReducer);
@@ -27,14 +27,7 @@ export function createReduxStore(
     reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>>,
     preloadedState: initialState,
     devTools: __IS_DEV__,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-      thunk: {
-        extraArgument: {
-          api: $axiosApi,
-          navigate,
-        },
-      },
-    }),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ thunk: { extraArgument: { api: $axiosApi, }, }, }),
   });
 
   // @ts-ignore

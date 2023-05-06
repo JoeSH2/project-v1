@@ -8,9 +8,7 @@ import { Text } from './Text';
 export default {
   title: 'shared/Text',
   component: Text,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof Text>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

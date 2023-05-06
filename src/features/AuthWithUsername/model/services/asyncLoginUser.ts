@@ -16,7 +16,6 @@ export const asyncLoginUser = createAsyncThunk<User, LoginUserProps, ThunkConfig
         throw new Error();
       }
       dispatch(userActions.signWith(response.data));
-      extra.navigate?.('/');
       return response.data;
     } catch (e) {
       console.log(e);

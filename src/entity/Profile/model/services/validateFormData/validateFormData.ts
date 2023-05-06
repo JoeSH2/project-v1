@@ -7,9 +7,7 @@ export const validateFormData = (profile?: Profile) => {
     return [validateError.NO_DATA];
   }
 
-  const {
-    age, avatar, city, country, currency, first, lastname, username,
-  } = profile;
+  const { age, avatar, city, country, currency, first, lastname, username, } = profile;
 
   const error: validateError[] = [];
 

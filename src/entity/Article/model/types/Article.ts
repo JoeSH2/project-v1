@@ -1,13 +1,21 @@
 import { User } from 'entity/User';
+import { ArticleSortField } from 'features/ArticleSort';
 
-export type ArticleType = 'IT' | 'SCIENCE' | 'ECONOMICS';
+export enum ArticleType {
+    ALL = 'ALL',
+    IT = 'IT', // 'IT' | 'SCIENCE' | 'ECONOMICS'
+    SCIENCE = 'SCIENCE',
+    CRYPTO = 'CRYPTO',
+    ECONOMICS = 'ECONOMICS'
+};
+
 export enum ArticleBlockType {
     CODE = 'CODE',
     TEXT = 'TEXT',
     IMAGE = 'IMAGE'
 }
 
-export type ArticleView = 'BIG' | 'SMALL'
+export type ArticleView = 'BIG' | 'SMALL';
 
 export type ArticleBlockBase = {
     id: string;

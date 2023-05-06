@@ -32,9 +32,7 @@ interface ProfileListProps {
   onChangeCurrency: () => void;
 }
 
-const listState: ReducerList = {
-  profile: profileReducer,
-};
+const listState: ReducerList = { profile: profileReducer, };
 
 export const ProfileList: FC<ProfileListProps> = ({
   onChangeFirstname,
@@ -65,7 +63,10 @@ export const ProfileList: FC<ProfileListProps> = ({
   if (error) {
     return (
       <form className={classNames(style.ProfileList, { [style.error]: error }, [])} action="">
-        <Text theme="red" title={t('Data retrieval error')} text={t('Profile data was not received, try reloading the page')} />
+        <Text 
+          theme="red" 
+          title={t('Data retrieval error')} 
+          text={t('Profile data was not received, try reloading the page')} />
       </form>
     );
   }

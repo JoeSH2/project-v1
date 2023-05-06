@@ -11,9 +11,7 @@ interface SidebareLinkProps {
   collapse: boolean;
 }
 
-export const SidebareLink: FC<SidebareLinkProps> = memo(({
-  collapse, item,
-}: SidebareLinkProps) => {
+export const SidebareLink: FC<SidebareLinkProps> = memo(({ collapse, item, }: SidebareLinkProps) => {
   const { t } = useTranslation();
   const { Icon, path, text } = item;
   return (

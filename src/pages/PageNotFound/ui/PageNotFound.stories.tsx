@@ -8,20 +8,14 @@ import { PageNotFound } from '../index';
 export default {
   title: 'pages/PageNotFound',
   component: PageNotFound,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof PageNotFound>;
 
 const Template: ComponentStory<typeof PageNotFound> = () => <PageNotFound />;
 
 export const Dark = Template.bind({});
-Dark.args = {
-  theme: Theme.DARK,
-};
+Dark.args = { theme: Theme.DARK, };
 
 export const Default = Template.bind({});
-Default.args = {
-  theme: Theme.DEFAULT,
-};
+Default.args = { theme: Theme.DEFAULT, };
 Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

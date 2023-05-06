@@ -8,9 +8,7 @@ import { ProfileList } from './ProfileList';
 export default {
   title: 'entity/ProfileList',
   component: ProfileList,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof ProfileList>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -45,8 +43,4 @@ Dark.decorators = [StoreDecorator({
 })];
 
 export const Error = Template.bind({});
-Error.decorators = [StoreDecorator({
-  profile: {
-    error: 'asdasd',
-  },
-})];
+Error.decorators = [StoreDecorator({ profile: { error: 'asdasd', }, })];

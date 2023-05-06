@@ -3,16 +3,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 14px;
     height: var(--navbare-height);
     background-color: var(--bg-color-dark);
     box-shadow: 1px 1px 3px 1px var(--bg-shadow);
     z-index: 10;
 }
 
+.logo {
+    fill: var(--bg-color-special);
+    height: 55px;
+    width: 55px;
+}
+
+.title {
+    font-weight: 800;
+    margin-left: 15px;
+}
+
 .linkWrapper {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 
@@ -21,6 +33,12 @@
     color: var(--primary-color);
 }
 
+.wrapperLog {
+    display: flex;
+    align-items: center;
+}
+
 .logBtn {
     padding: 8px 20px;
+    margin: 0 0 0 30px;
 }

@@ -8,9 +8,7 @@ import { Button, ButtonTheme } from './Button';
 export default {
   title: 'shared/Button',
   component: Button,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof Button>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -23,7 +21,5 @@ Clear.args = {
 };
 
 export const Default = Template.bind({});
-Default.args = {
-  children: 'toggle',
-};
+Default.args = { children: 'toggle', };
 Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

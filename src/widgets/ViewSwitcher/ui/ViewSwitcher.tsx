@@ -16,6 +16,9 @@ interface ViewSwitcherProps {
 export const ViewSwitcher: FC<ViewSwitcherProps> = (props) => {
   const { className, onChangeView, view } = props;
 
+  const activeSmall = view === 'SMALL';
+  const activeBig = view === 'BIG';
+
   const onClickView = (view: ArticleView) => () => {
     onChangeView(view);
   };
@@ -23,10 +26,10 @@ export const ViewSwitcher: FC<ViewSwitcherProps> = (props) => {
   return (
     <div className={classNames(style.viewSwitcher, {}, [className])}>
       <Button onClick={onClickView('SMALL')} theme={ButtonTheme.CLEAR}>
-        <IconGrid className={style.viewIcon} width={35} height={35} />
+        <IconGrid className={classNames(style.viewIcon, { [style.active]: activeSmall }, [])} width={35} height={35} />
       </Button>
       <Button onClick={onClickView('BIG')} theme={ButtonTheme.CLEAR}>
-        <IconLine className={style.viewIcon} width={35} height={35} />
+        <IconLine className={classNames(style.viewIcon, { [style.active]: activeBig }, [])} width={35} height={35} />
       </Button>
     </div>
   );

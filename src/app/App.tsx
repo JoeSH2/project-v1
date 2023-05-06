@@ -1,10 +1,8 @@
 import './styles/index.scss';
 
-import { getUserAuth, userActions } from 'entity/User';
+import { userActions } from 'entity/User';
 import { getUserMounted } from 'entity/User/model/selectors/getUserMounted';
-import React, {
-  FC, Suspense, useEffect,
-} from 'react';
+import React, { FC, Suspense, useEffect, } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbare } from 'widgets/Navbare';

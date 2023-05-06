@@ -20,9 +20,7 @@ const options = [
   { value: CurrencyList.USD, content: CurrencyList.USD },
 ];
 
-export const CurrencySelect: FC<CurrencySelectProps> = ({
-  onChange, className, readonly, value,
-}) => (
+export const CurrencySelect: FC<CurrencySelectProps> = ({ onChange, className, readonly, value, }) => (
   <Select
     className={classNames(style.CountrySelect, { }, [className])}
     onChange={onChange}

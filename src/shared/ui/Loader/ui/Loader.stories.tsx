@@ -8,9 +8,7 @@ import { Loader } from './Loader';
 export default {
   title: 'shared/Loader',
   component: Loader,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof Loader>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

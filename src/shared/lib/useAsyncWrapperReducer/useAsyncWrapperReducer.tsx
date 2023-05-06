@@ -1,29 +1,35 @@
 import { AnyAction } from '@reduxjs/toolkit';
-import { ReduxStoreManager, StateSchemaKey } from 'app/providers/StoreProvider';
+import { ReduxStoreManager, StateSchema, StateSchemaKey } from 'app/providers/StoreProvider';
 import { Reducer, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
 
 export type ReducerList = {
-  [name in StateSchemaKey]?: Reducer<any, AnyAction>
+  [name in StateSchemaKey]?: Reducer<StateSchema[name], AnyAction>
 }
 
-export const useAsyncWrapperReducer = (
-  reducers: ReducerList,
-) => {
+export const useAsyncWrapperReducer = (reducers: ReducerList, unmounte?: boolean) => {
   const dispatch = useDispatch();
   const store = useStore() as ReduxStoreManager;
+  const mountedReducers = store.reducerManager.getReducerMap();
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([key, reducer]) => {
-      store.reducerManager.add(key as StateSchemaKey, reducer);
-      dispatch({ type: `@MOUNT ${key}` });
-    });
+    let keyName;
+    // eslint-disable-next-line no-undef
+    const mouted = mountedReducers[keyName as unknown as StateSchemaKey];
+    if (!mouted) {
+      Object.entries(reducers).forEach(([key, reducer]) => {
+        store.reducerManager.add(key as StateSchemaKey, reducer);
+        dispatch({ type: `@MOUNT ${key}` });
+      });
+    }
 
     return () => {
-      Object.entries(reducers).forEach(([key]) => {
-        store.reducerManager.remove(key as StateSchemaKey);
-        dispatch({ type: `@UNMOUNT ${key}` });
-      });
+      if (!unmounte) {
+        Object.entries(reducers).forEach(([key]) => {
+          store.reducerManager.remove(key as StateSchemaKey);
+          dispatch({ type: `@UNMOUNT ${key}` });
+        });
+      }
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

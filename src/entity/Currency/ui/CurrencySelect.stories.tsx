@@ -12,6 +12,4 @@ export default {
 const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;
 
 export const Form = Template.bind({});
-Form.args = {
-  value: CurrencyList.EUR,
-};
+Form.args = { value: CurrencyList.EUR, };

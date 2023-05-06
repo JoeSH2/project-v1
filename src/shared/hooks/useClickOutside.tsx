@@ -19,8 +19,7 @@ export const useClickOutsed = ({ handler, ref, value = true }: useClickOutsidePr
 
     document.addEventListener('click', handleClick);
 
-    return () => {
-      document.removeEventListener('click', handleClick);
-    };
+    return () => document.removeEventListener('click', handleClick)
+
   }, []);
 };

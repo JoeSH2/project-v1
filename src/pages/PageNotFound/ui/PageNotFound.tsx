@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PageWrapper } from 'shared/ui/PageWrapper';
+import { Block } from 'shared/ui/Block';
+import { PageWrapper } from 'widgets/PageWrapper';
 
 import style from './PageNotFound.module.scss';
 
@@ -15,7 +16,9 @@ export const PageNotFound: FC<PageNotFoundProps> = ({ className, children }) => 
 
   return (
     <PageWrapper>
-      {t('Page not found')}
+      <Block>
+        {t('Page not found')}
+      </Block>
     </PageWrapper>
   );
 };

@@ -8,9 +8,7 @@ import { Input } from './Input';
 export default {
   title: 'shared/Input',
   component: Input,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof Input>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

@@ -1,12 +1,12 @@
-import { AboutPageAsync, MainPageAsync } from 'pages';
-import { ArticlesPageAsync } from 'pages/ArticlesPage';
-import { AtriclesDetailsPageAsync } from 'pages/AtriclesDetailsPage';
-import { PageNotFound } from 'pages/PageNotFound';
-import { ProfilePage } from 'pages/ProfilePage';
-import { RouteProps } from 'react-router';
+import { AboutPageAsync, MainPageAsync } from 'pages'
+import { ArticlesPageAsync } from 'pages/ArticlesPage'
+import { AtriclesDetailsPageAsync } from 'pages/AtriclesDetailsPage'
+import { PageNotFound } from 'pages/PageNotFound'
+import { ProfilePage } from 'pages/ProfilePage'
+import { RouteProps } from 'react-router'
 
 export type RouterAuth = RouteProps & {
-  authUser?: boolean;
+  authUser?: boolean
 }
 
 export enum AppRoutes {
@@ -16,6 +16,8 @@ export enum AppRoutes {
   NOT_FOUND = 'not_found',
   ARTICLE = 'articles',
   ARTICLE_DETAILS = 'article_details',
+  ARTICLE_CREATE = 'article_create',
+  ARTICLE_EDIT = 'article_edit',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -24,9 +26,11 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.PROFILE]: '/profile/', // + id
   [AppRoutes.ARTICLE]: '/articles',
   [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + id
+  [AppRoutes.ARTICLE_CREATE]: '/articles/create',
+  [AppRoutes.ARTICLE_EDIT]: '/articles/create/', // + id
   // last
   [AppRoutes.NOT_FOUND]: '*',
-};
+}
 
 export const routesConfig: Record<AppRoutes, RouterAuth> = {
   [AppRoutes.MAIN]: {
@@ -55,4 +59,14 @@ export const routesConfig: Record<AppRoutes, RouterAuth> = {
     element: <AtriclesDetailsPageAsync />,
     authUser: true,
   },
-};
+  [AppRoutes.ARTICLE_CREATE]: {
+    path: `${RoutePath.article_create}`,
+    element: <AtriclesDetailsPageAsync />,
+    authUser: true,
+  },
+  [AppRoutes.ARTICLE_EDIT]: {
+    path: `${RoutePath.article_details}:id`,
+    element: <AtriclesDetailsPageAsync />,
+    authUser: true,
+  },
+}

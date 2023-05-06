@@ -11,9 +11,7 @@ i18n
 
     debug: true,
 
-    interpolation: {
-      escapeValue: false,
-    },
+    interpolation: { escapeValue: false, },
 
     resources: { en: { translations: {} } },
   });

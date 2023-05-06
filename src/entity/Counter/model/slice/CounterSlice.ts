@@ -2,9 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { CounterSchema } from '../types/CounterSchema';
 
-const initialState: CounterSchema = {
-  value: 0,
-};
+const initialState: CounterSchema = { value: 0, };
 
 export const counterSlice = createSlice({
   name: 'counter',

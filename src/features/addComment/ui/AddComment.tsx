@@ -16,9 +16,7 @@ interface AddCommentProps {
   onSendComment: (text: string) => void;
 }
 
-const reducerList: ReducerList = {
-  commentForm: addCommentReducer,
-};
+const reducerList: ReducerList = { commentForm: addCommentReducer, };
 
 const AddComment: FC<AddCommentProps> = ({ className, onSendComment }) => {
   const { t } = useTranslation('about');
@@ -40,7 +38,6 @@ const AddComment: FC<AddCommentProps> = ({ className, onSendComment }) => {
     <form action="" className={classNames(style.AddComment, {}, [className])}>
       <Input
         placeholder="Comment"
-        i18n-placeholder
         className={style.input}
         value={text}
         onChange={onCommentChangeHandler}

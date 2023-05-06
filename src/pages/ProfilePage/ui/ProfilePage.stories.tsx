@@ -11,9 +11,7 @@ import ProfilePage from './ProfilePage';
 export default {
   title: 'pages/ProfilePage',
   component: ProfilePage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;

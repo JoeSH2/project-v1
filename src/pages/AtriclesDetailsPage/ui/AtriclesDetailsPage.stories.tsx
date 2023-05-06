@@ -1,15 +1,13 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Article, ArticleBlockType } from 'entity/Article';
+import { Article, ArticleBlockType, ArticleType } from 'entity/Article';
 import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
-
+import { ArticleSortField } from 'features/ArticleSort';
 import AtriclesDetailsPage from './AtriclesDetailsPage';
 
 export default {
   title: 'pages/AtriclesDetailsPage',
   component: AtriclesDetailsPage,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: { backgroundColor: { control: 'color' }, },
 } as ComponentMeta<typeof AtriclesDetailsPage>;
 
 const Template: ComponentStory<typeof AtriclesDetailsPage> = () => <AtriclesDetailsPage />;
@@ -21,7 +19,7 @@ const article: Article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
-  type: ['IT'],
+  type: [ArticleType.IT],
   blocks: [
     {
       id: '1',

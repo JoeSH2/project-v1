@@ -39,7 +39,7 @@ export const Input: FC<InputProps> = memo(({
     if (autofocus) {
       ref.current?.focus();
     }
-  }, []);
+  }, [autofocus]);
 
   return (
     <input

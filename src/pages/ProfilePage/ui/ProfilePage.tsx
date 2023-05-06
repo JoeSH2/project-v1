@@ -9,8 +9,9 @@ import { useParams } from 'react-router-dom';
 import { useAppDispatch } from 'shared/hooks/useAppDispatch';
 import { useInitialEffect } from 'shared/hooks/useInitialEffect';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { PageWrapper } from 'shared/ui/PageWrapper';
+import { Block } from 'shared/ui/Block';
 import { Text } from 'shared/ui/Text';
+import { PageWrapper } from 'widgets/PageWrapper';
 
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 import style from './ProfilePage.module.scss';
@@ -53,26 +54,24 @@ const ProfilePage: FC = () => {
   });
 
   return (
-    <PageWrapper>
-      <div className={classNames(style.ProfilePage, {}, [])}>
-        <div className={style.row}>
-          <ProfileHeader data={formData} />
-          {validateFormError?.length && validateFormError.map((err) => (
-            <Text key={err} theme="red" text={err} />
-          ))}
-          <ProfileList
-            onChangeFirstname={onChangeFirstname}
-            onChangeLastname={onChangeLastname}
-            onChangeAge={onChangeAge}
-            onChangeCity={onChangeCity}
-            onChangeUsername={onChangeUsername}
-            onChangeAvatar={onChangeAvatar}
-            onChangeCountry={onChangeCountry}
-            onChangeCurrency={onChangeCurrency}
-            data={formData}
-          />
-        </div>
-      </div>
+    <PageWrapper className={style.page}>
+      <Block className={style.ProfilePage}>
+        <ProfileHeader data={formData} />
+        {validateFormError?.length && validateFormError.map((err) => (
+          <Text key={err} theme="red" text={err} />
+        ))}
+        <ProfileList
+          onChangeFirstname={onChangeFirstname}
+          onChangeLastname={onChangeLastname}
+          onChangeAge={onChangeAge}
+          onChangeCity={onChangeCity}
+          onChangeUsername={onChangeUsername}
+          onChangeAvatar={onChangeAvatar}
+          onChangeCountry={onChangeCountry}
+          onChangeCurrency={onChangeCurrency}
+          data={formData}
+        />
+      </Block>
     </PageWrapper>
   );
 };
