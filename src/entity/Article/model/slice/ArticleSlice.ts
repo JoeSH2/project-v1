@@ -1,10 +1,10 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { fetchArticleById } from '../services/fetchArticleById';
-import { Article } from '../types/Article';
-import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema';
+import { fetchArticleById } from '../services/fetchArticleById'
+import { Article } from '../types/Article'
+import { ArticleDetailsSchema } from '../types/ArticleDetailsSchema'
 
-const initialState: ArticleDetailsSchema = { isLoading: false, };
+const initialState: ArticleDetailsSchema = { isLoading: false }
 
 export const ArticleSlice = createSlice({
   name: 'Article',
@@ -12,19 +12,19 @@ export const ArticleSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchArticleById.pending, (state) => {
-      state.error = undefined;
-      state.isLoading = true;
-    });
+      state.error = undefined
+      state.isLoading = true
+    })
     builder.addCase(fetchArticleById.rejected, (state, actions) => {
-      state.isLoading = false;
-      state.error = actions.payload;
-    });
+      state.isLoading = false
+      state.error = actions.payload
+    })
     builder.addCase(fetchArticleById.fulfilled, (state, action: PayloadAction<Article>) => {
-      state.isLoading = false;
-      state.data = action.payload;
-    });
+      state.isLoading = false
+      state.data = action.payload
+    })
   },
-});
+})
 
-export const { actions: ArticleActions } = ArticleSlice;
-export const { reducer: ArticleReducer } = ArticleSlice;
+export const { actions: ArticleActions } = ArticleSlice
+export const { reducer: ArticleReducer } = ArticleSlice
