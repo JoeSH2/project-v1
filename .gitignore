@@ -1,4 +1,7 @@
+package.txt
 /build
 node_modules
 .idea
-package.txt
+/storybook-static
+.loki/report.html
+.loki/report.json
