@@ -1,15 +1,15 @@
 name: linting, testing, building
 on:
   push:
-    branches: [ bnbnbnbnbn ]
+    branches: [bnbnbnbnbn]
   pull_request:
-    branches: [ bnbnbnbnbn ]
+    branches: [bnbnbnbnbn]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
 
     steps:
       - uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
       - name: build production
         run: npm run build:prod
         if: always()
-      - name: lint ts 
+      - name: lint ts
         run: npm run lint:ts
         if: always()
       - name: lint css
@@ -34,5 +34,5 @@ jobs:
         run: npm run storybook:build
         if: always()
       - name: screenshot test
-        run: npm run test:ui:ci
+        run: npm run test:ui
         if: always()

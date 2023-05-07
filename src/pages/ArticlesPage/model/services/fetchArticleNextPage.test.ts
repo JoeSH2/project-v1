@@ -1,9 +1,9 @@
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
+import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk'
 
-import { fetchArticleNextPage } from './fetchArticleNextPage';
-import { fetchArticlePage } from './fetchArticlePage';
+import { fetchArticleNextPage } from './fetchArticleNextPage'
+import { fetchArticlePage } from './fetchArticlePage'
 
-jest.mock('./fetchArticlePage');
+jest.mock('./fetchArticlePage')
 
 describe('fetchArticleNextPage', () => {
   test('success', async () => {
@@ -17,13 +17,13 @@ describe('fetchArticleNextPage', () => {
         isLoading: false,
         limit: 8,
       },
-    });
+    })
 
-    await thunk.callThunk();
+    await thunk.callThunk()
 
-    expect(thunk.dispatch).toBeCalledTimes(4);
-    expect(fetchArticlePage).toHaveBeenCalledWith({ page: 3 });
-  });
+    expect(thunk.dispatch).toBeCalledTimes(4)
+    expect(fetchArticlePage).toHaveBeenCalledWith({ replace: false })
+  })
 
   test('not fetch', async () => {
     const thunk = new TestAsyncThunk(fetchArticleNextPage, {
@@ -36,11 +36,11 @@ describe('fetchArticleNextPage', () => {
         hasMore: false,
         limit: 8,
       },
-    });
+    })
 
-    await thunk.callThunk();
+    await thunk.callThunk()
 
-    expect(thunk.dispatch).toBeCalledTimes(2);
-    expect(fetchArticlePage).not.toBeCalled();
-  });
-});
+    expect(thunk.dispatch).toBeCalledTimes(2)
+    expect(fetchArticlePage).not.toBeCalled()
+  })
+})

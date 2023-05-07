@@ -27,14 +27,13 @@
 }
 
 .title {
-    padding: 0 0 1rem 0;
+    padding: 0 0 1rem;
     font-weight: 700;
 }
 
 .wrapper {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column wrap;
     border-radius: 6px;
     padding: 4rem;
     background-color: var(--bg-color-dark);

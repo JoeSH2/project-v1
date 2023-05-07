@@ -63,6 +63,9 @@
   "Wrong login or password, try again!": "Неверный логин или пароль, попробуйте снова!",
   "ascending": "возрастанию",
   "descending": "убыванию",
+  "main": {
+    "Create article": "Создать статью"
+  },
   "name": "имя",
   "newest": "новейший",
   "number of views": "количество просмотров",

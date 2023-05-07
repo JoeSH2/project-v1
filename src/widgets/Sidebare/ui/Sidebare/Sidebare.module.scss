@@ -62,7 +62,7 @@
     min-width: var(--sidebare-width-collapse);
 
     .wrapperLink {
-        margin: 2rem 0 0 0;
+        margin: 2rem 0 0;
 
         ul {
             align-items: center;
@@ -84,6 +84,6 @@
     }
 
     100% {
-        opacity: 100%;
+        opacity: 1;
     }
 }

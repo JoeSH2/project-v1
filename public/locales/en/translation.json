@@ -63,6 +63,9 @@
   "Wrong login or password, try again!": "Wrong login or password, try again!",
   "ascending": "ascending",
   "descending": "descending",
+  "main": {
+    "Create article": "Create article"
+  },
   "name": "name",
   "newest": "newest",
   "number of views": "number of views",

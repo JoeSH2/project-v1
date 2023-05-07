@@ -1,4 +1,5 @@
 import { AboutPageAsync, MainPageAsync } from 'pages'
+import { ArticleCreatePage } from 'pages/ArticleCreatePage'
 import { ArticlesPageAsync } from 'pages/ArticlesPage'
 import { AtriclesDetailsPageAsync } from 'pages/AtriclesDetailsPage'
 import { PageNotFound } from 'pages/PageNotFound'
@@ -61,12 +62,12 @@ export const routesConfig: Record<AppRoutes, RouterAuth> = {
   },
   [AppRoutes.ARTICLE_CREATE]: {
     path: `${RoutePath.article_create}`,
-    element: <AtriclesDetailsPageAsync />,
+    element: <ArticleCreatePage />,
     authUser: true,
   },
   [AppRoutes.ARTICLE_EDIT]: {
     path: `${RoutePath.article_details}:id`,
-    element: <AtriclesDetailsPageAsync />,
+    element: <ArticleCreatePage />,
     authUser: true,
   },
 }

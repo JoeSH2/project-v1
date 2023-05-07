@@ -2,7 +2,7 @@
     --font-family-main: 'Mulish', sans-serif;
     --font-size-s: 12px;
     --font-line-s: 12px;
-    --font-m: var(var(--font-size-s) / var(--font-line-s) var(--font-family-main));
+    --font-s: var(var(--font-size-s) / var(--font-line-s) var(--font-family-main));
     --font-size-m: 16px;
     --font-line-m: 16px;
     --font-m: var(var(--font-size-m) / var(--font-line-m) var(--font-family-main));
@@ -15,7 +15,7 @@
     --font-xl: var(var(--font-size-xl) / var(--font-line-xl) var(--font-family-main));
     --font-size-xxl: 32px;
     --font-line-xxl: 32px;
-    --font-xl: var(var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main));
+    --font-xxl: var(var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main));
     --font-default-invereted: #fff;
     --font-dark-invereted: #000;
     --navbare-height: 60px;
@@ -39,5 +39,5 @@
     --color-red: #dd0505;
     --color-red-dark: #c00707;
     --color-gray: #a5a5a5;
-    --color-gray-dark: #888888;
+    --color-gray-dark: #888;
 }

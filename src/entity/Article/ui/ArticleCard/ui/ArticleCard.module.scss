@@ -1,6 +1,6 @@
-.articleCard {}
-
-.SMALL {}
+.articleCard {
+    width: 300px;
+}
 
 .wrapperIcon {
     position: relative;
@@ -40,7 +40,7 @@
 }
 
 .wrapperInfo {
-    margin: 20px 0 0 0;
+    margin: 20px 0 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -68,7 +68,7 @@
 }
 
 .title {
-    margin: 15px 0 0 0;
+    margin: 15px 0 0;
     font-weight: 700;
 
     h1 {
