@@ -8,15 +8,15 @@ import { ProfileList } from './ProfileList';
 export default {
   title: 'entity/ProfileList',
   component: ProfileList,
-  argTypes: { backgroundColor: { control: 'color' }, },
+  argTypes: { backgroundColor: { control: 'color' } },
 } as ComponentMeta<typeof ProfileList>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ProfileList> = (args) => <ProfileList {...args} />;
+const Template: ComponentStory<typeof ProfileList> = args => <ProfileList {...args} />;
 
 export const Dark = Template.bind({});
 Dark.args = {
-  data: {
+  form: {
     username: 'admin',
     age: 22,
     country: CountryList.CZECH,
@@ -27,20 +27,22 @@ Dark.args = {
     avatar: 'dasdasd',
   },
 };
-Dark.decorators = [StoreDecorator({
-  profile: {
-    data: {
-      username: 'admin',
-      age: 22,
-      country: CountryList.CZECH,
-      lastname: 'ulbi tv',
-      first: 'asd',
-      city: 'asf',
-      currency: CurrencyList.USD,
-      avatar: 'dasdasd',
+Dark.decorators = [
+  StoreDecorator({
+    profile: {
+      data: {
+        username: 'admin',
+        age: 22,
+        country: CountryList.CZECH,
+        lastname: 'ulbi tv',
+        first: 'asd',
+        city: 'asf',
+        currency: CurrencyList.USD,
+        avatar: 'dasdasd',
+      },
     },
-  },
-})];
+  }),
+];
 
 export const Error = Template.bind({});
-Error.decorators = [StoreDecorator({ profile: { error: 'asdasd', }, })];
+Error.decorators = [StoreDecorator({ profile: { error: 'asdasd' } })];

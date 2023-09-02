@@ -8,20 +8,19 @@
 }
 
 .wrapperLink {
-    display: block;
     margin: 2rem 0 0 1rem;
 
-    ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
-        transition: all 0.2s ease;
+    // ul {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: center;
+    //     align-items: start;
+    //     transition: all 0.2s ease;
 
-        span {
-            animation: linkOpacity 0.2s forwards;
-        }
-    }
+    //     span {
+    //         animation: linkOpacity 0.2s forwards;
+    //     }
+    // }
 }
 
 .switchers {
@@ -62,7 +61,8 @@
     min-width: var(--sidebare-width-collapse);
 
     .wrapperLink {
-        margin: 2rem 0 0;
+        margin: 2rem 0 0 1rem;
+
 
         ul {
             align-items: center;

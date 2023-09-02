@@ -1,18 +1,21 @@
 .pageWrapper {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding: 3rem;
-    height: calc(100vh - var(--navbare-height));
-    overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 3rem;
+  height: calc(100vh - var(--navbare-height));
+  overflow-y: scroll;
 
-    &::-webkit-scrollbar {
-        background: var(--bg-color-dark);
-        width: 8px;
-    }
+  &::-webkit-scrollbar {
+    background: var(--bg-color-dark);
+    width: 8px;
+  }
 
-    &::-webkit-scrollbar-thumb {
-        background: var(--bg-color-special-dark);
-        border-radius: 3px;
-    }
+  &::-webkit-scrollbar-thumb {
+    background: var(--bg-color-special-dark);
+  }
+}
+
+.trigger {
+  height: 10px;
 }

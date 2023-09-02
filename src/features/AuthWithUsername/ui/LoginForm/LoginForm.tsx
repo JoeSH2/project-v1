@@ -1,96 +1,82 @@
-import { getLoginUserStatus } from 'features/AuthWithUsername/model/selectors/getLoginUserStatus';
-import React, {
-  FC, memo, useCallback, useEffect,
-} from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ReducerList, useAsyncWrapperReducer } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Input } from 'shared/ui/Input';
-import { Text } from 'shared/ui/Text';
-import { PageLoader } from 'widgets/PageLoader';
+import React, { FC, memo, useCallback, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
+import { useAppDispatch } from 'shared/hooks/useAppDispatch'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { ReducerList, useAsyncWrapperReducer } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer'
+import { Button, ButtonTheme } from 'shared/ui/Button'
+import { Input } from 'shared/ui/Input'
+import { Text } from 'shared/ui/Text'
+import { PageLoader } from 'widgets/PageLoader'
 
-import { asyncLoginUser } from '../..';
-import { getLoginUserError } from '../../model/selectors/getLoginUserError';
-import { getLoginUserLoading } from '../../model/selectors/getLoginUserLoading';
-import { getLoginUsername } from '../../model/selectors/getLoginUsername';
-import { getLoginUserPassword } from '../../model/selectors/getLoginUserPassword';
-import { loginUserActions, loginUserReducer } from '../../model/slice/loginUserSlice';
-import style from './LoginForm.module.scss';
+import { asyncLoginUser } from '../..'
+import { getLoginUserError } from '../../model/selectors/getLoginUserError'
+import { getLoginUserLoading } from '../../model/selectors/getLoginUserLoading'
+import { getLoginUsername } from '../../model/selectors/getLoginUsername'
+import { getLoginUserPassword } from '../../model/selectors/getLoginUserPassword'
+import { loginUserActions, loginUserReducer } from '../../model/slice/loginUserSlice'
+import style from './LoginForm.module.scss'
 
-const listState: ReducerList = { loginUser: loginUserReducer, };
+const listState: ReducerList = { loginUser: loginUserReducer }
 export interface LoginFormProps {
-  className?: string;
+  className?: string
 }
 
 const LoginForm: FC<LoginFormProps> = memo(({ className }: LoginFormProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
 
-  const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch()
 
-  const username = useSelector(getLoginUsername);
-  const password = useSelector(getLoginUserPassword);
-  const error = useSelector(getLoginUserError);
-  const isLoading = useSelector(getLoginUserLoading);
+  const username = useSelector(getLoginUsername)
+  const password = useSelector(getLoginUserPassword)
+  const error = useSelector(getLoginUserError)
+  const isLoading = useSelector(getLoginUserLoading)
 
-  const onChangeLogin = useCallback((value: string) => {
-    dispatch(loginUserActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeLogin = useCallback(
+    (value: string) => {
+      dispatch(loginUserActions.setUsername(value))
+    },
+    [dispatch],
+  )
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginUserActions.setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginUserActions.setPassword(value))
+    },
+    [dispatch],
+  )
 
   const onClickLogin = useCallback(() => {
-    dispatch(asyncLoginUser({ username, password }));
-  }, [dispatch, password, username]);
+    dispatch(asyncLoginUser({ username, password }))
+  }, [dispatch, password, username])
 
-  useAsyncWrapperReducer(listState);
+  useAsyncWrapperReducer(listState)
 
   return (
     <div className={style.LoginForm}>
-      <h3 className={style.title}>
-        {t('Sing in with')}
-      </h3>
+      <h3 className={style.title}>{t('Sing in with')}</h3>
       <form className={classNames(style.form, {}, [className])}>
         <div className={style.wrapperInput}>
-          <label className={style.label} htmlFor="login">{t('Login')}</label>
-          <Input
-            onChange={onChangeLogin}
-            value={username}
-            autofocus
-            theme="clear"
-            className={style.input}
-          />
+          <label className={style.label} htmlFor='login'>
+            {t('Login')}
+          </label>
+          <Input onChange={onChangeLogin} value={username} autofocus theme='clear' className={style.input} />
         </div>
         <div className={style.wrapperInput}>
-          <label className={style.label} htmlFor="password">{t('Password')}</label>
-          <Input
-            onChange={onChangePassword}
-            value={password}
-            theme="clear"
-            className={style.input}
-            type="password"
-          />
+          <label className={style.label} htmlFor='password'>
+            {t('Password')}
+          </label>
+          <Input onChange={onChangePassword} value={password} theme='clear' className={style.input} type='password' />
         </div>
-        {error && <Text 
-          size="m" 
-          className={style.errorText} 
-          theme="red" 
-          text={t('Wrong login or password, try again!')} 
-        />}
-        <Button
-          onClick={onClickLogin}
-          disabled={isLoading}
-          className={style.loginBtn}
-        >
+        {error && (
+          <Text size='m' className={style.errorText} theme='red' text={t('Wrong login or password, try again!')} />
+        )}
+        <Button onClick={onClickLogin} disabled={isLoading} className={style.loginBtn}>
           {t('Sign in')}
         </Button>
       </form>
     </div>
-  );
-});
+  )
+})
 
-export default LoginForm;
+export default LoginForm

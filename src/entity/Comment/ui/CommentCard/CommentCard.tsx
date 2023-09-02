@@ -1,7 +1,4 @@
-import { getProfileData } from 'entity/Profile';
-import { getArticleDetailsCommentsLoading } from 'pages/AtriclesDetailsPage/model/selectors/comments';
 import React, { FC } from 'react';
-import { useSelector } from 'react-redux';
 import DefaultAvatar from 'shared/assets/icon/default-avatar.jpg';
 import { RoutePath } from 'shared/config/routeConfig/AppRoute';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -24,12 +21,12 @@ export const CommentCard: FC<CommentCardProps> = ({ className, comment, isLoadin
     return (
       <div className={classNames(style.Comment, {}, [className])}>
         <div className={style.userWrapper}>
-          <Skeleton className={style.avatar} height="50px" width="50px" rounded="50%" />
-          <Skeleton className={style.username} height="24px" width="100px" />
+          <Skeleton className={style.avatar} height='50px' width='50px' rounded='50%' />
+          <Skeleton className={style.username} height='24px' width='100px' />
         </div>
         <div className={style.wrapperTextSkeleton}>
-          <Skeleton height="12px" width="100%" />
-          <Skeleton height="12px" width="300px" />
+          <Skeleton height='12px' width='100%' />
+          <Skeleton height='12px' width='300px' />
         </div>
       </div>
     );
@@ -44,10 +41,10 @@ export const CommentCard: FC<CommentCardProps> = ({ className, comment, isLoadin
       <div className={style.userWrapper}>
         <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={style.link}>
           <Avatar size={50} className={style.avatar} src={comment.user.avatar || DefaultAvatar} />
-          <Text className={style.username} size="m" text={comment.user.username} />
+          <Text className={style.username} size='m' text={comment.user.username} />
         </AppLink>
       </div>
-      <Text size="m" align="left" className={style.text} text={comment.text} />
+      <Text size='m' align='left' className={style.text} text={comment.text} />
     </div>
   );
 };

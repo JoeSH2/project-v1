@@ -1,24 +1,23 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Theme } from 'app/providers/ThemesProvider'
-import { ArticleBlockType, ArticleType } from 'entity/Article/model/types/Article'
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator'
-import { ArticleCard } from './ArticleCard'
+import { Meta, StoryFn } from '@storybook/react';
+import { Theme } from 'app/providers/ThemesProvider';
+import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
+import { ArticleBlockType, ArticleType } from '../../../model/types/Article';
+import { ArticleCard } from './ArticleCard';
 
 export default {
   title: 'entity/Article/ArticleCard',
   component: ArticleCard,
   argTypes: { backgroundColor: { control: 'color' } },
-} as ComponentMeta<typeof ArticleCard>
+} as Meta<typeof ArticleCard>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ArticleCard> = (args) => <ArticleCard {...args} />
+const Template: StoryFn<typeof ArticleCard> = args => <ArticleCard {...args} />;
 
-export const Dark = Template.bind({})
+export const Dark = Template.bind({});
 Dark.args = {
   article: {
     id: '1',
     user: {
-      id: 1,
+      id: '1',
       username: 'Smile',
       avatar: undefined,
     },
@@ -41,14 +40,14 @@ Dark.args = {
       },
     ],
   },
-}
+};
 
-export const Default = Template.bind({})
+export const Default = Template.bind({});
 Default.args = {
   article: {
     id: '1',
     user: {
-      id: 1,
+      id: '1',
       username: 'Smile',
       avatar: undefined,
     },
@@ -71,5 +70,5 @@ Default.args = {
       },
     ],
   },
-}
-Default.decorators = [ThemeDecorator(Theme.DEFAULT)]
+};
+Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

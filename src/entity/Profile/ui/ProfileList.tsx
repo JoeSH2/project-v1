@@ -1,27 +1,20 @@
-import { CountryList, CountrySelect } from 'entity/Country';
+import { CountrySelect } from 'entity/Country';
 import { CurrencySelect } from 'entity/Currency';
 import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ReducerList, useAsyncWrapperReducer } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
-import { Select } from 'shared/ui/Select';
 import { Text } from 'shared/ui/Text';
-
-import { getProfileError } from '../model/selectors/getProfileError';
-import { getProfileLoading } from '../model/selectors/getProfileLoading';
-import { getProfileReadonly } from '../model/selectors/getProfileReadonly';
-import { profileReducer } from '../model/slice/ProfileSlice';
-import { Profile } from '../model/types/ProfileSchema';
+import { Profile } from '../model/types/Profile';
 import style from './ProfileList.module.scss';
 
 interface ProfileListProps {
   className?: string;
-  theme?: string;
-  children?: React.ReactNode;
-  data?: Profile;
+  form?: Profile;
+  readonly?: boolean;
+  isLoading?: boolean;
+  error?: string;
   onChangeFirstname: () => void;
   onChangeLastname: () => void;
   onChangeAge: () => void;
@@ -32,123 +25,127 @@ interface ProfileListProps {
   onChangeCurrency: () => void;
 }
 
-const listState: ReducerList = { profile: profileReducer, };
-
 export const ProfileList: FC<ProfileListProps> = ({
+  isLoading,
+  error,
+  readonly,
+  form,
   onChangeFirstname,
   onChangeLastname,
   onChangeAge,
   onChangeCountry,
-  data,
   onChangeCity,
   onChangeUsername,
   onChangeAvatar,
   onChangeCurrency,
 }) => {
   const { t } = useTranslation('profile');
-  const readonly = useSelector(getProfileReadonly);
-  const isLoading = useSelector(getProfileLoading);
-  const error = useSelector(getProfileError);
-
-  useAsyncWrapperReducer(listState);
 
   if (isLoading) {
     return (
-      <form className={classNames(style.ProfileList, {}, [style.load])} action="">
-        <Loader theme="large" />
+      <form className={classNames(style.ProfileList, {}, [style.load])} action=''>
+        <Loader theme='large' />
       </form>
     );
   }
 
   if (error) {
     return (
-      <form className={classNames(style.ProfileList, { [style.error]: error }, [])} action="">
-        <Text 
-          theme="red" 
-          title={t('Data retrieval error')} 
-          text={t('Profile data was not received, try reloading the page')} />
+      <form className={classNames(style.ProfileList, { [style.error]: error }, [])} action=''>
+        <Text
+          theme='red'
+          title={t('Data retrieval error')}
+          text={t('Profile data was not received, try reloading the page')}
+        />
       </form>
     );
   }
 
   return (
-    <form className={classNames(style.ProfileList, {}, [])} action="">
+    <form className={classNames(style.ProfileList, {}, [])} action=''>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('Username')}</label>
+        <label className={style.label} htmlFor='firstname'>
+          {t('Username')}
+        </label>
         <Input
-          value={data?.username}
+          data-testid='ProfileList.username'
+          value={form?.username}
           onChange={onChangeUsername}
-          theme="default"
+          theme='default'
           className={style.input}
           readonly={readonly}
         />
       </div>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('Firstname')}</label>
+        <label className={style.label} htmlFor='firstname'>
+          {t('Firstname')}
+        </label>
         <Input
-          value={data?.first}
+          data-testid='ProfileList.firstname'
+          value={form?.first}
           onChange={onChangeFirstname}
-          theme="default"
+          theme='default'
           className={style.input}
           readonly={readonly}
         />
       </div>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('Lastname')}</label>
+        <label className={style.label} htmlFor='firstname'>
+          {t('Lastname')}
+        </label>
         <Input
-          value={data?.lastname}
+          value={form?.lastname}
           onChange={onChangeLastname}
-          theme="default"
+          theme='default'
           className={style.input}
           readonly={readonly}
         />
       </div>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('Age')}</label>
+        <label className={style.label} htmlFor='firstname'>
+          {t('Age')}
+        </label>
         <Input
-          type="number"
-          value={data?.age}
+          type='number'
+          value={form?.age}
           onChange={onChangeAge}
-          theme="default"
+          theme='default'
           className={style.input}
           readonly={readonly}
         />
       </div>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('Avatar')}</label>
+        <label className={style.label} htmlFor='firstname'>
+          {t('Avatar')}
+        </label>
         <Input
-          value={data?.avatar}
+          value={form?.avatar}
           onChange={onChangeAvatar}
-          theme="default"
+          theme='default'
           className={style.input}
           readonly={readonly}
         />
       </div>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('City')}</label>
-        <Input
-          value={data?.city}
-          onChange={onChangeCity}
-          theme="default"
-          className={style.input}
-          readonly={readonly}
-        />
+        <label className={style.label} htmlFor='firstname'>
+          {t('City')}
+        </label>
+        <Input value={form?.city} onChange={onChangeCity} theme='default' className={style.input} readonly={readonly} />
       </div>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('Country')}</label>
-        <CountrySelect
-          value={data?.country}
-          onChange={onChangeCountry}
-          className={style.input}
-          readonly={readonly}
-        />
+        <label className={style.label} htmlFor='firstname'>
+          {t('Country')}
+        </label>
+        <CountrySelect value={form?.country} onChange={onChangeCountry} className={style.select} readonly={readonly} />
       </div>
       <div className={style.wrapper}>
-        <label className={style.label} htmlFor="firstname">{t('Currency')}</label>
+        <label className={style.label} htmlFor='firstname'>
+          {t('Currency')}
+        </label>
         <CurrencySelect
-          value={data?.currency}
+          value={form?.currency}
           onChange={onChangeCurrency}
-          className={style.input}
+          className={style.select}
           readonly={readonly}
         />
       </div>

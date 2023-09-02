@@ -1,0 +1,40 @@
+.EditorProfileHeader {
+  position: relative;
+  padding-bottom: 45px;
+
+  .titleWrapper {
+    flex: 0 1 50%;
+    display: flex;
+    align-items: center;
+  }
+
+  .title {
+    margin-right: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .editBtn {
+    font-size: var(--font-size-ml);
+    padding: 8px 26px;
+
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 2px;
+    background-color: (var(--bg-color-special));
+  }
+}
+
+.wrapperBtn {
+  flex: 0 1 50%;
+
+  .editBtn:last-child {
+    margin-left: 25px;
+  }
+}

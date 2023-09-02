@@ -1,4 +1,3 @@
-import { Article, ArticleBlockText, ArticleBlockType, ArticleView } from 'entity/Article/model/types/Article'
 import { FC, HTMLAttributeAnchorTarget, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +10,7 @@ import { Card } from 'shared/ui/Card'
 import { Text } from 'shared/ui/Text'
 
 import { AppLink } from 'shared/ui/AppLink'
+import { Article, ArticleBlockText, ArticleBlockType, ArticleView } from '../../../model/types/Article'
 import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText'
 import style from './ArticleCard.module.scss'
 

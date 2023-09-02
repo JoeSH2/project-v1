@@ -1,21 +1,37 @@
 :root {
     --font-family-main: 'Mulish', sans-serif;
+    
+    // FONT SIZE s
     --font-size-s: 12px;
     --font-line-s: 12px;
     --font-s: var(var(--font-size-s) / var(--font-line-s) var(--font-family-main));
+
+    // FONT SIZE m
     --font-size-m: 16px;
     --font-line-m: 16px;
     --font-m: var(var(--font-size-m) / var(--font-line-m) var(--font-family-main));
+
+    // FONT SIZE ml
+    --font-size-ml: 18px;
+    --font-line-ml: 18px;
+    --font-m: var(var(--font-size-ml) / var(--font-line-ml) var(--font-family-main));
+
+    // FONT SIZE l
     --font-size-l: 22px;
     --font-line-l: 22px;
     --font-l: var(var(--font-size-l) / var(--font-line-l) var(--font-family-main));
+
     --font-size-large: 46px;
+    // FONT SIZE xl
     --font-size-xl: 26px;
     --font-line-xl: 26px;
     --font-xl: var(var(--font-size-xl) / var(--font-line-xl) var(--font-family-main));
+
+    // FONT SIZE xxl
     --font-size-xxl: 32px;
     --font-line-xxl: 32px;
     --font-xxl: var(var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main));
+    
     --font-default-invereted: #fff;
     --font-dark-invereted: #000;
     --navbare-height: 60px;
@@ -36,8 +52,8 @@
     --bg-color-gray: #4e4e4e;
 
     // Color
-    --color-red: #dd0505;
-    --color-red-dark: #c00707;
+    --color-red: #bb1010;
+    --color-red-dark: #940606;
     --color-gray: #a5a5a5;
     --color-gray-dark: #888;
 }

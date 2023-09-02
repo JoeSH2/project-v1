@@ -6,9 +6,9 @@
       "userId": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "json-server",
-      "userId": 2
+      "userId": "2"
     }
   ],
   "articles": [
@@ -20,7 +20,9 @@
       "img": "https://media.tproger.ru/uploads/2017/04/11-js-tricks.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -90,7 +92,9 @@
       "img": "https://imageio.forbes.com/specials-images/imageserve/638e984730372f722d4072b6/Bitcoin-on-white-background/960x0.jpg?format=jpg&width=960",
       "views": 15328,
       "createdAt": "31.02.2022",
-      "type": ["CRYPTO"],
+      "type": [
+        "CRYPTO"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -160,7 +164,9 @@
       "img": "https://www.cozumpark.com/wp-content/uploads/2022/12/react-nedir-react-ile-neler-yapilabilir-jpeg.webp",
       "views": 19432,
       "createdAt": "11.06.2021",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -230,7 +236,9 @@
       "img": "https://s3.amazonaws.com/cms.ipressroom.com/173/files/20170/588109702cfac20aea00dbf0_Art+of+Science+spheres/Art+of+Science+spheres_97f8309b-e4b0-460c-a7b8-a87ca0e5485d-prv.jpg",
       "views": 2052,
       "createdAt": "03.02.2023",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -300,7 +308,9 @@
       "img": "https://t3.ftcdn.net/jpg/03/86/45/96/360_F_386459614_7JRoaj5LBSbum74i1LXf3oaoMnxQwJdu.jpg",
       "views": 427,
       "createdAt": "21.05.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -370,7 +380,9 @@
       "img": "https://blockworks-co.imgix.net/wp-content/uploads/2023/03/bitcoin-gold-sov.jpg",
       "views": 1538,
       "createdAt": "31.02.2022",
-      "type": ["CRYPTO"],
+      "type": [
+        "CRYPTO"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -440,7 +452,9 @@
       "img": "https://d585tldpucybw.cloudfront.net/sfimages/default-source/blogs/templates/social/reactt-light_1200x628.png?sfvrsn=43eb5f2a_2",
       "views": 1767,
       "createdAt": "21.11.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -510,7 +524,9 @@
       "img": "https://chronicle.brightspotcdn.com/dims4/default/90478b0/2147483647/strip/true/crop/811x426+0+92/resize/1200x630!/quality/90/?url=http%3A%2F%2Fchronicle-brightspot.s3.amazonaws.com%2F28%2Fd2%2F5f90613f9169c9fb6b7829432176%2F69d0c03586b265ca7828c568ab8becf6.jpg",
       "views": 20431,
       "createdAt": "13.05.2021",
-      "type": ["ECONOMICS"],
+      "type": [
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -580,7 +596,9 @@
       "img": "https://javascript.info/img/site_preview_en_512x512.png",
       "views": 9261,
       "createdAt": "31.09.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -650,7 +668,10 @@
       "img": "https://phantom-marca.unidadeditorial.es/d9a1af299a7596409ce8d061889577f5/resize/1200/f/webp/assets/multimedia/imagenes/2022/05/14/16525440098487.jpg",
       "views": 22578,
       "createdAt": "14.01.2023",
-      "type": ["IT", "CRYPTO"],
+      "type": [
+        "IT",
+        "CRYPTO"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -720,7 +741,9 @@
       "img": "https://gomobi.pl/wp-content/uploads/2019/06/react-native.png",
       "views": 8542,
       "createdAt": "16.12.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -790,7 +813,9 @@
       "img": "https://cdn.vox-cdn.com/thumbor/AsCb7hsaezVAhJdYuTuGYsCkODU=/0x0:2040x1360/2000x1333/filters:focal(1020x680:1021x681)/cdn.vox-cdn.com/uploads/chorus_asset/file/10581501/wjoel_1777_180403_youtube_003.jpg",
       "views": 1022,
       "createdAt": "09.09.2009",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -860,7 +885,9 @@
       "img": "https://a.thumbs.redditmedia.com/zDOFJTXd6fmlD58VDGypiV94Leflz11woxmgbGY6p_4.png",
       "views": 3022,
       "createdAt": "22.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -930,7 +957,9 @@
       "img": "https://thumbs.dreamstime.com/b/international-sanctions-concept-economic-sports-political-reasons-editable-clip-art-leaders-agree-to-cut-not-to-cut-65258221.jpg",
       "views": 1328,
       "createdAt": "30.02.2022",
-      "type": ["ECONOMICS"],
+      "type": [
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1000,7 +1029,9 @@
       "img": "https://lifeology.io/wp-content/uploads/2020/03/Left_Right_Brain-1024x1024.jpg",
       "views": 2722,
       "createdAt": "22.02.2022",
-      "type": ["SCIENCE"],
+      "type": [
+        "SCIENCE"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1070,7 +1101,9 @@
       "img": "https://appleinsider.ru/wp-content/uploads/2023/01/rutube_iphone_head-750x418.jpg",
       "views": 782,
       "createdAt": "04.05.2019",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1140,7 +1173,9 @@
       "img": "https://media.istockphoto.com/id/1214667260/vector/time-money-balance-urgency.jpg?s=612x612&w=0&k=20&c=MaCseQLNgrprHDpABe5N2kY5z4yAErxOfCi7Vn4ERfI=",
       "views": 6632,
       "createdAt": "26.07.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1210,7 +1245,10 @@
       "img": "https://insights.som.yale.edu/sites/default/files/styles/rectangle_xs/public/2021-03/bitcoin%20bubble.jpg?h=a51a5cf9&itok=azTpMsbq",
       "views": 14218,
       "createdAt": "28.08.2022",
-      "type": ["IT", "CRYPTO"],
+      "type": [
+        "IT",
+        "CRYPTO"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1280,7 +1318,9 @@
       "img": "https://bs-uploads.toptal.io/blackfish-uploads/components/seo/content/og_image_file/og_image/1146385/1105-A_Guide_to_Webpack_and_React_Dan_Social-119b3bc7125401b042860514ada7f1e7.png",
       "views": 1022,
       "createdAt": "06.05.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1350,7 +1390,10 @@
       "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJ1sDOxKcupMYzZg_sTnDKmQq0B9Bm7oaHg&usqp=CAU",
       "views": 11072,
       "createdAt": "26.08.2023",
-      "type": ["IT", "ECONOMICS"],
+      "type": [
+        "IT",
+        "ECONOMICS"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -1474,53 +1517,59 @@
       "id": "1",
       "username": "ADMIN",
       "password": "123",
-      "role": "ADMIN",
+      "role": [
+        "ADMIN"
+      ],
       "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/221/612/small_2x/hacker-icon-logo-background-free-vector.jpg"
     },
     {
       "id": "2",
-      "username": "Anton",
+      "username": "manager",
       "password": "123",
-      "role": "USER",
+      "role": [
+        "MANAGER"
+      ],
       "avatar": "https://i.pinimg.com/originals/c5/78/d7/c578d78c35b57d5f033dbf40edc4ee27.jpg"
     },
     {
       "id": "3",
-      "username": "foremansh2",
-      "password": "admin",
-      "role": "ADMIN",
+      "username": "user",
+      "password": "123",
+      "role": [
+        "USER"
+      ],
       "avatar": "https://cdnb.artstation.com/p/assets/images/images/048/127/951/large/akiro-art-11.jpg?1649265953"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "Danila",
-      "lastname": "Kuzin",
+      "first": "admin",
+      "lastname": "admin",
       "age": 22,
-      "currency": "USD",
-      "country": "Russia",
+      "currency": "RUB",
+      "country": "Czech",
       "city": "Moscow",
-      "username": "ADMIN",
+      "username": "admin",
       "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/221/612/small_2x/hacker-icon-logo-background-free-vector.jpg"
     },
     {
       "id": "2",
       "first": "Kaka",
-      "lastname": "Kuku",
+      "lastname": "Smirnov",
       "age": 16,
-      "currency": "RUB",
-      "country": "Czech",
+      "currency": "EUR",
+      "country": "Russia",
       "city": "Moscow",
       "username": "Anton",
-      "avatar": "https://i.pinimg.com/originals/c5/78/d7/c578d78c35b57d5f033dbf40edc4ee27.jpg"
+      "avatar": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fthumbs.dreamstime.com%2Fb%2Fmanager-works-laptop-icon-simple-style-illustration-vector-web-design-isolated-white-background-146621439.jpg&f=1&nofb=1&ipt=150094c4b5b5675df22eaf8e3ca765dacf2b7a757227e0e221f74905db770092&ipo=images"
     },
     {
       "id": "3",
       "first": "Danila",
       "lastname": "Kuzin",
       "age": 22,
-      "currency": "USD",
+      "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
       "username": "foremansh2",

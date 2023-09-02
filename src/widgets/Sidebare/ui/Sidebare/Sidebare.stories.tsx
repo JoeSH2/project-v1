@@ -12,26 +12,31 @@ export default {
 } as ComponentMeta<typeof Sidebare>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Sidebare> = (args) => <Sidebare {...args} />;
+const Template: ComponentStory<typeof Sidebare> = args => <Sidebare {...args} />;
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [StoreDecorator({
-  user: {
-    authData: {
-      id: 1,
-      username: 'admin',
+Dark.decorators = [
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: 'admin',
+      },
     },
-  },
-})];
+  }),
+];
 
 export const Default = Template.bind({});
 Default.args = {};
-Default.decorators = [ThemeDecorator(Theme.DEFAULT), StoreDecorator({
-  user: {
-    authData: {
-      id: 1,
-      username: 'admin',
+Default.decorators = [
+  ThemeDecorator(Theme.DEFAULT),
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: 'admin',
+      },
     },
-  },
-})];
+  }),
+];

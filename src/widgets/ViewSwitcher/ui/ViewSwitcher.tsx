@@ -5,15 +5,16 @@ import IconLine from 'shared/assets/icon/line.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
 import style from './ViewSwitcher.module.scss';
 
 interface ViewSwitcherProps {
-   className?: string;
-   view: ArticleView;
-   onChangeView: (view: ArticleView) => void
+  className?: string;
+  view: ArticleView;
+  onChangeView: (view: ArticleView) => void;
 }
 
-export const ViewSwitcher: FC<ViewSwitcherProps> = (props) => {
+export const ViewSwitcher: FC<ViewSwitcherProps> = props => {
   const { className, onChangeView, view } = props;
 
   const activeSmall = view === 'SMALL';
@@ -24,13 +25,13 @@ export const ViewSwitcher: FC<ViewSwitcherProps> = (props) => {
   };
 
   return (
-    <div className={classNames(style.viewSwitcher, {}, [className])}>
+    <HStack align='center' justify='between' className={classNames(style.viewSwitcher, {}, [className])}>
       <Button onClick={onClickView('SMALL')} theme={ButtonTheme.CLEAR}>
         <IconGrid className={classNames(style.viewIcon, { [style.active]: activeSmall }, [])} width={35} height={35} />
       </Button>
       <Button onClick={onClickView('BIG')} theme={ButtonTheme.CLEAR}>
         <IconLine className={classNames(style.viewIcon, { [style.active]: activeBig }, [])} width={35} height={35} />
       </Button>
-    </div>
+    </HStack>
   );
 };

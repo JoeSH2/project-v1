@@ -5,19 +5,22 @@ import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 import i18nTest from 'shared/config/i18n/i18nTest';
+import { ReducerList } from '../../../lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 
 interface componentRenderOptions {
-    route?: string;
-    initialState?: DeepPartial<StateSchema>;
+  route?: string;
+  initialState?: DeepPartial<StateSchema>;
+  asyncReducer?: ReducerList;
 }
 
-function componentRender(components: React.ReactNode, { route = '/', initialState = {} }: componentRenderOptions = {}) {
+function componentRender(
+  components: React.ReactNode,
+  { route = '/', initialState = {}, asyncReducer }: componentRenderOptions = {},
+) {
   return render(
-    <StoreProvider initialState={initialState}>
+    <StoreProvider asyncReducer={asyncReducer} initialState={initialState}>
       <MemoryRouter initialEntries={[route]}>
-        <I18nextProvider i18n={i18nTest}>
-          {components}
-        </I18nextProvider>
+        <I18nextProvider i18n={i18nTest}>{components}</I18nextProvider>
       </MemoryRouter>
     </StoreProvider>,
   );

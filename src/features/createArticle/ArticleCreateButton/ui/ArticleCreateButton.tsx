@@ -7,16 +7,20 @@ import { AppLink } from 'shared/ui/AppLink'
 import style from './ArticleCreateButton.module.scss'
 
 interface ArticleCreateButtonProps {
-  className?: string
+	className?: string
 }
 
 export const ArticleCreateButton: FC<ArticleCreateButtonProps> = (props) => {
-  const { className } = props
-  const { t } = useTranslation()
+	const { className } = props
+	const { t } = useTranslation()
 
-  return (
-    <AppLink to={RoutePath.article_create}>
-      <Button className={classNames(style.ArticleCreateButton, {}, [className])}>{t('Create article')}</Button>
-    </AppLink>
-  )
+	return (
+		<AppLink to={RoutePath.article_create}>
+			<Button
+				className={classNames(style.ArticleCreateButton, {}, [className])}
+			>
+				{t('Create article')}
+			</Button>
+		</AppLink>
+	)
 }

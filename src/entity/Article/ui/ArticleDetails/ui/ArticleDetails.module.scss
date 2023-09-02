@@ -2,6 +2,13 @@
     display: flex;
 }
 
+.absoluteBtn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
 .backBtn {
     position: absolute;
     top: 0.5rem;

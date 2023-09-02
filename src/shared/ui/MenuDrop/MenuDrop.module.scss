@@ -1,0 +1,95 @@
+.MenuDrop {
+  position: relative;
+  display: block;
+  width: fit-content;
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.list {
+  position: absolute;
+  min-width: 100%;
+  background-color: var(--bg-color-dark);
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.6rem;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  white-space: nowrap;
+  padding: 8px 22px;
+  color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--bg-color);
+  }
+}
+
+.top {
+  bottom: 0.3rem;
+}
+
+.topLeft {
+  bottom: 0.3rem;
+  right: 0.1rem;
+}
+
+.topRight {
+  bottom: 0.3rem;
+  left: 0.1rem;
+}
+
+.bottom {
+  top: 0.3rem;
+}
+
+.bottomLeft {
+  top: 0.3rem;
+  right: 0.1rem;
+}
+
+.bottomRight {
+  top: 0.3rem;
+  left: 0.1rem;
+}
+
+.enter {
+  transition: 0.2s ease-out;
+}
+
+.enterFrom {
+  transform: scale(0.9);
+  opacity: 0.2;
+}
+
+.enterTo {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.leave {
+  transition: 0.2s ease-out;
+}
+
+.leaveFrom {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.leaveTo {
+  transform: scale(0.9);
+  opacity: 0.2;
+}
