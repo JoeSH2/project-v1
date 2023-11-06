@@ -1,21 +1,21 @@
-import { FC, useCallback } from 'react'
-import CopyIcon from 'shared/assets/icon/copy.svg'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Svg } from '../../Svg/ui/Svg'
-import { Button, ButtonTheme } from '../../Button'
+import { FC, useCallback } from 'react';
+import CopyIcon from '@/shared/assets/icon/copy.svg';
 
-import style from './Code.module.scss'
+import style from './Code.module.scss';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Svg } from '@/shared/ui/Svg/ui/Svg';
 
 interface CodeProps {
-  className?: string
-  text: string
+  className?: string;
+  text: string;
 }
 
-export const Code: FC<CodeProps> = (props) => {
-  const { className, text } = props
+export const Code: FC<CodeProps> = props => {
+  const { className, text } = props;
   const onCopy = useCallback(() => {
-    navigator.clipboard.writeText(text)
-  }, [text])
+    navigator.clipboard.writeText(text);
+  }, [text]);
 
   return (
     <pre className={classNames(style.Code, {}, [className])}>
@@ -24,5 +24,5 @@ export const Code: FC<CodeProps> = (props) => {
       </Button>
       <code>{text}</code>
     </pre>
-  )
-}
+  );
+};

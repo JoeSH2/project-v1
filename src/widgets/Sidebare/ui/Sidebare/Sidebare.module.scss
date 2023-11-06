@@ -1,89 +1,70 @@
 .Sidebare {
-    position: relative;
-    height: calc(100vh - var(--navbare-height));
-    min-width: var(--sidebare-width);
-    background-color: var(--bg-color-dark);
-    transition: min-width 0.1s ease;
-    z-index: 10;
+  position: relative;
+  height: calc(100vh - var(--navbare-height));
+  min-width: var(--sidebare-width);
+  background-color: var(--bg-color-dark);
+  transition: min-width 0.1s ease;
+  z-index: var(--z-index-main);
 }
 
 .wrapperLink {
-    margin: 2rem 0 0 1rem;
-
-    // ul {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: center;
-    //     align-items: start;
-    //     transition: all 0.2s ease;
-
-    //     span {
-    //         animation: linkOpacity 0.2s forwards;
-    //     }
-    // }
+  width: 80%;
+  margin: 2rem auto 0;
 }
 
 .switchers {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .switchersColumn {
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    height: 150px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
 }
 
 .arrow {
-    width: 20px;
-    height: 20px;
-    fill: var(--special-color);
-    transition: transform 0.3s ease;
+  width: 20px;
+  height: 20px;
+  fill: var(--special-color);
+  transition: transform 0.3s ease;
 }
 
 .arrowRotate {
-    transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 
 .openBtn {
-    padding: 20px 0;
-    border-radius: 0 20px 20px 0;
-    position: absolute;
-    top: 45%;
-    right: -20px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  top: 45%;
+  right: -20px;
+  fill: var(--primary-color);
 }
 
 .collapse {
-    min-width: var(--sidebare-width-collapse);
-
-    .wrapperLink {
-        margin: 2rem 0 0 1rem;
-
-
-        ul {
-            align-items: center;
-
-            span {
-                opacity: 0;
-            }
-        }
-    }
+  min-width: var(--sidebare-width-collapse);
 }
 
 @keyframes linkOpacity {
-    0% {
-        opacity: 0;
-    }
+  0% {
+    opacity: 0;
+  }
 
-    60% {
-        opacity: 0.4;
-    }
+  60% {
+    opacity: 0.4;
+  }
 
-    100% {
-        opacity: 1;
-    }
+  100% {
+    opacity: 1;
+  }
 }

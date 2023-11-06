@@ -3,29 +3,48 @@
     "outDir": "./build/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "sourceMap": true,
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "src/*"
+      "@/*": [
+        "./src/*"
       ]
     }
   },
   "ts-node": {
     "compilerOptions": {
       "esModuleInterop": true,
-      "module": "CommonJS"
+      "outDir": "./build/",
+      "noImplicitAny": true,
+      "module": "CommonJS",
+      "target": "es6",
+      "jsx": "react-jsx",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true,
+      "isolatedModules": true,
+      "sourceMap": true,
+      "strict": true,
+      "baseUrl": ".",
+      "paths": {
+        "@/*": [
+          "./src/*"
+        ]
+      }
     }
   },
   "include": [
     "src",
     "./config/jest/setupTest.ts",
-    "scripts"
+    "scripts",
+    "storybook-static/sb-preview/runtime.js"
   ]
 }

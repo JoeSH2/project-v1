@@ -1,18 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/ThemesProvider';
 import React from 'react';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-
-import { Button, ButtonTheme } from './Button';
+import { Meta, StoryFn } from '@storybook/react';
+import { Theme } from '@/app/providers/ThemesProvider';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 
 export default {
   title: 'shared/Button',
   component: Button,
-  argTypes: { backgroundColor: { control: 'color' }, },
-} as ComponentMeta<typeof Button>;
+  argTypes: { backgroundColor: { control: 'color' } },
+} as Meta<typeof Button>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: StoryFn<typeof Button> = args => <Button {...args} />;
 
 export const Clear = Template.bind({});
 Clear.args = {
@@ -21,5 +20,5 @@ Clear.args = {
 };
 
 export const Default = Template.bind({});
-Default.args = { children: 'toggle', };
+Default.args = { children: 'toggle' };
 Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

@@ -1,19 +1,20 @@
 import './styles/index.scss';
 
-import { userActions } from 'entity/User';
-import { getUserMounted } from 'entity/User/model/selectors/getUserMounted';
-import React, { FC, Suspense, useEffect, } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Navbare } from 'widgets/Navbare';
-import { Sidebare } from 'widgets/Sidebare';
+import React, { FC, Suspense, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { userActions } from '@/entity/User';
+import { getUserMounted } from '@/entity/User/model/selectors/getUserMounted';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Navbare } from '@/widgets/Navbare';
+import { Sidebare } from '@/widgets/Sidebare';
 
 import { useTheme } from './providers/ThemesProvider';
 import { AppRoutes } from './routes';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 
 export const App: FC = () => {
   const { theme } = useTheme();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const mounted = useSelector(getUserMounted);
 
   useEffect(() => {
@@ -22,9 +23,9 @@ export const App: FC = () => {
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback="">
+      <Suspense fallback=''>
         <Navbare />
-        <div className="content-page">
+        <div className='content-page'>
           <Sidebare />
           {mounted && <AppRoutes />}
         </div>

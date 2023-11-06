@@ -1,15 +1,15 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryFn } from '@storybook/react';
 
-import { Article } from '../../../model/types/Article'
-import { ArticleList } from './ArticleList'
+import { Article } from '../../../model/types/Article';
+import { ArticleList } from './ArticleList';
 
 export default {
   title: 'entity/ArticleList',
   component: ArticleList,
   argTypes: { backgroundColor: { control: 'color' } },
-} as ComponentMeta<typeof ArticleList>
+} as Meta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />
+const Template: StoryFn<typeof ArticleList> = args => <ArticleList {...args} />;
 
 const article = {
   id: '11',
@@ -80,35 +80,35 @@ const article = {
       ],
     },
   ],
-} as Article
+} as Article;
 
-export const SmallView = Template.bind({})
+export const SmallView = Template.bind({});
 SmallView.args = {
   articles: new Array(8).fill(8).map((item, index) => ({
     ...article,
     id: String(index),
   })),
-}
+};
 
-export const BigView = Template.bind({})
+export const BigView = Template.bind({});
 BigView.args = {
   articles: new Array(8).fill(8).map((item, index) => ({
     ...article,
     id: String(index),
   })),
   view: 'BIG',
-}
+};
 
-export const LoadingSmallView = Template.bind({})
+export const LoadingSmallView = Template.bind({});
 LoadingSmallView.args = {
   articles: [],
   view: 'SMALL',
   isLoading: true,
-}
+};
 
-export const LoadingBigView = Template.bind({})
+export const LoadingBigView = Template.bind({});
 LoadingBigView.args = {
   articles: [],
   view: 'BIG',
   isLoading: true,
-}
+};

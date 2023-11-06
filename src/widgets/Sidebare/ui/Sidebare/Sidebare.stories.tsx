@@ -1,18 +1,16 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/ThemesProvider';
-import React from 'react';
-import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-
+import { Meta, StoryFn } from '@storybook/react';
+import { Theme } from '@/app/providers/ThemesProvider';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { Sidebare } from './Sidebare';
 
 export default {
   title: 'widgets/Sidebare',
   component: Sidebare,
-} as ComponentMeta<typeof Sidebare>;
+} as Meta<typeof Sidebare>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Sidebare> = args => <Sidebare {...args} />;
+const Template: StoryFn<typeof Sidebare> = args => <Sidebare {...args} />;
 
 export const Dark = Template.bind({});
 Dark.args = {};

@@ -1,7 +1,16 @@
 {
+  "Age": "Age",
+  "Avatar": "Avatar",
+  "Cancel": "Cancel",
+  "City": "City",
+  "Country": "Country",
+  "Currency": "Currency",
+  "Data retrieval error": "Data retrieval error",
   "Edit": "Edit",
   "Firstname": "Firstname",
   "Lastname": "Lastname",
-  "Data retrieval error": "Data retrieval error",
-  "Cancel": "Cancel"
+  "Profile": "Profile",
+  "Profile data was not received, try reloading the page": "Profile data was not received, try reloading the page",
+  "Save": "Save",
+  "Username": "Username"
 }

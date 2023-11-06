@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import { useParams } from 'react-router-dom';
-import { PageWrapper } from 'widgets/PageWrapper';
-import { EditorProfile } from 'features/editorProfile';
+import { PageWrapper } from '@/widgets/PageWrapper';
 import style from './ProfilePage.module.scss';
+import { EditorProfile } from '@/features/editorProfile';
 
 const ProfilePage: FC = () => {
   const { id } = useParams();

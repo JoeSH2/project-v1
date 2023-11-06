@@ -1,4 +1,4 @@
-import { LoadingStatus } from 'shared/types/LoadingStatus';
+import { LoadingStatus } from '@/shared/types/LoadingStatus';
 
 export interface LoginUserScheme {
     username: string,

@@ -1,13 +1,13 @@
-import { getArticleDetailsCommentsLoading } from 'pages/AtriclesDetailsPage/model/selectors/comments';
-import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text';
+import { FC } from 'react';
+import { getArticleDetailsCommentsLoading } from '@/pages/ArticleDetailsPage/model/selectors/comments';
 
-import { Comment } from '../../model/types/comment';
-import { CommentCard } from '../CommentCard/CommentCard';
 import style from './CommentList.module.scss';
+import { CommentCard } from '@/entity/Comment/ui/CommentCard/CommentCard';
+import { Text } from '@/shared/ui/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Comment } from '@/entity/Comment/model/types/comment';
 
 interface CommentListProps {
   className?: string;
@@ -28,9 +28,11 @@ export const CommentList: FC<CommentListProps> = ({ className, comments }) => {
 
   return (
     <div className={classNames(style.CommentList, {}, [className])}>
-      {comments.length ? comments.map((comment) => (
-        <CommentCard isLoading={isLoading} key={comment.id} comment={comment} />
-      )) : <Text text={t('No comments')} />}
+      {comments.length ? (
+        comments.map(comment => <CommentCard isLoading={isLoading} key={comment.id} comment={comment} />)
+      ) : (
+        <Text text={t('No comments')} />
+      )}
     </div>
   );
 };

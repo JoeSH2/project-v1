@@ -1,19 +1,14 @@
-import {
-  createEntityAdapter,
-  createSlice,
-  PayloadAction, 
-} from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Article, ArticleView } from 'entity/Article';
-import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Article, ArticleView } from '@/entity/Article';
+import { articlePageSchema } from '@/pages/ArticlesPage';
+import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
+import { fetchArticlePage } from '@/pages/ArticlesPage/model/services/fetchArticlePage';
 
-import { fetchArticlePage } from '../services/fetchArticlePage';
-import { articlePageSchema } from '../types/articlePageSchema';
-
-const articleAdapter = createEntityAdapter<Article>({ selectId: (article) => article.id, });
+const articleAdapter = createEntityAdapter<Article>({ selectId: article => article.id });
 
 export const getArticle = articleAdapter.getSelectors<StateSchema>(
-  (state) => state.articlePage || articleAdapter.getInitialState(),
+  state => state.articlePage || articleAdapter.getInitialState(),
 );
 
 const aticlePageSlice = createSlice({
@@ -42,14 +37,14 @@ const aticlePageSlice = createSlice({
       state.view = view;
       state.limit = view === 'SMALL' ? 8 : 4;
     },
-    initState: (state) => {
+    initState: state => {
       const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
       state.view = view;
       state.limit = view === 'BIG' ? 4 : 8;
       state._inited = true;
     },
   },
-  extraReducers: (builder) => {
+  extraReducers: builder => {
     builder
       .addCase(fetchArticlePage.pending, (state, action) => {
         state.error = undefined;
@@ -75,7 +70,4 @@ const aticlePageSlice = createSlice({
   },
 });
 
-export const { 
-  reducer: articlePageReducer, 
-  actions: articlePageActions 
-} = aticlePageSlice;
+export const { reducer: articlePageReducer, actions: articlePageActions } = aticlePageSlice;

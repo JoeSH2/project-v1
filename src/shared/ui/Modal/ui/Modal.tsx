@@ -1,64 +1,35 @@
-import { useTheme } from 'app/providers/ThemesProvider'
-import React, { FC, useCallback, useEffect, useRef, useState } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Portal } from '../../Portal/Portal'
+import React, { FC } from 'react';
+import { useTheme } from '@/app/providers/ThemesProvider';
 
-import style from './Modal.module.scss'
+import style from './Modal.module.scss';
+import { useModal } from '@/shared/hooks/useModal';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Overlay } from '@/shared/ui/Overlay/ui/Overlay';
+import { Portal } from '@/shared/ui/Portal/Portal';
 
 interface ModalProps {
-  className?: string
-  theme?: string
-  children: React.ReactNode
-  isOpen: boolean
-  onClose: () => void
-  lazy?: boolean
+  className?: string;
+  theme?: string;
+  children: React.ReactNode;
+  isOpen: boolean;
+  onClose: () => void;
+  lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose, lazy }) => {
-  const ref = useRef<HTMLDivElement>(null)
-  const [isMounted, setIsMounted] = useState(false)
-  const { theme } = useTheme()
-
-  const clickContent = (e: any) => {
-    e.stopPropagation()
-  }
-
-  const keyCloseModal = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Escape') {
-        onClose()
-      }
-    },
-    [onClose],
-  )
-
-  useEffect(() => {
-    if (isOpen) {
-      setIsMounted(true)
-    }
-  }, [isOpen])
-
-  useEffect(() => {
-    window.addEventListener('keydown', keyCloseModal)
-
-    return () => {
-      window.removeEventListener('keydown', keyCloseModal)
-    }
-  }, [onClose])
+  const { theme } = useTheme();
+  const { isMounted } = useModal(onClose, isOpen);
 
   if (lazy && !isMounted) {
-    return null
+    return null;
   }
 
   return (
     <Portal>
       <div className={classNames(style.Modal, { [style.open]: isOpen }, [className, theme])}>
-        <div onClick={onClose} className={style.overlay}>
-          <div onClick={clickContent} ref={ref} className={style.wrapper}>
-            {children}
-          </div>
-        </div>
+        <Overlay onClose={onClose} />
+        <div className={style.wrapper}>{children}</div>
       </div>
     </Portal>
-  )
-}
+  );
+};

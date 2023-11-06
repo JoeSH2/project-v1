@@ -14,6 +14,14 @@
   "Back": "Back",
   "CRYPTO": "CRYPTO",
   "Cancel": "Cancel",
+  "Check for notifications": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
+  "Check for notifications...": "Check for notifications...",
   "Choose the most important": "",
   "City": "City",
   "Comment": "Comment",
@@ -50,6 +58,7 @@
   "More": "",
   "No article found =(": "",
   "No comments": "",
+  "Notification": "",
   "Open Modal": "Open Modal",
   "Page not found": "",
   "Password": "Password",
@@ -75,6 +84,8 @@
   "Username": "Username",
   "Write a comment": "Write a comment",
   "Wrong login or password, try again!": "Wrong login or password, try again!",
+  "You don't have any notifications": "You don't have any notifications",
+  "You've been notified!": "You've been notified!",
   "ascending": "ascending",
   "descending": "descending",
   "main": {

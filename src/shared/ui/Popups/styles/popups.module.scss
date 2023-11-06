@@ -1,0 +1,56 @@
+.top {
+  bottom: 2.5rem;
+}
+
+.topLeft {
+  bottom: 2.5rem;
+  right: 1rem;
+}
+
+.topRight {
+  bottom: 2.5rem;
+  left: 1rem;
+}
+
+.bottom {
+  top: 2.5rem;
+}
+
+.bottomLeft {
+  top: 3rem;
+  right: 1rem;
+}
+
+.bottomRight {
+  top: 3rem;
+  left: 1rem;
+}
+
+.disabled {
+  opacity: 0.7;
+  font-weight: 900;
+}
+
+.enter {
+  transition: 0.2s ease-out;
+}
+
+.enterFrom {
+  opacity: 0;
+}
+
+.enterTo {
+  opacity: 1;
+}
+
+.leave {
+  transition: 0.2s ease-out;
+}
+
+.leaveFrom {
+  opacity: 1;
+}
+
+.leaveTo {
+  opacity: 0;
+}

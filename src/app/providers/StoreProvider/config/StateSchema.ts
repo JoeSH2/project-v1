@@ -1,23 +1,23 @@
-import { AnyAction, CombinedState, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { EnhancedStore } from '@reduxjs/toolkit/dist/configureStore';
+import { AnyAction, CombinedState, EnhancedStore, ReducersMapObject } from '@reduxjs/toolkit';
+import { Reducer } from 'react';
 import { AxiosInstance } from 'axios';
-import { ArticleDetailsSchema } from 'entity/Article';
-import { CounterSchema } from 'entity/Counter';
-import { UserSchema } from 'entity/User';
-import { CommentFormSchema } from 'features/addComment';
-import { ArticleSortSchema } from 'features/ArticleSort/model/types/ArticleSortSchema';
-import { LoginUserScheme } from 'features/AuthWithUsername';
-import { SaveScrollPageSchema } from 'features/saveScrollPage';
-import { articlePageSchema } from 'pages/ArticlesPage';
-import { ArticleDetailsPageSchema } from 'pages/AtriclesDetailsPage';
-import { apiRTK } from 'shared/api/apiRTK';
-import { ProfileSchema } from 'features/editorProfile';
+import { apiRTK } from '@/shared/api/apiRTK';
+import { CounterSchema } from '@/entity/Counter';
+import { UserSchema } from '@/entity/User';
+import { LoginUserScheme } from '@/features/AuthWithUsername';
+import { ProfileSchema } from '@/features/editorProfile';
+import { ArticleDetailsSchema } from '@/entity/Article';
+import { CommentFormSchema } from '@/features/addComment';
+import { articlePageSchema } from '@/pages/ArticlesPage';
+import { SaveScrollPageSchema } from '@/features/saveScrollPage';
+import { ArticleSortSchema } from '@/features/ArticleSort/model/types/ArticleSortSchema';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
+  // @ts-ignore
   [apiRTK.reducerPath]: ReturnType<typeof apiRTK.reducer>;
-
   // async reducers
   loginUser?: LoginUserScheme;
   profile?: ProfileSchema;
@@ -34,7 +34,7 @@ export type StateSchemaKey = keyof StateSchema;
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>;
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
-  add: (key: StateSchemaKey, reducer: Reducer) => void;
+  add: (key: StateSchemaKey, reducer: Reducer<any, AnyAction>) => void;
   remove: (key: StateSchemaKey) => void;
 }
 

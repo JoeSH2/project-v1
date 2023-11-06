@@ -1,14 +1,14 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 
 import { ViewSwitcher } from './ViewSwitcher';
 
 export default {
   title: 'shared/ViewSwitcher',
   component: ViewSwitcher,
-  argTypes: { backgroundColor: { control: 'color' }, },
-} as ComponentMeta<typeof ViewSwitcher>;
+  argTypes: { backgroundColor: { control: 'color' } },
+} as Meta<typeof ViewSwitcher>;
 
-const Template: ComponentStory<typeof ViewSwitcher> = (args) => <ViewSwitcher {...args} />;
+const Template: StoryFn<typeof ViewSwitcher> = args => <ViewSwitcher {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {};

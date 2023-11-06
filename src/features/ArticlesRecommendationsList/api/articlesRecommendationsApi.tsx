@@ -1,5 +1,5 @@
-import { apiRTK } from 'shared/api/apiRTK';
-import { Article } from 'entity/Article';
+import { apiRTK } from '@/shared/api/apiRTK';
+import { Article } from '@/entity/Article';
 
 const recommendationsApi = apiRTK.injectEndpoints({
   endpoints: build => ({

@@ -14,6 +14,13 @@
   "Back": "Назад",
   "CRYPTO": "КРИПТО",
   "Cancel": "",
+  "Check for notifications": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "City": "",
   "Comment": "",
   "Country": "",
@@ -49,6 +56,7 @@
   "More": "",
   "No article found =(": "",
   "No comments": "",
+  "Notification": "",
   "Open Modal": "",
   "Page not found": "Страница не найдена",
   "Password": "Пароль",
@@ -74,6 +82,8 @@
   "Username": "",
   "Write a comment": "",
   "Wrong login or password, try again!": "Неверный логин или пароль, попробуйте снова!",
+  "You don't have any notifications": "",
+  "You've been notified!": "",
   "ascending": "возрастанию",
   "descending": "убыванию",
   "main": {

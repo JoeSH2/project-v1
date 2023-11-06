@@ -1,18 +1,16 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/ThemesProvider';
-import React from 'react';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-
-import { Modal } from './Modal';
+import { Meta, StoryFn } from '@storybook/react';
+import { Theme } from '@/app/providers/ThemesProvider';
+import { Modal } from '@/shared/ui/Modal';
+import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 
 export default {
   title: 'shared/Modal',
   component: Modal,
-  argTypes: { backgroundColor: { control: 'color' }, },
-} as ComponentMeta<typeof Modal>;
+  argTypes: { backgroundColor: { control: 'color' } },
+} as Meta<typeof Modal>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
+const Template: StoryFn<typeof Modal> = args => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

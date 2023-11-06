@@ -1,15 +1,14 @@
-import 'app/styles/index.scss';
-
+import '@/app/styles/index.scss';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { Story } from '@storybook/react';
-import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
-import { ArticleReducer } from 'entity/Article';
-import { loginUserReducer } from 'features/AuthWithUsername/model/slice/loginUserSlice';
-import { ReducerList } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { articleSortReducer } from 'features/ArticleSort/model/slice/articleSortSlice';
-import { userReducer } from 'entity/User';
-import { articleDetailsPageReducer } from 'pages/AtriclesDetailsPage';
-import { editorProfileReducer } from 'features/editorProfile/model/slice/editorProfileSlice';
+import { ReducerList } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import { loginUserReducer } from '@/features/AuthWithUsername/model/slice/loginUserSlice';
+import { editorProfileReducer } from '@/features/editorProfile/model/slice/editorProfileSlice';
+import { ArticleReducer } from '@/entity/Article';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
+import { articleSortReducer } from '@/features/ArticleSort/model/slice/articleSortSlice';
+import { userReducer } from '@/entity/User';
+import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 
 const stateReducer: ReducerList = {
   loginUser: loginUserReducer,

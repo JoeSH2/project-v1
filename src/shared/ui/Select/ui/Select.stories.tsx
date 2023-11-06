@@ -1,18 +1,16 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/ThemesProvider';
-import React from 'react';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-
-import { Select } from './Select';
+import { Meta, StoryFn } from '@storybook/react';
+import { Theme } from '@/app/providers/ThemesProvider';
+import { Select } from '@/shared/ui/Select';
+import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 
 export default {
   title: 'shared/Select',
   component: Select,
-  argTypes: { backgroundColor: { control: 'color' }, },
-} as ComponentMeta<typeof Select>;
+  argTypes: { backgroundColor: { control: 'color' } },
+} as Meta<typeof Select>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
+const Template: StoryFn<typeof Select> = args => <Select {...args} />;
 
 export const Dark = Template.bind({});
 Dark.args = {

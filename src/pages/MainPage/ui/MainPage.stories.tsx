@@ -1,23 +1,21 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { Theme } from 'app/providers/ThemesProvider'
-import React from 'react'
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator'
-
-import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore'
-import { MainPage } from '../index'
+import { Meta, StoryFn } from '@storybook/react';
+import { Theme } from '@/app/providers/ThemesProvider';
+import { MainPage } from '@/pages/MainPage';
+import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
   title: 'pages/MainPage',
   component: MainPage,
   argTypes: { backgroundColor: { control: 'color' } },
-} as ComponentMeta<typeof MainPage>
+} as Meta<typeof MainPage>;
 
-const Template: ComponentStory<typeof MainPage> = () => <MainPage />
+const Template: StoryFn<typeof MainPage> = () => <MainPage />;
 
-export const Dark = Template.bind({})
-Dark.args = { theme: Theme.DARK }
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+export const Dark = Template.bind({});
+Dark.args = { theme: Theme.DARK };
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
-export const Default = Template.bind({})
-Default.args = { theme: Theme.DEFAULT }
-Default.decorators = [ThemeDecorator(Theme.DEFAULT), StoreDecorator({})]
+export const Default = Template.bind({});
+Default.args = { theme: Theme.DEFAULT };
+Default.decorators = [ThemeDecorator(Theme.DEFAULT), StoreDecorator({})];

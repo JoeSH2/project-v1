@@ -1,15 +1,16 @@
 {
-  "Edit": "Редактировать",
-  "Data retrieval error": "Ошибка извлечения данных",
   "Age": "Возраст",
   "Avatar": "Аватар",
   "Cancel": "Отмена",
   "City": "Город",
   "Country": "Страна",
   "Currency": "Валюта",
+  "Data retrieval error": "Ошибка извлечения данных",
+  "Edit": "Редактировать",
   "Firstname": "Имя",
   "Lastname": "Фамилия",
-  "Username": "Ник",
+  "Profile": "Профиль",
+  "Profile data was not received, try reloading the page": "Данные профиля не были получены, попробуйте перезагрузить страницу",
   "Save": "Сохранить",
-  "Profile": "Профиль"
+  "Username": "Ник"
 }

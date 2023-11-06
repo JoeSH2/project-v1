@@ -1,0 +1,21 @@
+.notification {
+  width: 32px;
+  height: 32px;
+  fill: var(--primary-color);
+}
+
+.btnDrawer {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+
+  &:active {
+    background-color: transparent;
+    fill: var(--bg-color-special);
+  }
+
+  &:focus {
+    background-color: transparent;
+    fill: var(--bg-color-special);
+  }
+}

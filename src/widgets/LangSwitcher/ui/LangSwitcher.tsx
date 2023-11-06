@@ -1,14 +1,13 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button';
-import { ButtonTheme } from 'shared/ui/Button/ui/Button';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import style from './LangSwitcher.module.scss';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 export enum LangSwitcherValues {
   RU = 'ru',
-  EN = 'en'
+  EN = 'en',
 }
 
 interface LangSwitcherProps {
@@ -19,11 +18,7 @@ interface LangSwitcherProps {
 }
 
 export const LangSwitcher: FC<LangSwitcherProps> = memo((props: LangSwitcherProps) => {
-  const {
-    className,
-    children,
-    isCollapsed,
-  } = props;
+  const { className, children, isCollapsed } = props;
   const { t, i18n } = useTranslation();
   const toggleLang = async (args: LangSwitcherValues) => {
     i18n.changeLanguage(args);

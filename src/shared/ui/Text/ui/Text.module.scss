@@ -1,87 +1,97 @@
 .Text {
-    line-height: 1.2;
+  line-height: 1.2;
 
-    .title {
-        font: var(--font-xl);
-        font-size: var(--font-size-xl);
-        color: var(--primary-color);
-    }
+  .title {
+    font: var(--font-xl);
+    font-size: var(--font-size-xl);
+    color: var(--primary-color);
+  }
 
-    .text {
-        font: var(--font-m);
-        font-size: var(--font-size-m);
-        color: var(--secondary-color);
-    }
+  .text {
+    font: var(--font-m);
+    font-size: var(--font-size-m);
+    color: var(--secondary-color);
+  }
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .left {
-    text-align: left;
+  text-align: left;
 }
 
 .rigth {
-    text-align: rigth;
+  text-align: right;
 }
 
 .theme {
-    .title {
-        color: var(--primary-color);
-    }
+  .title {
+    color: var(--primary-color);
+  }
 
-    .text {
-        color: var(--secondary-color);
-    }
+  .text {
+    color: var(--secondary-color);
+  }
+}
+
+.inverted {
+  .title {
+    color: var(--font-color-inverted);
+  }
+
+  .text {
+    color: var(--font-color-inverted);
+  }
 }
 
 .red {
-    .title {
-        color: var(--color-red);
-    }
+  .title {
+    color: var(--color-red);
+  }
 
-    .text {
-        color: var(--color-red-dark);
-    }
+  .text {
+    color: var(--color-red-dark);
+  }
 }
 
 .s {
-    .title {
-        font-size: var(--font-size-m);
-    }
+  .title {
+    font-size: var(--font-size-m);
+  }
 
-    .text {
-        font-size: var(--font-size-s);
-    }
+  .text {
+    font-size: var(--font-size-s);
+  }
 }
 
 .m {
-    .title {
-        font-size: var(--font-size-l);
-    }
+  .title {
+    font-size: var(--font-size-l);
+  }
 
-    .text {
-        font-size: var(--font-size-m);
-    }
+  .text {
+    font-size: var(--font-size-m);
+  }
 }
 
 .l {
-    .title {
-        font-size: var(--font-size-xl);
-    }
+  .title {
+    font-size: var(--font-size-xl);
+  }
 
-    .text {
-        font-size: var(--font-size-l);
-    }
+  .text {
+    font-size: var(--font-size-l);
+  }
 }
 
 .xl {
-    .title {
-        font-size: var(--font-size-xxl);
-    }
+  .title {
+    font-size: var(--font-size-xxl);
+  }
 
-    .text {
-        font-size: var(--font-size-xxl);
-    }
+  .text {
+    font-size: var(--font-size-xxl);
+  }
 }

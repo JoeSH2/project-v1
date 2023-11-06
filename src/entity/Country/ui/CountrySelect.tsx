@@ -1,8 +1,7 @@
-import React, { FC } from 'react';
-
-import { SelectList } from 'shared/ui/SelectList';
-import { CountryList } from '../model/types/CountryList';
+import { FC } from 'react';
+import { SelectList } from '@/shared/ui/Popups';
 import style from './CountrySelect.module.scss';
+import { CountryList } from '../model/types/CountryList';
 
 interface CountrySelectProps {
   className?: string;

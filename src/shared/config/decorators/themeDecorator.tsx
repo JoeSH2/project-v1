@@ -1,7 +1,6 @@
-import 'app/styles/index.scss';
-
+import '@/app/styles/index.scss';
 import { StoryFn } from '@storybook/react';
-import { Theme, ThemeProvider } from 'app/providers/ThemesProvider';
+import { Theme, ThemeProvider } from '@/app/providers/ThemesProvider';
 
 // export const ThemeDecorator = (theme: Theme) => (StoryComponent: StoryFn) =>
 export const ThemeDecorator = (theme: Theme) => (StoryComponent: StoryFn) =>

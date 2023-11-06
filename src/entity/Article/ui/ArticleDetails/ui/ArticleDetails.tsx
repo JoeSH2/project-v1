@@ -2,28 +2,28 @@ import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import DateIcon from 'shared/assets/icon/date.svg';
-import EyeIcon from 'shared/assets/icon/eye.svg';
-import { RoutePath } from 'shared/config/routeConfig/AppRoute';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch';
-import { useInitialEffect } from 'shared/hooks/useInitialEffect';
-import { ReducerList, useAsyncWrapperReducer } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { Block } from 'shared/ui/Block';
-import { Button } from 'shared/ui/Button';
-import { Skeleton } from 'shared/ui/Skeleton';
-import { Svg } from 'shared/ui/Svg/ui/Svg';
-import { Text } from 'shared/ui/Text';
-
-import { ArticleEditButton } from 'features/createArticle';
-import { getCanEditArticle } from 'pages/AtriclesDetailsPage';
-import { ArticleBlock, ArticleBlockType } from '../../../model/types/Article';
-import { ArticleReducer } from '../../../model/slice/ArticleSlice';
-import { fetchArticleById } from '../../../model/services/fetchArticleById';
-import { getArticleDetailsData, getArticleDetailsLoading } from '../../../model/selectors/getArticleDetails';
-import { ArticleDetailsBlockCode } from '../../ArticleDetailsBlockCode';
-import { ArticleDetailsBlockImage } from '../../ArticleDetailsBlockImage';
-import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
+import DateIcon from '@/shared/assets/icon/date.svg';
+import EyeIcon from '@/shared/assets/icon/eye.svg';
 import style from './ArticleDetails.module.scss';
+import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import { ArticleBlockType } from '../../../model/consts/index';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { getArticleDetailsData, getArticleDetailsLoading } from '../../../model/selectors/getArticleDetails';
+import { getCanEditArticle } from '@/pages/ArticleDetailsPage';
+import { ArticleBlock } from '../../../model/types/Article';
+import { ArticleDetailsBlockCode } from '../../../ui/ArticleDetailsBlockCode';
+import { ArticleDetailsBlockImage } from '../../../ui/ArticleDetailsBlockImage';
+import { ArticleDetailsBlockText } from '../../../ui/ArticleDetailsBlockText';
+import { RoutePath } from '@/shared/config/routeConfig/AppRoute';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { fetchArticleById } from '../../../model/services/fetchArticleById';
+import { Block } from '@/shared/ui/Block';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Button } from '@/shared/ui/Button';
+import { ArticleEditButton } from '@/features/createArticle';
+import { Svg } from '@/shared/ui/Svg/ui/Svg';
+import { Text } from '@/shared/ui/Text';
+import { ArticleReducer } from '../../../model/slice/ArticleSlice';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -40,7 +40,6 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
   const data = useSelector(getArticleDetailsData);
   const navigate = useNavigate();
   const canEdit = useSelector(getCanEditArticle);
-  console.log(canEdit);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {

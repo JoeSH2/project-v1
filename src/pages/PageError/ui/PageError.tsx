@@ -1,15 +1,13 @@
-import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Block } from 'shared/ui/Block';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { PageWrapper } from 'widgets/PageWrapper';
-
-import style from './PageError.module.scss';
+import { FC } from 'react';
+import { Block } from '@/shared/ui/Block';
+import { PageWrapper } from '@/widgets/PageWrapper';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 interface PageErrorProps {
   className?: string;
   theme?: string;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 export const PageError: FC<PageErrorProps> = ({ className }) => {
@@ -22,7 +20,9 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
     <PageWrapper>
       <Block>
         <div>{t('There was an error, return to the home page?')}</div>
-        <Button onClick={reloadPage} theme={ButtonTheme.CLEAR}>{t('Reload page')}</Button>
+        <Button onClick={reloadPage} theme={ButtonTheme.CLEAR}>
+          {t('Reload page')}
+        </Button>
       </Block>
     </PageWrapper>
   );

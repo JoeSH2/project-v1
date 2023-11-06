@@ -1,5 +1,5 @@
-import { CurrencyList } from 'entity/Currency/model/types/CurrencyList';
-import { CountryList } from 'entity/Country/model/types/CountryList';
+import { CurrencyList } from '@/entity/Currency';
+import { CountryList } from '@/entity/Country';
 
 export interface Profile {
   id?: string;

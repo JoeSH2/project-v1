@@ -1,20 +1,20 @@
-import { Profile } from 'entity/Profile';
-import { getUserAuth } from 'entity/User';
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/hooks/useAppDispatch';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Avatar } from 'shared/ui/Avatar';
-import { Button, ButtonTheme } from 'shared/ui/Button';
-import { Text } from 'shared/ui/Text';
-import { HStack } from 'shared/ui/Stack/HStack/HStack';
-import { ReducerList, useAsyncWrapperReducer } from 'shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly';
-import { editorProfileActions, editorProfileReducer } from '../../model/slice/editorProfileSlice';
+import { Text } from '@/shared/ui/Text';
+
 import style from './EditorProfileHeader.module.scss';
-import { getProfileData } from '../../model/selectors/getProfileData';
-import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { editorProfileActions, editorProfileReducer } from '@/features/editorProfile/model/slice/editorProfileSlice';
+import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { getProfileReadonly } from '@/features/editorProfile/model/selectors/getProfileReadonly';
+import { getUserAuth } from '@/entity/User';
+import { getProfileData } from '@/features/editorProfile/model/selectors/getProfileData';
+import { updateProfileData } from '@/features/editorProfile/model/services/updateProfileData/updateProfileData';
+import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Avatar } from '@/shared/ui/Avatar';
 
 interface EditorProfileHeaderProps {
   className?: string;

@@ -1,11 +1,12 @@
-import componentRender from 'shared/lib/tests/componentRender/componentRender';
-import { Profile } from 'entity/Profile';
 import { screen } from '@testing-library/react';
-import { CurrencyList } from 'entity/Currency';
-import { CountryList } from 'entity/Country';
 import userEvent from '@testing-library/user-event';
-import { editorProfileReducer } from 'features/editorProfile/model/slice/editorProfileSlice';
-import { EditorProfile } from './EditorProfile';
+import componentRender from '@/shared/lib/tests/componentRender/componentRender';
+
+import { CurrencyList } from '@/entity/Currency';
+import { Profile } from '@/entity/Profile';
+import { CountryList } from '@/entity/Country';
+import { editorProfileReducer } from '@/features/editorProfile/model/slice/editorProfileSlice';
+import { EditorProfile } from '@/features/editorProfile';
 
 const profile: Profile = {
   id: '1',

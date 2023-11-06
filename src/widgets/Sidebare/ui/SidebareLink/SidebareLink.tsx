@@ -1,11 +1,10 @@
-import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
-import { Flex } from 'shared/ui/Stack/Flex/Flex';
-import { SidebareLinksType } from '../../model/types/sidebareLinks';
+import { FC, memo } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import style from './SidebareLink.module.scss';
+import { SidebareLinksType } from '@/widgets/Sidebare/model/types/sidebareLinks';
+import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 
 interface SidebareLinkProps {
   item: SidebareLinksType;

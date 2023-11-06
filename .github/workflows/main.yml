@@ -1,15 +1,15 @@
 name: linting, testing, building
 on:
   push:
-    branches: [bnbnbnbnbn]
+    branches: [ bnbnbnbnbn ]
   pull_request:
-    branches: [bnbnbnbnbn]
+    branches: [ bnbnbnbnbn ]
 jobs:
   pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [ 18.x ]
 
     steps:
       - uses: actions/checkout@v2

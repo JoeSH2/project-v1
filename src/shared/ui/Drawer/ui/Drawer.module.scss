@@ -1,0 +1,23 @@
+.Drawer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: var(--z-index-general);
+}
+
+.open {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.wrapper {
+  z-index: var(--z-index-core);
+  position: fixed;
+  width: 96vw;
+  border-radius: 12px 12px 0 0;
+  background: var(--bg-color);
+  touch-action: none;
+  padding: 15px;
+}

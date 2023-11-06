@@ -1,16 +1,16 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { action } from '@storybook/addon-actions'
-import { Tab } from './Tab'
+import { Meta, StoryFn } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
+import { Tab } from './Tab';
 
 export default {
   title: 'shared/Tab',
   component: Tab,
   argTypes: { backgroundColor: { control: 'color' } },
-} as ComponentMeta<typeof Tab>
+} as Meta<typeof Tab>;
 
-const Template: ComponentStory<typeof Tab> = (args) => <Tab {...args} />
+const Template: StoryFn<typeof Tab> = args => <Tab {...args} />;
 
-export const Normal = Template.bind({})
+export const Normal = Template.bind({});
 Normal.args = {
   tabs: [
     {
@@ -28,4 +28,4 @@ Normal.args = {
   ],
   activeTab: 'TAB 3',
   onClickTab: action('onClickTab'),
-}
+};

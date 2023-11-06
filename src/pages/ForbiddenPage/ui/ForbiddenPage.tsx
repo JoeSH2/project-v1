@@ -1,7 +1,7 @@
-import { FC } from 'react';
-import { PageWrapper } from 'widgets/PageWrapper';
-import { Block } from 'shared/ui/Block';
 import { useTranslation } from 'react-i18next';
+import { FC } from 'react';
+import { PageWrapper } from '@/widgets/PageWrapper';
+import { Block } from '@/shared/ui/Block';
 
 interface ForbiddenPageProps {
   className?: string;

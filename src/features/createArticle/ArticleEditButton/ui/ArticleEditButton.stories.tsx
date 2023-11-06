@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ArticleEditButton } from './ArticleEditButton'
+import { Meta, StoryFn } from '@storybook/react';
+import { ArticleEditButton } from './ArticleEditButton';
 
 export default {
   title: 'shared/ArticleEditButton',
@@ -7,9 +7,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof ArticleEditButton>
+} as Meta<typeof ArticleEditButton>;
 
-const Template: ComponentStory<typeof ArticleEditButton> = (args) => <ArticleEditButton {...args} />
+const Template: StoryFn<typeof ArticleEditButton> = args => <ArticleEditButton {...args} />;
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal = Template.bind({});
+Normal.args = {};

@@ -1,10 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
-import { User, userActions } from 'entity/User';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { User, userActions } from '@/entity/User';
 
 interface LoginUserProps {
-    username: string;
-    password: string;
+  username: string;
+  password: string;
 }
 
 export const asyncLoginUser = createAsyncThunk<User, LoginUserProps, ThunkConfig<string>>(

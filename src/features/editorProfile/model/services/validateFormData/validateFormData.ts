@@ -1,5 +1,5 @@
-import { Profile } from 'entity/Profile';
-import { validateError } from '../../types/editorProfileSchema';
+import { Profile } from '@/entity/Profile';
+import { validateError } from '@/features/editorProfile/model/consts';
 
 export const validateFormData = (profile?: Profile) => {
   if (!profile) {

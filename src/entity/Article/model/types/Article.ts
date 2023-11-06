@@ -1,54 +1,40 @@
-import { User } from 'entity/User';
-import { ArticleSortField } from 'features/ArticleSort';
-
-export enum ArticleType {
-    ALL = 'ALL',
-    IT = 'IT', // 'IT' | 'SCIENCE' | 'ECONOMICS'
-    SCIENCE = 'SCIENCE',
-    CRYPTO = 'CRYPTO',
-    ECONOMICS = 'ECONOMICS'
-};
-
-export enum ArticleBlockType {
-    CODE = 'CODE',
-    TEXT = 'TEXT',
-    IMAGE = 'IMAGE'
-}
+import { User } from '../../../User';
+import { ArticleBlockType, ArticleType } from '../consts/index';
 
 export type ArticleView = 'BIG' | 'SMALL';
 
 export type ArticleBlockBase = {
-    id: string;
-    type: ArticleBlockType;
-}
+  id: string;
+  type: ArticleBlockType;
+};
 
 export interface ArticleBlockText extends ArticleBlockBase {
-    type: ArticleBlockType.TEXT,
-    paragraphs: string[];
-    title: string;
+  type: ArticleBlockType.TEXT;
+  paragraphs: string[];
+  title: string;
 }
 
 export interface ArticleBlockCode extends ArticleBlockBase {
-    type: ArticleBlockType.CODE,
-    code: string
+  type: ArticleBlockType.CODE;
+  code: string;
 }
 
 export interface ArticleBlockImage extends ArticleBlockBase {
-    type: ArticleBlockType.IMAGE,
-    src: string,
-    title: string
+  type: ArticleBlockType.IMAGE;
+  src: string;
+  title: string;
 }
 
-export type ArticleBlock = ArticleBlockText | ArticleBlockCode | ArticleBlockImage
+export type ArticleBlock = ArticleBlockText | ArticleBlockCode | ArticleBlockImage;
 
 export interface Article {
-    id: string,
-    user?: User;
-    title: string,
-    subtitle: string,
-    img: string,
-    views: number,
-    createdAt: string,
-    type: ArticleType[],
-    blocks: ArticleBlock[]
+  id: string;
+  user?: User;
+  title: string;
+  subtitle: string;
+  img: string;
+  views: number;
+  createdAt: string;
+  type: ArticleType[];
+  blocks: ArticleBlock[];
 }

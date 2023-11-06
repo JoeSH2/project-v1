@@ -1,8 +1,8 @@
-import { ProtectedRoute } from 'app/providers/ProtectedRoute';
 import React, { FC, memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { RouterAuth, routesConfig } from 'shared/config/routeConfig/AppRoute';
-import { PageLoader } from 'widgets/PageLoader';
+import { ProtectedRoute } from '@/app/providers/ProtectedRoute';
+import { RouterAuth, routesConfig } from '@/shared/config/routeConfig/AppRoute';
+import { PageLoader } from '@/widgets/PageLoader';
 
 export const AppRoutes: FC = memo(() => {
   const renderWithRouter = useCallback((route: RouterAuth) => {

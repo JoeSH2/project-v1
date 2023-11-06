@@ -1,8 +1,7 @@
-import { CountryList } from 'entity/Country';
-import { CurrencyList } from 'entity/Currency';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
-import { Profile } from 'entity/Profile/model/types/Profile';
-
+import { CountryList } from '@/entity/Country';
+import { CurrencyList } from '@/entity/Currency';
+import { Profile } from '@/entity/Profile';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
 import { fetchProfileData } from './fetchProfileData';
 
 test('fetch data', async () => {

@@ -1,28 +1,27 @@
-import { FC, HTMLAttributeAnchorTarget, useCallback } from 'react'
-import { useTranslation } from 'react-i18next'
-import { useNavigate } from 'react-router-dom'
-import ViewIcon from 'shared/assets/icon/eye.svg'
-import { RoutePath } from 'shared/config/routeConfig/AppRoute'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Avatar } from 'shared/ui/Avatar'
-import { Button } from 'shared/ui/Button'
-import { Card } from 'shared/ui/Card'
-import { Text } from 'shared/ui/Text'
-
-import { AppLink } from 'shared/ui/AppLink'
-import { Article, ArticleBlockText, ArticleBlockType, ArticleView } from '../../../model/types/Article'
-import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText'
-import style from './ArticleCard.module.scss'
+import { FC, HTMLAttributeAnchorTarget } from 'react';
+import { useTranslation } from 'react-i18next';
+import style from './ArticleCard.module.scss';
+import { Article, ArticleBlockText, ArticleView } from '../../../model/types/Article';
+import { Text } from '@/shared/ui/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import ViewIcon from '@/shared/assets/icon/eye.svg';
+import { Card } from '@/shared/ui/Card';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Button } from '@/shared/ui/Button';
+import { RoutePath } from '@/shared/config/routeConfig/AppRoute';
+import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
+import { Avatar } from '@/shared/ui/Avatar';
+import { ArticleBlockType } from '../../../model/consts/index';
 
 interface ArticleCardProps {
-  className?: string
-  article: Article
-  view: ArticleView
-  target: HTMLAttributeAnchorTarget
+  className?: string;
+  article: Article;
+  view: ArticleView;
+  target: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, target }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   const wrapperInfo = (
     <div className={style.wrapperInfo}>
@@ -32,10 +31,10 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
         <Text size='m' className={style.views} text={String(article.views)} />
       </div>
     </div>
-  )
+  );
 
   if (view === 'BIG') {
-    const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleBlockText
+    const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleBlockText;
 
     return (
       <div className={classNames(style.articleCard, {}, [className, style[view]])}>
@@ -60,7 +59,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
           {wrapperInfo}
         </Card>
       </div>
-    )
+    );
   }
 
   return (
@@ -76,5 +75,5 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
         <Text size='m' className={style.title} title={article.title} />
       </Card>
     </div>
-  )
-}
+  );
+};

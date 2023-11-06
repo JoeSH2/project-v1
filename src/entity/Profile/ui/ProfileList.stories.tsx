@@ -1,18 +1,17 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { CountryList } from 'entity/Country';
-import { CurrencyList } from 'entity/Currency';
-import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
-
-import { ProfileList } from './ProfileList';
+import { Meta, StoryFn } from '@storybook/react';
+import { CountryList } from '@/entity/Country';
+import { ProfileList } from '@/entity/Profile';
+import { CurrencyList } from '@/entity/Currency';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
   title: 'entity/ProfileList',
   component: ProfileList,
   argTypes: { backgroundColor: { control: 'color' } },
-} as ComponentMeta<typeof ProfileList>;
+} as Meta<typeof ProfileList>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ProfileList> = args => <ProfileList {...args} />;
+const Template: StoryFn<typeof ProfileList> = args => <ProfileList {...args} />;
 
 export const Dark = Template.bind({});
 Dark.args = {

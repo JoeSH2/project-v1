@@ -1,19 +1,18 @@
-import React, { FC } from 'react'
-import { useTranslation } from 'react-i18next'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Card } from 'shared/ui/Card'
-import { Skeleton } from 'shared/ui/Skeleton'
-import { ArticleView } from '../../model/types/Article'
-
-import style from './ArticleCardSkeleton.module.scss'
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import style from './ArticleCardSkeleton.module.scss';
+import { ArticleView } from '@/entity/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Card } from '@/shared/ui/Card';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleCardSkeletonProps {
-  className?: string
-  view: ArticleView
+  className?: string;
+  view: ArticleView;
 }
 
 export const ArticleCardSkeleton: FC<ArticleCardSkeletonProps> = ({ className, view }) => {
-  const { t } = useTranslation()
+  const { t } = useTranslation();
 
   if (view === 'BIG') {
     return (
@@ -47,7 +46,7 @@ export const ArticleCardSkeleton: FC<ArticleCardSkeletonProps> = ({ className, v
           </div>
         </Card>
       </div>
-    )
+    );
   }
 
   return (
@@ -66,5 +65,5 @@ export const ArticleCardSkeleton: FC<ArticleCardSkeletonProps> = ({ className, v
         <Skeleton height='24px' width='200px' className={style.title} />
       </Card>
     </div>
-  )
-}
+  );
+};

@@ -9,15 +9,15 @@
     justify-items: center;
     gap: 30px;
 
-    @media screen and (max-width: 1700px) {
+    @media screen and (width <= 1700px) {
         grid-template-columns: 1fr 1fr 1fr;
     }
 
-    @media screen and (max-width: 1360px) {
+    @media screen and (width <= 1360px) {
         grid-template-columns: 1fr 1fr;
     }
 
-    @media screen and (max-width: 840px) {
+    @media screen and (width <= 840px) {
         grid-template-columns: 1fr;
     }
 }

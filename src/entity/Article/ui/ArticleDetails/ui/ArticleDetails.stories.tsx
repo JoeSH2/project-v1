@@ -1,17 +1,15 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react'
-import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore'
-
-import { ArticleSortField } from 'features/ArticleSort'
-import { Article, ArticleBlockType, ArticleType } from '../../../model/types/Article'
-import { ArticleDetails } from './ArticleDetails'
+import { Meta, StoryFn } from '@storybook/react';
+import { ArticleDetails } from './ArticleDetails';
+import { Article, ArticleBlockType, ArticleType } from '@/entity/Article';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
   title: 'entity/ArticleDetails',
   component: ArticleDetails,
   argTypes: { backgroundColor: { control: 'color' } },
-} as ComponentMeta<typeof ArticleDetails>
+} as Meta<typeof ArticleDetails>;
 
-const Template: ComponentStory<typeof ArticleDetails> = (args) => <ArticleDetails {...args} />
+const Template: StoryFn<typeof ArticleDetails> = args => <ArticleDetails {...args} />;
 
 const article: Article = {
   id: '1',
@@ -47,10 +45,10 @@ const article: Article = {
       ],
     },
   ],
-}
+};
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal = Template.bind({});
+Normal.args = {};
 Normal.decorators = [
   StoreDecorator({
     articleDetails: {
@@ -59,4 +57,4 @@ Normal.decorators = [
       error: undefined,
     },
   }),
-]
+];

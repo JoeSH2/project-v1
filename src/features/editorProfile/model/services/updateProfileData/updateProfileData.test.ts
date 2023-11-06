@@ -1,8 +1,8 @@
-import { CountryList } from 'entity/Country';
-import { CurrencyList } from 'entity/Currency';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk';
-import { Profile } from 'entity/Profile';
-import { updateProfileData } from './updateProfileData';
+import { CountryList } from '@/entity/Country';
+import { CurrencyList } from '@/entity/Currency';
+import { Profile } from '@/entity/Profile';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
+import { updateProfileData } from '@/features/editorProfile/model/services/updateProfileData/updateProfileData';
 
 test('fetch data', async () => {
   const data: Profile = {

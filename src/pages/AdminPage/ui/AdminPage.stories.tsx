@@ -1,10 +1,8 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { Theme } from 'app/providers/ThemesProvider';
-import React from 'react';
-import { ThemeDecorator } from 'shared/config/decorators/themeDecorator';
-
-import { StoreDecorator } from 'shared/config/decorators/StoreDecoratore';
-import { AdminPage } from '../index';
+import { Theme } from '@/app/providers/ThemesProvider';
+import { AdminPage } from '@/pages/AdminPage';
+import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
   title: 'pages/AdminPage',

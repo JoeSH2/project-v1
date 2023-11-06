@@ -1,14 +1,12 @@
-import React, { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Block } from 'shared/ui/Block';
-import { PageWrapper } from 'widgets/PageWrapper';
-
-import style from './PageNotFound.module.scss';
+import { FC } from 'react';
+import { Block } from '@/shared/ui/Block';
+import { PageWrapper } from '@/widgets/PageWrapper';
 
 interface PageNotFoundProps {
   className?: string;
   theme?: string;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 }
 
 export const PageNotFound: FC<PageNotFoundProps> = ({ className, children }) => {
@@ -16,9 +14,7 @@ export const PageNotFound: FC<PageNotFoundProps> = ({ className, children }) => 
 
   return (
     <PageWrapper>
-      <Block>
-        {t('Page not found')}
-      </Block>
+      <Block>{t('Page not found')}</Block>
     </PageWrapper>
   );
 };

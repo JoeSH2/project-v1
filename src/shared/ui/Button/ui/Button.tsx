@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { ButtonHTMLAttributes, FC, memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 
 import style from './Button.module.scss';
 
@@ -9,7 +9,7 @@ export enum ButtonTheme {
   CLEAR = 'clear',
   RED = 'red',
   GRAY = 'gray',
-  OPACITY = 'opacity'
+  OPACITY = 'opacity',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,7 +24,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
   return (
     <button
       disabled={disabled}
-      type="button"
+      type='button'
       className={classNames(style.Button, { [style.disabled]: disabled }, [className, style[theme]])}
       // eslint-disable-next-line react/jsx-props-no-spreading
       {...otherProps}

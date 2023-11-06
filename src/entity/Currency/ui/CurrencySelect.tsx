@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
+import { SelectList } from '@/shared/ui/Popups';
 
-import { SelectList } from 'shared/ui/SelectList';
-import { CurrencyList } from '../model/types/CurrencyList';
 import style from './CurrencySelect.module.scss';
+import { CurrencyList } from '../model/types/CurrencyList';
 
 interface CurrencySelectProps {
   className?: string;
