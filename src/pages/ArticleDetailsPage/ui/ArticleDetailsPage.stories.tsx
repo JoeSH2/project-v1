@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { Suspense } from 'react';
 import { Article, ArticleBlockType, ArticleType } from '@/entity/Article';
 import ArticleDetailsPage from './ArticleDetailsPage';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
@@ -9,7 +10,11 @@ export default {
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ArticleDetailsPage>;
 
-const Template: StoryFn<typeof ArticleDetailsPage> = () => <ArticleDetailsPage />;
+const Template: StoryFn<typeof ArticleDetailsPage> = () => (
+  <Suspense fallback={<div />}>
+    <ArticleDetailsPage />
+  </Suspense>
+);
 
 const article: Article = {
   id: '1',

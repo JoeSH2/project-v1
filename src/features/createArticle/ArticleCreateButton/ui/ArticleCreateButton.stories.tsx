@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { ArticleCreateButton } from './ArticleCreateButton';
 
 export default {
-  title: 'shared/ArticleCreate',
+  title: 'features/ArticleCreate',
   component: ArticleCreateButton,
   argTypes: {
     backgroundColor: { control: 'color' },

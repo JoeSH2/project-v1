@@ -22,9 +22,9 @@ import { articlePageActions } from '@/pages/ArticlesPage/model/slice/articlePage
 import { ArticleType } from '@/entity/Article';
 import { Block } from '@/shared/ui/Block';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
-import { SelectList } from '@/shared/ui/Popups';
 import { Input } from '@/shared/ui/Input';
 import { ArticleTabsFilters } from '@/features/ArticleSort/ui/ArticleTabsFilters/ArticleTabsFilters';
+import { SelectList } from '@/shared/ui/Popups';
 
 interface ArticleSortProps {
   className?: string;

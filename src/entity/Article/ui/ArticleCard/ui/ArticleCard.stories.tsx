@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { ArticleCard } from '@/entity/Article/ui/ArticleCard';
-import { ArticleBlockType, ArticleType } from '@/entity/Article';
+import { ArticleCard } from './ArticleCard';
+import { ArticleBlockType, ArticleType } from '../../../model/consts';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { Theme } from '@/app/providers/ThemesProvider';
 

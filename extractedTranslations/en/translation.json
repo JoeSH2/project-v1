@@ -5,6 +5,13 @@
   "Admin panel": "",
   "Back": "",
   "CRYPTO": "",
+  "Check for notifications": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Create article": "",
   "ECONOMICS": "",
   "EN": "",
@@ -42,6 +49,8 @@
   "There was an error, return to the home page?": "",
   "Toggle": "",
   "Wrong login or password, try again!": "Wrong login or password, try again!",
+  "You don't have any notifications": "",
+  "You've been notified!": "",
   "ascending": "",
   "descending": "",
   "name": "",

@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
@@ -12,7 +13,11 @@ export default {
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ProfilePage>;
 
-const Template: StoryFn<typeof ProfilePage> = () => <ProfilePage />;
+const Template: StoryFn<typeof ProfilePage> = () => (
+  <Suspense fallback={<div />}>
+    <ProfilePage />
+  </Suspense>
+);
 
 export const Dark = Template.bind({});
 Dark.decorators = [

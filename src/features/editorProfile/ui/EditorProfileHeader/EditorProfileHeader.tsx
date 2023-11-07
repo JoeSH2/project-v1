@@ -51,13 +51,13 @@ export const EditorProfileHeader: FC<EditorProfileHeaderProps> = ({ className })
       </div>
       {userData?.id === profileData?.id &&
         (readonly ? (
-          <HStack justify='end' className={style.wrapperBtn}>
+          <HStack justify='justifyEnd' className={style.wrapperBtn}>
             <Button data-testid='EditorProfileHeader.EditBtn' onClick={onEdit} className={style.editBtn}>
               {t('Edit')}
             </Button>
           </HStack>
         ) : (
-          <HStack justify='end' className={style.wrapperBtn}>
+          <HStack justify='justifyEnd' className={style.wrapperBtn}>
             <Button
               data-testid='EditorProfileHeader.CancelBtn'
               onClick={cancelEdit}

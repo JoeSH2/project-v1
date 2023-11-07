@@ -1,16 +1,20 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
 import { AboutPage } from '@/pages/AboutPage';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
-export default {
+const meta: Meta<typeof AboutPage> = {
   title: 'pages/AboutPage',
   component: AboutPage,
-  argTypes: { backgroundColor: { control: 'color' } },
-} as Meta<typeof AboutPage>;
+};
 
-const Template: StoryFn<typeof AboutPage> = () => <AboutPage />;
+const Template: StoryFn<typeof AboutPage> = () => (
+  <Suspense fallback={<div />}>
+    <AboutPage />
+  </Suspense>
+);
 
 export const Dark = Template.bind({});
 Dark.args = { theme: Theme.DARK };
@@ -23,3 +27,4 @@ Default.decorators = [ThemeDecorator(Theme.DEFAULT), StoreDecorator({})];
 export const Brown = Template.bind({});
 Brown.args = { theme: Theme.BROWN };
 Brown.decorators = [ThemeDecorator(Theme.BROWN), StoreDecorator({})];
+export default meta;

@@ -1,12 +1,11 @@
 import { FC } from 'react';
 import DefaultAvatar from '@/shared/assets/icon/default-avatar.jpg';
 import { Text } from '@/shared/ui/Text';
-
 import style from './CommentCard.module.scss';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
-import { Comment } from '@/entity/Comment/model/types/comment';
+import { Comment } from '../../model/types/comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { RoutePath } from '@/shared/config/routeConfig/AppRoute';
 

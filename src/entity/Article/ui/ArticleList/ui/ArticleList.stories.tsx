@@ -4,7 +4,7 @@ import { Article } from '../../../model/types/Article';
 import { ArticleList } from './ArticleList';
 
 export default {
-  title: 'entity/ArticleList',
+  title: 'entity/Article/ArticleList',
   component: ArticleList,
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ArticleList>;

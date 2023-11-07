@@ -4,7 +4,7 @@ import { Article, ArticleBlockType, ArticleType } from '@/entity/Article';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
-  title: 'entity/ArticleDetails',
+  title: 'entity/Article/ArticleDetails',
   component: ArticleDetails,
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ArticleDetails>;

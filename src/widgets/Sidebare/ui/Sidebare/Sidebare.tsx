@@ -4,8 +4,8 @@ import { getUserAuth } from '@/entity/User';
 import ArrowIcon from '@/shared/assets/icon/arrow.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
-import { LangSwitcher } from '@/widgets/LangSwitcher';
-import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { LangSwitcher } from '../../../LangSwitcher';
+import { ThemeSwitcher } from '../../../ThemeSwitcher';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import { getSidebareLinks } from '../../model/selectors/getSidebareLinks';
 
@@ -38,7 +38,7 @@ export const Sidebare: FC<SidebareProps> = memo(({ className }: SidebareProps) =
   return (
     <aside data-testid='sidebare' className={classNames(style.Sidebare, { [style.collapse]: collapse }, [className])}>
       <VStack
-        justify='between'
+        justify='justifyBetween'
         align={collapse ? 'center' : 'start'}
         htmlStyle='nav'
         gap='gap16'

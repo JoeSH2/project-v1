@@ -3,28 +3,22 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Theme } from '@/app/providers/ThemesProvider';
 
 import ArtIcon from './art.jpg';
-import { Avatar } from '@/shared/ui/Avatar';
-import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
+import { Avatar } from './Avatar';
+import { ThemeDecorator } from '../../../config/decorators/themeDecorator';
 
-export default {
+const meta: Meta<typeof Avatar> = {
   title: 'shared/Avatar',
   component: Avatar,
   argTypes: { backgroundColor: { control: 'color' } },
+  args: {
+    src: ArtIcon,
+    alt: 'art',
+  },
 } as Meta<typeof Avatar>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: StoryFn<typeof Avatar> = args => <Avatar {...args} />;
 
-export const Dark = Template.bind({});
-Dark.args = {
-  src: ArtIcon,
-  alt: 'art',
-};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const Default = Template.bind({});
-Default.args = {
-  src: ArtIcon,
-  alt: 'art',
-};
 Default.decorators = [ThemeDecorator(Theme.DEFAULT)];
+
+export default meta;

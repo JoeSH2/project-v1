@@ -1,6 +1,6 @@
 import '@/app/styles/index.scss';
 import { DeepPartial } from '@reduxjs/toolkit';
-import { Story } from '@storybook/react';
+import { StoryFn } from '@storybook/react';
 import { ReducerList } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { loginUserReducer } from '@/features/AuthWithUsername/model/slice/loginUserSlice';
 import { editorProfileReducer } from '@/features/editorProfile/model/slice/editorProfileSlice';
@@ -19,7 +19,7 @@ const stateReducer: ReducerList = {
   user: userReducer,
 };
 
-export const StoreDecorator = (state: DeepPartial<StateSchema>) => (StoryComponent: Story) =>
+export const StoreDecorator = (state: DeepPartial<StateSchema>) => (StoryComponent: StoryFn) =>
   (
     <StoreProvider initialState={state} asyncReducer={stateReducer}>
       <StoryComponent />

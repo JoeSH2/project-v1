@@ -1,5 +1,5 @@
-import axios, { AxiosStatic } from 'axios/index';
 import { AnyAction, AsyncThunkAction, DeepPartial, ThunkDispatch } from '@reduxjs/toolkit';
+import axios, { AxiosStatic } from 'axios';
 import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
 
 type ActionCreatorType<Return, Args, RejectValue> = (

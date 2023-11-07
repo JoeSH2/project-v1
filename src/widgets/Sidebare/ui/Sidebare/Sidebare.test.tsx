@@ -1,6 +1,7 @@
-import { fireEvent, screen } from '@storybook/testing-library';
-import componentRender from '@/shared/lib/tests/componentRender/componentRender';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { Sidebare } from './Sidebare';
+import componentRender from '@/shared/lib/tests/componentRender/componentRender';
 
 test('renders full components', () => {
   componentRender(<Sidebare />);
@@ -8,10 +9,10 @@ test('renders full components', () => {
   screen.debug();
 });
 
-test('toggle sidebare', () => {
+test('toggle sidebare', async () => {
   componentRender(<Sidebare />);
   const toggleButton = screen.getByTestId('toggle-sidebare');
-  fireEvent.click(toggleButton);
+  await userEvent.click(toggleButton);
   expect(screen.getByTestId('sidebare')).toHaveClass('collapse');
   screen.debug();
 });

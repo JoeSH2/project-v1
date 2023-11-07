@@ -7,7 +7,7 @@ import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { Theme } from '@/app/providers/ThemesProvider';
 
 export default {
-  title: 'features/article/ArticleSort',
+  title: 'features/ArticleSort',
   component: ArticleSort,
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ArticleSort>;

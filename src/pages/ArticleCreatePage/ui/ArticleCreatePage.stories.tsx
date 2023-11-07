@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
 import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
@@ -10,7 +11,11 @@ export default {
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ArticleCreatePage>;
 
-const Template: StoryFn<typeof ArticleCreatePage> = () => <ArticleCreatePage />;
+const Template: StoryFn<typeof ArticleCreatePage> = () => (
+  <Suspense fallback={<div />}>
+    <ArticleCreatePage />
+  </Suspense>
+);
 
 export const Dark = Template.bind({});
 Dark.args = { theme: Theme.DARK };

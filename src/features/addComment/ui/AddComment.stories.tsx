@@ -1,25 +1,25 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { AddComment } from '@/features/addComment';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import AddComment from './AddComment';
 
-export default {
-  title: 'shared/AddComment',
+const meta: Meta<typeof AddComment> = {
+  title: 'features/AddComment',
   component: AddComment,
-  argTypes: { backgroundColor: { control: 'color' } },
-} as Meta<typeof AddComment>;
+  decorators: [
+    StoreDecorator({
+      commentForm: {
+        isLoading: false,
+        text: 'hello!',
+        articleId: '1',
+        userId: '1',
+        error: undefined,
+      },
+    }),
+  ],
+};
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: StoryFn<typeof AddComment> = args => <AddComment {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
-Default.decorators = [
-  StoreDecorator({
-    commentForm: {
-      isLoading: false,
-      text: 'Nice comment',
-      articleId: '1',
-      userId: '1',
-    },
-  }),
-];
+export const Dark = Template.bind({});
+Dark.args = {};
+export default meta;

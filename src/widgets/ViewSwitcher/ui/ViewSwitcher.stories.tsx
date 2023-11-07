@@ -3,7 +3,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { ViewSwitcher } from './ViewSwitcher';
 
 export default {
-  title: 'shared/ViewSwitcher',
+  title: 'widgets/ViewSwitcher',
   component: ViewSwitcher,
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ViewSwitcher>;

@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
@@ -10,7 +11,11 @@ export default {
   argTypes: { backgroundColor: { control: 'color' } },
 } as Meta<typeof ForbiddenPage>;
 
-const Template: StoryFn<typeof ForbiddenPage> = () => <ForbiddenPage />;
+const Template: StoryFn<typeof ForbiddenPage> = () => (
+  <Suspense fallback={<div />}>
+    <ForbiddenPage />
+  </Suspense>
+);
 
 export const Default = Template.bind({});
 Default.decorators = [ThemeDecorator(Theme.DEFAULT), StoreDecorator({})];

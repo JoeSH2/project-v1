@@ -2,9 +2,10 @@ import { DeepPartial } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { I18nextProvider } from 'react-i18next';
-import { ReducerList } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import { ReactNode } from 'react';
+import { ReducerList } from '../../useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import i18nTest from '@/shared/config/i18n/i18nTest';
+import i18nTest from '../../../config/i18n/i18nTest';
 
 interface componentRenderOptions {
   route?: string;
@@ -13,7 +14,7 @@ interface componentRenderOptions {
 }
 
 function componentRender(
-  components: React.ReactNode,
+  components: ReactNode,
   { route = '/', initialState = {}, asyncReducer }: componentRenderOptions = {},
 ) {
   return render(

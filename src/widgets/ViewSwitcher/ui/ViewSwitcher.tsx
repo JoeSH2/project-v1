@@ -25,7 +25,7 @@ export const ViewSwitcher: FC<ViewSwitcherProps> = props => {
   };
 
   return (
-    <HStack align='center' justify='between' className={classNames(style.viewSwitcher, {}, [className])}>
+    <HStack align='center' justify='justifyBetween' className={classNames(style.viewSwitcher, {}, [className])}>
       <Button onClick={onClickView('SMALL')} theme={ButtonTheme.CLEAR}>
         <IconGrid className={classNames(style.viewIcon, { [style.active]: activeSmall }, [])} width={35} height={35} />
       </Button>
