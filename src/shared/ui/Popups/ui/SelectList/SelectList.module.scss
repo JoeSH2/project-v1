@@ -1,0 +1,54 @@
+.MenuPopup {
+  position: relative;
+}
+
+.button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  font-weight: 500;
+}
+
+.theme {
+  background-color: var(--bg-color-special);
+  color: var(--primary-color);
+  padding: 8px 22px;
+  border-radius: 4px;
+}
+
+.clear {
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--primary-color);
+}
+
+.item {
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 1.2rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background-color: var(--bg-color-inverted-secondary);
+  }
+}
+
+.list {
+  position: absolute;
+  min-width: 100%;
+  z-index: var(--z-index-main);
+  overflow: hidden;
+  background-color: var(--bg-color-inverted);
+  color: var(--font-color-inverted);
+  border-radius: 1rem;
+  padding: 12px 0;
+}
+
