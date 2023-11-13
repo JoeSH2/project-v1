@@ -2,12 +2,12 @@ import React, { FC, memo, ReactNode, useEffect } from 'react';
 import { useTheme } from '@/app/providers/ThemesProvider';
 
 import style from './Drawer.module.scss';
-import { useAnimationLibs } from '@/shared/config/decorators/AnimationDecorator';
-import { useModal } from '@/shared/hooks/useModal';
-import { Button } from '@/shared/ui/Button';
+import { AnimationProvider, useAnimationLibs } from '../../../config/decorators/AnimationDecorator';
+import { useModal } from '../../../hooks/useModal';
+import { Button } from '../../Button';
 import { Portal } from '../../Portal/Portal';
 import { Overlay } from '../../Overlay/ui/Overlay';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { classNames } from '../../../lib/classNames/classNames';
 
 interface DrawerProps {
   className?: string;
@@ -22,7 +22,8 @@ interface DrawerProps {
 }
 
 const heightDrawer = window.innerHeight - 100;
-export const DrawerContent: FC<DrawerProps> = memo((props: DrawerProps) => {
+
+const DrawerContent: FC<DrawerProps> = memo((props: DrawerProps) => {
   const { className, classNameBtn, onOpen, value, lazy, children, isOpen, onClose } = props;
   const { isMounted } = useModal(onClose, isOpen);
   const { theme } = useTheme();
@@ -93,7 +94,7 @@ export const DrawerContent: FC<DrawerProps> = memo((props: DrawerProps) => {
   );
 });
 
-export const Drawer: FC<DrawerProps> = memo((props: DrawerProps) => {
+const DrawerLoading: FC<DrawerProps> = memo((props: DrawerProps) => {
   const { isLoading } = useAnimationLibs();
   const { children } = props;
   if (!isLoading) {
@@ -101,4 +102,14 @@ export const Drawer: FC<DrawerProps> = memo((props: DrawerProps) => {
   }
 
   return <DrawerContent {...props}>{children}</DrawerContent>;
+});
+
+export const Drawer: FC<DrawerProps> = memo((props: DrawerProps) => {
+  const { children } = props;
+
+  return (
+    <AnimationProvider>
+      <DrawerLoading {...props}>{children}</DrawerLoading>
+    </AnimationProvider>
+  );
 });

@@ -5,7 +5,6 @@ import { NotificationsList } from '@/entity/Notifications';
 import NotificationIcon from '@/shared/assets/icon/notification.svg';
 import style from './NotificationButton.module.scss';
 import { Popover } from '@/shared/ui/Popups';
-import { AnimationProvider } from '@/shared/config/decorators/AnimationDecorator';
 import { Drawer } from '@/shared/ui/Drawer';
 import { Svg } from '@/shared/ui/Svg/ui/Svg';
 
@@ -23,17 +22,15 @@ export const NotificationButton: FC<NotificationButtonProps> = ({ className }) =
         </Popover>
       </BrowserView>
       <MobileView>
-        <AnimationProvider>
-          <Drawer
-            classNameBtn={style.btnDrawer}
-            onOpen={() => setOpen(true)}
-            onClose={() => setOpen(false)}
-            isOpen={open}
-            value={<Svg className={style.notification} Svg={NotificationIcon} />}
-          >
-            <NotificationsList />
-          </Drawer>
-        </AnimationProvider>
+        <Drawer
+          classNameBtn={style.btnDrawer}
+          onOpen={() => setOpen(true)}
+          onClose={() => setOpen(false)}
+          isOpen={open}
+          value={<Svg className={style.notification} Svg={NotificationIcon} />}
+        >
+          <NotificationsList />
+        </Drawer>
       </MobileView>
     </>
   );
