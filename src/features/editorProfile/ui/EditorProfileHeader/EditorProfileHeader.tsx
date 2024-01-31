@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux';
 import { Text } from '@/shared/ui/Text';
 
 import style from './EditorProfileHeader.module.scss';
-import { editorProfileActions, editorProfileReducer } from '@/features/editorProfile/model/slice/editorProfileSlice';
+import { editorProfileActions, editorProfileReducer } from '../../model/slice/editorProfileSlice';
 import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { getProfileReadonly } from '@/features/editorProfile/model/selectors/getProfileReadonly';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly';
 import { getUserAuth } from '@/entity/User';
-import { getProfileData } from '@/features/editorProfile/model/selectors/getProfileData';
-import { updateProfileData } from '@/features/editorProfile/model/services/updateProfileData/updateProfileData';
+import { getProfileData } from '../../model/selectors/getProfileData';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';

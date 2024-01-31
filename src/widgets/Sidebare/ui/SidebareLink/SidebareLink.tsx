@@ -3,7 +3,7 @@ import { FC, memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import style from './SidebareLink.module.scss';
-import { SidebareLinksType } from '@/widgets/Sidebare/model/types/sidebareLinks';
+import { SidebareLinksType } from '../../model/types/sidebareLinks';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 
 interface SidebareLinkProps {

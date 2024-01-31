@@ -31,7 +31,7 @@ export const NotificationsList: FC = () => {
     <>
       {data ? (
         <VStack className={style.wrapper} gap='gap16'>
-          <Text className={style.title} align='left' size='m' title={t("You've been notified!")} />
+          <Text theme='theme' className={style.title} align='left' size='m' title={t("You've been notified!")} />
           {data
             .filter(notification => notification.userId === authData?.id)
             .map(notification => (
@@ -47,7 +47,13 @@ export const NotificationsList: FC = () => {
         </VStack>
       ) : (
         <VStack className={style.wrapper} gap='gap8'>
-          <Text className={style.title} align='left' size='l' text={t("You don't have any notifications")} />
+          <Text
+            theme='inverted'
+            className={style.title}
+            align='left'
+            size='l'
+            text={t("You don't have any notifications")}
+          />
         </VStack>
       )}
     </>

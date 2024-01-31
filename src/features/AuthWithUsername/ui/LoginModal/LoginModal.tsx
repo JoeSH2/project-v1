@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Modal } from '@/shared/ui/Modal';
-import { LoginFormAsync } from '@/features/AuthWithUsername/ui/LoginForm/LoginFormAsync';
+import { LoginFormAsync } from '../LoginForm/LoginFormAsync';
 
 interface LoginModalProps {
   isOpen: boolean;

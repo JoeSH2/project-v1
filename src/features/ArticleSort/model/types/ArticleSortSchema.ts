@@ -1,6 +1,6 @@
 import { ArticleType } from '@/entity/Article';
 import { SortOrder } from '@/shared/types/types';
-import { ArticleSortField } from '@/features/ArticleSort/model/consts';
+import { ArticleSortField } from '../consts';
 
 export interface ArticleSortSchema {
   search: string;

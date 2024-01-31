@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
-import { ArticleTabsFilters } from '@/features/ArticleSort/ui/ArticleTabsFilters/ArticleTabsFilters';
+import { ArticleTabsFilters } from './ArticleTabsFilters';
 
 const meta: Meta<typeof ArticleTabsFilters> = {
   title: 'features/ArticleTabsFilters',

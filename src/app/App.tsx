@@ -2,8 +2,7 @@ import './styles/index.scss';
 
 import React, { FC, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { userActions } from '@/entity/User';
-import { getUserMounted } from '@/entity/User/model/selectors/getUserMounted';
+import { getUserMounted, userActions } from '@/entity/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbare } from '@/widgets/Navbare';
 import { Sidebare } from '@/widgets/Sidebare';

@@ -1,18 +1,18 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
-import { AboutPage } from '@/pages/AboutPage';
+import { AboutPageAsync } from './AboutPage.async';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
-const meta: Meta<typeof AboutPage> = {
-  title: 'pages/AboutPage',
-  component: AboutPage,
+const meta: Meta<typeof AboutPageAsync> = {
+  title: 'pages/AboutPageAsync',
+  component: AboutPageAsync,
 };
 
-const Template: StoryFn<typeof AboutPage> = () => (
+const Template: StoryFn<typeof AboutPageAsync> = () => (
   <Suspense fallback={<div />}>
-    <AboutPage />
+    <AboutPageAsync />
   </Suspense>
 );
 

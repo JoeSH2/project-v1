@@ -3,8 +3,8 @@ import { FC } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import style from './ArticleCreateButton.module.scss';
 import { AppLink } from '@/shared/ui/AppLink';
-import { RoutePath } from '@/shared/config/routeConfig/AppRoute';
 import { Button } from '@/shared/ui/Button';
+import { RoutePath } from '@/app/routes/config/routeConfig';
 
 interface ArticleCreateButtonProps {
   className?: string;

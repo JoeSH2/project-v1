@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Article, ArticleType } from '@/entity/Article';
 import { UserRole } from '@/entity/User';
-import { ArticlesRecommendationsList } from '@/features/ArticlesRecommendationsList';
+import { ArticlesRecommendationsList } from './ArticlesRecommendationsList';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 const article: Article = {

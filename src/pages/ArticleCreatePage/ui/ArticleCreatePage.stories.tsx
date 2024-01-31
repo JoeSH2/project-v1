@@ -1,19 +1,19 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
-import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { ArticleCreatePageAsync } from './ArticleCreatePage.async';
 
 export default {
-  title: 'pages/ArticleCreatePage',
-  component: ArticleCreatePage,
+  title: 'pages/ArticleCreatePageAsync',
+  component: ArticleCreatePageAsync,
   argTypes: { backgroundColor: { control: 'color' } },
-} as Meta<typeof ArticleCreatePage>;
+} as Meta<typeof ArticleCreatePageAsync>;
 
-const Template: StoryFn<typeof ArticleCreatePage> = () => (
+const Template: StoryFn<typeof ArticleCreatePageAsync> = () => (
   <Suspense fallback={<div />}>
-    <ArticleCreatePage />
+    <ArticleCreatePageAsync />
   </Suspense>
 );
 

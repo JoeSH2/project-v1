@@ -1,19 +1,19 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
-import { AdminPage } from '@/pages/AdminPage';
+import { AdminPageAsync } from './AdminPage.async';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
-  title: 'pages/AdminPage',
-  component: AdminPage,
+  title: 'pages/AdminPageAsync',
+  component: AdminPageAsync,
   argTypes: { backgroundColor: { control: 'color' } },
-} as Meta<typeof AdminPage>;
+} as Meta<typeof AdminPageAsync>;
 
-const Template: StoryFn<typeof AdminPage> = () => (
+const Template: StoryFn<typeof AdminPageAsync> = () => (
   <Suspense fallback={<div />}>
-    <AdminPage />
+    <AdminPageAsync />
   </Suspense>
 );
 

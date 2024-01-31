@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
-import { ProfilePage } from '@/pages/ProfilePage';
+import { ProfilePageAsync } from './ProfilePage.async';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 import { CountryList } from '@/entity/Country';
 import { CurrencyList } from '@/entity/Currency';
@@ -9,13 +9,13 @@ import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 
 export default {
   title: 'pages/ProfilePage',
-  component: ProfilePage,
+  component: ProfilePageAsync,
   argTypes: { backgroundColor: { control: 'color' } },
-} as Meta<typeof ProfilePage>;
+} as Meta<typeof ProfilePageAsync>;
 
-const Template: StoryFn<typeof ProfilePage> = () => (
+const Template: StoryFn<typeof ProfilePageAsync> = () => (
   <Suspense fallback={<div />}>
-    <ProfilePage />
+    <ProfilePageAsync />
   </Suspense>
 );
 

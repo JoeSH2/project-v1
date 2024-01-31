@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 import { ArticleSort } from './ArticleSort';
-import { ArticleSortField } from '@/features/ArticleSort/model/consts';
+import { ArticleSortField } from '../model/consts';
 import { ArticleType } from '@/entity/Article';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { Theme } from '@/app/providers/ThemesProvider';

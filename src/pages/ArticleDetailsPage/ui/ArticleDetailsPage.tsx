@@ -8,16 +8,17 @@ import { Text } from '@/shared/ui/Text';
 
 import style from './ArticleDetailsPage.module.scss';
 import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
+import { articleDetailsPageReducer } from '../../ArticleDetailsPage/model/slice';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { getArticleComments } from '@/pages/ArticleDetailsPage/model/slice/ArticleDetailsCommentsSlice';
-import { addCommentArticleDetails } from '@/pages/ArticleDetailsPage/model/services/addCommentArticleDetails';
+import { getArticleComments } from '../model/slice/ArticleDetailsCommentsSlice';
+import { addCommentArticleDetails } from '../model/services/addCommentArticleDetails';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import { fetchArticleDetailsComments } from '@/pages/ArticleDetailsPage/model/services/fetchArticleDetailsComments';
+import { fetchArticleDetailsComments } from '../model/services/fetchArticleDetailsComments';
 import { PageWrapper } from '@/widgets/PageWrapper';
 import { ArticlesRecommendationsList } from '@/features/ArticlesRecommendationsList';
 import { AddComment } from '@/features/addComment';
-import { CommentList } from '@/entity/Comment/ui/CommentList/CommentList';
+import { CommentList } from '@/entity/Comment';
+import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -53,6 +54,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   return (
     <PageWrapper className={className}>
       <ArticleDetails id={id} />
+      <ArticleRating className={style.wrapperRating} articleId={id} />
       <ArticlesRecommendationsList className={style.recommendations} />
       <AddComment onSendComment={onSendComment} />
       <CommentList comments={comments} />

@@ -5,7 +5,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 
 import style from './ArticleTabsFilters.module.scss';
 import { ArticleType } from '@/entity/Article';
-import { getArticleSortType } from '@/features/ArticleSort/model/selectors/getArticleSortSelectors';
+import { getArticleSortType } from '../../model/selectors/getArticleSortSelectors';
 import { Tab, TabsOptions } from '@/shared/ui/Tab/ui/Tab';
 
 export interface ArticleTabsFiltersProps {

@@ -84,16 +84,16 @@ time,
 mark,
 audio,
 video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 /* make sure to set some focus styles for accessibility */
 :focus {
-    outline: 0;
+  outline: 0;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -108,52 +108,52 @@ hgroup,
 menu,
 nav,
 section {
-    display: block;
+  display: block;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-    quotes: none;
+  quotes: none;
 }
 
 blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-    content: "";
-    content: none;
+  content: "";
+  content: none;
 }
 
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration {
-    appearance: none;
+  appearance: none;
 }
 
 input[type="search"] {
-    appearance: none;
-    box-sizing: content-box;
+  appearance: none;
+  box-sizing: content-box;
 }
 
 textarea {
-    overflow: auto;
-    vertical-align: top;
-    resize: vertical;
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
 }
 
 /**
@@ -163,10 +163,10 @@ textarea {
 audio,
 canvas,
 video {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    max-width: 100%;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%;
 }
 
 /**
@@ -175,8 +175,8 @@ video {
  */
 
 audio:not([controls]) {
-    display: none;
-    height: 0;
+  display: none;
+  height: 0;
 }
 
 /**
@@ -185,7 +185,7 @@ audio:not([controls]) {
  */
 
 [hidden] {
-    display: none;
+  display: none;
 }
 
 /**
@@ -196,10 +196,10 @@ audio:not([controls]) {
  */
 
 html {
-    font-size: 100%;
+  font-size: 100%;
 
-    /* 1 */
-    text-size-adjust: 100%;
+  /* 1 */
+  text-size-adjust: 100%;
 }
 
 /**
@@ -207,7 +207,7 @@ html {
  */
 
 a:focus {
-    outline: thin dotted;
+  outline: thin dotted;
 }
 
 /**
@@ -216,7 +216,7 @@ a:focus {
 
 a:active,
 a:hover {
-    outline: 0;
+  outline: 0;
 }
 
 /**
@@ -225,7 +225,7 @@ a:hover {
  */
 
 img {
-    border: 0;
+  border: 0;
 }
 
 /**
@@ -233,7 +233,7 @@ img {
  */
 
 figure {
-    margin: 0;
+  margin: 0;
 }
 
 /**
@@ -241,7 +241,7 @@ figure {
  */
 
 form {
-    margin: 0;
+  margin: 0;
 }
 
 /**
@@ -249,9 +249,9 @@ form {
  */
 
 fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 /**
@@ -261,16 +261,16 @@ fieldset {
  */
 
 legend {
-    border: 0;
+  border: 0;
 
-    /* 1 */
-    padding: 0;
-    white-space: normal;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
 
-    /* 2 */
-    *margin-left: -7px;
+  /* 2 */
+  *margin-left: -7px;
 
-    /* 3 */
+  /* 3 */
 }
 
 /**
@@ -284,18 +284,19 @@ button,
 input,
 select,
 textarea {
-    font-size: 100%;
+  font-size: 100%;
+  border: none;
 
-    /* 1 */
-    margin: 0;
+  /* 1 */
+  margin: 0;
 
-    /* 2 */
-    vertical-align: baseline;
+  /* 2 */
+  vertical-align: baseline;
 
-    /* 3 */
-    *vertical-align: middle;
+  /* 3 */
+  *vertical-align: middle;
 
-    /* 3 */
+  /* 3 */
 }
 
 /**
@@ -305,7 +306,7 @@ textarea {
 
 button,
 input {
-    line-height: normal;
+  line-height: normal;
 }
 
 /**
@@ -317,7 +318,7 @@ input {
 
 button,
 select {
-    text-transform: none;
+  text-transform: none;
 }
 
 /**
@@ -332,18 +333,18 @@ select {
 
 button,
 html input[type="button"],
-/* 1 */
+  /* 1 */
 input[type="reset"],
 input[type="submit"] {
-    appearance: button;
+  appearance: button;
 
-    /* 2 */
-    cursor: pointer;
+  /* 2 */
+  cursor: pointer;
 
-    /* 3 */
-    *overflow: visible;
+  /* 3 */
+  *overflow: visible;
 
-    /* 4 */
+  /* 4 */
 }
 
 /**
@@ -352,7 +353,7 @@ input[type="submit"] {
 
 button[disabled],
 html input[disabled] {
-    cursor: default;
+  cursor: default;
 }
 
 /**
@@ -364,23 +365,23 @@ html input[disabled] {
 
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    /* 1 */
-    padding: 0;
+  /* 1 */
+  padding: 0;
 
-    /* 2 */
-    *height: 13px;
+  /* 2 */
+  *height: 13px;
 
-    /* 3 */
-    *width: 13px;
+  /* 3 */
+  *width: 13px;
 
-    /* 3 */
+  /* 3 */
 }
 
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    appearance: none;
+  appearance: none;
 }
 
 /**
@@ -389,8 +390,8 @@ input[type="search"]::-webkit-search-decoration {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+  border: 0;
+  padding: 0;
 }
 
 html,
@@ -398,10 +399,10 @@ button,
 input,
 select,
 textarea {
-    color: #222;
+  color: #222;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
+  background: #b3d4fc;
+  text-shadow: none;
 }

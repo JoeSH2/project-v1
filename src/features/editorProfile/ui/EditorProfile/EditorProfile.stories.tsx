@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Profile } from '@/entity/Profile';
-import { EditorProfile } from '@/features/editorProfile';
+import { EditorProfile } from './EditorProfile';
 import { CurrencyList } from '@/entity/Currency';
 import { CountryList } from '@/entity/Country';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';

@@ -15,33 +15,60 @@ export interface FlexProps {
   direction?: FlexDirection;
   wrap?: boolean;
   gap?: FlexGap;
+  full?: boolean;
   htmlStyle?: 'ul' | 'nav' | 'aside' | 'main' | 'section';
 }
 
 export const Flex: FC<FlexProps> = props => {
-  const { children, htmlStyle, align = 'center', justify = 'start', className, direction = 'row', gap, wrap } = props;
+  const {
+    children,
+    htmlStyle,
+    full,
+    align = 'center',
+    justify = 'start',
+    className,
+    direction = 'row',
+    gap,
+    wrap,
+  } = props;
 
   const classArray = [className, style[align], style[justify], style[direction], gap && style[gap]];
 
   if (htmlStyle === 'aside') {
-    return <aside className={classNames(style.Flex, { [style.wrap]: wrap }, classArray)}>{children}</aside>;
+    return (
+      <aside className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>
+        {children}
+      </aside>
+    );
   }
 
   if (htmlStyle === 'nav') {
-    return <nav className={classNames(style.Flex, { [style.wrap]: wrap }, classArray)}>{children}</nav>;
+    return (
+      <nav className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</nav>
+    );
   }
 
   if (htmlStyle === 'ul') {
-    return <ul className={classNames(style.Flex, { [style.wrap]: wrap }, classArray)}>{children}</ul>;
+    return (
+      <ul className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</ul>
+    );
   }
 
   if (htmlStyle === 'main') {
-    return <main className={classNames(style.Flex, { [style.wrap]: wrap }, classArray)}>{children}</main>;
+    return (
+      <main className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</main>
+    );
   }
 
   if (htmlStyle === 'section') {
-    return <section className={classNames(style.Flex, { [style.wrap]: wrap }, classArray)}>{children}</section>;
+    return (
+      <section className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>
+        {children}
+      </section>
+    );
   }
 
-  return <div className={classNames(style.Flex, { [style.wrap]: wrap }, classArray)}>{children}</div>;
+  return (
+    <div className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</div>
+  );
 };

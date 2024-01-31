@@ -1,0 +1,20 @@
+.StarsRating {
+  margin: 10px 0 0 0;
+}
+
+.star {
+  fill: transparent;
+  stroke-width: 1px;
+  stroke: var(--gold-color-white);
+  cursor: pointer;
+  padding: 0 3px 0 0;
+  transition: fill 0.2s ease;
+}
+
+.hovered {
+  fill: var(--gold-color);
+}
+
+.selected {
+  cursor: auto;
+}

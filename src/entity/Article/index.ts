@@ -1,4 +1,9 @@
 export { ArticleActions, ArticleReducer } from './model/slice/ArticleSlice';
+export {
+  getArticleDetailsData,
+  getArticleDetailsError,
+  getArticleDetailsLoading,
+} from './model/selectors/getArticleDetails';
 export type { Article, ArticleView } from './model/types/Article';
 export type { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
 export { ArticleDetails } from './ui/ArticleDetails/ui/ArticleDetails';

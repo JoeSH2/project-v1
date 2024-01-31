@@ -8,10 +8,10 @@ import ViewIcon from '@/shared/assets/icon/eye.svg';
 import { Card } from '@/shared/ui/Card';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button } from '@/shared/ui/Button';
-import { RoutePath } from '@/shared/config/routeConfig/AppRoute';
 import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
 import { Avatar } from '@/shared/ui/Avatar';
 import { ArticleBlockType } from '../../../model/consts/index';
+import { RoutePath } from '@/app/routes/config/routeConfig';
 
 interface ArticleCardProps {
   className?: string;

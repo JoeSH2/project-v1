@@ -1,19 +1,19 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
-import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { ForbiddenPageAsync } from './ForbiddenPage.async';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
-  title: 'pages/ForbiddenPage',
-  component: ForbiddenPage,
+  title: 'pages/ForbiddenPageAsync',
+  component: ForbiddenPageAsync,
   argTypes: { backgroundColor: { control: 'color' } },
-} as Meta<typeof ForbiddenPage>;
+} as Meta<typeof ForbiddenPageAsync>;
 
-const Template: StoryFn<typeof ForbiddenPage> = () => (
+const Template: StoryFn<typeof ForbiddenPageAsync> = () => (
   <Suspense fallback={<div />}>
-    <ForbiddenPage />
+    <ForbiddenPageAsync />
   </Suspense>
 );
 

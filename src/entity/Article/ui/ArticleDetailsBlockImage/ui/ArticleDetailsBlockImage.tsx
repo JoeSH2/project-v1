@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
 import style from './ArticleDetailsBlockImage.module.scss';
-import { ArticleBlockImage } from '@/entity/Article/model/types/Article';
+import { ArticleBlockImage } from '../../../model/types/Article';
 
 interface ArticleDetailsBlockImageProps {
   className?: string;

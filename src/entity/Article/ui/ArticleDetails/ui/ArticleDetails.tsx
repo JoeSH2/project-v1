@@ -14,7 +14,6 @@ import { ArticleBlock } from '../../../model/types/Article';
 import { ArticleDetailsBlockCode } from '../../../ui/ArticleDetailsBlockCode';
 import { ArticleDetailsBlockImage } from '../../../ui/ArticleDetailsBlockImage';
 import { ArticleDetailsBlockText } from '../../../ui/ArticleDetailsBlockText';
-import { RoutePath } from '@/shared/config/routeConfig/AppRoute';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { fetchArticleById } from '../../../model/services/fetchArticleById';
 import { Block } from '@/shared/ui/Block';
@@ -24,6 +23,7 @@ import { ArticleEditButton } from '@/features/createArticle';
 import { Svg } from '@/shared/ui/Svg/ui/Svg';
 import { Text } from '@/shared/ui/Text';
 import { ArticleReducer } from '../../../model/slice/ArticleSlice';
+import { RoutePath } from '@/app/routes/config/routeConfig';
 
 interface ArticleDetailsProps {
   className?: string;

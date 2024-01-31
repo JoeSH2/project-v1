@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import style from './ArticleCardSkeleton.module.scss';
-import { ArticleView } from '@/entity/Article';
+import { ArticleView } from '../../model/types/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/Card';
 import { Skeleton } from '@/shared/ui/Skeleton';

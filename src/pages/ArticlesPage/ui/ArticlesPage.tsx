@@ -4,19 +4,16 @@ import { useSearchParams } from 'react-router-dom';
 import { ArticleList, ArticleView } from '@/entity/Article';
 import style from './ArticlesPage.module.scss';
 import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { articlePageActions, articlePageReducer, getArticle } from '@/pages/ArticlesPage/model/slice/articlePageSlice';
+import { articlePageActions, articlePageReducer, getArticle } from '../model/slice/articlePageSlice';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import {
-  getArticlePageLoading,
-  getArticlePageView,
-} from '@/pages/ArticlesPage/model/selectors/getArticlePageSelectors';
+import { getArticlePageLoading, getArticlePageView } from '../model/selectors/getArticlePageSelectors';
 import { PageWrapper } from '@/widgets/PageWrapper';
 import { ViewSwitcher } from '@/widgets/ViewSwitcher';
 import { ArticleSort } from '@/features/ArticleSort';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import { fetchArticlePage } from '@/pages/ArticlesPage/model/services/fetchArticlePage';
-import { fetchArticleNextPage } from '@/pages/ArticlesPage/model/services/fetchArticleNextPage';
-import { initedArticlePage } from '@/pages/ArticlesPage/model/services/initedArticlePage';
+import { fetchArticlePage } from '../model/services/fetchArticlePage';
+import { fetchArticleNextPage } from '../model/services/fetchArticleNextPage';
+import { initedArticlePage } from '../model/services/initedArticlePage';
 
 interface ArticlesPageProps {
   className?: string;

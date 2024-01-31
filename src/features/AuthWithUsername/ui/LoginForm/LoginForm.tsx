@@ -7,12 +7,12 @@ import { Text } from '@/shared/ui/Text';
 
 import style from './LoginForm.module.scss';
 import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { loginUserActions, loginUserReducer } from '@/features/AuthWithUsername/model/slice/loginUserSlice';
-import { getLoginUsername } from '@/features/AuthWithUsername/model/selectors/getLoginUsername';
-import { getLoginUserPassword } from '@/features/AuthWithUsername/model/selectors/getLoginUserPassword';
-import { getLoginUserError } from '@/features/AuthWithUsername/model/selectors/getLoginUserError';
-import { getLoginUserLoading } from '@/features/AuthWithUsername/model/selectors/getLoginUserLoading';
-import { asyncLoginUser } from '@/features/AuthWithUsername';
+import { loginUserActions, loginUserReducer } from '../../model/slice/loginUserSlice';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername';
+import { getLoginUserPassword } from '../../model/selectors/getLoginUserPassword';
+import { getLoginUserError } from '../../model/selectors/getLoginUserError';
+import { getLoginUserLoading } from '../../model/selectors/getLoginUserLoading';
+import { asyncLoginUser } from '../../model/services/asyncLoginUser';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';

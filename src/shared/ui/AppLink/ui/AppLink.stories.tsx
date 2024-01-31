@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Theme } from '@/app/providers/ThemesProvider';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
+import { AppLink, AppLinkTheme } from '../ui/AppLink';
+import { ThemeDecorator } from '../../../config/decorators/themeDecorator';
 
 export default {
   title: 'shared/AppLink',

@@ -1,19 +1,14 @@
-import { RouteProps } from 'react-router-dom';
 import { AboutPageAsync, MainPageAsync } from '@/pages';
-import { AppRoutes } from '@/shared/config/routeConfig/consts';
+import { AdminPage } from '@/pages/AdminPage';
 import { UserRole } from '@/entity/User';
 import { ProfilePage } from '@/pages/ProfilePage';
-import { AdminPage } from '@/pages/AdminPage';
 import { PageNotFound } from '@/pages/PageNotFound';
 import { ArticlesPageAsync } from '@/pages/ArticlesPage';
 import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage';
 import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
-
-export type RouterAuth = RouteProps & {
-  authUser?: boolean;
-  roles?: UserRole[];
-};
+import { AppRoutes } from '@/shared/const/route';
+import { RouterAuth } from '@/shared/types/route';
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
@@ -28,7 +23,6 @@ export const RoutePath: Record<AppRoutes, string> = {
   // last
   [AppRoutes.NOT_FOUND]: '*',
 };
-
 export const routesConfig: Record<AppRoutes, RouterAuth> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,

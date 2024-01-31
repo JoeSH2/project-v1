@@ -1,5 +1,14 @@
-.AtriclesDetailsPage {}
+.AtriclesDetailsPage {
+}
 
 .recommendations {
-    margin: 3rem 0 0;
+  margin: 3rem 0 0;
+}
+
+.wrapperRating {
+  background-color: var(--bg-color-dark);
+  border: 1px solid var(--bg-color-special);
+  border-radius: 4px;
+  margin-top: 2rem;
+  padding: 15px 0;
 }

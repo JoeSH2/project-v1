@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import style from './ProfileList.module.scss';
-import { Profile } from '@/entity/Profile';
+import { Profile } from '../model/types/Profile';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Loader } from '@/shared/ui/Loader';
 import { Text } from '@/shared/ui/Text';

@@ -10,7 +10,7 @@ import { ArticleDetailsSchema } from '@/entity/Article';
 import { CommentFormSchema } from '@/features/addComment';
 import { articlePageSchema } from '@/pages/ArticlesPage';
 import { SaveScrollPageSchema } from '@/features/saveScrollPage';
-import { ArticleSortSchema } from '@/features/ArticleSort/model/types/ArticleSortSchema';
+import { ArticleSortSchema } from '@/features/ArticleSort';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 
 export interface StateSchema {

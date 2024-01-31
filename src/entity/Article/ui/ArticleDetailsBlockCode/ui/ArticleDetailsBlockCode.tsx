@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ArticleBlockCode } from '@/entity/Article/model/types/Article';
+import { ArticleBlockCode } from '../../../model/types/Article';
 import { Code } from '@/shared/ui/Code';
 
 import style from './ArticleDetailsBlockCode.module.scss';

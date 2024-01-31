@@ -1,5 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { ArticleSortField } from '@/features/ArticleSort/model/consts';
+import { ArticleSortField } from '../consts';
 import { ArticleType } from '@/entity/Article';
 
 export const getArticleSortOrder = (state: StateSchema) => state.articleSort?.order ?? 'asc';

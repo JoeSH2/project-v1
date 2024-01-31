@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 
 interface useClickOutsideProps {
-    handler: () => void;
-    ref: React.MutableRefObject<HTMLElement>;
-    value: boolean;
+  handler: () => void;
+  ref: React.MutableRefObject<HTMLElement>;
+  value: boolean;
 }
 
 export const useClickOutsed = ({ handler, ref, value = true }: useClickOutsideProps) => {
@@ -19,7 +19,6 @@ export const useClickOutsed = ({ handler, ref, value = true }: useClickOutsidePr
 
     document.addEventListener('click', handleClick);
 
-    return () => document.removeEventListener('click', handleClick)
-
-  }, []);
+    return () => document.removeEventListener('click', handleClick);
+  }, [handler, ref, value]);
 };

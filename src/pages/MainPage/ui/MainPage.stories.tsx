@@ -1,19 +1,19 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { Theme } from '@/app/providers/ThemesProvider';
-import { MainPage } from '@/pages/MainPage';
+import { MainPageAsync } from './MainPage.async';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 
 export default {
-  title: 'pages/MainPage',
-  component: MainPage,
+  title: 'pages/MainPageAsync',
+  component: MainPageAsync,
   argTypes: { backgroundColor: { control: 'color' } },
-} as Meta<typeof MainPage>;
+} as Meta<typeof MainPageAsync>;
 
-const Template: StoryFn<typeof MainPage> = () => (
+const Template: StoryFn<typeof MainPageAsync> = () => (
   <Suspense fallback={<div />}>
-    <MainPage />
+    <MainPageAsync />
   </Suspense>
 );
 

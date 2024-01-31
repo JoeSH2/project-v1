@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import cls from './ArticleDetailsBlockText.module.scss';
-import { ArticleBlockText } from '@/entity/Article/model/types/Article';
+import { ArticleBlockText } from '../../../model/types/Article';
 import { Text } from '@/shared/ui/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 

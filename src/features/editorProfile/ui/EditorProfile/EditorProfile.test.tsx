@@ -5,8 +5,8 @@ import componentRender from '@/shared/lib/tests/componentRender/componentRender'
 import { CurrencyList } from '@/entity/Currency';
 import { Profile } from '@/entity/Profile';
 import { CountryList } from '@/entity/Country';
-import { editorProfileReducer } from '@/features/editorProfile/model/slice/editorProfileSlice';
-import { EditorProfile } from '@/features/editorProfile';
+import { editorProfileReducer } from '../../model/slice/editorProfileSlice';
+import { EditorProfile } from '../EditorProfile/EditorProfile';
 
 const profile: Profile = {
   id: '1',

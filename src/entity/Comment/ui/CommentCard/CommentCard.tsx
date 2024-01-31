@@ -7,7 +7,8 @@ import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Comment } from '../../model/types/comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { RoutePath } from '@/shared/config/routeConfig/AppRoute';
+
+import { RoutePath } from '@/app/routes/config/routeConfig';
 
 interface CommentCardProps {
   className?: string;

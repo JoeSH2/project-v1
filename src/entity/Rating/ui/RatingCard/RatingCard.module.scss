@@ -1,0 +1,16 @@
+.modalContent {
+  width: 600px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid var(--bg-color-special);
+  background-color: var(--secondary-color);
+  color: var(--font-color-inverted);
+  border-radius: 0.2rem;
+  padding: 8px;
+}
+
+.btn {
+  padding: 6px 22px;
+}

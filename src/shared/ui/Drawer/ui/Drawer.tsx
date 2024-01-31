@@ -14,7 +14,7 @@ interface DrawerProps {
   classNameBtn?: string;
   theme?: string;
   children: ReactNode;
-  value: ReactNode;
+  value?: ReactNode;
   isOpen: boolean;
   onOpen: () => void;
   onClose: () => void;
@@ -67,9 +67,11 @@ const DrawerContent: FC<DrawerProps> = memo((props: DrawerProps) => {
 
   return (
     <div>
-      <Button className={classNameBtn} onClick={onOpen}>
-        {value}
-      </Button>
+      {value && (
+        <Button className={classNameBtn} onClick={onOpen}>
+          {value}
+        </Button>
+      )}
       {isOpen && (
         <Portal>
           <div className={classNames(style.Drawer, { [style.open]: isOpen }, [className, theme])}>

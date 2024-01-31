@@ -1,36 +1,22 @@
 .Input {
-    outline: none;
-    box-shadow: none;
-    background: none;
-    background-color: transparent;
-    border: none;
-    color: var(--font-color-inverted);
 }
 
 .default {
-    color: var(--primary-color);
-    box-shadow: 0 0 3px 0 var(--bg-color-inverted);
-    transition: box-shadow 0.2s ease-in-out;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+  box-shadow: 0 0 1px 0 var(--bg-color-inverted);
+  transition: box-shadow 0.2s ease-in-out;
 
-    &:focus {
-        box-shadow: 0 0 7px 0 var(--bg-color-inverted);
-    }
+  &:focus {
+    box-shadow: 0 0 7px 0 var(--bg-color-inverted);
+  }
 }
 
-.dark {
-    color: var(--primary-color);
-    box-shadow: 0 0 3px 0 var(--bg-color-inverted);
-    transition: box-shadow 0.2s ease-in-out;
-
-    &:focus {
-        box-shadow: 0 0 7px 0 var(--bg-color-inverted);
-    }
+.clear {
 }
-
-.clear {}
 
 .readonly {
-    pointer-events: none;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
+  pointer-events: none;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
 }

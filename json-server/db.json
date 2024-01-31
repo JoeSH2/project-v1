@@ -2721,6 +2721,12 @@
       "articleId": "22",
       "text": "article",
       "id": "K4JznRe"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "text": "Wwww",
+      "id": "ZVeCyt0"
     }
   ],
   "users": [
@@ -2759,7 +2765,7 @@
       "lastname": "admin",
       "age": 22,
       "currency": "RUB",
-      "country": "Czech",
+      "country": "Russia",
       "city": "Moscow",
       "username": "admin",
       "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/221/612/small_2x/hacker-icon-logo-background-free-vector.jpg"
@@ -2785,6 +2791,75 @@
       "city": "Moscow",
       "username": "foremansh2",
       "avatar": "https://cdnb.artstation.com/p/assets/images/images/048/127/951/large/akiro-art-11.jpg?1649265953"
+    }
+  ],
+  "articles-rating": [
+    {
+      "id": "1",
+      "articleId": "1",
+      "userId": "1",
+      "feedback": "Good article feedback",
+      "rate": 2
+    },
+    {
+      "id": "2",
+      "articleId": "2",
+      "userId": "1",
+      "feedback": "Good article feedback 2",
+      "rate": 4
+    },
+    {
+      "articleId": "22",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "",
+      "id": "Uif1PpM"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "Good article feedback 11",
+      "id": "9sBllpv"
+    },
+    {
+      "articleId": "19",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "Good",
+      "id": "GuCCuNa"
+    },
+    {
+      "articleId": "27",
+      "userId": "1",
+      "rate": 4,
+      "id": "u9oKGaC"
+    }
+  ],
+  "profiles-rating": [
+    {
+      "id": "1",
+      "profileId": "1",
+      "userId": "1",
+      "rate": 2
+    },
+    {
+      "id": "2",
+      "profileId": "2",
+      "userId": "1",
+      "rate": 4
+    },
+    {
+      "profileId": "3",
+      "userId": "1",
+      "rate": 4,
+      "id": "JmqySon"
+    },
+    {
+      "profileId": "1",
+      "userId": "2",
+      "rate": 5,
+      "id": "cwnVgMB"
     }
   ]
 }

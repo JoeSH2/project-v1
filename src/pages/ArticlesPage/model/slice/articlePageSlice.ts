@@ -1,9 +1,9 @@
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article, ArticleView } from '@/entity/Article';
-import { articlePageSchema } from '@/pages/ArticlesPage';
+import { articlePageSchema } from '../types/articlePageSchema';
 import { ARTICLES_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { fetchArticlePage } from '@/pages/ArticlesPage/model/services/fetchArticlePage';
+import { fetchArticlePage } from '../services/fetchArticlePage';
 
 const articleAdapter = createEntityAdapter<Article>({ selectId: article => article.id });
 

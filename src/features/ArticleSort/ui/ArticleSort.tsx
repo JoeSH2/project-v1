@@ -7,23 +7,23 @@ import ArrowIcon from '@/shared/assets/icon/arrow.svg';
 import { Text } from '@/shared/ui/Text';
 import style from './ArticleSort.module.scss';
 import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { articleSortActions, articleSortReducer } from '@/features/ArticleSort/model/slice/articleSortSlice';
+import { articleSortActions, articleSortReducer } from '../model/slice/articleSortSlice';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import {
   getArticleSortOrder,
   getArticleSortSearch,
   getArticleSortSort,
-} from '@/features/ArticleSort/model/selectors/getArticleSortSelectors';
+} from '../model/selectors/getArticleSortSelectors';
 import { SelectOptions } from '@/shared/ui/Select/ui/Select';
 import { SortOrder } from '@/shared/types/types';
-import { ArticleSortField } from '@/features/ArticleSort/model/consts';
+import { ArticleSortField } from '../model/consts';
 import { useDebounce } from '@/shared/hooks/useDebounce';
-import { articlePageActions } from '@/pages/ArticlesPage/model/slice/articlePageSlice';
+import { articlePageActions } from '@/pages/ArticlesPage';
 import { ArticleType } from '@/entity/Article';
 import { Block } from '@/shared/ui/Block';
 import { HStack } from '@/shared/ui/Stack/HStack/HStack';
 import { Input } from '@/shared/ui/Input';
-import { ArticleTabsFilters } from '@/features/ArticleSort/ui/ArticleTabsFilters/ArticleTabsFilters';
+import { ArticleTabsFilters } from './ArticleTabsFilters/ArticleTabsFilters';
 import { SelectList } from '@/shared/ui/Popups';
 
 interface ArticleSortProps {

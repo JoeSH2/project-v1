@@ -5,7 +5,7 @@ import style from './Input.module.scss';
 
 type InputExtends = Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange' | 'value' | 'readOnly'>;
 
-type InputTheme = 'default' | 'dark' | 'clear';
+type InputTheme = 'default' | 'clear';
 
 interface InputProps extends InputExtends {
   className?: string;
@@ -18,7 +18,16 @@ interface InputProps extends InputExtends {
 }
 
 export const Input: FC<InputProps> = memo(
-  ({ className, theme = 'dark', value, onChange, type = 'text', autofocus, readonly, ...otherProps }: InputProps) => {
+  ({
+    className,
+    theme = 'default',
+    value,
+    onChange,
+    type = 'text',
+    autofocus,
+    readonly,
+    ...otherProps
+  }: InputProps) => {
     const ref = useRef<HTMLInputElement>(null);
 
     const changeInput = (e: ChangeEvent<HTMLInputElement>) => {
