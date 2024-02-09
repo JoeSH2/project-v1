@@ -1,9 +1,9 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
-import { Theme } from '@/app/providers/ThemesProvider';
 import { ForbiddenPageAsync } from './ForbiddenPage.async';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'pages/ForbiddenPageAsync',

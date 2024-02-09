@@ -51,6 +51,10 @@ module.exports = {
     "react/no-array-index-key": "off",
     "object-curly-spacing": ["error", "always"],
     "import-path-lint-plugin/path-checker": ["error", { alias: "@" }],
+    "import-path-lint-plugin/layer-imports": ["error", {
+      alias: "@",
+      ignoreCase: ["**/StoreProvider", "**/testing"]
+    }],
     "import-path-lint-plugin/public-import": ["error", {
       alias: "@",
       testingPattern: ["**/StoreDecoratore.tsx", "**/*.test.*", "**/*.story.*"]

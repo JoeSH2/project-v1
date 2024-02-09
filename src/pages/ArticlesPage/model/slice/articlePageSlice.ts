@@ -11,7 +11,7 @@ export const getArticle = articleAdapter.getSelectors<StateSchema>(
   state => state.articlePage || articleAdapter.getInitialState(),
 );
 
-const aticlePageSlice = createSlice({
+const articlePageSlice = createSlice({
   name: 'articlePage',
   initialState: articleAdapter.getInitialState<articlePageSchema>({
     entities: {},
@@ -70,4 +70,4 @@ const aticlePageSlice = createSlice({
   },
 });
 
-export const { reducer: articlePageReducer, actions: articlePageActions } = aticlePageSlice;
+export const { reducer: articlePageReducer, actions: articlePageActions } = articlePageSlice;

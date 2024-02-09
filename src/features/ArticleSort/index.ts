@@ -1,5 +1,5 @@
 export { ArticleSort } from './ui/ArticleSort';
-export { articleSortReducer, articleSortActions } from './model/slice/articleSortSlice';
+export { articleSortActions } from './model/slice/articleSortSlice';
 export { ArticleSortField } from './model/consts';
 export type { ArticleSortSchema } from './model/types/ArticleSortSchema';
 export {

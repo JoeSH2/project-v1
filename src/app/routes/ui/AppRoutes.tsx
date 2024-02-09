@@ -1,8 +1,8 @@
 import React, { FC, memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ProtectedRoute } from '@/app/providers/ProtectedRoute';
+import { ProtectedRoute } from '../../providers/ProtectedRoute';
 import { PageLoader } from '@/widgets/PageLoader';
-import { routesConfig } from '@/app/routes/config/routeConfig';
+import { routesConfig } from '../config/routeConfig';
 import { RouterAuth } from '@/shared/types/route';
 
 export const AppRoutes: FC = memo(() => {

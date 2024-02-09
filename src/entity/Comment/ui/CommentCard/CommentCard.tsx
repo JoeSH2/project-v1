@@ -8,7 +8,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Comment } from '../../model/types/comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { RoutePath } from '@/app/routes/config/routeConfig';
+import { RoutePath } from '@/shared/const/route';
 
 interface CommentCardProps {
   className?: string;

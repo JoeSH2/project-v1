@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import { getUserAuth, getUserRole, UserRole } from '@/entity/User';
 
-import { RoutePath } from '@/app/routes/config/routeConfig';
+import { RoutePath } from '@/shared/const/route';
 
 interface ProtectedRouteProps {
   children: ReactNode;

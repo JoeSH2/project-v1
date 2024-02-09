@@ -5,7 +5,6 @@ import { PageWrapper } from '@/widgets/PageWrapper';
 
 interface PageNotFoundProps {
   className?: string;
-  theme?: string;
   children?: React.ReactNode;
 }
 

@@ -3,7 +3,7 @@ import { classNames } from '../../../lib/classNames/classNames';
 import StarIcon from '../../../assets/icon/star.svg';
 import { Svg } from '../../Svg/ui/Svg';
 import style from './StarsRating.module.scss';
-import { HStack } from '../../Stack/HStack/HStack';
+import { HStack } from '../../Stack';
 
 interface StarsRatingProps {
   className?: string;

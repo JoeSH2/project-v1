@@ -19,6 +19,8 @@ import { ArticlesRecommendationsList } from '@/features/ArticlesRecommendationsL
 import { AddComment } from '@/features/addComment';
 import { CommentList } from '@/entity/Comment';
 import { ArticleRating } from '@/features/ArticleRating';
+import { getArticleDetailsCommentsLoading } from '../model/selectors/comments';
+import { getCanEditArticle } from '../model/selectors/article';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -33,6 +35,8 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   const { id } = useParams();
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
+  const isLoading = useSelector(getArticleDetailsCommentsLoading);
+  const canEdit = useSelector(getCanEditArticle);
 
   const onSendComment = useCallback(
     (text: string) => {
@@ -53,11 +57,11 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
 
   return (
     <PageWrapper className={className}>
-      <ArticleDetails id={id} />
+      <ArticleDetails canEdit={canEdit} id={id} />
       <ArticleRating className={style.wrapperRating} articleId={id} />
       <ArticlesRecommendationsList className={style.recommendations} />
       <AddComment onSendComment={onSendComment} />
-      <CommentList comments={comments} />
+      <CommentList isLoading={isLoading} comments={comments} />
     </PageWrapper>
   );
 };

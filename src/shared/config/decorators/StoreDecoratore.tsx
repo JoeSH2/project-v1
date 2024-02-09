@@ -1,13 +1,14 @@
+// eslint-disable-next-line
 import '@/app/styles/index.scss';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StoryFn } from '@storybook/react';
 import { ReducerList } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { loginUserReducer } from '@/features/AuthWithUsername';
-import { editorProfileReducer } from '@/features/editorProfile';
-import { ArticleReducer } from '@/entity/Article';
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage';
-import { articleSortReducer } from '@/features/ArticleSort';
-import { userReducer } from '@/entity/User';
+import { loginUserReducer } from '@/features/AuthWithUsername/testing';
+import { editorProfileReducer } from '@/features/editorProfile/testing';
+import { ArticleReducer } from '@/entity/Article/testing';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
+import { articleSortReducer } from '@/features/ArticleSort/testing';
+import { userReducer } from '@/entity/User/testing';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 
 const stateReducer: ReducerList = {

@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui/Text';
 import style from './NotificationsList.module.scss';
 import { useApiNotifications } from '../../model/api/apiNotifications';
 import { getUserAuth } from '../../../User/model/selectors/getUserAuth';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
 

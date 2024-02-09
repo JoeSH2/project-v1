@@ -1,11 +1,11 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
-import { Theme } from '@/app/providers/ThemesProvider';
 import { ProfilePageAsync } from './ProfilePage.async';
 import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
 import { CountryList } from '@/entity/Country';
 import { CurrencyList } from '@/entity/Currency';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'pages/ProfilePage',

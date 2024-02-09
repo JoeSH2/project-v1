@@ -4,8 +4,6 @@ import style from './Avatar.module.scss';
 
 interface AvatarProps {
   className?: string;
-  theme?: string;
-  children?: React.ReactNode;
   src?: string;
   alt?: string;
   size?: number;

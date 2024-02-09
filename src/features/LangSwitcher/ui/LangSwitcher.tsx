@@ -12,7 +12,6 @@ export enum LangSwitcherValues {
 
 interface LangSwitcherProps {
   className?: string;
-  theme?: string;
   children?: React.ReactNode;
   isCollapsed: boolean;
 }

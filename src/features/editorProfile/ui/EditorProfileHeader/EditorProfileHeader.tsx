@@ -11,7 +11,7 @@ import { getProfileReadonly } from '../../model/selectors/getProfileReadonly';
 import { getUserAuth } from '@/entity/User';
 import { getProfileData } from '../../model/selectors/getProfileData';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { HStack } from '@/shared/ui/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Avatar } from '@/shared/ui/Avatar';

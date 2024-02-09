@@ -4,9 +4,8 @@ import { getUserAuth } from '@/entity/User';
 import ArticleIcon from '@/shared/assets/icon/article.svg';
 import AboutUsIcon from '@/shared/assets/icon/info.svg';
 import MainPageIcon from '@/shared/assets/icon/mainPage.svg';
-
 import { SidebareLinksType } from '../types/sidebareLinks';
-import { RoutePath } from '@/app/routes/config/routeConfig';
+import { RoutePath } from '@/shared/const/route';
 
 export const getSidebareLinks = createSelector(getUserAuth, userData => {
   const linksSidebare: SidebareLinksType[] = [

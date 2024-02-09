@@ -11,7 +11,8 @@ import { Button } from '@/shared/ui/Button';
 import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
 import { Avatar } from '@/shared/ui/Avatar';
 import { ArticleBlockType } from '../../../model/consts/index';
-import { RoutePath } from '@/app/routes/config/routeConfig';
+
+import { RoutePath } from '@/shared/const/route';
 
 interface ArticleCardProps {
   className?: string;

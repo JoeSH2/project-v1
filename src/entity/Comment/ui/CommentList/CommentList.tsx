@@ -1,7 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { FC } from 'react';
-import { getArticleDetailsCommentsLoading } from '@/pages/ArticleDetailsPage';
 
 import style from './CommentList.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
@@ -12,11 +10,11 @@ import { Comment } from '../../model/types/comment';
 interface CommentListProps {
   className?: string;
   comments: Comment[];
+  isLoading?: boolean;
 }
 
-export const CommentList: FC<CommentListProps> = ({ className, comments }) => {
+export const CommentList: FC<CommentListProps> = ({ className, comments, isLoading }) => {
   const { t } = useTranslation();
-  const isLoading = useSelector(getArticleDetailsCommentsLoading);
 
   if (isLoading) {
     return (

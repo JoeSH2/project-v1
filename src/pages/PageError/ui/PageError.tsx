@@ -6,7 +6,6 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 interface PageErrorProps {
   className?: string;
-  theme?: string;
   children?: React.ReactNode;
 }
 

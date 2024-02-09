@@ -1,15 +1,14 @@
 import React, { FC } from 'react';
-import { useTheme } from '@/app/providers/ThemesProvider';
 
 import style from './Modal.module.scss';
 import { useModal } from '../../../hooks/useModal';
 import { classNames } from '../../../lib/classNames/classNames';
 import { Overlay } from '../../Overlay/ui/Overlay';
-import { Portal } from '../../Portal/Portal';
+import { Portal } from '../../Portal';
+import { useTheme } from '../../../hooks/useTheme';
 
 interface ModalProps {
   className?: string;
-  theme?: string;
   children: React.ReactNode;
   isOpen: boolean;
   onClose: () => void;

@@ -1,13 +1,13 @@
 import React, { FC, memo, ReactNode, useEffect } from 'react';
-import { useTheme } from '@/app/providers/ThemesProvider';
 
 import style from './Drawer.module.scss';
 import { AnimationProvider, useAnimationLibs } from '../../../config/decorators/AnimationDecorator';
 import { useModal } from '../../../hooks/useModal';
 import { Button } from '../../Button';
-import { Portal } from '../../Portal/Portal';
+import { Portal } from '../../Portal';
 import { Overlay } from '../../Overlay/ui/Overlay';
 import { classNames } from '../../../lib/classNames/classNames';
+import { useTheme } from '@/shared/hooks/useTheme';
 
 interface DrawerProps {
   className?: string;
@@ -57,7 +57,7 @@ const DrawerContent: FC<DrawerProps> = memo((props: DrawerProps) => {
     if (isOpen) {
       open(true);
     }
-  }, [isOpen]);
+  }, [isOpen, open]);
 
   const display = y.to(py => (py < heightDrawer ? 'block' : 'none'));
 

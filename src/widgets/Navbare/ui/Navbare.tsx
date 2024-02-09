@@ -8,7 +8,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
 import { Text } from '@/shared/ui/Text';
 import style from './Navbare.module.scss';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { HStack } from '@/shared/ui/Stack';
 import { AvatarMenuButton } from '@/entity/AvatarMenuButton';
 import { NotificationButton } from '@/features/NotificationButton';
 

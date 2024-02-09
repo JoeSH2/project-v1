@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemesProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'widgets/ThemeSwitcher',

@@ -2,7 +2,8 @@ import { Meta, StoryFn } from '@storybook/react';
 import { ArticleCard } from './ArticleCard';
 import { ArticleBlockType, ArticleType } from '../../../model/consts';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemesProvider';
+
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'entity/Article/ArticleCard',

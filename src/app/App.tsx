@@ -7,9 +7,9 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Navbare } from '@/widgets/Navbare';
 import { Sidebare } from '@/widgets/Sidebare';
 
-import { useTheme } from './providers/ThemesProvider';
 import { AppRoutes } from './routes';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { useTheme } from '@/shared/hooks/useTheme';
 
 export const App: FC = () => {
   const { theme } = useTheme();

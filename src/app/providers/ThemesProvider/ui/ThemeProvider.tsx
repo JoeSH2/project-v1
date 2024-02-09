@@ -1,13 +1,10 @@
 import React, { FC, useMemo, useState } from 'react';
 
-import {
-  LOCAL_STORAGE_THEME_KEY,
-  Theme,
-  ThemesContext,
-} from '../lib/ThemesContext';
+import { Theme, ThemesContext } from '@/shared/const/theme';
+import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localStorage';
 
 interface ThemeProviderProps {
-  children: React.ReactNode
+  children: React.ReactNode;
   initialTheme?: Theme;
 }
 
@@ -24,11 +21,7 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
     [theme, setTheme],
   );
 
-  return (
-    <ThemesContext.Provider value={defaultProps}>
-      {children}
-    </ThemesContext.Provider>
-  );
+  return <ThemesContext.Provider value={defaultProps}>{children}</ThemesContext.Provider>;
 };
 
 export default ThemeProvider;

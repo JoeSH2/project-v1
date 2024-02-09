@@ -7,22 +7,9 @@ import { ArticlesPageAsync } from '@/pages/ArticlesPage';
 import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage';
 import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
-import { AppRoutes } from '@/shared/const/route';
+import { AppRoutes, RoutePath } from '@/shared/const/route';
 import { RouterAuth } from '@/shared/types/route';
 
-export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: '/',
-  [AppRoutes.ABOUT]: '/about',
-  [AppRoutes.PROFILE]: '/profile/', // + id
-  [AppRoutes.ARTICLE]: '/articles',
-  [AppRoutes.ARTICLE_DETAILS]: '/articles/', // + id
-  [AppRoutes.ARTICLE_CREATE]: '/articles/create',
-  [AppRoutes.ARTICLE_EDIT]: '/articles/edit/', // + id
-  [AppRoutes.ADMIN]: '/admin',
-  [AppRoutes.FORBIDDEN]: '/forbidden',
-  // last
-  [AppRoutes.NOT_FOUND]: '*',
-};
 export const routesConfig: Record<AppRoutes, RouterAuth> = {
   [AppRoutes.MAIN]: {
     path: RoutePath.main,

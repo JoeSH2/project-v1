@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { ArticleList } from '@/entity/Article';
 import { Text } from '@/shared/ui/Text';
 import { useArticleRecommendationsList } from '../api/articlesRecommendationsApi';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 
 interface ArticlesRecommendationsListProps {
   className?: string;

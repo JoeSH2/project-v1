@@ -5,7 +5,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import style from './ArticleEditButton.module.scss';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button } from '@/shared/ui/Button';
-import { RoutePath } from '@/app/routes/config/routeConfig';
+
+import { RoutePath } from '@/shared/const/route';
 
 interface ArticleEditButtonProps {
   className?: string;

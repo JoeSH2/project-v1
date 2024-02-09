@@ -8,7 +8,7 @@ import { articlePageActions, articlePageReducer, getArticle } from '../model/sli
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { getArticlePageLoading, getArticlePageView } from '../model/selectors/getArticlePageSelectors';
 import { PageWrapper } from '@/widgets/PageWrapper';
-import { ViewSwitcher } from '@/widgets/ViewSwitcher';
+import { ViewSwitcher } from '@/features/ViewSwitcher';
 import { ArticleSort } from '@/features/ArticleSort';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { fetchArticlePage } from '../model/services/fetchArticlePage';

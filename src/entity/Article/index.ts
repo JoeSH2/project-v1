@@ -1,4 +1,4 @@
-export { ArticleActions, ArticleReducer } from './model/slice/ArticleSlice';
+export { ArticleActions } from './model/slice/ArticleSlice';
 export {
   getArticleDetailsData,
   getArticleDetailsError,

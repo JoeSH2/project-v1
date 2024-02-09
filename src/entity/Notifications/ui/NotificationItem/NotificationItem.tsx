@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import style from './NotificationItem.module.scss';
 import { Text } from '@/shared/ui/Text';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
+import { VStack } from '@/shared/ui/Stack';
 import { NotificationOptions } from '../../model/types/NotificationOptions';
 
 interface NotificationItemProps extends NotificationOptions {

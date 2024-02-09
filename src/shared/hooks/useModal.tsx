@@ -23,7 +23,7 @@ export function useModal(onClose: () => void, isOpen: boolean) {
     return () => {
       window.removeEventListener('keydown', keyCloseModal);
     };
-  }, [onClose]);
+  }, [keyCloseModal, onClose]);
 
   return { isMounted };
 }

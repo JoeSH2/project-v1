@@ -5,11 +5,12 @@ import style from './AvatarMenuButton.module.scss';
 import { MenuDrop } from '@/shared/ui/Popups';
 import { getUserAuth, isUserRoleAdmin, isUserRoleManager, userActions } from '@/entity/User';
 import { MenuDropOptions } from '@/shared/ui/Popups/ui/MenuDrop/MenuDrop';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { HStack } from '@/shared/ui/Stack';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { RoutePath } from '@/app/routes/config/routeConfig';
+
+import { RoutePath } from '@/shared/const/route';
 
 interface AvatarMenuButtonProps {
   className?: string;

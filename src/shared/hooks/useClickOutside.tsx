@@ -6,7 +6,7 @@ interface useClickOutsideProps {
   value: boolean;
 }
 
-export const useClickOutsed = ({ handler, ref, value = true }: useClickOutsideProps) => {
+export const useClickOutside = ({ handler, ref, value = true }: useClickOutsideProps) => {
   useEffect(() => {
     if (!value) return;
 

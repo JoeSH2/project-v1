@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
-import { Theme } from '@/app/providers/ThemesProvider';
 
 import ArtIcon from './art.jpg';
 import { Avatar } from './Avatar';
 import { ThemeDecorator } from '../../../config/decorators/themeDecorator';
+import { Theme } from '@/shared/const/theme';
 
 const meta: Meta<typeof Avatar> = {
   title: 'shared/Avatar',

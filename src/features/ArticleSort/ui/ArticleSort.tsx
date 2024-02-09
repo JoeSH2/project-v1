@@ -18,10 +18,11 @@ import { SelectOptions } from '@/shared/ui/Select/ui/Select';
 import { SortOrder } from '@/shared/types/types';
 import { ArticleSortField } from '../model/consts';
 import { useDebounce } from '@/shared/hooks/useDebounce';
+// eslint-disable-next-line import-path-lint-plugin/layer-imports
 import { articlePageActions } from '@/pages/ArticlesPage';
 import { ArticleType } from '@/entity/Article';
 import { Block } from '@/shared/ui/Block';
-import { HStack } from '@/shared/ui/Stack/HStack/HStack';
+import { HStack } from '@/shared/ui/Stack';
 import { Input } from '@/shared/ui/Input';
 import { ArticleTabsFilters } from './ArticleTabsFilters/ArticleTabsFilters';
 import { SelectList } from '@/shared/ui/Popups';

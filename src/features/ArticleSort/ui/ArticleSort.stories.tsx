@@ -4,7 +4,8 @@ import { ArticleSort } from './ArticleSort';
 import { ArticleSortField } from '../model/consts';
 import { ArticleType } from '@/entity/Article';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
-import { Theme } from '@/app/providers/ThemesProvider';
+
+import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'features/ArticleSort',

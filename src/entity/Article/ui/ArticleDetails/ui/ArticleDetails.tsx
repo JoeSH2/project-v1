@@ -9,7 +9,6 @@ import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrappe
 import { ArticleBlockType } from '../../../model/consts/index';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { getArticleDetailsData, getArticleDetailsLoading } from '../../../model/selectors/getArticleDetails';
-import { getCanEditArticle } from '@/pages/ArticleDetailsPage';
 import { ArticleBlock } from '../../../model/types/Article';
 import { ArticleDetailsBlockCode } from '../../../ui/ArticleDetailsBlockCode';
 import { ArticleDetailsBlockImage } from '../../../ui/ArticleDetailsBlockImage';
@@ -19,27 +18,27 @@ import { fetchArticleById } from '../../../model/services/fetchArticleById';
 import { Block } from '@/shared/ui/Block';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { Button } from '@/shared/ui/Button';
-import { ArticleEditButton } from '@/features/createArticle';
 import { Svg } from '@/shared/ui/Svg/ui/Svg';
 import { Text } from '@/shared/ui/Text';
 import { ArticleReducer } from '../../../model/slice/ArticleSlice';
-import { RoutePath } from '@/app/routes/config/routeConfig';
+import { RoutePath } from '@/shared/const/route';
+import { ArticleEditButton } from '../../createArticle';
 
 interface ArticleDetailsProps {
   className?: string;
   id: string;
+  canEdit?: boolean;
 }
 
 const reduserList: ReducerList = { articleDetails: ArticleReducer };
 
 export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetailsProps) => {
-  const { className, id } = props;
+  const { className, id, canEdit } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsLoading);
   const data = useSelector(getArticleDetailsData);
   const navigate = useNavigate();
-  const canEdit = useSelector(getCanEditArticle);
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
