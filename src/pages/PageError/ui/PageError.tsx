@@ -16,7 +16,7 @@ export const PageError: FC<PageErrorProps> = ({ className }) => {
     location.reload();
   };
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='PageError'>
       <Block>
         <div>{t('There was an error, return to the home page?')}</div>
         <Button onClick={reloadPage} theme={ButtonTheme.CLEAR}>

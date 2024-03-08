@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { ArticleRatingAsync } from './ArticleRating.async';
-import { StoreDecorator } from '../../../../storybook-static/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 
 export default {
   title: 'features/ArticleRating',

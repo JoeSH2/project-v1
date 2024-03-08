@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { Article, ArticleBlockType, ArticleType } from '@/entity/Article';
 import ArticleDetailsPage from './ArticleDetailsPage';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 
 export default {
   title: 'pages/ArticleDetailsPage',

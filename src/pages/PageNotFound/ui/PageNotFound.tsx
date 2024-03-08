@@ -12,7 +12,7 @@ export const PageNotFound: FC<PageNotFoundProps> = ({ className, children }) => 
   const { t } = useTranslation();
 
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='PageNotFound'>
       <Block>{t('Page not found')}</Block>
     </PageWrapper>
   );

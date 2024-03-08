@@ -8,7 +8,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Comment } from '../../model/types/comment';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
-import { RoutePath } from '@/shared/const/route';
+import { getProfilePage } from '@/shared/const/route';
 
 interface CommentCardProps {
   className?: string;
@@ -39,7 +39,7 @@ export const CommentCard: FC<CommentCardProps> = ({ className, comment, isLoadin
   return (
     <div className={classNames(style.Comment, {}, [className])}>
       <div className={style.userWrapper}>
-        <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={style.link}>
+        <AppLink to={getProfilePage(comment.user.id)} className={style.link}>
           <Avatar size={50} className={style.avatar} src={comment.user.avatar || DefaultAvatar} />
           <Text className={style.username} size='m' text={comment.user.username} />
         </AppLink>

@@ -3,9 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { ArticleDetails } from '@/entity/Article';
-
 import { Text } from '@/shared/ui/Text';
-
 import style from './ArticleDetailsPage.module.scss';
 import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { articleDetailsPageReducer } from '../../ArticleDetailsPage/model/slice';
@@ -56,7 +54,7 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
   }
 
   return (
-    <PageWrapper className={className}>
+    <PageWrapper data-testid='ArticleDetailsPage' className={className}>
       <ArticleDetails canEdit={canEdit} id={id} />
       <ArticleRating className={style.wrapperRating} articleId={id} />
       <ArticlesRecommendationsList className={style.recommendations} />

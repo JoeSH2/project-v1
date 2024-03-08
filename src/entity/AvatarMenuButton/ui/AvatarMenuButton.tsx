@@ -10,7 +10,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 
-import { RoutePath } from '@/shared/const/route';
+import { getAdminPage, getArticleCreatePage, getProfilePage } from '@/shared/const/route';
 
 interface AvatarMenuButtonProps {
   className?: string;
@@ -34,18 +34,17 @@ export const AvatarMenuButton: FC<AvatarMenuButtonProps> = props => {
           {
             content: t('Admin panel'),
             // eslint-disable-next-line no-unsafe-optional-chaining
-            href: RoutePath.admin,
+            href: getAdminPage(),
           },
         ]
       : []),
     {
       content: t('Profile'),
-      // eslint-disable-next-line no-unsafe-optional-chaining
-      href: RoutePath.profile + authData?.id,
+      href: authData && getProfilePage(authData.id),
     },
     {
       content: t('Create article'),
-      href: RoutePath.article_create,
+      href: getArticleCreatePage(),
     },
     {
       content: t('Log out'),

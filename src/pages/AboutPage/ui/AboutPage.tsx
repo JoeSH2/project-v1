@@ -5,7 +5,7 @@ import { PageWrapper } from '@/widgets/PageWrapper';
 const AboutPage = () => {
   const { t } = useTranslation('about');
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='AboutPage'>
       <Block>{t('About us')}</Block>
     </PageWrapper>
   );

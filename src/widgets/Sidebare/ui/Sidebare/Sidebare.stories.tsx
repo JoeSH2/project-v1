@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
 import { Sidebare } from './Sidebare';
 import { Theme } from '@/shared/const/theme';

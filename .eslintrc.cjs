@@ -57,7 +57,7 @@ module.exports = {
     }],
     "import-path-lint-plugin/public-import": ["error", {
       alias: "@",
-      testingPattern: ["**/StoreDecoratore.tsx", "**/*.test.*", "**/*.story.*"]
+      testingPattern: ["**/StoreDecorator.tsx", "**/*.test.*", "**/*.story.*"]
     }],
     "i18next/no-literal-string": [
       "error",

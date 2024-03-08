@@ -9,10 +9,10 @@ export const buildBabelLoader = ({ isTSX, isDev }: BuildBabelLoaderProps) => ({
   test: isTSX ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
   exclude: /node_modules/,
   use: {
-    // loader: 'babelPlugin-loader',
     loader: 'babel-loader',
     options: {
-      presets: ['@babel/preset-env'],
+      cacheDirectory: true,
+      presets: [['@babel/preset-env', { targets: { node: 'current' } }], '@babel/preset-typescript'],
       plugins: [
         [
           'i18next-extract',
@@ -30,12 +30,13 @@ export const buildBabelLoader = ({ isTSX, isDev }: BuildBabelLoaderProps) => ({
           },
         ],
         '@babel/plugin-transform-runtime',
-        isTSX && [
-          babelRemoveIdentifier,
-          {
-            props: ['data-testid'],
-          },
-        ],
+        isTSX &&
+          !isDev && [
+            babelRemoveIdentifier,
+            {
+              props: ['data-testid'],
+            },
+          ],
       ].filter(Boolean),
     },
   },

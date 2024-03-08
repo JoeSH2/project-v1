@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { Article, ArticleType } from '@/entity/Article';
 import { UserRole } from '@/entity/User';
 import { ArticlesRecommendationsList } from './ArticlesRecommendationsList';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 
 const article: Article = {
   title: 'asdasdasd',

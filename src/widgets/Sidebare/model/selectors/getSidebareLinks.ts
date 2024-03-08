@@ -5,17 +5,17 @@ import ArticleIcon from '@/shared/assets/icon/article.svg';
 import AboutUsIcon from '@/shared/assets/icon/info.svg';
 import MainPageIcon from '@/shared/assets/icon/mainPage.svg';
 import { SidebareLinksType } from '../types/sidebareLinks';
-import { RoutePath } from '@/shared/const/route';
+import { getAboutPage, getArticlesPage, getMainPage, getProfilePage } from '@/shared/const/route';
 
 export const getSidebareLinks = createSelector(getUserAuth, userData => {
   const linksSidebare: SidebareLinksType[] = [
     {
-      path: RoutePath.main,
+      path: getMainPage(),
       Icon: MainPageIcon,
       text: 'Home',
     },
     {
-      path: RoutePath.about,
+      path: getAboutPage(),
       Icon: AboutUsIcon,
       text: 'About us',
     },
@@ -24,13 +24,13 @@ export const getSidebareLinks = createSelector(getUserAuth, userData => {
   if (userData) {
     linksSidebare.push(
       {
-        path: RoutePath.profile + userData.id,
+        path: getProfilePage(userData.id),
         Icon: ProfileIcon,
         text: 'Profile',
         authLink: true,
       },
       {
-        path: RoutePath.articles,
+        path: getArticlesPage(),
         Icon: ArticleIcon,
         text: 'Articles',
         authLink: true,

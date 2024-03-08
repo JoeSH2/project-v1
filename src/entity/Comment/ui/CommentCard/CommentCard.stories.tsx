@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { CommentCard } from './CommentCard';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import AvatarIcon from './art.jpg';
 
 const meta: Meta<typeof CommentCard> = {

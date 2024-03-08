@@ -14,6 +14,9 @@ export const NotificationsList: FC = () => {
   const { t } = useTranslation();
   const { data, isLoading } = useApiNotifications(null);
   const authData = useSelector(getUserAuth);
+  const userId = authData?.id;
+  const notificationsUser = data?.filter(notification => notification.userId === userId);
+  console.log(notificationsUser);
 
   if (isLoading) {
     return (
@@ -26,36 +29,47 @@ export const NotificationsList: FC = () => {
     );
   }
 
+  if (notificationsUser?.length === 0) {
+    return (
+      <VStack className={style.wrapper} gap='gap8'>
+        <Text
+          theme='theme'
+          className={style.title}
+          align='left'
+          size='l'
+          text={t("You don't have any notifications")}
+        />
+      </VStack>
+    );
+  }
+
+  if (!notificationsUser) {
+    return (
+      <VStack className={style.wrapper} gap='gap8'>
+        <Text
+          theme='theme'
+          className={style.title}
+          align='left'
+          size='l'
+          text={t('Reload page, notifications not found')}
+        />
+      </VStack>
+    );
+  }
+
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      {data ? (
-        <VStack className={style.wrapper} gap='gap16'>
-          <Text theme='theme' className={style.title} align='left' size='m' title={t("You've been notified!")} />
-          {data
-            .filter(notification => notification.userId === authData?.id)
-            .map(notification => (
-              <NotificationItem
-                userId={notification.userId}
-                id={notification.id}
-                description={notification.description}
-                title={notification.title}
-                href={notification.href}
-                key={notification.id}
-              />
-            ))}
-        </VStack>
-      ) : (
-        <VStack className={style.wrapper} gap='gap8'>
-          <Text
-            theme='inverted'
-            className={style.title}
-            align='left'
-            size='l'
-            text={t("You don't have any notifications")}
-          />
-        </VStack>
-      )}
-    </>
+    <VStack className={style.wrapper} gap='gap16'>
+      <Text theme='theme' className={style.title} align='left' size='m' title={t("You've been notified!")} />
+      {notificationsUser.map(notification => (
+        <NotificationItem
+          userId={notification.userId}
+          id={notification.id}
+          description={notification.description}
+          title={notification.title}
+          href={notification.href}
+          key={notification.id}
+        />
+      ))}
+    </VStack>
   );
 };

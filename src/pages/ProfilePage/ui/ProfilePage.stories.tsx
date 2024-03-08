@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { ProfilePageAsync } from './ProfilePage.async';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import { CountryList } from '@/entity/Country';
 import { CurrencyList } from '@/entity/Currency';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';

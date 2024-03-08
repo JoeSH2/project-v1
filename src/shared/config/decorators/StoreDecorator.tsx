@@ -2,7 +2,7 @@
 import '@/app/styles/index.scss';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { StoryFn } from '@storybook/react';
-import { ReducerList } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import { ReducerList } from '../../lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { loginUserReducer } from '@/features/AuthWithUsername/testing';
 import { editorProfileReducer } from '@/features/editorProfile/testing';
 import { ArticleReducer } from '@/entity/Article/testing';

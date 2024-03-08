@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import { ArticleSort } from './ArticleSort';
 import { ArticleSortField } from '../model/consts';
 import { ArticleType } from '@/entity/Article';

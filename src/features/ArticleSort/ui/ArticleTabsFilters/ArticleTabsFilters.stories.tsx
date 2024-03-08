@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import { ArticleTabsFilters } from './ArticleTabsFilters';
 
 const meta: Meta<typeof ArticleTabsFilters> = {

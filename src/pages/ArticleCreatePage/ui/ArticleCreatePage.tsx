@@ -9,7 +9,7 @@ const ArticleCreatePage = () => {
   const canEdit = Boolean(id);
 
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='ArticleCreatePage'>
       <Block>{canEdit ? t('Edit article id=') + id : t('Create article')}</Block>
     </PageWrapper>
   );

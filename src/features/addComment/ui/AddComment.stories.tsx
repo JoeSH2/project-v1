@@ -1,5 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import AddComment from './AddComment';
 
 const meta: Meta<typeof AddComment> = {

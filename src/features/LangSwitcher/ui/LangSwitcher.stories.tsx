@@ -13,8 +13,8 @@ export default {
 const Template: StoryFn<typeof LangSwitcher> = args => <LangSwitcher {...args} />;
 
 export const Dark = Template.bind({});
-Dark.args = { theme: Theme.DARK };
+Dark.args = {};
 
 export const Default = Template.bind({});
-Default.args = { theme: Theme.DEFAULT };
+Default.args = {};
 Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

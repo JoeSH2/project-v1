@@ -21,6 +21,6 @@ Default.decorators = [ThemeDecorator(Theme.DEFAULT)];
 
 export const Dark = Template.bind({});
 Dark.args = {
-  theme: 'dark',
+  theme: 'clear',
   value: 'Login',
 };

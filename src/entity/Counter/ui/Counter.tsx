@@ -1,24 +1,32 @@
 import React, { FC } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
-import { counterActions } from '../model/slice/CounterSlice';
+import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterSlice } from '../model/slice/CounterSlice';
+import { HStack, VStack } from '@/shared/ui/Stack';
+import { Button } from '@/shared/ui/Button';
+import style from './Counter.module.scss';
 
 export const Counter: FC = () => {
-  const value = useSelector(getCounterValue);
-  const dispatch = useDispatch();
-  const decrement = () => {
-    dispatch(counterActions.decrement());
+  const value = useCounterValue().toString();
+  const { increment, decrement } = useCounterSlice();
+
+  const handleDecrement = () => {
+    decrement();
+  };
+  const handleIncrement = () => {
+    increment();
   };
 
-  const increment = () => {
-    dispatch(counterActions.increment());
-  };
   return (
-    <>
-      <h1 data-testid="counter-value">{value}</h1>
-      <button data-testid="decrement-btn" onClick={decrement} type="button">-</button>
-      <button data-testid="increment-btn" onClick={increment} type="button">+</button>
-    </>
+    <VStack className={style.wrapper} align='center' gap='gap8'>
+      <h1 data-testid='counter-value'>{value}</h1>
+      <HStack gap='gap8'>
+        <Button className={style.btn} data-testid='decrement-btn' onClick={handleDecrement} type='button'>
+          -
+        </Button>
+        <Button className={style.btn} data-testid='increment-btn' onClick={handleIncrement} type='button'>
+          +
+        </Button>
+      </HStack>
+    </VStack>
   );
 };

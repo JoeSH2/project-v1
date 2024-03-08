@@ -1,10 +1,10 @@
 import { useDispatch, useStore } from 'react-redux';
-import { Reducer, useEffect } from 'react';
-import { AnyAction } from '@reduxjs/toolkit';
+import { useEffect } from 'react';
+import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
 
 export type ReducerList = {
-  [name in StateSchemaKey]?: Reducer<StateSchema[name], AnyAction>;
+  [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
 };
 
 export const useAsyncWrapperReducer = (reducers: ReducerList, unmounte?: boolean) => {

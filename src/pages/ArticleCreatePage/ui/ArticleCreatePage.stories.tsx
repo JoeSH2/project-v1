@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Suspense } from 'react';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import { ArticleCreatePageAsync } from './ArticleCreatePage.async';
 import { Theme } from '@/shared/const/theme';
 

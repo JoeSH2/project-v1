@@ -1,681 +1,260 @@
-<html>
-<head>
-  <meta charset="utf-8" />
-  <title>Test Report</title>
-  <style type="text/css">html,
-  body {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-      margin: 0;
-      padding: 0;
-      color: #333;
-  }
+<html><head><meta charset="utf-8"/><title>Test Report</title><style type="text/css">html,
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+body {
+  padding: 2rem 1rem;
+  font-size: 0.85rem;
+}
+.jesthtml-content {
+  margin: 0 auto;
+  max-width: 70rem;
+}
+header {
+  display: flex;
+  align-items: center;
+}
+#title {
+  margin: 0;
+  flex-grow: 1;
+}
+#logo {
+  height: 4rem;
+}
+#timestamp {
+  color: #777;
+  margin-top: 0.5rem;
+}
 
-  body {
-      padding: 2rem 1rem;
-      font-size: 0.85rem;
-  }
-
-  .jesthtml-content {
-      margin: 0 auto;
-      max-width: 70rem;
-  }
-
-  header {
-      display: flex;
-      align-items: center;
-  }
-
-  #title {
-      margin: 0;
-      flex-grow: 1;
-  }
-
-  #logo {
-      height: 4rem;
-  }
-
-  #timestamp {
-      color: #777;
-      margin-top: 0.5rem;
-  }
-
-  /** SUMMARY */
+/** SUMMARY */
+#summary {
+  color: #333;
+  margin: 2rem 0;
+  display: flex;
+  font-family: monospace;
+  font-size: 1rem;
+}
+#summary > div {
+  margin-right: 2rem;
+  background: #eee;
+  padding: 1rem;
+  min-width: 15rem;
+}
+#summary > div:last-child {
+  margin-right: 0;
+}
+@media only screen and (max-width: 720px) {
   #summary {
-      color: #333;
-      margin: 2rem 0;
-      display: flex;
-      font-family: monospace;
-      font-size: 1rem;
+    flex-direction: column;
   }
-
   #summary > div {
-      margin-right: 2rem;
-      background: #eee;
-      padding: 1rem;
-      min-width: 15rem;
+    margin-right: 0;
+    margin-top: 2rem;
   }
-
-  #summary > div:last-child {
-      margin-right: 0;
+  #summary > div:first-child {
+    margin-top: 0;
   }
+}
 
-  @media only screen and (max-width: 720px) {
-      #summary {
-          flex-direction: column;
-      }
+.summary-total {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+.summary-passed {
+  color: #4f8a10;
+  border-left: 0.4rem solid #4f8a10;
+  padding-left: 0.5rem;
+}
+.summary-failed,
+.summary-obsolete-snapshots {
+  color: #d8000c;
+  border-left: 0.4rem solid #d8000c;
+  padding-left: 0.5rem;
+}
+.summary-pending {
+  color: #9f6000;
+  border-left: 0.4rem solid #9f6000;
+  padding-left: 0.5rem;
+}
+.summary-empty {
+  color: #999;
+  border-left: 0.4rem solid #999;
+}
 
-      #summary > div {
-          margin-right: 0;
-          margin-top: 2rem;
-      }
+.test-result {
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+}
+.test-result:last-child {
+  border: 0;
+}
+.test-result.passed {
+  background-color: #dff2bf;
+  color: #4f8a10;
+}
+.test-result.failed {
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.test-result.pending {
+  background-color: #ffdf61;
+  color: #9f6000;
+}
 
-      #summary > div:first-child {
-          margin-top: 0;
-      }
-  }
+.test-info {
+  display: flex;
+  justify-content: space-between;
+}
+.test-suitename {
+  width: 20%;
+  text-align: left;
+  font-weight: bold;
+  word-break: break-word;
+}
+.test-title {
+  width: 40%;
+  text-align: left;
+  font-style: italic;
+}
+.test-status {
+  width: 20%;
+  text-align: right;
+}
+.test-duration {
+  width: 10%;
+  text-align: right;
+  font-size: 0.75rem;
+}
 
-  .summary-total {
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-  }
+.failureMessages {
+  padding: 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px dashed #d8000c;
+}
+.failureMessages.suiteFailure {
+  border-top: none;
+}
+.failureMsg {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
 
-  .summary-passed {
-      color: #4f8a10;
-      border-left: 0.4rem solid #4f8a10;
-      padding-left: 0.5rem;
-  }
+.suite-container {
+  margin-bottom: 2rem;
+}
+.suite-container > input[type="checkbox"] {
+  position: absolute;
+  left: -100vw;
+}
+.suite-container label {
+  display: block;
+}
+.suite-container .suite-tests {
+  overflow-y: hidden;
+  height: 0;
+}
+.suite-container > input[type="checkbox"]:checked ~ .suite-tests {
+  height: auto;
+  overflow: visible;
+}
+.suite-info {
+  padding: 1rem;
+  background-color: #eee;
+  color: #777;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+.suite-info:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+.suite-info .suite-path {
+  word-break: break-all;
+  flex-grow: 1;
+  font-family: monospace;
+  font-size: 1rem;
+}
+.suite-info .suite-time {
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.3rem;
+  font-size: 0.75rem;
+}
+.suite-info .suite-time.warn {
+  background-color: #d8000c;
+  color: #fff;
+}
+.suite-info:before {
+  content: "\2303";
+  display: inline-block;
+  margin-right: 0.5rem;
+  transform: rotate(0deg);
+}
+.suite-container > input[type="checkbox"]:checked ~ label .suite-info:before {
+  transform: rotate(180deg);
+}
 
-  .summary-failed,
-  .summary-obsolete-snapshots {
-      color: #d8000c;
-      border-left: 0.4rem solid #d8000c;
-      padding-left: 0.5rem;
-  }
+/* CONSOLE LOGS */
+.suite-consolelog {
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  background-color: #efefef;
+}
+.suite-consolelog-header {
+  font-weight: bold;
+}
+.suite-consolelog-item {
+  padding: 0.5rem;
+}
+.suite-consolelog-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-consolelog-item-origin {
+  color: #777;
+  font-weight: bold;
+}
+.suite-consolelog-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
 
-  .summary-pending {
-      color: #9f6000;
-      border-left: 0.4rem solid #9f6000;
-      padding-left: 0.5rem;
-  }
-
-  .summary-empty {
-      color: #999;
-      border-left: 0.4rem solid #999;
-  }
-
-  .test-result {
-      padding: 1rem;
-      margin-bottom: 0.25rem;
-  }
-
-  .test-result:last-child {
-      border: 0;
-  }
-
-  .test-result.passed {
-      background-color: #dff2bf;
-      color: #4f8a10;
-  }
-
-  .test-result.failed {
-      background-color: #ffbaba;
-      color: #d8000c;
-  }
-
-  .test-result.pending {
-      background-color: #ffdf61;
-      color: #9f6000;
-  }
-
-  .test-info {
-      display: flex;
-      justify-content: space-between;
-  }
-
-  .test-suitename {
-      width: 20%;
-      text-align: left;
-      font-weight: bold;
-      word-break: break-word;
-  }
-
-  .test-title {
-      width: 40%;
-      text-align: left;
-      font-style: italic;
-  }
-
-  .test-status {
-      width: 20%;
-      text-align: right;
-  }
-
-  .test-duration {
-      width: 10%;
-      text-align: right;
-      font-size: 0.75rem;
-  }
-
-  .failureMessages {
-      padding: 0 1rem;
-      margin-top: 1rem;
-      border-top: 1px dashed #d8000c;
-  }
-
-  .failureMessages.suiteFailure {
-      border-top: none;
-  }
-
-  .failureMsg {
-      white-space: pre-wrap;
-      white-space: -moz-pre-wrap;
-      white-space: -o-pre-wrap;
-      word-wrap: break-word;
-  }
-
-  .suite-container {
-      margin-bottom: 2rem;
-  }
-
-  .suite-container > input[type="checkbox"] {
-      position: absolute;
-      left: -100vw;
-  }
-
-  .suite-container label {
-      display: block;
-  }
-
-  .suite-container .suite-tests {
-      overflow-y: hidden;
-      height: 0;
-  }
-
-  .suite-container > input[type="checkbox"]:checked ~ .suite-tests {
-      height: auto;
-      overflow: visible;
-  }
-
-  .suite-info {
-      padding: 1rem;
-      background-color: #eee;
-      color: #777;
-      display: flex;
-      align-items: center;
-      margin-bottom: 0.25rem;
-  }
-
-  .suite-info:hover {
-      background-color: #ddd;
-      cursor: pointer;
-  }
-
-  .suite-info .suite-path {
-      word-break: break-all;
-      flex-grow: 1;
-      font-family: monospace;
-      font-size: 1rem;
-  }
-
-  .suite-info .suite-time {
-      margin-left: 0.5rem;
-      padding: 0.2rem 0.3rem;
-      font-size: 0.75rem;
-  }
-
-  .suite-info .suite-time.warn {
-      background-color: #d8000c;
-      color: #fff;
-  }
-
-  .suite-info:before {
-      content: "\2303";
-      display: inline-block;
-      margin-right: 0.5rem;
-      transform: rotate(0deg);
-  }
-
-  .suite-container > input[type="checkbox"]:checked ~ label .suite-info:before {
-      transform: rotate(180deg);
-  }
-
-  /* CONSOLE LOGS */
-  .suite-consolelog {
-      margin-bottom: 0.25rem;
-      padding: 1rem;
-      background-color: #efefef;
-  }
-
-  .suite-consolelog-header {
-      font-weight: bold;
-  }
-
-  .suite-consolelog-item {
-      padding: 0.5rem;
-  }
-
-  .suite-consolelog-item pre {
-      margin: 0.5rem 0;
-      white-space: pre-wrap;
-      white-space: -moz-pre-wrap;
-      white-space: -o-pre-wrap;
-      word-wrap: break-word;
-  }
-
-  .suite-consolelog-item-origin {
-      color: #777;
-      font-weight: bold;
-  }
-
-  .suite-consolelog-item-message {
-      color: #000;
-      font-size: 1rem;
-      padding: 0 0.5rem;
-  }
-
-  /* OBSOLETE SNAPSHOTS */
-  .suite-obsolete-snapshots {
-      margin-bottom: 0.25rem;
-      padding: 1rem;
-      background-color: #ffbaba;
-      color: #d8000c;
-  }
-
-  .suite-obsolete-snapshots-header {
-      font-weight: bold;
-  }
-
-  .suite-obsolete-snapshots-item {
-      padding: 0.5rem;
-  }
-
-  .suite-obsolete-snapshots-item pre {
-      margin: 0.5rem 0;
-      white-space: pre-wrap;
-      white-space: -moz-pre-wrap;
-      white-space: -o-pre-wrap;
-      word-wrap: break-word;
-  }
-
-  .suite-obsolete-snapshots-item-message {
-      color: #000;
-      font-size: 1rem;
-      padding: 0 0.5rem;
-  }
-  </style>
-</head>
-<body>
-<div class="jesthtml-content">
-  <header><h1 id="title">Test Report</h1></header>
-  <div id="metadata-container">
-    <div id="timestamp">Started: 2023-11-06 16:38:26</div>
-    <div id="summary">
-      <div id="suite-summary">
-        <div class="summary-total">Suites (12)</div>
-        <div class="summary-passed ">12 passed</div>
-        <div class="summary-failed  summary-empty">0 failed</div>
-        <div class="summary-pending  summary-empty">0 pending</div>
-      </div>
-      <div id="test-summary">
-        <div class="summary-total">Tests (28)</div>
-        <div class="summary-passed ">28 passed</div>
-        <div class="summary-failed  summary-empty">0 failed</div>
-        <div class="summary-pending  summary-empty">0 pending</div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-1" class="suite-container"><input id="collapsible-0" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-0">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\entity\Counter\model\selectors\getCounter\getCounter.test.ts</div>
-      <div class="suite-time">2.93s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">getCounter</div>
-          <div class="test-title">get counter value</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.004s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-2" class="suite-container"><input id="collapsible-1" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-1">
-    <div class="suite-info">
-      <div class="suite-path">
-        F:\project-course\src\entity\Counter\model\selectors\getCounterValue\getCounterValue.test.ts
-      </div>
-      <div class="suite-time">2.992s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">getCounterValue</div>
-          <div class="test-title">get value</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.005s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-3" class="suite-container"><input id="collapsible-2" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-2">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\shared\lib\classNames\classNames.test.ts</div>
-      <div class="suite-time">3.009s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">all class</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.004s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">with only first param</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.001s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">with additional class</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">with mods</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.001s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">with mods false</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.001s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">with mods undefined</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-4" class="suite-container"><input id="collapsible-3" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-3">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\shared\lib\addQueryParams.ts\addQueryParams.test.ts</div>
-      <div class="suite-time">3.086s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">shared/lib/addQueryParams</div>
-          <div class="test-title">test with one param</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.006s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">shared/lib/addQueryParams</div>
-          <div class="test-title">test with two params</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.001s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">shared/lib/addQueryParams</div>
-          <div class="test-title">test with undefind</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.001s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-5" class="suite-container"><input id="collapsible-4" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-4">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\shared\ui\Button\ui\Button.test.tsx</div>
-      <div class="suite-time">3.277s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">renders full components</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.08s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">renders class clear</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.008s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-6" class="suite-container"><input id="collapsible-5" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-5">
-    <div class="suite-info">
-      <div class="suite-path">
-        F:\project-course\src\features\editorProfile\model\services\fetchProfileData\fetchProfileData.test.tsx
-      </div>
-      <div class="suite-time">3.447s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">fetch data</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.011s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">error fetch data</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.034s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-7" class="suite-container"><input id="collapsible-6" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-6">
-    <div class="suite-info">
-      <div class="suite-path">
-        F:\project-course\src\features\editorProfile\model\services\updateProfileData\updateProfileData.test.ts
-      </div>
-      <div class="suite-time">3.391s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">fetch data</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.012s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">error fetch data</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.002s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-8" class="suite-container"><input id="collapsible-7" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-7">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\features\AuthWithUsername\model\services\asyncLoginUser.test.ts
-      </div>
-      <div class="suite-time">0.651s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">login</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.008s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">error</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.03s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-9" class="suite-container"><input id="collapsible-8" type="checkbox" class="toggle"
-                                                   checked="checked" /><label for="collapsible-8">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\pages\ArticlesPage\model\services\fetchArticleNextPage.test.ts</div>
-      <div class="suite-time">3.793s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">fetchArticleNextPage</div>
-          <div class="test-title">success</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.008s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">fetchArticleNextPage</div>
-          <div class="test-title">not fetch</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.002s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-10" class="suite-container"><input id="collapsible-9" type="checkbox" class="toggle"
-                                                    checked="checked" /><label for="collapsible-9">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\entity\Counter\ui\Counter.test.tsx</div>
-      <div class="suite-time">4.065s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">Counter</div>
-          <div class="test-title">Counter render value</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.063s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">Counter</div>
-          <div class="test-title">Counter increment</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.074s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">Counter</div>
-          <div class="test-title">Counter decrement</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.018s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-11" class="suite-container"><input id="collapsible-10" type="checkbox" class="toggle"
-                                                    checked="checked" /><label for="collapsible-10">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\widgets\Sidebare\ui\Sidebare\Sidebare.test.tsx</div>
-      <div class="suite-time">4.269s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">renders full components</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.093s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename"></div>
-          <div class="test-title">toggle sidebare</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.135s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="suite-12" class="suite-container"><input id="collapsible-11" type="checkbox" class="toggle"
-                                                    checked="checked" /><label for="collapsible-11">
-    <div class="suite-info">
-      <div class="suite-path">F:\project-course\src\features\editorProfile\ui\EditorProfile\EditorProfile.test.tsx</div>
-      <div class="suite-time">4.529s</div>
-    </div>
-  </label>
-    <div class="suite-tests">
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">Edit profile</div>
-          <div class="test-title">readonly status</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.209s</div>
-        </div>
-      </div>
-      <div class="test-result passed">
-        <div class="test-info">
-          <div class="test-suitename">Edit profile</div>
-          <div class="test-title">error validation</div>
-          <div class="test-status">passed</div>
-          <div class="test-duration">0.29s</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-</html>
+/* OBSOLETE SNAPSHOTS */
+.suite-obsolete-snapshots {
+  margin-bottom: 0.25rem;
+  padding: 1rem;
+  background-color: #ffbaba;
+  color: #d8000c;
+}
+.suite-obsolete-snapshots-header {
+  font-weight: bold;
+}
+.suite-obsolete-snapshots-item {
+  padding: 0.5rem;
+}
+.suite-obsolete-snapshots-item pre {
+  margin: 0.5rem 0;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+.suite-obsolete-snapshots-item-message {
+  color: #000;
+  font-size: 1rem;
+  padding: 0 0.5rem;
+}
+</style></head><body><div class="jesthtml-content"><header><h1 id="title">Test Report</h1></header><div id="metadata-container"><div id="timestamp">Started: 2024-03-06 17:51:27</div><div id="summary"><div id="suite-summary"><div class="summary-total">Suites (13)</div><div class="summary-passed ">13 passed</div><div class="summary-failed  summary-empty">0 failed</div><div class="summary-pending  summary-empty">0 pending</div></div><div id="test-summary"><div class="summary-total">Tests (29)</div><div class="summary-passed ">29 passed</div><div class="summary-failed  summary-empty">0 failed</div><div class="summary-pending  summary-empty">0 pending</div></div></div></div><div id="suite-1" class="suite-container"><input id="collapsible-0" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-0"><div class="suite-info"><div class="suite-path">F:\project-course\src\shared\lib\addQueryParams.ts\addQueryParams.test.ts</div><div class="suite-time">2.864s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">shared/lib/addQueryParams</div><div class="test-title">test with one param</div><div class="test-status">passed</div><div class="test-duration">0.004s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">shared/lib/addQueryParams</div><div class="test-title">test with two params</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">shared/lib/addQueryParams</div><div class="test-title">test with undefind</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-2" class="suite-container"><input id="collapsible-1" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-1"><div class="suite-info"><div class="suite-path">F:\project-course\src\shared\lib\classNames\classNames.test.ts</div><div class="suite-time">2.801s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">all class</div><div class="test-status">passed</div><div class="test-duration">0.003s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">with only first param</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">with additional class</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">with mods</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">with mods false</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">with mods undefined</div><div class="test-status">passed</div><div class="test-duration">0s</div></div></div></div></div><div id="suite-3" class="suite-container"><input id="collapsible-2" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-2"><div class="suite-info"><div class="suite-path">F:\project-course\src\entity\Counter\model\selectors\getCounter\getCounter.test.ts</div><div class="suite-time">2.831s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">getCounter</div><div class="test-title">get counter value</div><div class="test-status">passed</div><div class="test-duration">0.004s</div></div></div></div></div><div id="suite-4" class="suite-container"><input id="collapsible-3" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-3"><div class="suite-info"><div class="suite-path">F:\project-course\src\features\AuthWithUsername\model\services\asyncLoginUser.test.ts</div><div class="suite-time">3.053s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">login</div><div class="test-status">passed</div><div class="test-duration">0.009s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">error</div><div class="test-status">passed</div><div class="test-duration">0.012s</div></div></div></div></div><div id="suite-5" class="suite-container"><input id="collapsible-4" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-4"><div class="suite-info"><div class="suite-path">F:\project-course\src\entity\Counter\model\selectors\getCounterValue\getCounterValue.test.ts</div><div class="suite-time">3.122s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">getCounterValue</div><div class="test-title">get value</div><div class="test-status">passed</div><div class="test-duration">0.004s</div></div></div></div></div><div id="suite-6" class="suite-container"><input id="collapsible-5" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-5"><div class="suite-info"><div class="suite-path">F:\project-course\src\features\editorProfile\model\services\updateProfileData\updateProfileData.test.ts</div><div class="suite-time">3.256s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">fetch data</div><div class="test-status">passed</div><div class="test-duration">0.013s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">error fetch data</div><div class="test-status">passed</div><div class="test-duration">0.002s</div></div></div></div></div><div id="suite-7" class="suite-container"><input id="collapsible-6" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-6"><div class="suite-info"><div class="suite-path">F:\project-course\src\features\editorProfile\model\services\fetchProfileData\fetchProfileData.test.tsx</div><div class="suite-time">3.278s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">fetch data</div><div class="test-status">passed</div><div class="test-duration">0.008s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">error fetch data</div><div class="test-status">passed</div><div class="test-duration">0.012s</div></div></div></div></div><div id="suite-8" class="suite-container"><input id="collapsible-7" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-7"><div class="suite-info"><div class="suite-path">F:\project-course\src\shared\ui\Button\ui\Button.test.tsx</div><div class="suite-time">0.734s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">renders full components</div><div class="test-status">passed</div><div class="test-duration">0.058s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">renders class clear</div><div class="test-status">passed</div><div class="test-duration">0.006s</div></div></div></div></div><div id="suite-9" class="suite-container"><input id="collapsible-8" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-8"><div class="suite-info"><div class="suite-path">F:\project-course\src\pages\ArticlesPage\model\services\fetchArticleNextPage.test.ts</div><div class="suite-time">1.029s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">fetchArticleNextPage</div><div class="test-title">success</div><div class="test-status">passed</div><div class="test-duration">0.005s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">fetchArticleNextPage</div><div class="test-title">not fetch</div><div class="test-status">passed</div><div class="test-duration">0.001s</div></div></div></div></div><div id="suite-10" class="suite-container"><input id="collapsible-9" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-9"><div class="suite-info"><div class="suite-path">F:\project-course\src\entity\Counter\ui\Counter.test.tsx</div><div class="suite-time">3.988s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Counter</div><div class="test-title">Counter render value</div><div class="test-status">passed</div><div class="test-duration">0.059s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Counter</div><div class="test-title">Counter increment</div><div class="test-status">passed</div><div class="test-duration">0.132s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Counter</div><div class="test-title">Counter decrement</div><div class="test-status">passed</div><div class="test-duration">0.063s</div></div></div></div></div><div id="suite-11" class="suite-container"><input id="collapsible-10" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-10"><div class="suite-info"><div class="suite-path">F:\project-course\src\widgets\Sidebare\ui\Sidebare\Sidebare.test.tsx</div><div class="suite-time">4.127s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">renders full components</div><div class="test-status">passed</div><div class="test-duration">0.085s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">toggle sidebare</div><div class="test-status">passed</div><div class="test-duration">0.122s</div></div></div></div></div><div id="suite-12" class="suite-container"><input id="collapsible-11" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-11"><div class="suite-info"><div class="suite-path">F:\project-course\src\app\routes\ui\AppRoute.test.tsx</div><div class="suite-time">3.993s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename"> </div><div class="test-title">Main page render</div><div class="test-status">passed</div><div class="test-duration">0.085s</div></div></div></div></div><div id="suite-13" class="suite-container"><input id="collapsible-12" type="checkbox" class="toggle" checked="checked"/><label for="collapsible-12"><div class="suite-info"><div class="suite-path">F:\project-course\src\features\editorProfile\ui\EditorProfile\EditorProfile.test.tsx</div><div class="suite-time">4.444s</div></div></label><div class="suite-tests"><div class="test-result passed"><div class="test-info"><div class="test-suitename">Edit profile</div><div class="test-title">readonly status</div><div class="test-status">passed</div><div class="test-duration">0.215s</div></div></div><div class="test-result passed"><div class="test-info"><div class="test-suitename">Edit profile</div><div class="test-title">error validation</div><div class="test-status">passed</div><div class="test-duration">0.272s</div></div></div></div></div></div></body></html>

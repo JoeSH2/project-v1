@@ -3,7 +3,7 @@ import { Profile } from '@/entity/Profile';
 import { EditorProfile } from './EditorProfile';
 import { CurrencyList } from '@/entity/Currency';
 import { CountryList } from '@/entity/Country';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 
 export default {
   title: 'features/EditorProfile',

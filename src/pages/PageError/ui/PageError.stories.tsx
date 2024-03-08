@@ -1,7 +1,7 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { PageError } from './PageError';
 import { ThemeDecorator } from '@/shared/config/decorators/themeDecorator';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 import { Theme } from '@/shared/const/theme';
 
 export default {
@@ -13,9 +13,9 @@ export default {
 const Template: StoryFn<typeof PageError> = () => <PageError />;
 
 export const Dark = Template.bind({});
-Dark.args = { theme: Theme.DARK };
+Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const Default = Template.bind({});
-Default.args = { theme: Theme.DEFAULT };
+Default.args = {};
 Default.decorators = [ThemeDecorator(Theme.DEFAULT), StoreDecorator({})];

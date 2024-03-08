@@ -11,8 +11,10 @@ import { Button } from '@/shared/ui/Button';
 import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
 import { Avatar } from '@/shared/ui/Avatar';
 import { ArticleBlockType } from '../../../model/consts/index';
-
-import { RoutePath } from '@/shared/const/route';
+import ErrorImg from '@/shared/assets/icon/error.jpg';
+import { getArticleDetailsPage } from '@/shared/const/route';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Loader } from '@/shared/ui/Loader';
 
 interface ArticleCardProps {
   className?: string;
@@ -23,6 +25,9 @@ interface ArticleCardProps {
 
 export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, target }) => {
   const { t } = useTranslation();
+
+  const loadingFeedback = <Loader theme='medium' />;
+  const errorFeedback = <img alt='Error' src={ErrorImg} />;
 
   const wrapperInfo = (
     <div className={style.wrapperInfo}>
@@ -53,7 +58,7 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
           {textBlock && <ArticleDetailsBlockText className={style.block} block={textBlock} />}
           <div className={style.btnWrapper}>
             <Text className={style.created} size='m' text={article.createdAt} />
-            <AppLink target={target} to={RoutePath.article_details + article.id}>
+            <AppLink target={target} to={getArticleDetailsPage(article.id)}>
               <Button className={style.btn}>{t('Read Article')}</Button>
             </AppLink>
           </div>
@@ -66,9 +71,15 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
   return (
     <div className={classNames(style.articleCard, {}, [className, style[view]])}>
       <Card className={style.card}>
-        <AppLink target={target} to={RoutePath.article_details + article.id}>
+        <AppLink target={target} to={getArticleDetailsPage(article.id)}>
           <div className={style.wrapperIcon}>
-            <img className={style.img} src={article.img} alt={article.title} />
+            <AppImage
+              loadingFeedback={loadingFeedback}
+              errorFeedback={errorFeedback}
+              className={style.img}
+              src={article.img}
+              alt={article.title}
+            />
             <Text className={style.created} size='s' text={article.createdAt} />
           </div>
         </AppLink>

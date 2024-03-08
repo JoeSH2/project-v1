@@ -10,8 +10,9 @@ import { useThrottle } from '@/shared/hooks/useThrottle';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import { useInfiniteScroll } from '@/shared/hooks/useInfiniteScroll';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { TestProps } from '@/shared/types/types';
 
-interface PageWrapperProps {
+interface PageWrapperProps extends TestProps {
   className?: string;
   children: React.ReactNode;
   callback?: () => void;
@@ -36,7 +37,13 @@ export const PageWrapper: FC<PageWrapperProps> = props => {
   useInfiniteScroll({ triggerRef, wrapperRef, callback });
 
   return (
-    <main onScroll={onScroll} ref={wrapperRef} className={classNames(style.pageWrapper, {}, [className])}>
+    <main
+      // eslint-disable-next-line
+      data-testid={props['data-testid'] ?? 'Page'}
+      onScroll={onScroll}
+      ref={wrapperRef}
+      className={classNames(style.pageWrapper, {}, [className])}
+    >
       {children}
       {callback && <div className={style.trigger} ref={triggerRef} />}
     </main>

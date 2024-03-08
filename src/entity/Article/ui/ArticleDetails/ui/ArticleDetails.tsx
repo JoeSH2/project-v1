@@ -21,7 +21,7 @@ import { Button } from '@/shared/ui/Button';
 import { Svg } from '@/shared/ui/Svg/ui/Svg';
 import { Text } from '@/shared/ui/Text';
 import { ArticleReducer } from '../../../model/slice/ArticleSlice';
-import { RoutePath } from '@/shared/const/route';
+import { getArticlesPage } from '@/shared/const/route';
 import { ArticleEditButton } from '../../createArticle';
 
 interface ArticleDetailsProps {
@@ -57,7 +57,7 @@ export const ArticleDetails: FC<ArticleDetailsProps> = memo((props: ArticleDetai
   }, []);
 
   const onBack = useCallback(() => {
-    navigate(RoutePath.articles);
+    navigate(getArticlesPage());
   }, [navigate]);
 
   useAsyncWrapperReducer(reduserList);

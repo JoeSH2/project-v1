@@ -2,7 +2,6 @@ import { FC, memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-
 import ArrowIcon from '@/shared/assets/icon/arrow.svg';
 import { Text } from '@/shared/ui/Text';
 import style from './ArticleSort.module.scss';
@@ -73,7 +72,7 @@ export const ArticleSort: FC<ArticleSortProps> = memo(({ className, fetchArticle
     [t],
   );
 
-  const deboucedFetchArticleSort = useDebounce(fetchArticleSort, 500);
+  const debouncedFetchArticleSort = useDebounce(fetchArticleSort, 500);
 
   const onChangeOrder = useCallback(
     (newOrder: SortOrder) => {
@@ -97,9 +96,9 @@ export const ArticleSort: FC<ArticleSortProps> = memo(({ className, fetchArticle
     (newSearch: string) => {
       dispatch(articleSortActions.setSearch(newSearch));
       dispatch(articlePageActions.setPage(1));
-      deboucedFetchArticleSort();
+      debouncedFetchArticleSort();
     },
-    [deboucedFetchArticleSort, dispatch],
+    [debouncedFetchArticleSort, dispatch],
   );
 
   const onChangeType = useCallback(

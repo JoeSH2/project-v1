@@ -10,7 +10,7 @@ interface ForbiddenPageProps {
 const ForbiddenPage: FC<ForbiddenPageProps> = ({ className }) => {
   const { t } = useTranslation();
   return (
-    <PageWrapper>
+    <PageWrapper data-testid='ForbiddenPage'>
       <Block className={className}>
         <p>{t('Forbidden page')}</p>
       </Block>

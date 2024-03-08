@@ -1,7 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
 import { Select } from '../ui/Select';
-import { ThemeDecorator } from '../../../config/decorators/themeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'shared/Select',
@@ -22,15 +20,3 @@ Dark.args = {
     { value: 'w', content: 'w' },
   ],
 };
-
-export const Default = Template.bind({});
-Default.args = {
-  value: 'Vot',
-  options: [
-    { value: 'a', content: 'a' },
-    { value: 'n', content: 'n' },
-    { value: 'd', content: 'd' },
-    { value: 'w', content: 'w' },
-  ],
-};
-Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

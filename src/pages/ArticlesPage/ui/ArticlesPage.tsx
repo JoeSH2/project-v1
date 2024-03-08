@@ -50,7 +50,7 @@ const ArticlesPage: FC<ArticlesPageProps> = memo(({ className }: ArticlesPagePro
   });
 
   return (
-    <PageWrapper callback={onLoadArticle}>
+    <PageWrapper data-testid='ArticlesPage' callback={onLoadArticle}>
       <ViewSwitcher view={view} onChangeView={onChangeView} className={style.viewWrapper} />
       <ArticleSort fetchArticleSort={fetchArticleSort} />
       <ArticleList target='_parent' isLoading={isLoading} view={view} articles={article} />

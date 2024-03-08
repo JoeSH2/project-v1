@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import { getUserAuth, getUserRole, UserRole } from '@/entity/User';
 
-import { RoutePath } from '@/shared/const/route';
+import { getForbiddenPage, getMainPage } from '@/shared/const/route';
 
 interface ProtectedRouteProps {
   children: ReactNode;
@@ -23,11 +23,11 @@ export const ProtectedRoute: FC<ProtectedRouteProps> = ({ children, roles }) => 
   }, [roles, userRoles]);
 
   if (!isAuth) {
-    return <Navigate to={RoutePath.main} replace state={{ from: location }} />;
+    return <Navigate to={getMainPage()} replace state={{ from: location }} />;
   }
 
   if (!hasReqRoles) {
-    return <Navigate to={RoutePath.forbidden} replace state={{ from: location }} />;
+    return <Navigate to={getForbiddenPage()} replace state={{ from: location }} />;
   }
 
   return (

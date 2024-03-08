@@ -6,10 +6,8 @@ import { buildPlugins } from './buildPlugins';
 import { buildResolvers } from './buildResolvers';
 import { BuildOptions } from './types/config';
 
-export const buildWebpackConfig = (
-  options: BuildOptions,
-): webpack.Configuration => {
-  const { paths, mode, isDev, } = options;
+export const buildWebpackConfig = (options: BuildOptions): webpack.Configuration => {
+  const { paths, mode, isDev } = options;
   return {
     mode,
     entry: paths.entry,
@@ -20,9 +18,9 @@ export const buildWebpackConfig = (
       publicPath: '/',
     },
     plugins: buildPlugins(options),
-    module: { rules: buildLoaders(options), },
+    module: { rules: buildLoaders(options) },
     resolve: buildResolvers(options),
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };
 };

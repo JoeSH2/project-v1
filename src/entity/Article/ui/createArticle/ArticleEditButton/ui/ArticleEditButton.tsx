@@ -6,7 +6,7 @@ import style from './ArticleEditButton.module.scss';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button } from '@/shared/ui/Button';
 
-import { RoutePath } from '@/shared/const/route';
+import { getArticleEditPage } from '@/shared/const/route';
 
 interface ArticleEditButtonProps {
   className?: string;
@@ -18,7 +18,7 @@ export const ArticleEditButton: FC<ArticleEditButtonProps> = props => {
   const { t } = useTranslation();
 
   return (
-    <AppLink to={RoutePath.article_edit + id}>
+    <AppLink to={getArticleEditPage(id)}>
       <Button className={classNames(style.ArticleEditButton, {}, [className])}>{t('Edit article')}</Button>
     </AppLink>
   );

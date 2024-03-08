@@ -2,7 +2,7 @@ import { Meta, StoryFn } from '@storybook/react';
 import { CountryList } from '../../Country';
 import { ProfileList } from '../ui/ProfileList';
 import { CurrencyList } from '../../Currency';
-import { StoreDecorator } from '@/shared/config/decorators/StoreDecoratore';
+import { StoreDecorator } from '@/shared/config/decorators/StoreDecorator';
 
 export default {
   title: 'entity/ProfileList',

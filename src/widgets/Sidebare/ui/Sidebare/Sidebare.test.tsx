@@ -13,6 +13,6 @@ test('toggle sidebare', async () => {
   componentRender(<Sidebare />);
   const toggleButton = screen.getByTestId('toggle-sidebare');
   await userEvent.click(toggleButton);
-  expect(screen.getByTestId('sidebare')).toHaveClass('collapse');
+  expect(screen.getByTestId('sidebare').className).toBe('Sidebare collapse');
   screen.debug();
 });

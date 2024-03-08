@@ -17,7 +17,7 @@ const ProfilePage: FC = () => {
   }
 
   return (
-    <PageWrapper className={style.page}>
+    <PageWrapper data-testid='ProfilePage' className={style.page}>
       <Block>
         <EditorProfile className={style.ProfilePage} id={id} />
         <ProfileRating profileId={id} />

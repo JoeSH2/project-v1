@@ -5,7 +5,7 @@ import { PageLoader } from '@/widgets/PageLoader';
 import { routesConfig } from '../config/routeConfig';
 import { RouterAuth } from '@/shared/types/route';
 
-export const AppRoutes: FC = memo(() => {
+export const AppRoute: FC = memo(() => {
   const renderWithRouter = useCallback((route: RouterAuth) => {
     const element = <Suspense fallback={<PageLoader />}>{route.element}</Suspense>;
 
