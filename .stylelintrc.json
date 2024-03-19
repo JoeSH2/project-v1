@@ -5,6 +5,7 @@
     "keyframes-name-pattern": null,
     "block-no-empty": null,
     "no-descending-specificity": null,
-    "scss/double-slash-comment-whitespace-inside": null
+    "scss/double-slash-comment-whitespace-inside": null,
+    "shorthand-property-no-redundant-values": null
   }
 }

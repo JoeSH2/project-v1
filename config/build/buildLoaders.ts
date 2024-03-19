@@ -10,7 +10,7 @@ export const buildLoaders = (options: BuildOptions): webpack.RuleSetRule[] => {
   const svgLoader = buildSvgLoader();
 
   const fileLoader = {
-    test: /\.(png|jpe?g|gif)$/i,
+    test: /\.(png|jpg|jpe|gif)$/i,
     use: [{ loader: 'file-loader' }],
   };
 

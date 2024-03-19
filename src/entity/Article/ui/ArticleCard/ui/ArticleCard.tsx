@@ -10,8 +10,8 @@ import { AppLink } from '@/shared/ui/AppLink';
 import { Button } from '@/shared/ui/Button';
 import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
 import { Avatar } from '@/shared/ui/Avatar';
-import { ArticleBlockType } from '../../../model/consts/index';
-import ErrorImg from '@/shared/assets/icon/error.jpg';
+import { ArticleBlockType } from '../../../model/consts';
+import ErrorImg from '@/shared/assets/icon/error.png';
 import { getArticleDetailsPage } from '@/shared/const/route';
 import { AppImage } from '@/shared/ui/AppImage';
 import { Loader } from '@/shared/ui/Loader';
@@ -22,12 +22,11 @@ interface ArticleCardProps {
   view: ArticleView;
   target: HTMLAttributeAnchorTarget;
 }
-
 export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, target }) => {
   const { t } = useTranslation();
 
   const loadingFeedback = <Loader theme='medium' />;
-  const errorFeedback = <img alt='Error' src={ErrorImg} />;
+  const errorFeedback = <img className={style.img} alt='Error' src={ErrorImg} />;
 
   const wrapperInfo = (
     <div className={style.wrapperInfo}>
@@ -40,7 +39,9 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
   );
 
   if (view === 'BIG') {
-    const textBlock = article.blocks.find(block => block.type === ArticleBlockType.TEXT) as ArticleBlockText;
+    const textBlock = article.blocks.find(
+      block => block.type === ArticleBlockType.TEXT,
+    ) as ArticleBlockText;
 
     return (
       <div className={classNames(style.articleCard, {}, [className, style[view]])}>
@@ -48,7 +49,12 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
           <div className={style.titleWrapper}>
             <div className={style.articleInfo}>
               <Text className={style.title} size='l' title={article.title} />
-              <Avatar className={style.articleImg} src={article.img} alt={article.title} size={50} />
+              <Avatar
+                className={style.articleImg}
+                src={article.img}
+                alt={article.title}
+                size={50}
+              />
             </div>
             <div className={style.userWrapper}>
               <Avatar src={article.user?.avatar} className={style.avatar} size={45} />
