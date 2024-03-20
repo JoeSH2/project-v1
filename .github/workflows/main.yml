@@ -17,8 +17,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: install yarn ts-node for preinstall
-        run: yarn add ts-node
       - name: install modules
         run: yarn install --force
       - name: build production
