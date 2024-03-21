@@ -28,7 +28,7 @@
     "generate:slice": "node ./scripts/createSlice/index.js",
     "build-dev": "tsc -w",
     "build-storybook": "storybook build",
-    "preinstall": "./scripts/clear-cacheDir.ts",
+    "preinstall": "node ./scripts/clear-cacheDir.ts",
     "prepare": "husky"
   },
   "keywords": [],
