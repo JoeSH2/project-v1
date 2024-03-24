@@ -1,5 +1,5 @@
 {
-  "name": "production-project",
+  "name": "project-v1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -32,7 +32,7 @@
     "prepare": "husky"
   },
   "keywords": [],
-  "author": "",
+  "author": "JoeSH2 <foremansh2@mail.ru>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.24.0",
@@ -159,6 +159,7 @@
     "react-router-dom": "^6.11.2",
     "react-window-infinite-loader": "^1.0.9"
   },
+  "repository": "https://github.com/JoeSH2/project-v1.git",
   "loki": {
     "diffingEngine": "pixelmatch",
     "configurations": {
@@ -170,18 +171,8 @@
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.docker",
+        "target": "chrome.app",
         "preset": "iPhone 7"
-      },
-      "chrome.a4": {
-        "target": "chrome.aws-lambda",
-        "preset": "A4 Paper"
-      },
-      "ios": {
-        "target": "ios.simulator"
-      },
-      "android": {
-        "target": "android.emulator"
       }
     }
   }

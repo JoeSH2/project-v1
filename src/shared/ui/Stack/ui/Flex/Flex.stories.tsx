@@ -1,5 +1,5 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Flex } from './Flex'
+import { StoryFn, Meta } from '@storybook/react';
+import { Flex } from './Flex';
 
 export default {
   title: 'shared/Flex',
@@ -7,9 +7,17 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Flex>
+} as Meta<typeof Flex>;
 
-const Template: ComponentStory<typeof Flex> = (args) => <Flex {...args} />
+const Template: StoryFn<typeof Flex> = args => (
+  <Flex {...args}>
+    <p style={{ backgroundColor: 'blue', padding: 20 }}>Flex block</p>
+  </Flex>
+);
 
-export const Normal = Template.bind({})
-Normal.args = {}
+export const Normal = Template.bind({});
+Normal.args = {
+  align: 'center',
+  justify: 'justifyCenter',
+  htmlStyle: 'section',
+};

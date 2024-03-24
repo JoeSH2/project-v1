@@ -12,11 +12,11 @@ const Template: StoryFn<typeof Skeleton> = args => <Skeleton {...args} />;
 
 export const Normal = Template.bind({});
 Normal.args = {
-  width: '900',
-  height: '300',
-  rounded: '2',
-  marginLeft: '10',
-  marginRight: '10',
-  marginTop: '20',
-  marginBottom: '20',
+  width: '900px',
+  height: '300px',
+  rounded: '10px',
+  marginLeft: '10px',
+  marginRight: '10px',
+  marginTop: '20px',
+  marginBottom: '20px',
 };

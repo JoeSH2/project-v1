@@ -1,8 +1,6 @@
 import React from 'react';
 import { Meta, StoryFn } from '@storybook/react';
 import { Loader } from '../ui/Loader';
-import { ThemeDecorator } from '../../../config/decorators/themeDecorator';
-import { Theme } from '@/shared/const/theme';
 
 export default {
   title: 'shared/Loader',
@@ -13,7 +11,4 @@ export default {
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: StoryFn<typeof Loader> = args => <Loader {...args} />;
 
-export const Dark = Template.bind({});
-
 export const Default = Template.bind({});
-Default.decorators = [ThemeDecorator(Theme.DEFAULT)];

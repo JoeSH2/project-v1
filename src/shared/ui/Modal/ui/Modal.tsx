@@ -5,7 +5,6 @@ import { useModal } from '../../../hooks/useModal';
 import { classNames } from '../../../lib/classNames/classNames';
 import { Overlay } from '../../Overlay/ui/Overlay';
 import { Portal } from '../../Portal';
-import { useTheme } from '../../../hooks/useTheme';
 
 interface ModalProps {
   className?: string;
@@ -16,7 +15,6 @@ interface ModalProps {
 }
 
 export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose, lazy }) => {
-  const { theme } = useTheme();
   const { isMounted } = useModal(onClose, isOpen);
 
   if (lazy && !isMounted) {
@@ -25,7 +23,7 @@ export const Modal: FC<ModalProps> = ({ className, children, isOpen, onClose, la
 
   return (
     <Portal>
-      <div className={classNames(style.Modal, { [style.open]: isOpen }, [className, theme])}>
+      <div className={classNames(style.Modal, { [style.open]: isOpen }, [className])}>
         <Overlay onClose={onClose} />
         <div className={style.wrapper}>{children}</div>
       </div>

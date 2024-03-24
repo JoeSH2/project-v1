@@ -28,8 +28,7 @@
 .item {
   width: 100%;
   display: flex;
-  align-content: center;
-  justify-content: center;
+  place-content: center center;
   border: none;
   background: none;
   white-space: nowrap;
