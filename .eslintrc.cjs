@@ -63,7 +63,7 @@ module.exports = {
       "error",
       {
         markupOnly: true,
-        ignoreAttribute: ["data-testid", "to"]
+        ignoreAttribute: ["data-testid", "to", "**/*.stories.*"]
       }
     ]
     // 'react/jsx-indent': [2, 2],
@@ -78,13 +78,15 @@ module.exports = {
     __API__: true,
     __PROJECT__: true
   },
+  ignorePatterns: ["**/*.stories.*"],
   overrides: [
     {
       files: ["**/src/**/*.{test,stories}.{ts,tsx}"],
       rules: {
-        "i18next/no-literal-string": "off",
-        "max-len": "off"
-      }
-    }
-  ]
+        "i18next/no-literal-string": 0,
+        "max-len": 0
+      },
+    },
+  ],
+
 };

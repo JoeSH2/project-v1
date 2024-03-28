@@ -11,7 +11,6 @@ export default {
 
 const Template: StoryFn<typeof Flex> = args => (
   <Flex {...args}>
-    {/* eslint-disable-next-line i18next/no-literal-string */}
     <p style={{ backgroundColor: 'blue', padding: 20 }}>Flex block</p>
   </Flex>
 );

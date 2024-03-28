@@ -14,7 +14,6 @@ export const Normal = Template.bind({});
 // eslint-disable-next-line react/no-unescaped-entities
 Normal.args = {
   children: (
-    // eslint-disable-next-line i18next/no-literal-string
     <div>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam in voluptas omnis possimus
       aliquid cum. Ut harum nobis nisi iste, totam odio dolore similique provident necessitatibus
