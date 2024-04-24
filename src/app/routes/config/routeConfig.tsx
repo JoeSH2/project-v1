@@ -27,23 +27,20 @@ export const routesConfig: Record<AppRoutes, RouterAuth> = {
     path: getMainPage(),
     element: <MainPage />,
   },
+  [AppRoutes.ABOUT]: {
+    path: getAboutPage(),
+    element: <AboutPage />,
+  },
   [AppRoutes.ADMIN]: {
     path: getAdminPage(),
     element: <AdminPage />,
     authUser: true,
     roles: [UserRole.ADMIN, UserRole.MANAGER],
   },
-  [AppRoutes.ABOUT]: {
-    path: getAboutPage(),
-    element: <AboutPage />,
-  },
   [AppRoutes.PROFILE]: {
     path: getProfilePage(':id'),
     element: <ProfilePage />,
-  },
-  [AppRoutes.NOT_FOUND]: {
-    path: '*',
-    element: <PageNotFound />,
+    authUser: true,
   },
   [AppRoutes.ARTICLE]: {
     path: getArticlesPage(),
@@ -69,5 +66,9 @@ export const routesConfig: Record<AppRoutes, RouterAuth> = {
     path: getForbiddenPage(),
     element: <ForbiddenPage />,
     authUser: true,
+  },
+  [AppRoutes.NOT_FOUND]: {
+    path: '*',
+    element: <PageNotFound />,
   },
 };

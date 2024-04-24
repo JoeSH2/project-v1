@@ -2,7 +2,6 @@ import { FC, ReactNode, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
 import { getUserAuth, getUserRole, UserRole } from '@/entity/User';
-
 import { getForbiddenPage, getMainPage } from '@/shared/const/route';
 
 interface ProtectedRouteProps {
@@ -23,7 +22,7 @@ export const ProtectedRoute: FC<ProtectedRouteProps> = ({ children, roles }) => 
   }, [roles, userRoles]);
 
   if (!isAuth) {
-    return <Navigate to={getMainPage()} replace state={{ from: location }} />;
+    return <Navigate to={getMainPage()} state={{ from: location }} replace />;
   }
 
   if (!hasReqRoles) {

@@ -44,7 +44,10 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
     ) as ArticleBlockText;
 
     return (
-      <div className={classNames(style.articleCard, {}, [className, style[view]])}>
+      <div
+        data-testid='ArticleCard'
+        className={classNames(style.articleCard, {}, [className, style[view]])}
+      >
         <Card className={style.card}>
           <div className={style.titleWrapper}>
             <div className={style.articleInfo}>
@@ -75,7 +78,10 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
   }
 
   return (
-    <div className={classNames(style.articleCard, {}, [className, style[view]])}>
+    <div
+      data-testid='ArticleCard'
+      className={classNames(style.articleCard, {}, [className, style[view]])}
+    >
       <Card className={style.card}>
         <AppLink target={target} to={getArticleDetailsPage(article.id)}>
           <div className={style.wrapperIcon}>

@@ -20,7 +20,9 @@ export const Text: FC<TextProps> = props => {
   const { className, title, text, theme = 'theme', align = 'center', size = 'xl' } = props;
 
   return (
-    <div className={classNames(style.Text, {}, [style[theme], style[align], style[size], className])}>
+    <div
+      className={classNames(style.Text, {}, [style[theme], style[align], style[size], className])}
+    >
       <h1 className={style.title}>{title}</h1>
       <p className={style.text}>{text}</p>
     </div>

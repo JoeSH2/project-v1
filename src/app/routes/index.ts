@@ -1,1 +1,1 @@
-export { AppRoute } from './ui/AppRoute';
+export { default as AppRoute } from './ui/AppRoute';

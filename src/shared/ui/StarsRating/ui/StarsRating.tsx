@@ -38,8 +38,9 @@ export const StarsRating: FC<StarsRatingProps> = props => {
 
   return (
     <HStack className={classNames(style.StarsRating, {}, [className])}>
-      {stars.map(star => (
+      {stars.map((star, item) => (
         <Svg
+          data-testid={`StarsRating.${item + 1}`}
           onClick={onClick(star)}
           onMouseEnter={onHover(star)}
           onMouseLeave={onLeave}

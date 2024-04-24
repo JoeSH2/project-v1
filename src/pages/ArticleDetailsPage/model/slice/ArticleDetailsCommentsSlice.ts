@@ -4,14 +4,15 @@ import { Comment } from '@/entity/Comment';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSlice';
 import { fetchArticleDetailsComments } from '../services/fetchArticleDetailsComments';
 
-const commentsAdapter = createEntityAdapter<Comment>({ selectId: comment => comment.id });
+const commentsAdapter = createEntityAdapter<Comment>({
+  selectId: comment => comment.id,
+});
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-  // state => state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
   state => state.articleDetailsPage?.comments || commentsAdapter.getInitialState(),
 );
 
-const aticleDetailsCommentsSlice = createSlice({
+const articleDetailsCommentsSlice = createSlice({
   name: 'comments',
   initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
     entities: {},
@@ -37,4 +38,4 @@ const aticleDetailsCommentsSlice = createSlice({
   },
 });
 
-export const { reducer: articleDetailsCommentsReducer } = aticleDetailsCommentsSlice;
+export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsSlice;

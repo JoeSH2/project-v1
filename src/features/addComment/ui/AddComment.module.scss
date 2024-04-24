@@ -1,20 +1,22 @@
 .AddComment {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 2rem;
-    background: var(--bg-color-dark);
-    margin: 0.5rem 0 1rem;
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  grid-auto-columns: 80% 20%;
+  padding: 2rem;
+  background: var(--bg-color-dark);
+  margin: 0.5rem 0 1rem;
 }
 
 .input {
-    padding: 1rem;
-    background: var(--bg-color);
-    border-radius: 4px;
-    flex-grow: 1;
+  padding: 1rem;
+  background: var(--bg-color);
+  flex: 1 0 auto;
 }
 
 .btn {
-    padding: 1rem 2rem;
-    margin: 0 0 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
 }

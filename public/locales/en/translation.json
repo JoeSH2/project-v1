@@ -11,13 +11,6 @@
   "Back": "Back",
   "CRYPTO": "CRYPTO",
   "Cancel": "Cancel",
-  "Check for notifications": {
-    "": {
-      "": {
-        "": ""
-      }
-    }
-  },
   "Check for notifications...": "Check for notifications...",
   "Choose the most important": "Choose the most important",
   "City": "City",
@@ -56,7 +49,7 @@
   "No profile found =(": "No profile found =(",
   "Notification": "Notification",
   "Open Modal": "Open Modal",
-  "Page not found": "",
+  "Page not found": "Page not found",
   "Password": "Password",
   "Profile": "Profile",
   "Profile data was not received, try reloading the page": "Profile data was not received, try reloading the page",

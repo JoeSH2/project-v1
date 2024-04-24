@@ -30,9 +30,14 @@ export const ArticleList: FC<ArticleListProps> = props => {
 
   // @ts-ignore
   return (
-    <div className={classNames(style.articleList, {}, [className, style[view]])}>
+    <div
+      data-testid='ArticleList'
+      className={classNames(style.articleList, {}, [className, style[view]])}
+    >
       {articles ? (
-        articles.map(article => <ArticleCard target={target} key={article.id} view={view} article={article} />)
+        articles.map(article => (
+          <ArticleCard target={target} key={article.id} view={view} article={article} />
+        ))
       ) : (
         // eslint-disable-next-line react/jsx-no-undef
         <Text title={t('Error in receiving articles')} />

@@ -2653,6 +2653,41 @@
           ]
         }
       ]
+    },
+    {
+      "id": "testID",
+      "userId": "4",
+      "title": "TEST ARTICLE",
+      "subtitle": "Тестовая статья",
+      "img": "https://i.pinimg.com/originals/e1/50/f8/e150f8c1d859436170f0b1373fdda2cc.jpg",
+      "views": 9999,
+      "createdAt": "99.99.9999",
+      "type": [
+        "IT"
+      ],
+      "blocks": []
+    },
+    {
+      "userId": "4",
+      "title": "TEST ARTICLE",
+      "subtitle": "Тестовая статья",
+      "img": "https://i.pinimg.com/originals/e1/50/f8/e150f8c1d859436170f0b1373fdda2cc.jpg",
+      "views": 1111,
+      "createdAt": "11.11.1111",
+      "type": "IT",
+      "blocks": [],
+      "id": "9vFBYyz"
+    },
+    {
+      "userId": "4",
+      "title": "TEST ARTICLE",
+      "subtitle": "Тестовая статья",
+      "img": "https://i.pinimg.com/originals/e1/50/f8/e150f8c1d859436170f0b1373fdda2cc.jpg",
+      "views": 1111,
+      "createdAt": "11.11.1111",
+      "type": "IT",
+      "blocks": [],
+      "id": "KPRop4P"
     }
   ],
   "comments": [
@@ -2673,12 +2708,6 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "3"
-    },
-    {
-      "userId": "3",
-      "articleId": "1",
-      "text": "New Comment",
-      "id": "pdCENkC"
     },
     {
       "userId": "1",
@@ -2718,15 +2747,21 @@
     },
     {
       "userId": "1",
-      "articleId": "22",
-      "text": "article",
-      "id": "K4JznRe"
-    },
-    {
-      "userId": "1",
       "articleId": "1",
       "text": "Wwww",
       "id": "ZVeCyt0"
+    },
+    {
+      "userId": "1",
+      "articleId": "27",
+      "text": "Food",
+      "id": "h-Ei30L"
+    },
+    {
+      "userId": "4",
+      "articleId": "9vFBYyz",
+      "text": "test comment",
+      "id": "q55jNl6"
     }
   ],
   "users": [
@@ -2756,6 +2791,15 @@
         "USER"
       ],
       "avatar": "https://cdnb.artstation.com/p/assets/images/images/048/127/951/large/akiro-art-11.jpg?1649265953"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "role": [
+        "ADMIN"
+      ],
+      "avatar": "https://sun6-21.userapi.com/s/v1/if2/my0bOeQoFkmaRFWlsJUaaYNViN3ih6M2bYnOWNF3j-Cm0lA5E26DS0Ypm7h_nCJtc1a17zWfNuz8n541Ge36Iou7.jpg?size=1121x1121&quality=96&crop=39,39,1121,1121&ava=1"
     }
   ],
   "profile": [
@@ -2791,6 +2835,17 @@
       "city": "Moscow",
       "username": "foremansh2",
       "avatar": "https://cdnb.artstation.com/p/assets/images/images/048/127/951/large/akiro-art-11.jpg?1649265953"
+    },
+    {
+      "id": "4",
+      "first": "test",
+      "lastname": "user",
+      "age": 30,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "testuser",
+      "avatar": "https://sun6-21.userapi.com/s/v1/if2/my0bOeQoFkmaRFWlsJUaaYNViN3ih6M2bYnOWNF3j-Cm0lA5E26DS0Ypm7h_nCJtc1a17zWfNuz8n541Ge36Iou7.jpg?size=1121x1121&quality=96&crop=39,39,1121,1121&ava=1"
     }
   ],
   "articles-rating": [

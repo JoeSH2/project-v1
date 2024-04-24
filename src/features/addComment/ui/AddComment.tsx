@@ -2,7 +2,10 @@ import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import {
+  ReducerList,
+  useAsyncWrapperReducer,
+} from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { addCommentActions, addCommentReducer } from '../model/slice/addCommentSlice';
 import { getCommentFormText } from '../model/selectors/getCommentFormData';
 import style from './AddComment.module.scss';
@@ -18,7 +21,7 @@ interface AddCommentProps {
 const reducerList: ReducerList = { commentForm: addCommentReducer };
 
 const AddComment: FC<AddCommentProps> = ({ className, onSendComment }) => {
-  const { t } = useTranslation('about');
+  const { t } = useTranslation();
   const text = useSelector(getCommentFormText);
   const dispatch = useAppDispatch();
 
@@ -37,9 +40,19 @@ const AddComment: FC<AddCommentProps> = ({ className, onSendComment }) => {
   useAsyncWrapperReducer(reducerList);
 
   return (
-    <form action='' className={classNames(style.AddComment, {}, [className])}>
-      <Input placeholder='Comment' className={style.input} value={text} onChange={onCommentChangeHandler} />
-      <Button onClick={onSubmitForm} className={style.btn}>
+    <form
+      data-testid='AddComment'
+      action=''
+      className={classNames(style.AddComment, {}, [className])}
+    >
+      <Input
+        data-testid='AddComment.Input'
+        placeholder='Comment'
+        className={style.input}
+        value={text}
+        onChange={onCommentChangeHandler}
+      />
+      <Button data-testid='AddComment.Button' onClick={onSubmitForm} className={style.btn}>
         {t('Comment')}
       </Button>
     </form>

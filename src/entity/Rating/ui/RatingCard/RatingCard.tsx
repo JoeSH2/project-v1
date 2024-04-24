@@ -50,9 +50,10 @@ export const RatingCard: FC<RatingCardProps> = props => {
   };
 
   const modalContent = (
-    <VStack gap='gap16'>
+    <VStack data-testid='RatingCard.Modal' gap='gap16'>
       <Text theme='inverted' size='l' title={modalTitle} />
       <Input
+        data-testid='RatingCard.Input'
         theme='clear'
         className={style.input}
         i18n-placeholder={t('Write a feedback')}
@@ -60,10 +61,15 @@ export const RatingCard: FC<RatingCardProps> = props => {
         onChange={feedbackText => setFeedbackText(feedbackText)}
       />
       <HStack full justify='justifyEnd' gap='gap8'>
-        <Button onClick={onCancelFeedback} className={style.btn} theme={ButtonTheme.RED}>
+        <Button
+          data-testid='RatingCard.Cancel'
+          onClick={onCancelFeedback}
+          className={style.btn}
+          theme={ButtonTheme.RED}
+        >
           {t('Cancel')}
         </Button>
-        <Button onClick={onSendFeedback} className={style.btn}>
+        <Button data-testid='RatingCard.Send' onClick={onSendFeedback} className={style.btn}>
           {t('Send')}
         </Button>
       </HStack>
@@ -71,7 +77,7 @@ export const RatingCard: FC<RatingCardProps> = props => {
   );
 
   return (
-    <VStack className={classNames(style.RatingCard, {}, [className])}>
+    <VStack data-testid='RatingCard' className={classNames(style.RatingCard, {}, [className])}>
       <Text size='l' title={title} />
       <StarsRating sizeStar={size} onSelect={selectStar} rating={countStar} />
       <BrowserView>

@@ -94,6 +94,7 @@ export const ProfileList: FC<ProfileListProps> = ({
           {t('Lastname')}
         </label>
         <Input
+          data-testid='ProfileList.lastname'
           value={form?.lastname}
           onChange={onChangeLastname}
           theme='default'
@@ -130,13 +131,24 @@ export const ProfileList: FC<ProfileListProps> = ({
         <label className={style.label} htmlFor='firstname'>
           {t('City')}
         </label>
-        <Input value={form?.city} onChange={onChangeCity} theme='default' className={style.input} readonly={readonly} />
+        <Input
+          value={form?.city}
+          onChange={onChangeCity}
+          theme='default'
+          className={style.input}
+          readonly={readonly}
+        />
       </div>
       <div className={style.wrapper}>
         <label className={style.label} htmlFor='firstname'>
           {t('Country')}
         </label>
-        <CountrySelect value={form?.country} onChange={onChangeCountry} className={style.select} readonly={readonly} />
+        <CountrySelect
+          value={form?.country}
+          onChange={onChangeCountry}
+          className={style.select}
+          readonly={readonly}
+        />
       </div>
       <div className={style.wrapper}>
         <label className={style.label} htmlFor='firstname'>

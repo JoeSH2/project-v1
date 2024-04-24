@@ -1,56 +1,76 @@
 .Comment {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-color-dark);
-    padding: 2rem;
-    border-radius: 6px;
-    margin: 1rem 0 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color-dark);
+  padding: 2rem;
+  border-radius: 6px;
+  margin: 1rem 0 0;
 }
 
 .userWrapper {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: auto;
+  padding-bottom: 15px;
+
+  .link {
     display: flex;
-    position: relative;
-    width: auto;
-    padding-bottom: 15px;
+    align-items: center;
 
-    .link {
-        display: flex;
-        align-items: center;
-
-        &:hover {
-            .avatar {
-                padding: 2px;
-            }
-        }
+    &:hover {
+      .avatar {
+        padding: 2px;
+      }
     }
+  }
 
-    &::before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 2px;
-        width: 20%;
-        background-color: var(--bg-color-special);
-    }
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 20%;
+    background-color: var(--bg-color-special);
+  }
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 30px;
+  height: 30px;
+}
+
+.cross {
+  fill: var(--bg-color-special);
+  height: 100%;
+  width: 100%;
+  transition: fill 0.2s ease;
+
+  &:hover {
+    fill: var(--bg-color-special-dark);
+  }
 }
 
 .avatar {
-    margin-right: 15px;
-    transition: padding 0.2s ease-out;
+  margin-right: 15px;
+  transition: padding 0.2s ease-out;
 }
 
 .username {
-    font-weight: 600;
-    padding-left: 10px;
-
+  font-weight: 600;
+  padding-left: 10px;
 }
 
 .text {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .wrapperTextSkeleton {
-    width: 100%;
-    margin-left: 20px;
+  width: 100%;
+  margin-left: 20px;
 }

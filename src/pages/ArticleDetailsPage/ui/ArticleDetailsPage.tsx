@@ -5,7 +5,10 @@ import { useSelector } from 'react-redux';
 import { ArticleDetails } from '@/entity/Article';
 import { Text } from '@/shared/ui/Text';
 import style from './ArticleDetailsPage.module.scss';
-import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import {
+  ReducerList,
+  useAsyncWrapperReducer,
+} from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { articleDetailsPageReducer } from '../../ArticleDetailsPage/model/slice';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { getArticleComments } from '../model/slice/ArticleDetailsCommentsSlice';
@@ -15,10 +18,12 @@ import { fetchArticleDetailsComments } from '../model/services/fetchArticleDetai
 import { PageWrapper } from '@/widgets/PageWrapper';
 import { ArticlesRecommendationsList } from '@/features/ArticlesRecommendationsList';
 import { AddComment } from '@/features/addComment';
-import { CommentList } from '@/entity/Comment';
+import { Comment, CommentList } from '@/entity/Comment';
 import { ArticleRating } from '@/features/ArticleRating';
 import { getArticleDetailsCommentsLoading } from '../model/selectors/comments';
 import { getCanEditArticle } from '../model/selectors/article';
+import { removeArticleComment } from '../model/services/removeArticleComment';
+import { getUserAuth, getUserRole } from '@/entity/User';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -43,6 +48,13 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     [dispatch],
   );
 
+  const removeComment = useCallback(
+    (comm: Comment) => {
+      dispatch(removeArticleComment(comm));
+    },
+    [dispatch],
+  );
+
   useInitialEffect(() => {
     dispatch(fetchArticleDetailsComments(id));
   });
@@ -53,13 +65,15 @@ const ArticleDetailsPage: FC<ArticleDetailsPageProps> = ({ className }) => {
     return <Text title={t('No article found =(')} />;
   }
 
+  console.log(isLoading);
+
   return (
     <PageWrapper data-testid='ArticleDetailsPage' className={className}>
       <ArticleDetails canEdit={canEdit} id={id} />
       <ArticleRating className={style.wrapperRating} articleId={id} />
       <ArticlesRecommendationsList className={style.recommendations} />
       <AddComment onSendComment={onSendComment} />
-      <CommentList isLoading={isLoading} comments={comments} />
+      <CommentList onDeleteComment={removeComment} isLoading={isLoading} comments={comments} />
     </PageWrapper>
   );
 };

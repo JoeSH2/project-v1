@@ -50,6 +50,7 @@ module.exports = {
     "no-undef": "off",
     "react/no-array-index-key": "off",
     "object-curly-spacing": ["error", "always"],
+    "react/destructuring-assignment": 'warn',
     "import-path-lint-plugin/path-checker": ["error", { alias: "@" }],
     "import-path-lint-plugin/layer-imports": ["error", {
       alias: "@",

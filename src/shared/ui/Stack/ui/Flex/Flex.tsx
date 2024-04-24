@@ -1,13 +1,14 @@
 import { FC, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import style from './Flex.module.scss';
+import { TestProps } from '../../../../types/types';
 
 type FlexAlign = 'center' | 'end' | 'start';
 type FlexJustify = 'justifyStart' | 'justifyBetween' | 'justifyEnd' | 'justifyCenter';
 type FlexDirection = 'row' | 'column';
 type FlexGap = 'gap2' | 'gap4' | 'gap8' | 'gap16' | 'gap24' | 'gap32';
 
-export interface FlexProps {
+export interface FlexProps extends TestProps {
   children: ReactNode;
   className?: string;
   align?: FlexAlign;
@@ -36,7 +37,11 @@ export const Flex: FC<FlexProps> = props => {
 
   if (htmlStyle === 'aside') {
     return (
-      <aside className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>
+      <aside
+        // eslint-disable-next-line
+        data-testid={props['data-testid'] ?? undefined}
+        className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}
+      >
         {children}
       </aside>
     );
@@ -44,31 +49,59 @@ export const Flex: FC<FlexProps> = props => {
 
   if (htmlStyle === 'nav') {
     return (
-      <nav className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</nav>
+      <nav
+        // eslint-disable-next-line
+        data-testid={props['data-testid'] ?? undefined}
+        className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}
+      >
+        {children}
+      </nav>
     );
   }
 
   if (htmlStyle === 'ul') {
     return (
-      <ul className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</ul>
+      <ul
+        // eslint-disable-next-line
+        data-testid={props['data-testid'] ?? undefined}
+        className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}
+      >
+        {children}
+      </ul>
     );
   }
 
   if (htmlStyle === 'main') {
     return (
-      <main className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</main>
+      <main
+        // eslint-disable-next-line
+        data-testid={props['data-testid'] ?? undefined}
+        className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}
+      >
+        {children}
+      </main>
     );
   }
 
   if (htmlStyle === 'section') {
     return (
-      <section className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>
+      <section
+        // eslint-disable-next-line
+        data-testid={props['data-testid'] ?? undefined}
+        className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}
+      >
         {children}
       </section>
     );
   }
 
   return (
-    <div className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}>{children}</div>
+    <div
+      // eslint-disable-next-line
+      data-testid={props['data-testid'] ?? undefined}
+      className={classNames(style.Flex, { [style.wrap]: wrap, [style.full]: full }, classArray)}
+    >
+      {children}
+    </div>
   );
 };

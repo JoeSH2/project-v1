@@ -5,7 +5,10 @@ import { Text } from '@/shared/ui/Text';
 
 import style from './EditorProfileHeader.module.scss';
 import { editorProfileActions, editorProfileReducer } from '../../model/slice/editorProfileSlice';
-import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import {
+  ReducerList,
+  useAsyncWrapperReducer,
+} from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly';
 import { getUserAuth } from '@/entity/User';
@@ -30,6 +33,7 @@ export const EditorProfileHeader: FC<EditorProfileHeaderProps> = ({ className })
   const readonly = useSelector(getProfileReadonly);
   const userData = useSelector(getUserAuth);
   const profileData = useSelector(getProfileData);
+  const canEdit = userData?.id === profileData?.id;
 
   const onEdit = () => {
     dispatch(editorProfileActions.setReadonly(false));
@@ -41,6 +45,42 @@ export const EditorProfileHeader: FC<EditorProfileHeaderProps> = ({ className })
     dispatch(updateProfileData());
   };
 
+  const editBlock = () => {
+    if (readonly) {
+      return (
+        <HStack justify='justifyEnd' className={style.wrapperBtn}>
+          <Button
+            data-testid='EditorProfileHeader.EditBtn'
+            onClick={onEdit}
+            className={style.editBtn}
+          >
+            {t('Edit')}
+          </Button>
+        </HStack>
+      );
+    }
+
+    return (
+      <HStack justify='justifyEnd' className={style.wrapperBtn}>
+        <Button
+          data-testid='EditorProfileHeader.CancelBtn'
+          onClick={cancelEdit}
+          theme={ButtonTheme.RED}
+          className={style.editBtn}
+        >
+          {t('Cancel')}
+        </Button>
+        <Button
+          data-testid='EditorProfileHeader.SaveBtn'
+          onClick={onSaveForm}
+          className={style.editBtn}
+        >
+          {t('Save')}
+        </Button>
+      </HStack>
+    );
+  };
+
   useAsyncWrapperReducer(reducerList);
 
   return (
@@ -49,28 +89,7 @@ export const EditorProfileHeader: FC<EditorProfileHeaderProps> = ({ className })
         <Text align='left' className={style.title} theme='theme' title={t('Profile')} />
         <Avatar size={65} src={profileData?.avatar} alt='avatar' />
       </div>
-      {userData?.id === profileData?.id &&
-        (readonly ? (
-          <HStack justify='justifyEnd' className={style.wrapperBtn}>
-            <Button data-testid='EditorProfileHeader.EditBtn' onClick={onEdit} className={style.editBtn}>
-              {t('Edit')}
-            </Button>
-          </HStack>
-        ) : (
-          <HStack justify='justifyEnd' className={style.wrapperBtn}>
-            <Button
-              data-testid='EditorProfileHeader.CancelBtn'
-              onClick={cancelEdit}
-              theme={ButtonTheme.RED}
-              className={style.editBtn}
-            >
-              {t('Cancel')}
-            </Button>
-            <Button data-testid='EditorProfileHeader.SaveBtn' onClick={onSaveForm} className={style.editBtn}>
-              {t('Save')}
-            </Button>
-          </HStack>
-        ))}
+      {canEdit && editBlock()}
     </HStack>
   );
 };

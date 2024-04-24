@@ -8,12 +8,18 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Comment } from '../../model/types/comment';
 
 interface CommentListProps {
+  onDeleteComment?: (comm: Comment) => void;
   className?: string;
   comments: Comment[];
   isLoading?: boolean;
 }
 
-export const CommentList: FC<CommentListProps> = ({ className, comments, isLoading }) => {
+export const CommentList: FC<CommentListProps> = ({
+  className,
+  comments,
+  isLoading,
+  onDeleteComment,
+}) => {
   const { t } = useTranslation();
 
   if (isLoading) {
@@ -27,9 +33,16 @@ export const CommentList: FC<CommentListProps> = ({ className, comments, isLoadi
   }
 
   return (
-    <div className={classNames(style.CommentList, {}, [className])}>
+    <div data-testid='CommentList' className={classNames(style.CommentList, {}, [className])}>
       {comments.length ? (
-        comments.map(comment => <CommentCard isLoading={isLoading} key={comment.id} comment={comment} />)
+        comments.map(comment => (
+          <CommentCard
+            onDeleteComment={onDeleteComment}
+            isLoading={isLoading}
+            key={comment.id}
+            comment={comment}
+          />
+        ))
       ) : (
         <Text text={t('No comments')} />
       )}

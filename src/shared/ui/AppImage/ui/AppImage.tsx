@@ -25,7 +25,6 @@ export const AppImage: FC<AppImageProps> = props => {
       setIsLoading(false);
       setHasError(true);
     };
-    console.log(img);
   }, [hasError, isLoading, src]);
 
   if (isLoading && loadingFeedback) {
@@ -34,6 +33,13 @@ export const AppImage: FC<AppImageProps> = props => {
   if (hasError && errorFeedback) {
     return errorFeedback;
   }
-  console.log(hasError, isLoading);
-  return <img {...otherProps} src={src} alt={alt} className={classNames(style.AppImage, {}, [className])} />;
+
+  return (
+    <img
+      {...otherProps}
+      src={src}
+      alt={alt}
+      className={classNames(style.AppImage, {}, [className])}
+    />
+  );
 };
