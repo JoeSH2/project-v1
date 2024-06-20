@@ -1,7 +1,9 @@
 import { FC } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ArticleBlockCode } from '../../../model/types/Article';
 import { Code } from '@/shared/ui/Code';
+
+import { ArticleBlockCode } from '../../../model/types/Article';
 
 import style from './ArticleDetailsBlockCode.module.scss';
 

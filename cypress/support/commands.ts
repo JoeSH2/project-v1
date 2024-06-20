@@ -1,7 +1,7 @@
-import * as CommonCommands from './commands/common';
-import * as ProfileCommands from './commands/profile';
 import * as ArticleCommands from './commands/article';
 import * as CommentCommands from './commands/comment';
+import * as CommonCommands from './commands/common';
+import * as ProfileCommands from './commands/profile';
 import * as RatingCommands from './commands/rating';
 
 Cypress.Commands.addAll(CommonCommands);

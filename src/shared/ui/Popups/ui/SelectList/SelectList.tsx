@@ -1,11 +1,12 @@
 import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Listbox, Transition } from '@headlessui/react';
+
 import { classNames } from '../../../../lib/classNames/classNames';
+import { PositionPopup } from '../../styles/consts';
 
 import popupStyles from '../../styles/popups.module.scss';
 import style from './SelectList.module.scss';
-import { PositionPopup } from '../../styles/consts';
 
 type ThemeMenuPopup = 'clear' | 'theme';
 

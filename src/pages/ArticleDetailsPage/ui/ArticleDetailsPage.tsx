@@ -1,29 +1,31 @@
 import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
+
 import { ArticleDetails } from '@/entity/Article';
-import { Text } from '@/shared/ui/Text';
-import style from './ArticleDetailsPage.module.scss';
+import { Comment, CommentList } from '@/entity/Comment';
+import { AddComment } from '@/features/addComment';
+import { ArticleRating } from '@/features/ArticleRating';
+import { ArticlesRecommendationsList } from '@/features/ArticlesRecommendationsList';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
 import {
   ReducerList,
   useAsyncWrapperReducer,
 } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { articleDetailsPageReducer } from '../../ArticleDetailsPage/model/slice';
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { getArticleComments } from '../model/slice/ArticleDetailsCommentsSlice';
-import { addCommentArticleDetails } from '../model/services/addCommentArticleDetails';
-import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import { fetchArticleDetailsComments } from '../model/services/fetchArticleDetailsComments';
+import { Text } from '@/shared/ui/Text';
 import { PageWrapper } from '@/widgets/PageWrapper';
-import { ArticlesRecommendationsList } from '@/features/ArticlesRecommendationsList';
-import { AddComment } from '@/features/addComment';
-import { Comment, CommentList } from '@/entity/Comment';
-import { ArticleRating } from '@/features/ArticleRating';
-import { getArticleDetailsCommentsLoading } from '../model/selectors/comments';
+
+import { articleDetailsPageReducer } from '../../ArticleDetailsPage/model/slice';
 import { getCanEditArticle } from '../model/selectors/article';
+import { getArticleDetailsCommentsLoading } from '../model/selectors/comments';
+import { addCommentArticleDetails } from '../model/services/addCommentArticleDetails';
+import { fetchArticleDetailsComments } from '../model/services/fetchArticleDetailsComments';
 import { removeArticleComment } from '../model/services/removeArticleComment';
-import { getUserAuth, getUserRole } from '@/entity/User';
+import { getArticleComments } from '../model/slice/ArticleDetailsCommentsSlice';
+
+import style from './ArticleDetailsPage.module.scss';
 
 interface ArticleDetailsPageProps {
   className?: string;

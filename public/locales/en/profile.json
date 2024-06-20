@@ -9,8 +9,13 @@
   "Edit": "Edit",
   "Firstname": "Firstname",
   "Lastname": "Lastname",
+  "No profile found =(": "",
   "Profile": "Profile",
   "Profile data was not received, try reloading the page": "Profile data was not received, try reloading the page",
   "Save": "Save",
+  "This is the first time you have visited the profile page": {
+    " If this is your profile, you will be able to edit it": "This is the first time you have visited the profile page. If this is your profile, you will be able to edit it"
+  },
+  "This window is shown only once": "This window is shown only once",
   "Username": "Username"
 }

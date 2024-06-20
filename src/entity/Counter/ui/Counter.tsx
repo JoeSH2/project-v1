@@ -1,8 +1,11 @@
 import React, { FC } from 'react';
+
+import { Button } from '@/shared/ui/Button';
+import { HStack, VStack } from '@/shared/ui/Stack';
+
 import { useCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 import { useCounterSlice } from '../model/slice/CounterSlice';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import { Button } from '@/shared/ui/Button';
+
 import style from './Counter.module.scss';
 
 export const Counter: FC = () => {

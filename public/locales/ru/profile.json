@@ -9,8 +9,13 @@
   "Edit": "Редактировать",
   "Firstname": "Имя",
   "Lastname": "Фамилия",
+  "No profile found =(": "",
   "Profile": "Профиль",
   "Profile data was not received, try reloading the page": "Данные профиля не были получены, попробуйте перезагрузить страницу",
   "Save": "Сохранить",
+  "This is the first time you have visited the profile page": {
+    " If this is your profile, you will be able to edit it": ""
+  },
+  "This window is shown only once": "Это окно показывается только один раз",
   "Username": "Ник"
 }

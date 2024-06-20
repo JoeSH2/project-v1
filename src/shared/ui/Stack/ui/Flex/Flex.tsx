@@ -1,7 +1,10 @@
 import { FC, ReactNode } from 'react';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
-import style from './Flex.module.scss';
+
 import { TestProps } from '../../../../types/types';
+
+import style from './Flex.module.scss';
 
 type FlexAlign = 'center' | 'end' | 'start';
 type FlexJustify = 'justifyStart' | 'justifyBetween' | 'justifyEnd' | 'justifyCenter';

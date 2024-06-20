@@ -1,13 +1,16 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import style from './ProfileList.module.scss';
-import { Profile } from '../model/types/Profile';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Loader } from '@/shared/ui/Loader';
-import { Text } from '@/shared/ui/Text';
-import { Input } from '@/shared/ui/Input';
+
 import { CountrySelect } from '@/entity/Country';
 import { CurrencySelect } from '@/entity/Currency';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Input } from '@/shared/ui/Input';
+import { Loader } from '@/shared/ui/Loader';
+import { Text } from '@/shared/ui/Text';
+
+import { Profile } from '../model/types/Profile';
+
+import style from './ProfileList.module.scss';
 
 interface ProfileListProps {
   className?: string;

@@ -1,11 +1,13 @@
 import { createSelector } from '@reduxjs/toolkit';
-import ProfileIcon from '@/shared/assets/icon/profile.svg';
+
 import { getUserAuth } from '@/entity/User';
 import ArticleIcon from '@/shared/assets/icon/article.svg';
 import AboutUsIcon from '@/shared/assets/icon/info.svg';
 import MainPageIcon from '@/shared/assets/icon/mainPage.svg';
-import { SidebareLinksType } from '../types/sidebareLinks';
+import ProfileIcon from '@/shared/assets/icon/profile.svg';
 import { getAboutPage, getArticlesPage, getMainPage, getProfilePage } from '@/shared/const/route';
+
+import { SidebareLinksType } from '../types/sidebareLinks';
 
 export const getSidebareLinks = createSelector(getUserAuth, userData => {
   const linksSidebare: SidebareLinksType[] = [

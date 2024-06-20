@@ -1,9 +1,10 @@
-import { DefaultTFuncReturn } from 'i18next';
 import { FC } from 'react';
+import { DefaultTFuncReturn } from 'i18next';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { TestProps } from '@/shared/types/types';
 
 import style from './Text.module.scss';
-import { TestProps } from '@/shared/types/types';
 
 type TextTheme = 'theme' | 'red' | 'inverted';
 

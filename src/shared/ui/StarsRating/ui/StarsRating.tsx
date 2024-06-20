@@ -1,9 +1,11 @@
 import { FC, useState } from 'react';
-import { classNames } from '../../../lib/classNames/classNames';
+
 import StarIcon from '../../../assets/icon/star.svg';
-import { Svg } from '../../Svg/ui/Svg';
-import style from './StarsRating.module.scss';
+import { classNames } from '../../../lib/classNames/classNames';
 import { HStack } from '../../Stack';
+import { Svg } from '../../Svg/ui/Svg';
+
+import style from './StarsRating.module.scss';
 
 interface StarsRatingProps {
   className?: string;

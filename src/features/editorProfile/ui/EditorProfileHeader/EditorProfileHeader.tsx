@@ -1,23 +1,25 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text } from '@/shared/ui/Text';
 
-import style from './EditorProfileHeader.module.scss';
-import { editorProfileActions, editorProfileReducer } from '../../model/slice/editorProfileSlice';
+import { getUserAuth } from '@/entity/User';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   ReducerList,
   useAsyncWrapperReducer,
 } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { getProfileReadonly } from '../../model/selectors/getProfileReadonly';
-import { getUserAuth } from '@/entity/User';
-import { getProfileData } from '../../model/selectors/getProfileData';
-import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { HStack } from '@/shared/ui/Stack';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+
+import { getProfileData } from '../../model/selectors/getProfileData';
+import { getProfileReadonly } from '../../model/selectors/getProfileReadonly';
+import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
+import { editorProfileActions, editorProfileReducer } from '../../model/slice/editorProfileSlice';
+
+import style from './EditorProfileHeader.module.scss';
 
 interface EditorProfileHeaderProps {
   className?: string;

@@ -1,16 +1,17 @@
-import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import style from './AvatarMenuButton.module.scss';
-import { MenuDrop } from '@/shared/ui/Popups';
+
 import { getUserAuth, isUserRoleAdmin, isUserRoleManager, userActions } from '@/entity/User';
-import { MenuDropOptions } from '@/shared/ui/Popups/ui/MenuDrop/MenuDrop';
-import { HStack } from '@/shared/ui/Stack';
+import { getAdminPage, getArticleCreatePage, getProfilePage } from '@/shared/const/route';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button } from '@/shared/ui/Button';
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { MenuDrop } from '@/shared/ui/Popups';
+import { MenuDropOptions } from '@/shared/ui/Popups/ui/MenuDrop/MenuDrop';
+import { HStack } from '@/shared/ui/Stack';
 
-import { getAdminPage, getArticleCreatePage, getProfilePage } from '@/shared/const/route';
+import style from './AvatarMenuButton.module.scss';
 
 interface AvatarMenuButtonProps {
   className?: string;
@@ -26,6 +27,7 @@ export const AvatarMenuButton: FC<AvatarMenuButtonProps> = props => {
   const userRoleTrue = isAdmin || isManager;
   const clickLogout = () => {
     dispatch(userActions.logout());
+    window.location.reload();
   };
 
   const optionsMenu: MenuDropOptions[] = [

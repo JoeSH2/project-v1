@@ -1,8 +1,9 @@
-import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
 import { Block } from '@/shared/ui/Block';
-import { PageWrapper } from '@/widgets/PageWrapper';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { PageWrapper } from '@/widgets/PageWrapper';
 
 interface PageErrorProps {
   className?: string;

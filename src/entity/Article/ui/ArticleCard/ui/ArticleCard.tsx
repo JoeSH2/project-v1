@@ -1,20 +1,23 @@
 import { FC, HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
-import style from './ArticleCard.module.scss';
-import { Article, ArticleBlockText, ArticleView } from '../../../model/types/Article';
-import { Text } from '@/shared/ui/Text';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import ViewIcon from '@/shared/assets/icon/eye.svg';
-import { Card } from '@/shared/ui/Card';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Button } from '@/shared/ui/Button';
-import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
-import { Avatar } from '@/shared/ui/Avatar';
-import { ArticleBlockType } from '../../../model/consts';
+
 import ErrorImg from '@/shared/assets/icon/error.png';
+import ViewIcon from '@/shared/assets/icon/eye.svg';
 import { getArticleDetailsPage } from '@/shared/const/route';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppImage } from '@/shared/ui/AppImage';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button } from '@/shared/ui/Button';
+import { Card } from '@/shared/ui/Card';
 import { Loader } from '@/shared/ui/Loader';
+import { Text } from '@/shared/ui/Text';
+
+import { ArticleBlockType } from '../../../model/consts';
+import { Article, ArticleBlockText, ArticleView } from '../../../model/types/Article';
+import { ArticleDetailsBlockText } from '../../ArticleDetailsBlockText';
+
+import style from './ArticleCard.module.scss';
 
 interface ArticleCardProps {
   className?: string;
@@ -27,10 +30,11 @@ export const ArticleCard: FC<ArticleCardProps> = ({ className, article, view, ta
 
   const loadingFeedback = <Loader theme='medium' />;
   const errorFeedback = <img className={style.img} alt='Error' src={ErrorImg} />;
+  const articleType = article.type.join(', ');
 
   const wrapperInfo = (
     <div className={style.wrapperInfo}>
-      <Text className={style.articleType} align='left' size='m' text={article.type.join(', ')} />
+      <Text className={style.articleType} align='left' size='m' text={articleType} />
       <div className={style.wrapperView}>
         <ViewIcon className={style.viewIcon} width={20} />
         <Text size='m' className={style.views} text={String(article.views)} />

@@ -1,6 +1,8 @@
 import { FC, ImgHTMLAttributes, ReactElement, useLayoutEffect, useState } from 'react';
-import style from './AppImage.module.scss';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+
+import style from './AppImage.module.scss';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;

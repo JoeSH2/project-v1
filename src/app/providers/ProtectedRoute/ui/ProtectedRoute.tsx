@@ -1,7 +1,8 @@
 import { FC, ReactNode, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate, useLocation } from 'react-router-dom';
-import { getUserAuth, getUserRole, UserRole } from '@/entity/User';
+
+import { getUserAuth, getUserRole,UserRole } from '@/entity/User';
 import { getForbiddenPage, getMainPage } from '@/shared/const/route';
 
 interface ProtectedRouteProps {

@@ -1,4 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
+import { buildSelectors } from '@/shared/lib/buildRedux';
 
 export const getArticlePageLoading = (state: StateSchema) => state.articlePage?.isLoading || false;
 export const getArticlePageError = (state: StateSchema) => state.articlePage?.error;
@@ -7,3 +8,7 @@ export const getArticlePagePage = (state: StateSchema) => state.articlePage?.pag
 export const getArticlePageLimit = (state: StateSchema) => state.articlePage?.limit || 8;
 export const getArticlePageHasMore = (state: StateSchema) => state.articlePage?.hasMore;
 export const getArticlePageInited = (state: StateSchema) => state.articlePage?._inited;
+
+export const [useGetArticleItem] = buildSelectors(
+  (state: StateSchema, id: string) => state.articlePage?.entities[id],
+);

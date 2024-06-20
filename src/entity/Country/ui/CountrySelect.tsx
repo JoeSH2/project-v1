@@ -1,7 +1,10 @@
 import { FC } from 'react';
+
 import { SelectList } from '@/shared/ui/Popups';
-import style from './CountrySelect.module.scss';
+
 import { CountryList } from '../model/types/CountryList';
+
+import style from './CountrySelect.module.scss';
 
 interface CountrySelectProps {
   className?: string;

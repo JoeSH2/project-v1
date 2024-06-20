@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Article, ArticleType } from '@/entity/Article';
-import { getArticlePageLimit, getArticlePagePage } from '../selectors/getArticlePageSelectors';
 // eslint-disable-next-line
 import {
   getArticleSortOrder,
@@ -10,6 +10,8 @@ import {
   getArticleSortType,
 } from '@/features/ArticleSort/model/selectors/getArticleSortSelectors';
 import { addQueryParams } from '@/shared/lib/addQueryParams.ts/addQueryParams';
+
+import { getArticlePageLimit, getArticlePagePage } from '../selectors/getArticlePageSelectors';
 
 interface FetchArticlePageOptions {
   replace?: boolean;

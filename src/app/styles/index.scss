@@ -1,8 +1,8 @@
-@import "./reset";
-@import "./dark/dark";
-@import "./default/default";
-@import "./brown/brown";
-@import "./variables/global";
+@import './reset';
+@import './dark/dark';
+@import './default/default';
+@import './brown/brown';
+@import './variables/global';
 @import 'https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900;1000&display=swap';
 
 body {
@@ -31,6 +31,13 @@ a {
   background-color: var(--bg-color);
   height: 100vh;
   transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+.mounted {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  place-content: center center;
 }
 
 .content-page {

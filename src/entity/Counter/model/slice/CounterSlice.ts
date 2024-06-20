@@ -1,5 +1,6 @@
-import { CounterSchema } from '../types/CounterSchema';
 import { buildSlice } from '@/shared/lib/buildRedux';
+
+import { CounterSchema } from '../types/CounterSchema';
 
 const initialState: CounterSchema = { value: 0 };
 

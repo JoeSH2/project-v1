@@ -23,7 +23,7 @@ module.exports = {
     ecmaVersion: "latest",
     sourceType: "module"
   },
-  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks", "prettier", "import-path-lint-plugin"],
+  plugins: ["react", "@typescript-eslint", "i18next", "react-hooks", "simple-import-sort", "prettier", "import-path-lint-plugin", "unused-imports"],
   rules: {
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/no-static-element-interactions": "off",
@@ -51,6 +51,35 @@ module.exports = {
     "react/no-array-index-key": "off",
     "object-curly-spacing": ["error", "always"],
     "react/destructuring-assignment": 'warn',
+    "unused-imports/no-unused-imports": "error",
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Packages `react` related packages come first.
+          ["^react", "^@?\\w"],
+          // Internal packages.
+          ["^(@|components)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.?(scss)$"]
+        ]
+      }
+    ],
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_",
+      },
+    ],
     "import-path-lint-plugin/path-checker": ["error", { alias: "@" }],
     "import-path-lint-plugin/layer-imports": ["error", {
       alias: "@",
@@ -67,12 +96,6 @@ module.exports = {
         ignoreAttribute: ["data-testid", "to", "**/*.stories.*"]
       }
     ]
-    // 'react/jsx-indent': [2, 2],
-    // 'react/jsx-indent-props': [2, 2],
-    // indent: ['error', 2],
-    // 'max-len': ['error', { ignoreComments: true, code: 120 }],
-    // "space-in-brackets": [ "error", "never" ],
-    // "array-bracket-spacing": [ "error", "always" ],
   },
   globals: {
     __IS_DEV__: true,

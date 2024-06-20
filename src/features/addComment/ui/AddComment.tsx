@@ -1,17 +1,20 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   ReducerList,
   useAsyncWrapperReducer,
 } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { addCommentActions, addCommentReducer } from '../model/slice/addCommentSlice';
-import { getCommentFormText } from '../model/selectors/getCommentFormData';
-import style from './AddComment.module.scss';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+
+import { getCommentFormText } from '../model/selectors/getCommentFormData';
+import { addCommentActions, addCommentReducer } from '../model/slice/addCommentSlice';
+
+import style from './AddComment.module.scss';
 
 interface AddCommentProps {
   className?: string;

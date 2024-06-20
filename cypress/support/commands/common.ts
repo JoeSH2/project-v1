@@ -1,6 +1,7 @@
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorage';
-import { selectDataTestId } from '../../helpers/selectDataTestId';
+
 import { User } from '../../../src/entity/User';
+import { selectDataTestId } from '../../helpers/selectDataTestId';
 
 export const getDataTestid = (testid: string) => {
   cy.get(selectDataTestId(testid));

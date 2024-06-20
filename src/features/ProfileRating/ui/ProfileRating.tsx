@@ -1,9 +1,12 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { RatingCard } from '@/entity/Rating';
-import { useAddProfileRating, useGetProfileRating } from '../model/api/apiFetchProfileRating';
 import { getUserAuth } from '@/entity/User';
+
+import { useAddProfileRating, useGetProfileRating } from '../model/api/apiFetchProfileRating';
+
 import style from './ProfileRating.module.scss';
 
 interface ProfileRatingProps {

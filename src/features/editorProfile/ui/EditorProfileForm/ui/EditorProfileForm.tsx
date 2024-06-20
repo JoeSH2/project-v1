@@ -1,18 +1,21 @@
 import { FC, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import style from './EditorProfileForm.module.scss';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
+
+import { CountryList } from '@/entity/Country';
+import { CurrencyList } from '@/entity/Currency';
 import { ProfileList } from '@/entity/Profile';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { getProfileForm } from '../../../model/selectors/getProfileForm';
-import { getProfileReadonly } from '../../../model/selectors/getProfileReadonly';
-import { getProfileLoading } from '../../../model/selectors/getProfileLoading';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text';
+
 import { getProfileError } from '../../../model/selectors/getProfileError';
 import { getProfileErrorForm } from '../../../model/selectors/getProfileErrorForm';
+import { getProfileForm } from '../../../model/selectors/getProfileForm';
+import { getProfileLoading } from '../../../model/selectors/getProfileLoading';
+import { getProfileReadonly } from '../../../model/selectors/getProfileReadonly';
 import { editorProfileActions } from '../../../model/slice/editorProfileSlice';
-import { CurrencyList } from '@/entity/Currency';
-import { CountryList } from '@/entity/Country';
+
+import style from './EditorProfileForm.module.scss';
 
 interface EditorProfileFormProps {
   className?: string;

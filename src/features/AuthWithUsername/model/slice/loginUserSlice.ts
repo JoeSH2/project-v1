@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice,PayloadAction } from '@reduxjs/toolkit';
 
 import { asyncLoginUser } from '../services/asyncLoginUser';
 import { LoginUserScheme } from '../types/LoginUserScheme';

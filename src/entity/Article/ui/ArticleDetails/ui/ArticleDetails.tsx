@@ -2,27 +2,30 @@ import { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+
 import DateIcon from '@/shared/assets/icon/date.svg';
 import EyeIcon from '@/shared/assets/icon/eye.svg';
-import style from './ArticleDetails.module.scss';
-import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { ArticleBlockType } from '../../../model/consts/index';
+import { getArticlesPage } from '@/shared/const/route';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import { Block } from '@/shared/ui/Block';
+import { Button } from '@/shared/ui/Button';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Svg } from '@/shared/ui/Svg/ui/Svg';
+import { Text } from '@/shared/ui/Text';
+
+import { ArticleBlockType } from '../../../model/consts/index';
 import { getArticleDetailsData, getArticleDetailsLoading } from '../../../model/selectors/getArticleDetails';
+import { fetchArticleById } from '../../../model/services/fetchArticleById';
+import { ArticleReducer } from '../../../model/slice/ArticleSlice';
 import { ArticleBlock } from '../../../model/types/Article';
 import { ArticleDetailsBlockCode } from '../../../ui/ArticleDetailsBlockCode';
 import { ArticleDetailsBlockImage } from '../../../ui/ArticleDetailsBlockImage';
 import { ArticleDetailsBlockText } from '../../../ui/ArticleDetailsBlockText';
-import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import { fetchArticleById } from '../../../model/services/fetchArticleById';
-import { Block } from '@/shared/ui/Block';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Button } from '@/shared/ui/Button';
-import { Svg } from '@/shared/ui/Svg/ui/Svg';
-import { Text } from '@/shared/ui/Text';
-import { ArticleReducer } from '../../../model/slice/ArticleSlice';
-import { getArticlesPage } from '@/shared/const/route';
 import { ArticleEditButton } from '../../createArticle';
+
+import style from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
   className?: string;

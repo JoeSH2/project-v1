@@ -1,11 +1,13 @@
-import { CombinedState, configureStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+import { CombinedState, configureStore,Reducer, ReducersMapObject } from '@reduxjs/toolkit';
+
 import { counterReducer } from '@/entity/Counter';
-import { createReducerManager } from '../../StoreProvider/config/reducerManager';
-import { StateSchema } from '../../StoreProvider/config/StateSchema';
 import { userReducer } from '@/entity/User';
 import { saveScrollPageReducer } from '@/features/saveScrollPage';
-import { apiRTK } from '@/shared/api/apiRTK';
 import { $axiosApi } from '@/shared/api/api';
+import { apiRTK } from '@/shared/api/apiRTK';
+
+import { createReducerManager } from '../../StoreProvider/config/reducerManager';
+import { StateSchema } from '../../StoreProvider/config/StateSchema';
 
 export function createReduxStore(initialState: StateSchema, asyncRedusers?: ReducersMapObject<StateSchema>) {
   const rootReducer: ReducersMapObject<StateSchema> = {

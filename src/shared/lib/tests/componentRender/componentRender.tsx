@@ -1,11 +1,13 @@
+import { ReactNode } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import { MemoryRouter } from 'react-router-dom';
 import { DeepPartial } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
-import { MemoryRouter } from 'react-router-dom';
-import { I18nextProvider } from 'react-i18next';
-import { ReactNode } from 'react';
-import { ReducerList } from '../../useAsyncWrapperReducer/useAsyncWrapperReducer';
+
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
+
 import i18nTest from '../../../config/i18n/i18nTest';
+import { ReducerList } from '../../useAsyncWrapperReducer/useAsyncWrapperReducer';
 
 interface componentRenderOptions {
   route?: string;

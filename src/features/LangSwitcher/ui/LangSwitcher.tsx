@@ -1,9 +1,10 @@
 import React, { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 import style from './LangSwitcher.module.scss';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 export enum LangSwitcherValues {
   RU = 'ru',

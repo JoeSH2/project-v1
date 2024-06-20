@@ -1,16 +1,17 @@
 import React, { FC, MutableRefObject, UIEvent, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { StateSchema } from '@/app/providers/StoreProvider';
+import { useLocation } from 'react-router-dom';
 
-import style from './PageWrapper.module.scss';
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
+import { StateSchema } from '@/app/providers/StoreProvider';
 import { getScrollByPath, saveScrollPageActions } from '@/features/saveScrollPage';
-import { useThrottle } from '@/shared/hooks/useThrottle';
-import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { useInfiniteScroll } from '@/shared/hooks/useInfiniteScroll';
+import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { useThrottle } from '@/shared/hooks/useThrottle';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { TestProps } from '@/shared/types/types';
+
+import style from './PageWrapper.module.scss';
 
 interface PageWrapperProps extends TestProps {
   className?: string;

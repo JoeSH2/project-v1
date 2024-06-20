@@ -1,13 +1,17 @@
-import './styles/index.scss';
 import React, { FC, Suspense, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { getUserMounted, userActions } from '@/entity/User';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Navbare } from '@/widgets/Navbare';
-import { Sidebare } from '@/widgets/Sidebare';
-import { AppRoute } from './routes';
+
+import { fetchGetUserById, getUserMounted } from '@/entity/User';
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { useTheme } from '@/shared/hooks/useTheme';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Navbare } from '@/widgets/Navbare';
+import { PageLoader } from '@/widgets/PageLoader';
+import { Sidebare } from '@/widgets/Sidebare';
+
+import { AppRoute } from './routes';
+
+import './styles/index.scss';
 
 export const App: FC = () => {
   const { theme } = useTheme();
@@ -15,8 +19,12 @@ export const App: FC = () => {
   const mounted = useSelector(getUserMounted);
 
   useEffect(() => {
-    dispatch(userActions.initUserData());
+    dispatch(fetchGetUserById());
   }, [dispatch]);
+
+  if (!mounted) {
+    return <PageLoader />;
+  }
 
   return (
     <div className={classNames('app', {}, [theme])}>

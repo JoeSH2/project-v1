@@ -1,14 +1,16 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
 
-import style from './NotificationsList.module.scss';
-import { useApiNotifications } from '../../model/api/apiNotifications';
 import { getUserAuth } from '../../../User/model/selectors/getUserAuth';
-import { VStack } from '@/shared/ui/Stack';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { useApiNotifications } from '../../model/api/apiNotifications';
 import { NotificationItem } from '../NotificationItem/NotificationItem';
+
+import style from './NotificationsList.module.scss';
 
 export const NotificationsList: FC = () => {
   const { t } = useTranslation();

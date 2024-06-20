@@ -1,13 +1,15 @@
 import React, { FC, memo, ReactNode, useEffect } from 'react';
 
-import style from './Drawer.module.scss';
+import { useTheme } from '@/shared/hooks/useTheme';
+
 import { AnimationProvider, useAnimationLibs } from '../../../config/decorators/AnimationDecorator';
 import { useModal } from '../../../hooks/useModal';
-import { Button } from '../../Button';
-import { Portal } from '../../Portal';
-import { Overlay } from '../../Overlay/ui/Overlay';
 import { classNames } from '../../../lib/classNames/classNames';
-import { useTheme } from '@/shared/hooks/useTheme';
+import { Button } from '../../Button';
+import { Overlay } from '../../Overlay/ui/Overlay';
+import { Portal } from '../../Portal';
+
+import style from './Drawer.module.scss';
 
 interface DrawerProps {
   className?: string;

@@ -1,9 +1,11 @@
-import { Popover as HPopover } from '@headlessui/react';
 import { FC, ReactNode } from 'react';
-import { PositionPopup } from '../../styles/consts';
+import { Popover as HPopover } from '@headlessui/react';
+
 import { classNames } from '../../../../lib/classNames/classNames';
-import style from './Popover.module.scss';
+import { PositionPopup } from '../../styles/consts';
+
 import popupStyle from '../../styles/popups.module.scss';
+import style from './Popover.module.scss';
 
 interface PopoverProps {
   className?: string;

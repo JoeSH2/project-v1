@@ -1,7 +1,9 @@
 import React, { CSSProperties, FC, useMemo } from 'react';
+
 import { classNames } from '../../../lib/classNames/classNames';
-import style from './Avatar.module.scss';
 import { AppImage } from '../../AppImage';
+
+import style from './Avatar.module.scss';
 
 interface AvatarProps {
   className?: string;

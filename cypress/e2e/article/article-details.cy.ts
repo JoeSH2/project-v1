@@ -1,6 +1,3 @@
-import { deleteComment } from '../../support/commands/comment';
-import { getDataTestid } from '../../support/commands/common';
-
 let articleId: string | number;
 describe('Tests article details page', () => {
   beforeEach(() => {
@@ -15,6 +12,9 @@ describe('Tests article details page', () => {
     cy.removeTestArticle(articleId);
   });
   it('create article and visit', () => {
+    cy.fixture('article-details').then(data => {
+      cy.intercept('GET', '**/articles/*', data);
+    });
     cy.getDataTestid('ArticleDetailsPage').should('exist');
   });
   it('rate and feedback the article', () => {

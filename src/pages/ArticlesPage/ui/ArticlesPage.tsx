@@ -1,19 +1,33 @@
 import { FC, memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
+
 import { ArticleList, ArticleView } from '@/entity/Article';
-import style from './ArticlesPage.module.scss';
-import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { articlePageActions, articlePageReducer, getArticle } from '../model/slice/articlePageSlice';
-import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
-import { getArticlePageLoading, getArticlePageView } from '../model/selectors/getArticlePageSelectors';
-import { PageWrapper } from '@/widgets/PageWrapper';
-import { ViewSwitcher } from '@/features/ViewSwitcher';
 import { ArticleSort } from '@/features/ArticleSort';
+import { ViewSwitcher } from '@/features/ViewSwitcher';
+import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
-import { fetchArticlePage } from '../model/services/fetchArticlePage';
+import {
+  ReducerList,
+  useAsyncWrapperReducer,
+} from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+import { PageWrapper } from '@/widgets/PageWrapper';
+
+import {
+  getArticlePageLoading,
+  getArticlePageView,
+  useGetArticleItem,
+} from '../model/selectors/getArticlePageSelectors';
 import { fetchArticleNextPage } from '../model/services/fetchArticleNextPage';
+import { fetchArticlePage } from '../model/services/fetchArticlePage';
 import { initedArticlePage } from '../model/services/initedArticlePage';
+import {
+  articlePageActions,
+  articlePageReducer,
+  getArticle,
+} from '../model/slice/articlePageSlice';
+
+import style from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
   className?: string;
@@ -27,6 +41,8 @@ const ArticlesPage: FC<ArticlesPageProps> = memo(({ className }: ArticlesPagePro
   const isLoading = useSelector(getArticlePageLoading);
   const view = useSelector(getArticlePageView);
   const [searchParams] = useSearchParams();
+  const articleItem = useGetArticleItem('22');
+  console.log(articleItem);
 
   const onChangeView = useCallback(
     (view: ArticleView) => {

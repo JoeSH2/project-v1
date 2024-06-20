@@ -1,10 +1,12 @@
-import './shared/config/i18n/i18n';
-import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+
+import './shared/config/i18n/i18n';
+
+import { App } from './app/App';
+import { ErrorBoundaries } from './app/providers/ErrorBoundaries';
 import { StoreProvider } from './app/providers/StoreProvider';
 import ThemeProvider from './app/providers/ThemesProvider/ui/ThemeProvider';
-import { ErrorBoundaries } from './app/providers/ErrorBoundaries';
-import { App } from './app/App';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);

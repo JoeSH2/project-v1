@@ -1,11 +1,13 @@
 import { FC, memo } from 'react';
-import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
-import { editorProfileReducer } from '../../model/slice/editorProfileSlice';
+
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 import { useInitialEffect } from '@/shared/hooks/useInitialEffect';
+import { ReducerList, useAsyncWrapperReducer } from '@/shared/lib/useAsyncWrapperReducer/useAsyncWrapperReducer';
+
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { EditorProfileHeader } from '../EditorProfileHeader/EditorProfileHeader';
+import { editorProfileReducer } from '../../model/slice/editorProfileSlice';
 import { EditorProfileForm } from '../EditorProfileForm/ui/EditorProfileForm';
+import { EditorProfileHeader } from '../EditorProfileHeader/EditorProfileHeader';
 
 interface EditorProfileProps {
   className?: string;

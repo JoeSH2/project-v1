@@ -1,5 +1,5 @@
-import { apiRTK } from '@/shared/api/apiRTK';
 import { IProfileRating } from '@/entity/Rating';
+import { apiRTK } from '@/shared/api/apiRTK';
 
 interface ProfileRatingProps {
   profileId: string;

@@ -1,5 +1,7 @@
-import 'loki/configure-react';
 import { Preview } from '@storybook/react';
+
+import 'loki/configure-react';
+
 import { RouterDecorator } from '../../src/shared/config/decorators/routerDecorator';
 import { styleDecorator } from '../../src/shared/config/decorators/styleDecorator';
 import { Theme } from '../../src/shared/const/theme';

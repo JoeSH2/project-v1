@@ -1,9 +1,11 @@
 import React, { FC, memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { ProtectedRoute } from '../../providers/ProtectedRoute';
-import { PageLoader } from '@/widgets/PageLoader';
-import { routesConfig } from '../config/routeConfig';
+
 import { RouterAuth } from '@/shared/types/route';
+import { PageLoader } from '@/widgets/PageLoader';
+
+import { ProtectedRoute } from '../../providers/ProtectedRoute';
+import { routesConfig } from '../config/routeConfig';
 
 const AppRoute: FC = memo(() => {
   const renderWithRouter = useCallback((route: RouterAuth) => {

@@ -1,12 +1,14 @@
 import { FC, memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import { ArticleType } from '@/entity/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Tab, TabsOptions } from '@/shared/ui/Tab/ui/Tab';
+
+import { getArticleSortType } from '../../model/selectors/getArticleSortSelectors';
 
 import style from './ArticleTabsFilters.module.scss';
-import { ArticleType } from '@/entity/Article';
-import { getArticleSortType } from '../../model/selectors/getArticleSortSelectors';
-import { Tab, TabsOptions } from '@/shared/ui/Tab/ui/Tab';
 
 export interface ArticleTabsFiltersProps {
   className?: string;

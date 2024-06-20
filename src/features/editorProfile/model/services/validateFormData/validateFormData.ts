@@ -1,4 +1,5 @@
 import { Profile } from '@/entity/Profile';
+
 import { validateError } from '../../consts';
 
 export const validateFormData = (profile?: Profile) => {

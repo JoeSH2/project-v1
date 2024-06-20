@@ -1,8 +1,10 @@
 import { FC } from 'react';
+
 import { SelectList } from '@/shared/ui/Popups';
 
-import style from './CurrencySelect.module.scss';
 import { CurrencyList } from '../model/types/CurrencyList';
+
+import style from './CurrencySelect.module.scss';
 
 interface CurrencySelectProps {
   className?: string;

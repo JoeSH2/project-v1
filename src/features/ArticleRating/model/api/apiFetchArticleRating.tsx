@@ -1,5 +1,5 @@
-import { apiRTK } from '@/shared/api/apiRTK';
 import { IArticleRating } from '@/entity/Rating';
+import { apiRTK } from '@/shared/api/apiRTK';
 
 interface IGetArticleRating {
   userId: string;

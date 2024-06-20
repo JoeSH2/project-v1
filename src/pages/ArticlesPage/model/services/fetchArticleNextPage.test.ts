@@ -1,4 +1,5 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk';
+
 import { fetchArticleNextPage } from './fetchArticleNextPage';
 import { fetchArticlePage } from './fetchArticlePage';
 

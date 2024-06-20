@@ -1,11 +1,12 @@
 import { FC } from 'react';
+
 import { ArticleView } from '@/entity/Article';
 import IconGrid from '@/shared/assets/icon/grid.svg';
 import IconLine from '@/shared/assets/icon/line.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-
 import { HStack } from '@/shared/ui/Stack';
+
 import style from './ViewSwitcher.module.scss';
 
 interface ViewSwitcherProps {

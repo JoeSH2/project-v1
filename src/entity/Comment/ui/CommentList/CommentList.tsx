@@ -1,11 +1,13 @@
-import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text';
+
+import { Comment } from '../../model/types/comment';
+import { CommentCard } from '../CommentCard/CommentCard';
 
 import style from './CommentList.module.scss';
-import { CommentCard } from '../CommentCard/CommentCard';
-import { Text } from '@/shared/ui/Text';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Comment } from '../../model/types/comment';
 
 interface CommentListProps {
   onDeleteComment?: (comm: Comment) => void;

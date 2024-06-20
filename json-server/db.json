@@ -2653,41 +2653,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": "testID",
-      "userId": "4",
-      "title": "TEST ARTICLE",
-      "subtitle": "Тестовая статья",
-      "img": "https://i.pinimg.com/originals/e1/50/f8/e150f8c1d859436170f0b1373fdda2cc.jpg",
-      "views": 9999,
-      "createdAt": "99.99.9999",
-      "type": [
-        "IT"
-      ],
-      "blocks": []
-    },
-    {
-      "userId": "4",
-      "title": "TEST ARTICLE",
-      "subtitle": "Тестовая статья",
-      "img": "https://i.pinimg.com/originals/e1/50/f8/e150f8c1d859436170f0b1373fdda2cc.jpg",
-      "views": 1111,
-      "createdAt": "11.11.1111",
-      "type": "IT",
-      "blocks": [],
-      "id": "9vFBYyz"
-    },
-    {
-      "userId": "4",
-      "title": "TEST ARTICLE",
-      "subtitle": "Тестовая статья",
-      "img": "https://i.pinimg.com/originals/e1/50/f8/e150f8c1d859436170f0b1373fdda2cc.jpg",
-      "views": 1111,
-      "createdAt": "11.11.1111",
-      "type": "IT",
-      "blocks": [],
-      "id": "KPRop4P"
     }
   ],
   "comments": [
@@ -2758,10 +2723,10 @@
       "id": "h-Ei30L"
     },
     {
-      "userId": "4",
-      "articleId": "9vFBYyz",
-      "text": "test comment",
-      "id": "q55jNl6"
+      "userId": "1",
+      "articleId": "19",
+      "text": "Good",
+      "id": "BJ5QkSO"
     }
   ],
   "users": [
@@ -2772,7 +2737,16 @@
       "role": [
         "ADMIN"
       ],
-      "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/221/612/small_2x/hacker-icon-logo-background-free-vector.jpg"
+      "features": {
+        "isArticleRatingEnabled": true,
+        "isCounterEnabled": true
+      },
+      "avatar": "https://static.vecteezy.com/system/resources/thumbnails/006/221/612/small_2x/hacker-icon-logo-background-free-vector.jpg",
+      "jsonSettings": {
+        "theme": "app_brown_theme",
+        "firstVisit": true,
+        "pageOpened": false
+      }
     },
     {
       "id": "2",
@@ -2781,7 +2755,12 @@
       "role": [
         "MANAGER"
       ],
-      "avatar": "https://i.pinimg.com/originals/c5/78/d7/c578d78c35b57d5f033dbf40edc4ee27.jpg"
+      "avatar": "https://i.pinimg.com/originals/c5/78/d7/c578d78c35b57d5f033dbf40edc4ee27.jpg",
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "firstVisit": false,
+        "pageOpened": false
+      }
     },
     {
       "id": "3",
@@ -2790,7 +2769,12 @@
       "role": [
         "USER"
       ],
-      "avatar": "https://cdnb.artstation.com/p/assets/images/images/048/127/951/large/akiro-art-11.jpg?1649265953"
+      "avatar": "https://cdnb.artstation.com/p/assets/images/images/048/127/951/large/akiro-art-11.jpg?1649265953",
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "firstVisit": true,
+        "pageOpened": false
+      }
     },
     {
       "id": "4",
@@ -2799,7 +2783,12 @@
       "role": [
         "ADMIN"
       ],
-      "avatar": "https://sun6-21.userapi.com/s/v1/if2/my0bOeQoFkmaRFWlsJUaaYNViN3ih6M2bYnOWNF3j-Cm0lA5E26DS0Ypm7h_nCJtc1a17zWfNuz8n541Ge36Iou7.jpg?size=1121x1121&quality=96&crop=39,39,1121,1121&ava=1"
+      "avatar": "https://sun6-21.userapi.com/s/v1/if2/my0bOeQoFkmaRFWlsJUaaYNViN3ih6M2bYnOWNF3j-Cm0lA5E26DS0Ypm7h_nCJtc1a17zWfNuz8n541Ge36Iou7.jpg?size=1121x1121&quality=96&crop=39,39,1121,1121&ava=1",
+      "jsonSettings": {
+        "theme": "app_dark_theme",
+        "firstVisit": false,
+        "pageOpened": false
+      }
     }
   ],
   "profile": [
@@ -2919,6 +2908,12 @@
       "userId": "1",
       "rate": 5,
       "id": "61Aul8P"
+    },
+    {
+      "articleId": "bmtwpDX",
+      "userId": "4",
+      "rate": 4,
+      "id": "WM4Pvzx"
     }
   ],
   "profiles-rating": [

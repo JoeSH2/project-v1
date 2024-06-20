@@ -1,7 +1,8 @@
+import { useMemo } from 'react';
 import { bindActionCreators, createSlice } from '@reduxjs/toolkit';
 import type { SliceCaseReducers } from '@reduxjs/toolkit/dist';
 import { CreateSliceOptions } from '@reduxjs/toolkit/dist';
-import { useMemo } from 'react';
+
 import { useAppDispatch } from '@/shared/hooks/useAppDispatch';
 
 export const buildSlice = <State, CaseReducers extends SliceCaseReducers<State>, Name extends string = string>(

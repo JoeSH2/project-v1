@@ -1,8 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { Comment } from '@/entity/Comment';
-import { getUserAuth, getUserRole } from '@/entity/User';
 import { getArticleDetailsData } from '@/entity/Article';
+import { Comment } from '@/entity/Comment';
+import { getUserAuth } from '@/entity/User';
+
 import { fetchArticleDetailsComments } from './fetchArticleDetailsComments';
 
 export const removeArticleComment = createAsyncThunk<void, Comment, ThunkConfig<string>>(

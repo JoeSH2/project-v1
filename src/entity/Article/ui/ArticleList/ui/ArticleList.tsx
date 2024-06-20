@@ -1,11 +1,14 @@
 import { FC, HTMLAttributeAnchorTarget } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ArticleCardSkeleton } from '../../ArticleCardSkeleton/ArticleCardSkeleton';
+import { Text } from '@/shared/ui/Text';
+
 import { Article, ArticleView } from '../../../model/types/Article';
 import { ArticleCard } from '../../ArticleCard/ui/ArticleCard';
+import { ArticleCardSkeleton } from '../../ArticleCardSkeleton/ArticleCardSkeleton';
+
 import style from './ArticleList.module.scss';
-import { Text } from '@/shared/ui/Text';
 
 interface ArticleListProps {
   className?: string;
@@ -39,7 +42,6 @@ export const ArticleList: FC<ArticleListProps> = props => {
           <ArticleCard target={target} key={article.id} view={view} article={article} />
         ))
       ) : (
-        // eslint-disable-next-line react/jsx-no-undef
         <Text title={t('Error in receiving articles')} />
       )}
       {isLoading && getSkeletons}

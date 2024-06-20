@@ -27,6 +27,7 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
     "generate:slice": "node ./scripts/createSlice/index.js",
+    "remove-feature": "ts-node ./scripts/remove-feature/remove-feature.ts",
     "build-dev": "tsc -w",
     "build-storybook": "storybook build",
     "preinstall": "node ./scripts/clear-cacheDir.ts",
@@ -124,8 +125,6 @@
     "storybook-addon-mock": "^4.3.0",
     "storybook-addon-themes": "^6.1.0",
     "style-loader": "^3.3.3",
-    "stylelint": "^16.3.1",
-    "stylelint-config-standard-scss": "^13.1.0",
     "ts-jest": "^29.1.2",
     "ts-loader": "^9.4.3",
     "ts-morph": "^20.0.0",
@@ -149,6 +148,7 @@
     "axios": "^1.4.0",
     "circular-dependency-plugin": "^5.2.2",
     "concurrently": "^8.2.2",
+    "eslint-plugin-unused-imports": "^4.0.0",
     "i18next": "^22.5.1",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.2.2",
@@ -159,7 +159,9 @@
     "react-i18next": "^12.3.1",
     "react-redux": "^8.0.7",
     "react-router-dom": "^6.11.2",
-    "react-window-infinite-loader": "^1.0.9"
+    "react-window-infinite-loader": "^1.0.9",
+    "stylelint": "^16.5.0",
+    "stylelint-config-standard-scss": "^13.1.0"
   },
   "repository": "https://github.com/JoeSH2/project-v1.git",
   "loki": {

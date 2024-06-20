@@ -1,9 +1,11 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import { ArticleList } from '@/entity/Article';
-import { Text } from '@/shared/ui/Text';
-import { useArticleRecommendationsList } from '../api/articlesRecommendationsApi';
 import { VStack } from '@/shared/ui/Stack';
+import { Text } from '@/shared/ui/Text';
+
+import { useArticleRecommendationsList } from '../api/articlesRecommendationsApi';
 
 interface ArticlesRecommendationsListProps {
   className?: string;

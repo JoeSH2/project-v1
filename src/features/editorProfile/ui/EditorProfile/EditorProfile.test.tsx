@@ -1,10 +1,11 @@
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import componentRender from '@/shared/lib/tests/componentRender/componentRender';
 
+import { CountryList } from '@/entity/Country';
 import { CurrencyList } from '@/entity/Currency';
 import { Profile } from '@/entity/Profile';
-import { CountryList } from '@/entity/Country';
+import componentRender from '@/shared/lib/tests/componentRender/componentRender';
+
 import { editorProfileReducer } from '../../model/slice/editorProfileSlice';
 import { EditorProfile } from '../EditorProfile/EditorProfile';
 

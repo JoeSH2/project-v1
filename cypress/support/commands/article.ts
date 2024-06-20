@@ -7,7 +7,7 @@ const testingArticle = {
   img: 'https://i.pinimg.com/originals/e1/50/f8/e150f8c1d859436170f0b1373fdda2cc.jpg',
   views: 1111,
   createdAt: '11.11.1111',
-  type: 'IT',
+  type: ['IT'],
   blocks: [],
 };
 

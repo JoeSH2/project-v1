@@ -1,16 +1,18 @@
 import React, { FC, memo, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
+
 import { getUserAuth } from '@/entity/User';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import ArrowIcon from '@/shared/assets/icon/arrow.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
 import { VStack } from '@/shared/ui/Stack';
 
-import { SidebareLink } from '../SidebareLink/SidebareLink';
-import style from './Sidebare.module.scss';
-import { ThemeSwitcher } from '@/features/ThemeSwitcher';
-import { LangSwitcher } from '@/features/LangSwitcher';
 import { getSidebareLinks } from '../../model/selectors/getSidebareLinks';
+import { SidebareLink } from '../SidebareLink/SidebareLink';
+
+import style from './Sidebare.module.scss';
 
 interface SidebareProps {
   className?: string;

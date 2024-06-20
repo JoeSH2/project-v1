@@ -1,10 +1,12 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import { RatingCard } from '@/entity/Rating';
-import { useAddArticleRating, useGetArticleRating } from '../model/api/apiFetchArticleRating';
 import { getUserAuth } from '@/entity/User';
 import { Skeleton } from '@/shared/ui/Skeleton';
+
+import { useAddArticleRating, useGetArticleRating } from '../model/api/apiFetchArticleRating';
 
 export interface ArticleRatingProps {
   className?: string;

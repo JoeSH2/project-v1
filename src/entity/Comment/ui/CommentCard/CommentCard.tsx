@@ -1,19 +1,21 @@
 import { FC } from 'react';
 import { useSelector } from 'react-redux';
+
+import { getUserAuth } from '@/entity/User';
+import Cross from '@/shared/assets/icon/cross.svg';
 import DefaultAvatar from '@/shared/assets/icon/default-avatar.jpg';
-import { Text } from '@/shared/ui/Text';
-import style from './CommentCard.module.scss';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { getProfilePage } from '@/shared/const/route';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
-import Cross from '@/shared/assets/icon/cross.svg';
-import { Comment } from '../../model/types/comment';
-import { classNames } from '@/shared/lib/classNames/classNames';
-
-import { getProfilePage } from '@/shared/const/route';
-import { Svg } from '@/shared/ui/Svg/ui/Svg';
-import { getUserAuth } from '@/entity/User';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Svg } from '@/shared/ui/Svg/ui/Svg';
+import { Text } from '@/shared/ui/Text';
+
+import { Comment } from '../../model/types/comment';
+
+import style from './CommentCard.module.scss';
 
 interface CommentCardProps {
   onDeleteComment?: (comm: Comment) => void;

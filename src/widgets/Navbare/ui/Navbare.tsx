@@ -1,16 +1,18 @@
 import { FC, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import LogoIcon from '@/shared/assets/icon/LOGO.svg';
-import { LoginModal } from '@/features/AuthWithUsername';
+
+import { AvatarMenuButton } from '@/entity/AvatarMenuButton';
 import { getUserAuth } from '@/entity/User';
+import { LoginModal } from '@/features/AuthWithUsername';
+import { NotificationButton } from '@/features/NotificationButton';
+import LogoIcon from '@/shared/assets/icon/LOGO.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button } from '@/shared/ui/Button';
-import { Text } from '@/shared/ui/Text';
-import style from './Navbare.module.scss';
 import { HStack } from '@/shared/ui/Stack';
-import { AvatarMenuButton } from '@/entity/AvatarMenuButton';
-import { NotificationButton } from '@/features/NotificationButton';
+import { Text } from '@/shared/ui/Text';
+
+import style from './Navbare.module.scss';
 
 interface NavbareProps {
   className?: string;

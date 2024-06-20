@@ -1,10 +1,12 @@
-import { useTranslation } from 'react-i18next';
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import { getArticleCreatePage } from '@/shared/const/route';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import style from './ArticleCreateButton.module.scss';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button } from '@/shared/ui/Button';
-import { getArticleCreatePage } from '@/shared/const/route';
+
+import style from './ArticleCreateButton.module.scss';
 
 interface ArticleCreateButtonProps {
   className?: string;

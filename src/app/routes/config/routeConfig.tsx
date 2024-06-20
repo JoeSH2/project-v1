@@ -1,11 +1,13 @@
-import { AdminPage } from '@/pages/AdminPage';
 import { UserRole } from '@/entity/User';
-import { ProfilePage } from '@/pages/ProfilePage';
-import { PageNotFound } from '@/pages/PageNotFound';
-import { ArticlesPageAsync } from '@/pages/ArticlesPage';
-import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { AdminPage } from '@/pages/AdminPage';
 import { ArticleCreatePage } from '@/pages/ArticleCreatePage';
+import { ArticleDetailsPageAsync } from '@/pages/ArticleDetailsPage';
+import { ArticlesPageAsync } from '@/pages/ArticlesPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { MainPage } from '@/pages/MainPage';
+import { PageNotFound } from '@/pages/PageNotFound';
+import { ProfilePage } from '@/pages/ProfilePage';
 import {
   AppRoutes,
   getAboutPage,
@@ -19,8 +21,6 @@ import {
   getProfilePage,
 } from '@/shared/const/route';
 import { RouterAuth } from '@/shared/types/route';
-import { MainPage } from '@/pages/MainPage';
-import { AboutPage } from '@/pages/AboutPage';
 
 export const routesConfig: Record<AppRoutes, RouterAuth> = {
   [AppRoutes.MAIN]: {

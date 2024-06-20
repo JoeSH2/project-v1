@@ -1,8 +1,11 @@
 import { FC } from 'react';
-import cls from './ArticleDetailsBlockText.module.scss';
-import { ArticleBlockText } from '../../../model/types/Article';
-import { Text } from '@/shared/ui/Text';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text';
+
+import { ArticleBlockText } from '../../../model/types/Article';
+
+import cls from './ArticleDetailsBlockText.module.scss';
 
 interface ArticleDetailsBlockTextProps {
   className?: string;
