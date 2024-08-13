@@ -16,7 +16,7 @@ interface ThemeSwitcherProps {
   theme?: string;
 }
 
-let actualTheme: Theme | undefined;
+// let actualTheme: Theme | undefined;
 
 export const ThemeSwitcher: FC<ThemeSwitcherProps> = memo(() => {
   const { theme, toggleTheme } = useTheme();
